@@ -48,6 +48,7 @@ const sidebars: SidebarsConfig = {
         'css-basics/text-typography',
         'css-basics/advanced-styling',
         'css-basics/pseudo-classes',
+        'css-basics/css-animations',
       ],
     },
   ],
