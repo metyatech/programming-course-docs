@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 import Exercise, { Solution } from '@site/src/components/Exercise';
-import CodePreview from '@site/src/components/CodePreview';
+import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 # 導入
 

@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # 演習-発展
 
-import CodePreview from '@site/src/components/CodePreview';
+import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 ## HTMLマークアップ演習
 

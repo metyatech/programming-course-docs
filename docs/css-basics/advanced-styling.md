@@ -2,8 +2,7 @@
 sidebar_position: 6
 ---
 
-import CodePreview from '@site/src/components/CodePreview';
-import Exercise, { Solution } from '@site/src/components/Exercise';
+import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 # 発展スタイリング
 
@@ -57,4 +56,4 @@ import Exercise, { Solution } from '@site/src/components/Exercise';
 
 [advanced-styling-complete.zip](@site/static/files/advanced-styling-complete.zip)
 
---- 
+---
