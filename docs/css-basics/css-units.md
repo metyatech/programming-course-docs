@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-import Exercise, { Solution } from '@site/src/components/Exercise';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 # 単位

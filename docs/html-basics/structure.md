@@ -1,4 +1,4 @@
-import Exercise, { Solution } from '@site/src/components/Exercise';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 
 # 構造
 

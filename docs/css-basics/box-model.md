@@ -4,7 +4,7 @@ sidebar_position: 4
 
 import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
-import Exercise, { Solution } from '@site/src/components/Exercise';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 
 # ボックスモデル
 

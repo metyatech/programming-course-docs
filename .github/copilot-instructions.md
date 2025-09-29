@@ -16,7 +16,7 @@
   - `initialCode`はHTMLのbody内容のみ（DOCTYPE/html/headタグは不要）
   - `initialCSS`で別途CSSスタイリングを指定
   - 例：`<CodePreview initialCode="<p>こんにちは</p>" initialCSS="p { color: red; }" />`
-- **Exercise** (`src/components/Exercise/`) - 折りたたみ可能な解答付きの演習問題
+- **Exercise**（`@kodai-yamamoto-siw/exercise` パッケージ）- 折りたたみ可能な解答付きの演習問題
   - 解答は`<Solution>`コンポーネントで展開可能にする
 
 ### コンテンツ規約
@@ -88,6 +88,8 @@ CodePreviewでは常にHTMLとCSSを分離する：
 
 ### 演習構造
 ```jsx
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
+
 <Exercise>
 ### 課題: [タイトル]
 [問題の説明と要件]
