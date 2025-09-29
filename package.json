@@ -18,8 +18,8 @@
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@kodai-yamamoto-siw/code-preview": "github:Kodai-Yamamoto-SIW/code-preview",
-    "@mdx-js/react": "^3.0.0",
     "@kodai-yamamoto-siw/exercise": "github:Kodai-Yamamoto-SIW/exercise-module",
+    "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

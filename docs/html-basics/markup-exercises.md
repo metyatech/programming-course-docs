@@ -42,7 +42,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 `演習用原稿.txt` の内容をすべて `<body>` 要素内に貼り付けてください。  
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -67,7 +67,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - サブセクションの見出しはありますか？
 
 <CodePreview 
-  initialCode={`<h1>メインタイトル</h1>
+  initialHTML={`<h1>メインタイトル</h1>
 <h2>セクションタイトル</h2>
 <h3>サブセクションタイトル</h3>`}
 />
@@ -84,7 +84,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - 一つの話題としてまとまっている部分はどこでしょうか？
 
 <CodePreview 
-  initialCode={`<p>これは一つの段落です。関連する内容をまとめて記述します。</p>
+  initialHTML={`<p>これは一つの段落です。関連する内容をまとめて記述します。</p>
 <p>これは別の段落です。新しい話題や内容を記述します。</p>`}
 />
 
@@ -101,7 +101,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - 時系列や手順を表している部分はありますか？
 
 <CodePreview 
-  initialCode={`<!-- 順序のないリスト -->
+  initialHTML={`<!-- 順序のないリスト -->
 <ul>
     <li>項目1</li>
     <li>項目2</li>
@@ -130,7 +130,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - サイトのタイトルや案内を含む部分はありますか？
 
 <CodePreview 
-  initialCode={`<header>
+  initialHTML={`<header>
     <h1>サイトタイトル</h1>
     <nav>
         <ul>
@@ -154,7 +154,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - 著作権や連絡先の情報はありますか？
 
 <CodePreview 
-  initialCode={`<footer>
+  initialHTML={`<footer>
     <p>© 2025 サイト名</p>
     <p>お問い合わせ: example@email.com</p>
     <p>電話: 03-1234-5678</p>
@@ -173,7 +173,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - ヘッダーとフッターを除いた、主要な情報はどこからどこまででしょうか？
 
 <CodePreview 
-  initialCode={`<main>
+  initialHTML={`<main>
     <h1>メインコンテンツのタイトル</h1>
     <p>これがページの主要な内容です。</p>
     <section>
@@ -199,7 +199,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - それぞれのセクションは明確に分かれていますか？
 
 <CodePreview 
-  initialCode={`<section>
+  initialHTML={`<section>
     <h2>セクション1のタイトル</h2>
     <p>セクション1の内容です。独立したテーマや話題をまとめます。</p>
 </section>
@@ -222,7 +222,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 - どのセクションへのリンクを作成しますか？
 
 <CodePreview 
-  initialCode={`<nav>
+  initialHTML={`<nav>
     <ul>
         <li>セクション1</li>
         <li>セクション2</li>

@@ -32,7 +32,7 @@ HTMLのタグを使って、文章の各部分に意味を与えることです�
    [原稿.txtをダウンロード](@site/static/files/原稿.txt)
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
@@ -51,7 +51,7 @@ HTMLのタグを使って、文章の各部分に意味を与えることです�
 - 一番上の大見出し「ピクニックのお知らせ」を`<h1>`タグで囲みます。
 
 <CodePreview 
-  initialCode={`<body>
+  initialHTML={`<body>
   <h1>ピクニックのお知らせ</h1>
   [ピクニックのイメージ画像]
 
@@ -68,7 +68,7 @@ HTMLのタグを使って、文章の各部分に意味を与えることです�
 - セクションごとの見出し（「日時と場所」「内容」「注意事項」「アクセス」「お問い合わせ」「周辺情報」）には、`<h2>`タグを使います。
 
 <CodePreview 
-  initialCode={`<h2>日時と場所</h2>
+  initialHTML={`<h2>日時と場所</h2>
 <h2>内容</h2>
 <h2>注意事項</h2>
 <h2>アクセス</h2>
@@ -83,20 +83,20 @@ HTMLのタグを使って、文章の各部分に意味を与えることです�
 - セクション内の小見出しには `<h3>` タグを使います。例えば、「アクセス」セクションの中で「公共交通機関」や「自動車」など、さらに細かく分けたい場合に使います。
 
 <CodePreview 
-  initialCode={`<h3>公共交通機関</h3>
+  initialHTML={`<h3>公共交通機関</h3>
 <h3>自動車</h3>`}
 />
 
 - 文章のまとまりごとに`<p>`タグで囲みます。1つの段落ごとに`<p>`を使いましょう。
 
 <CodePreview 
-  initialCode={`<p>近郊の公園でピクニックを開催します！</p>`}
+  initialHTML={`<p>近郊の公園でピクニックを開催します！</p>`}
 />
 
 - リストを使う場合は、`<ul>`（順序なしリスト）や`<ol>`（順序付きリスト）と、`<li>`（リスト項目）を使います。
 
 <CodePreview 
-  initialCode={`<ul>
+  initialHTML={`<ul>
     <li>飲食物の持ち込みは自由です。</li>
     <li>ゲームやアクティビティの参加は任意です。</li>
     <li>天候により中止になる場合があります。
@@ -106,7 +106,7 @@ HTMLのタグを使って、文章の各部分に意味を与えることです�
 />
 
 <CodePreview 
-  initialCode={`<ol>
+  initialHTML={`<ol>
     <li>受付 (10:00 〜 10:30)</li>
     <li>司会進行 (10:30 〜 11:30)</li>
     <li>昼食 (11:30 〜 12:30)</li>

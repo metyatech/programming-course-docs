@@ -80,7 +80,7 @@ html {
 **ピクセル（px）** は、画面の最小単位である「点」の数を表します。
 
 <CodePreview 
-  initialCode={`<h1>24pxの見出し</h1>
+  initialHTML={`<h1>24pxの見出し</h1>
 <h2>20pxの小見出し</h2>
 <p>16pxの段落テキスト</p>
 <small>12pxの小さなテキスト</small>`}
@@ -157,7 +157,7 @@ p {
 ### 💡 emの相対的な性質を理解しよう
 
 <CodePreview 
-  initialCode={`<h1>大きな見出し（24px）<span>子要素は1em</span></h1>
+  initialHTML={`<h1>大きな見出し（24px）<span>子要素は1em</span></h1>
 
 <h2>普通の見出し（16px）<span>子要素は1em</span></h2>`}
   initialCSS={`/* emは親要素のフォントサイズに依存する */
@@ -191,7 +191,7 @@ span {
 ### remの絶対的な性質を理解しよう
 
 <CodePreview 
-  initialCode={`<h1>大きな見出し（24px）<span>子要素は1rem</span></h1>
+  initialHTML={`<h1>大きな見出し（24px）<span>子要素は1rem</span></h1>
 
 <h2>小さな見出し（12px）<span>子要素は1rem</span></h2>`}
   initialCSS={`/* remは常にhtml要素のフォントサイズ（16px）に依存 */
@@ -224,7 +224,7 @@ span {
 ### vw・vhの使用例
 
 <CodePreview 
-  initialCode={`<header>ヘッダー（画面幅100%、高さ10%）</header>
+  initialHTML={`<header>ヘッダー（画面幅100%、高さ10%）</header>
 <main>メインコンテンツ（画面幅80%、高さ60%）</main>
 <footer>フッター（画面幅100%、高さ15%）</footer>`}
   initialCSS={`header {
@@ -283,7 +283,7 @@ footer {
 <Solution>
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">

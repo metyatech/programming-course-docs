@@ -123,7 +123,7 @@ footer {
 - RGB値：`rgb(255, 0, 0)`（赤）, `rgb(0, 0, 255)`（青）など
 
 <CodePreview 
-  initialCode={`<h1>見出しの背景色</h1>
+  initialHTML={`<h1>見出しの背景色</h1>
 <p>段落の背景色</p>
 <div>div要素の背景色</div>`}
   initialCSS={`h1 {
@@ -189,7 +189,7 @@ footer {
 ### 子孫セレクタの例
 
 <CodePreview 
-  initialCode={`<header>
+  initialHTML={`<header>
     <h1>サイトタイトル</h1>
 </header>
 <main>

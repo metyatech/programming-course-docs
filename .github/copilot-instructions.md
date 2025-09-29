@@ -13,9 +13,9 @@
 
 ### カスタムコンポーネント
 - **CodePreview** (`src/components/CodePreview/`) - ライブHTML/CSSエディタとプレビュー
-  - `initialCode`はHTMLのbody内容のみ（DOCTYPE/html/headタグは不要）
+  - `initialHTML`はHTMLのbody内容のみ（DOCTYPE/html/headタグは不要）
   - `initialCSS`で別途CSSスタイリングを指定
-  - 例：`<CodePreview initialCode="<p>こんにちは</p>" initialCSS="p { color: red; }" />`
+  - 例：`<CodePreview initialHTML="<p>こんにちは</p>" initialCSS="p { color: red; }" />`
 - **Exercise**（`@kodai-yamamoto-siw/exercise` パッケージ）- 折りたたみ可能な解答付きの演習問題
   - 解答は`<Solution>`コンポーネントで展開可能にする
 
@@ -52,7 +52,7 @@ npm run serve      # ビルド済みサイトをローカル提供
 CodePreviewでは常にHTMLとCSSを分離する：
 ```jsx
 <CodePreview 
-  initialCode={`<button class="btn1">ボタン</button>`}
+  initialHTML={`<button class="btn1">ボタン</button>`}
   initialCSS={`.btn1 { background-color: blue; }`}
 />
 ```

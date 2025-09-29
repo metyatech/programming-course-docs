@@ -40,7 +40,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **説明**: `<br>`タグは改行を挿入するタグ  
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <li>天候により中止になる場合があります。
     ※ 中止の場合は、当日朝9時までにご連絡いたします。</li>
 
@@ -54,7 +54,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **説明**: `<strong>`タグは重要なキーワードを強調するタグ  
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <li>天候により中止になる場合があります。<br>
     ※ 中止の場合は、当日朝9時までにご連絡いたします。</li>
 
@@ -70,7 +70,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **適用箇所①**:
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <li>天候により<strong>中止</strong>になる場合があります。<br>
     ※ <strong>中止</strong>の場合は、<strong>当日朝9時</strong>までにご連絡いたします。</li>
 
@@ -83,7 +83,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **適用箇所②**:
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <p>参加者の皆様には、事前にご案内申し上げております。</p>
 
 <!-- 修正後 -->
@@ -93,7 +93,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **適用箇所③**:
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <p>© 2025 ピクニック実行委員会</p>
 
 <!-- 修正後 -->
@@ -110,7 +110,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 <CodePreview 
   imageBasePath="@site/static/files/text-markup-complete/"
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <section>
     [ピクニックのイメージ画像]
     <p>近郊の公園でピクニックを開催します！</p>
@@ -127,7 +127,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 <CodePreview 
   imageBasePath="@site/static/files/text-markup-complete/"
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 [公園の地図画像]
 
 <!-- 修正後 -->

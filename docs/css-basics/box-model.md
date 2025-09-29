@@ -52,7 +52,7 @@ Google Chromeの開発者ツールを使うと、実際にボックスモデル�
 以下のサンプルをChromeのインスペクターで確認してみましょう：
 
 <CodePreview 
-  initialCode={`<div>
+  initialHTML={`<div>
   このテキストがcontent（内容）です
 </div>
 <div>
@@ -111,7 +111,7 @@ Google Chromeの開発者ツールを使うと、実際にボックスモデル�
 ### クラスセレクタの基本例
 
 <CodePreview 
-  initialCode={`<h1>普通の見出し</h1>
+  initialHTML={`<h1>普通の見出し</h1>
 <h1 class="mark">特別な見出し</h1>
 <h1>普通の見出し</h1>
 <p class="mark">特別な段落</p>
@@ -156,7 +156,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<h1>サイトタイトル</h1>
+  initialHTML={`<h1>サイトタイトル</h1>
 <p class="mark">重要なお知らせ</p>
 <p>通常の段落</p>
 <p class="mark">もう一つの重要な情報</p>`}
@@ -199,7 +199,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<h1>ニュースサイト</h1>
+  initialHTML={`<h1>ニュースサイト</h1>
 <h2 class="urgent">速報：台風が接近中</h2>
 <p class="info">最新の気象情報をお届けします。</p>
 <div class="urgent">緊急避難情報が発表されました。</div>
@@ -255,7 +255,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="container">
+  initialHTML={`<div class="container">
     <h1 class="title">サイトタイトル</h1>
     <p class="highlight">重要なお知らせ</p>
     <p class="normal">通常の段落</p>
@@ -314,7 +314,7 @@ h1 {
 ### widthの動作例
 
 <CodePreview 
-  initialCode={`<div class="box1">幅100pxの箱</div>
+  initialHTML={`<div class="box1">幅100pxの箱</div>
 <div class="box2">幅50%の箱</div>
 <div class="box3">幅autoの箱（デフォルト）</div>`}
   initialCSS={`.box1 {
@@ -364,7 +364,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">狭い箱</div>
+  initialHTML={`<div class="box1">狭い箱</div>
 <div class="box2">中くらいの箱</div>
 <div class="box3">広い箱</div>`}
   initialCSS={`.box1 {
@@ -419,7 +419,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box">
+  initialHTML={`<div class="box">
     <div class="box1">狭い箱</div>
     <div class="box2">中くらいの箱</div>
     <div class="box3">広い箱</div>
@@ -480,7 +480,7 @@ h1 {
 ### heightの動作例
 
 <CodePreview 
-  initialCode={`<div class="takaku">高さ150pxの箱</div>
+  initialHTML={`<div class="takaku">高さ150pxの箱</div>
 <div class="hikuku">高さ50pxの箱</div>
 <div class="jidou">高さautoの箱（中身に合わせて自動調整）</div>`}
   initialCSS={`.takaku {
@@ -529,7 +529,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">正方形の箱</div>
+  initialHTML={`<div class="box1">正方形の箱</div>
 <div class="box2">長方形の箱</div>
 <div class="box3">小さな箱</div>`}
   initialCSS={`.box1 {
@@ -584,7 +584,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">ヒーローセクション</div>
+  initialHTML={`<div class="box1">ヒーローセクション</div>
 <div class="box2">カードセクション</div>
 <div class="box3">サイドバー</div>`}
   initialCSS={`.box1 {
@@ -649,7 +649,7 @@ h1 {
 ### borderの動作例
 
 <CodePreview 
-  initialCode={`<div class="waku1">実線の境界線</div>
+  initialHTML={`<div class="waku1">実線の境界線</div>
 <div class="waku2">破線の境界線</div>
 <div class="waku3">太い境界線</div>
 <div class="waku4">色付きの境界線</div>`}
@@ -707,7 +707,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">額縁風の箱1</div>
+  initialHTML={`<div class="box1">額縁風の箱1</div>
 <div class="box2">額縁風の箱2</div>
 <div class="box3">額縁風の箱3</div>`}
   initialCSS={`.box1 {
@@ -756,7 +756,7 @@ h1 {
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="alert">緊急通知</div>
+  initialHTML={`<div class="alert">緊急通知</div>
 <div class="info">お知らせ</div>
 <div class="success">完了メッセージ</div>`}
   initialCSS={`.alert {
@@ -833,7 +833,7 @@ paddingは、スペース区切りで値を書くことで、様々な指定方�
 ### paddingの動作例
 
 <CodePreview 
-  initialCode={`<div class="pad1">余白なし</div>
+  initialHTML={`<div class="pad1">余白なし</div>
 <div class="pad2">小さな余白</div>
 <div class="pad3">大きな余白</div>
 <div class="pad4">カスタム余白</div>`}
@@ -891,7 +891,7 @@ paddingは、スペース区切りで値を書くことで、様々な指定方�
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">箱1</div>
+  initialHTML={`<div class="box1">箱1</div>
 <div class="box2">箱2</div>
 <div class="box3">箱3</div>`}
   initialCSS={`.box1 {
@@ -944,7 +944,7 @@ paddingは、スペース区切りで値を書くことで、様々な指定方�
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">カード1</div>
+  initialHTML={`<div class="box1">カード1</div>
 <div class="box2">カード2</div>
 <div class="box3">カード3</div>`}
   initialCSS={`.box1 {
@@ -1019,7 +1019,7 @@ marginは、スペース区切りで値を書くことで、様々な指定方�
 ### marginの動作例
 
 <CodePreview 
-  initialCode={`<div class="mar1">余白なし</div>
+  initialHTML={`<div class="mar1">余白なし</div>
 <div class="mar2">小さな余白</div>
 <div class="mar3">大きな余白</div>
 <div class="mar4">カスタム余白</div>`}
@@ -1077,7 +1077,7 @@ marginは、スペース区切りで値を書くことで、様々な指定方�
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">セクション1</div>
+  initialHTML={`<div class="box1">セクション1</div>
 <div class="box2">セクション2</div>
 <div class="box3">セクション3</div>`}
   initialCSS={`.box1 {
@@ -1133,7 +1133,7 @@ marginは、スペース区切りで値を書くことで、様々な指定方�
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="section1">セクション1</div>
+  initialHTML={`<div class="section1">セクション1</div>
 <div class="section2">セクション2</div>
 <div class="section3">セクション3</div>`}
   initialCSS={`.section1 {
@@ -1206,7 +1206,7 @@ marginは、スペース区切りで値を書くことで、様々な指定方�
 ### 中央揃えの動作例
 
 <CodePreview 
-  initialCode={`<div class="hidari">左寄せ（デフォルト）</div>
+  initialHTML={`<div class="hidari">左寄せ（デフォルト）</div>
 <div class="center">中央揃え</div>
 <div class="center2">中央揃え（上下margin付き）</div>`}
   initialCSS={`.hidari {
@@ -1253,7 +1253,7 @@ marginは、スペース区切りで値を書くことで、様々な指定方�
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="box1">ヘッダー</div>
+  initialHTML={`<div class="box1">ヘッダー</div>
 <div class="box2">メインコンテンツ</div>`}
   initialCSS={`.box1 {
     width: 300px;
@@ -1310,7 +1310,7 @@ marginは、スペース区切りで値を書くことで、様々な指定方�
 <Solution>
 
 <CodePreview 
-  initialCode={`<div class="title">CAFE MENU</div>
+  initialHTML={`<div class="title">CAFE MENU</div>
 <div class="menu1">ホットコーヒー ¥300</div>
 <div class="menu2">アイスラテ ¥400</div>
 <div class="menu3">チーズケーキ ¥500</div>

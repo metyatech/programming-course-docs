@@ -43,7 +43,7 @@ transition: プロパティ名 時間;
 ボタンにマウスを乗せた時の色や位置の変化をアニメーション化します。
 
 <CodePreview 
-  initialCode={`<h2>ボタンアニメーションの例</h2>
+  initialHTML={`<h2>ボタンアニメーションの例</h2>
 <button class="btn1">マウスを乗せてみてください</button>`}
   initialCSS={`.btn1 {
     background-color: #3498db;
@@ -83,7 +83,7 @@ transition: プロパティ名 時間;
 
 <Solution>
 <CodePreview 
-  initialCode={`<button class="btn2">クリックしてね</button>`}
+  initialHTML={`<button class="btn2">クリックしてね</button>`}
   initialCSS={`.btn2 {
     background-color: #27ae60;
     color: white;
@@ -119,7 +119,7 @@ transition: プロパティ名 時間;
 
 <Solution>
 <CodePreview 
-  initialCode={`<button class="btn3">上下に動くボタン</button>`}
+  initialHTML={`<button class="btn3">上下に動くボタン</button>`}
   initialCSS={`.btn3 {
     background-color: #e74c3c;
     color: white;

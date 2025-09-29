@@ -21,7 +21,7 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 要素の上にマウスカーソルが乗った時にスタイルが適用されます。
 
 <CodePreview 
-  initialCode={`<p class="text1">マウスを乗せてみてください</p>
+  initialHTML={`<p class="text1">マウスを乗せてみてください</p>
 <button class="btn1">ボタン</button>`}
   initialCSS={`.text1 {
     color: #333;
@@ -64,7 +64,7 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 
 <Solution>
 <CodePreview 
-  initialCode={`<div class="box1">この四角にマウスを乗せてください</div>`}
+  initialHTML={`<div class="box1">この四角にマウスを乗せてください</div>`}
   initialCSS={`.box1 {
     background-color: #f0f0f0;
     color: #333;
@@ -86,7 +86,7 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 要素がクリックされている間（マウスボタンが押されている間）にスタイルが適用されます。
 
 <CodePreview 
-  initialCode={`<button class="btn2">クリックしてみてください</button>`}
+  initialHTML={`<button class="btn2">クリックしてみてください</button>`}
   initialCSS={`.btn2 {
     background-color: #27ae60;
     color: white;
@@ -125,7 +125,7 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 
 <Solution>
 <CodePreview 
-  initialCode={`<button class="btn3">押してみて</button>`}
+  initialHTML={`<button class="btn3">押してみて</button>`}
   initialCSS={`.btn3 {
     background-color: #e74c3c;
     color: white;
@@ -153,7 +153,7 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 入力欄やボタンなどがフォーカスされた時（キーボードのTabキーで選択された時など）にスタイルが適用されます。
 
 <CodePreview 
-  initialCode={`<input type="text" class="input1" placeholder="ここをクリックで選択">`}
+  initialHTML={`<input type="text" class="input1" placeholder="ここをクリックで選択">`}
   initialCSS={`.input1 {
     border: 2px solid #ddd;
     border-radius: 4px;
@@ -181,7 +181,7 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
 
 <Solution>
 <CodePreview 
-  initialCode={`<input type="text" class="input2" placeholder="お名前を入力してください">`}
+  initialHTML={`<input type="text" class="input2" placeholder="お名前を入力してください">`}
   initialCSS={`.input2 {
     padding: 12px;
     border: 2px solid #ccc;

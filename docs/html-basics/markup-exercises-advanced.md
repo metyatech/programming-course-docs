@@ -30,7 +30,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **使用例：**
 
 <CodePreview 
-  initialCode={`<p>開催日時: 2025年10月15日（土）～ 10月16日（日）<br>
+  initialHTML={`<p>開催日時: 2025年10月15日（土）～ 10月16日（日）<br>
 両日とも 9:00 ～ 17:00</p>`}
 />
 
@@ -49,7 +49,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **使用例：**
 
 <CodePreview 
-  initialCode={`<p>入場料は<strong>無料</strong>です</p>
+  initialHTML={`<p>入場料は<strong>無料</strong>です</p>
 <p>事前申込は<strong>不要</strong>です</p>`}
 />
 
@@ -68,7 +68,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **使用例：**
 
 <CodePreview 
-  initialCode={`<p><small>※ 雨天の場合は一部内容を変更して実施いたします</small></p>
+  initialHTML={`<p><small>※ 雨天の場合は一部内容を変更して実施いたします</small></p>
 <p><small>© 2025 学校祭実行委員会 All Rights Reserved.</small></p>`}
 />
 
@@ -93,7 +93,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 <CodePreview 
   imageBasePath="@site/static/files/markup-exercises-advanced-complete"
-  initialCode={`<img src="images/main.png" alt="学校祭メインビジュアル">
+  initialHTML={`<img src="images/main.png" alt="学校祭メインビジュアル">
 <img src="images/map.png" alt="会場マップ画像">`}
 />
 
@@ -118,7 +118,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **手順1: 各セクションに`id`属性を追加**
 
 <CodePreview 
-  initialCode={`<section id="overview">
+  initialHTML={`<section id="overview">
     <h2>開催概要</h2>
     ...
 </section>`}
@@ -127,7 +127,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **手順2: ナビゲーションにリンクを追加**
 
 <CodePreview 
-  initialCode={`<nav>
+  initialHTML={`<nav>
     <ul>
         <li><a href="#overview">開催概要</a></li>
         <li><a href="#events">イベント内容</a></li>
@@ -149,7 +149,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **使用例：**
 
 <CodePreview 
-  initialCode={`<p>詳しいアクセス方法は<a href="https://www.siw.ac.jp/" target="_blank">学校公式サイト</a>をご確認ください。</p>`}
+  initialHTML={`<p>詳しいアクセス方法は<a href="https://www.siw.ac.jp/" target="_blank">学校公式サイト</a>をご確認ください。</p>`}
 />
 
 #### 7. HTML文法チェック

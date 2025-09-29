@@ -22,7 +22,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **説明**: `<a>`タグの`href`属性に絶対URLを指定すると外部サイトへのリンクになる。`target="_blank"`属性を指定すると、新しいタブ（または新しいウィンドウ）でリンクを開くことができる。
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <p>JR東日本の路線をご利用ください。</p>
 
 <!-- 修正後 -->
@@ -34,7 +34,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 **説明**: 相対パスを指定すると内部サイトへのリンクになる。  
 
 <CodePreview 
-  initialCode={`<p><a href="about.html">会社概要</a></p>
+  initialHTML={`<p><a href="about.html">会社概要</a></p>
 <p><a href="contact/index.html">お問い合わせ</a></p>`}
 />
 
@@ -108,7 +108,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 ```
 
 <CodePreview 
-  initialCode={`<!-- 修正前 -->
+  initialHTML={`<!-- 修正前 -->
 <ul>
     <li>概要</li>
     <li>内容</li>

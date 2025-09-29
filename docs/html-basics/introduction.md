@@ -39,7 +39,7 @@ CSSはWebページの見た目を整えるための言語です。
 - 単に文字をずらずら書くだけでは、改行を入れても表示上、改行されません。
 
 <CodePreview 
-  initialCode={`<body>
+  initialHTML={`<body>
     はじめてのHTML
     はじめてのWebページです。
   </body>`}
@@ -50,7 +50,7 @@ CSSはWebページの見た目を整えるための言語です。
 - `<p>` は段落を表すタグです。
 
 <CodePreview 
-  initialCode={`<body>
+  initialHTML={`<body>
     <h1>はじめてのHTML</h1>
     <p>はじめてのWebページです。</p>
   </body>`}
@@ -62,7 +62,7 @@ CSSはWebページの見た目を整えるための言語です。
 - `color` プロパティで文字の色を指定できます。
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
   <html>
   <head>
     <style>

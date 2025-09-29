@@ -31,14 +31,14 @@ CSSをHTMLに適用する方法は主に3つあります：
 ### 1. 直接HTML要素に書く（インラインスタイル）
 
 <CodePreview 
-  initialCode={`<h1 style="color: red;">赤い見出し</h1>
+  initialHTML={`<h1 style="color: red;">赤い見出し</h1>
 <p style="color: blue; font-size: 18px;">青い段落</p>`}
 />
 
 ### 2. `<head>`内に`<style>`タグで書く（内部スタイルシート）
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -63,7 +63,7 @@ CSSをHTMLに適用する方法は主に3つあります：
 ### 3. 外部ファイルを参照（外部スタイルシート）
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -128,7 +128,7 @@ CSSの基本的な書き方は以下の通りです：
 ### 例
 
 <CodePreview 
-  initialCode={`<h1>見出しテキスト</h1>
+  initialHTML={`<h1>見出しテキスト</h1>
 <p>段落のテキストです。</p>
 <p>もう一つの段落です。</p>`}
   initialCSS={`h1 {
@@ -174,7 +174,7 @@ p {
 <Solution>
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -218,7 +218,7 @@ p {
 <Solution>
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -325,7 +325,7 @@ p { color: rgba(0, 0, 255, 0.8); }    /* 少し透明な青 */
 ### 色指定を試してみよう！
 
 <CodePreview 
-  initialCode={`<h1>カラーネーム</h1>
+  initialHTML={`<h1>カラーネーム</h1>
 <h2>16進数カラーコード</h2>
 <h3>RGB数値</h3>
 <h4>RGBパーセント</h4>
@@ -388,7 +388,7 @@ p {
 <Solution>
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -458,7 +458,7 @@ small {
 <Solution>
 
 <CodePreview 
-  initialCode={`<!DOCTYPE html>
+  initialHTML={`<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -503,7 +503,7 @@ CSSでは、親要素のスタイルが子要素に自動的に受け継がれ�
 ### 継承の例を試してみよう！
 
 <CodePreview 
-  initialCode={`<body>
+  initialHTML={`<body>
     <h1>この見出しも青色・18px・中央揃えになる</h1>
     <p>この段落も青色・18px・中央揃えになる</p>
 </body>`}
@@ -540,7 +540,7 @@ CSSでは、親要素のスタイルが子要素に自動的に受け継がれ�
 ### 上書きの例を試してみよう！
 
 <CodePreview 
-  initialCode={`<body>
+  initialHTML={`<body>
     <h1>この見出しは緑色になる</h1>
 </body>`}
   initialCSS={`h1 {
