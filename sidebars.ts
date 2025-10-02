@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -44,6 +44,7 @@ const sidebars: SidebarsConfig = {
         'css-basics/css-introduction',
         'css-basics/css-units',
         'css-basics/css-styling-basics',
+        'css-basics/backgrounds',
         'css-basics/box-model',
         'css-basics/text-typography',
         'css-basics/advanced-styling',
