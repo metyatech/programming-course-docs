@@ -3,7 +3,7 @@ sidebar_position: 8
 ---
 
 import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
-import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise/client';
 
 # CSSアニメーション
 

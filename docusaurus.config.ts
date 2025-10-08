@@ -119,6 +119,9 @@ const config: Config = {
       additionalLanguages: ['markup', 'css', 'javascript'],
     },
   } satisfies Preset.ThemeConfig,
+  plugins: [
+    '@kodai-yamamoto-siw/exercise'
+  ]
 };
 
 export default config;

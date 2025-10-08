@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise/client';
 import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 # 背景プロパティ（background の基本）

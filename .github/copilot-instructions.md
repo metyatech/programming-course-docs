@@ -88,7 +88,7 @@ CodePreviewでは常にHTMLとCSSを分離する：
 
 ### 演習構造
 ```jsx
-import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise/client';
 
 <Exercise>
 ### 課題: [タイトル]
