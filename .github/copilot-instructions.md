@@ -57,6 +57,40 @@ CodePreviewでは常にHTMLとCSSを分離する：
 />
 ```
 
+注意：`initialHTML` や `initialCSS` の内容が複数行にまたがる場合は、2行目以降は必ずインデントを入れてください。目安としては「1段分のインデント（半角スペース2つ）」を使います。これにより、コードの見た目が揃い、読みやすくなります。
+
+例（推奨フォーマット）：
+```jsx
+<CodePreview 
+  initialHTML={`<div class="box">あか</div>
+  <div class="box">みどり</div>
+  <div class="box">あお</div>`}
+  initialCSS={`.box {
+    padding: 8px;
+    margin: 6px 0;
+  }
+  .box:nth-child(1) { background-color: #ffdddd; }
+  .box:nth-child(2) { background-color: #ddffdd; }
+  .box:nth-child(3) { background-color: #dde7ff; }`}
+/>
+```
+
+追加ルール：CSS の波括弧（{}）の前後は、必ず改行を入れてください。可読性を高め、初学者が構造を理解しやすくするためです。
+
+例：
+```css
+.box {
+  padding: 8px;
+  margin: 6px 0;
+}
+
+.other {
+  color: red;
+}
+```
+
+このルールは、`initialCSS` の中に書く場合でも同様に適用してください（波括弧の前後で必ず改行する）。
+
 ## ファイル構成
 
 ### 重要なファイル

@@ -34,41 +34,11 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 ```
 
 <CodePreview 
-  initialHTML={`<div class="box">あか</div>
-<div class="box">みどり</div>
-<div class="box">あお</div>`}
-  initialCSS={`.box {
-  padding: 8px;
-  margin: 6px 0;
-}
-.box:nth-child(1) { background-color: #ffdddd; }
-.box:nth-child(2) { background-color: #ddffdd; }
-.box:nth-child(3) { background-color: #dde7ff; }`}
-/>
-
-<Exercise title="演習1：箱に背景色をつける">
-
-3つの段落に、それぞれちがう背景色をつけてください。
-
-要件：
-- 1つ目：うすいオレンジ
-- 2つ目：うすいみずいろ
-- 3つ目：うすいきみどり
-
-<Solution>
-
-<CodePreview 
-  initialHTML={`<p class="bun1">1つ目の文</p>
-<p class="bun2">2つ目の文</p>
-<p class="bun3">3つ目の文</p>`}
-  initialCSS={`.bun1 { background-color: #ffe8cc; padding: 8px; }
-.bun2 { background-color: #e3f2fd; padding: 8px; }
-.bun3 { background-color: #e8f5e9; padding: 8px; }`}
-/>
-
-</Solution>
-
-</Exercise>
+  initialHTML={`<div>背景色のサンプル</div>`}
+  initialCSS={`div {
+    background-color: #ffdddd;
+  }`}
+/> 
 
 ---
 
@@ -84,35 +54,96 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 ```
 
 <CodePreview 
-  initialHTML={`<div class="hako">背景画像のサンプル</div>`}
-  initialCSS={`.hako {
-  height: 160px;
-  padding: 12px;
-  color: white;
-  background-image: url('/programming-course-docs/files/picnic.jpg');
-}`}
+  initialHTML={`<div>背景画像のサンプル</div>`}
+  initialCSS={`div {
+    height: 500px;
+    background-color: #d9e5ff;
+    background-image: url("/programming-course-docs/files/background-sample.png");
+  }`}
 />
 
 注意：見やすくするために、あとで「大きさ」「くり返し」「置き場所」を合わせて使うことが多いです。
 
-<Exercise title="演習2：見出しのうしろに画像を入れる">
+:::note 補足：相対パスについて
 
-要件：
-- 高さ180pxの箱を作る（クラス名：`midashi`）
-- 背景画像に `picnic.jpg` を使う（`/programming-course-docs/files/picnic.jpg`）
-- 文字は白にする
+- `background-image: url("../img/image.jpg")` のような相対パスは、CSS を書いているファイルの位置を基準として、画像ファイルの位置を指定します。CSS ファイルの場所を起点に、画像ファイルまでの経路をたどる形で書いてください。
+
+- `../` は一つ上のフォルダを指します。
+
+フォルダ構成の例：
+
+```
+index.html
+css/
+  style.css
+img/
+  image1.jpg
+```
+
+この場合、`css/style.css` から `img/image1.jpg` を指定するには `../img/image1.jpg` と書きます。
+
+:::
+
+<Exercise title="演習1: 相対パス練習1">
+
+```html
+<div>この div の背景に画像をつける</div>
+```
+
+- `index.html` に上の div 要素を置き、高さ 600px にする。
+- 背景色を #d9e5ff にする。
+- 下のようなフォルダ構成で、image1.jpg を背景に指定。
+
+```
+index.html
+css/
+  style.css
+img/
+  image1.jpg
+```
 
 <Solution>
 
-<CodePreview 
-  initialHTML={`<div class="midashi">イベントのお知らせ</div>`}
-  initialCSS={`.midashi {
-  height: 180px;
-  padding: 12px;
-  color: #fff;
-  background-image: url('/programming-course-docs/files/picnic.jpg');
-}`}
+<CodePreview
+  initialHTML={`<div>この div の背景に画像をつける</div>`}
+  initialCSS={`div {
+    height: 600px;
+    background-color: #d9e5ff;
+    background-image: url("../img/image1.jpg");
+  }`}
 />
+
+</Solution>
+
+</Exercise>
+
+<Exercise title="演習2: 相対パス練習2">
+
+```html
+<div>この div の背景に画像をつける</div>
+```
+
+- `index.html` に上の div 要素を置き、高さ 600px にする。
+- 背景色を #d9e5ff にする
+- 下のようなフォルダ構成で、image2.jpg を背景に指定。
+
+```
+index.html
+css/
+  style.css
+  image2.jpg
+```
+
+<Solution>
+
+<CodePreview
+  initialHTML={`<div>この div の背景に画像をつける</div>`}
+  initialCSS={`div {
+    height: 600px;
+    background-color: #d9e5ff;
+    background-image: url("image2.jpg");
+  }`}
+/> 
 
 </Solution>
 
@@ -124,87 +155,198 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 背景画像をタイルのようにくり返すかどうかを決めます。
 
-- repeat（初期）…たてよこにくり返す
-- no-repeat … くり返さない（1枚だけ）
-- repeat-x … よこ方向だけくり返す
-- repeat-y … たて方向だけくり返す
+| 値 | 説明 |
+| --- | --- |
+| repeat（初期値） | たてよこにくり返す |
+| no-repeat | くり返さない（1枚だけ表示） |
+| repeat-x | よこ方向だけくり返す |
+| repeat-y | たて方向だけくり返す |
+| space | 要素の中に収まるだけ画像を並べ、画像どうしの間に余白を入れる |
 
 <CodePreview 
-  initialHTML={`<div class="r1">repeat</div>
-<div class="r2">no-repeat</div>
-<div class="r3">repeat-x</div>
-<div class="r4">repeat-y</div>`}
-  initialCSS={`div { height: 120px; padding: 8px; margin: 6px 0; color: #fff; }
-.r1 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: repeat; background-size: 120px; }
-.r2 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: no-repeat; background-size: 120px; }
-.r3 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: repeat-x; background-size: 120px; }
-.r4 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: repeat-y; background-size: 120px; }`}
+  initialHTML={`<div class="rep">repeat</div>
+  <div class="norep">no-repeat</div>
+  <div class="rx">repeat-x</div>
+  <div class="ry">repeat-y</div>
+  <div class="sp">space</div>`}
+  initialCSS={`div {
+    height: 250px;
+    margin: 10px;
+    background-color: #d9e5ff;
+    background-image: url("/programming-course-docs/files/background-sample.png");
+  }
+
+  .rep {
+    background-repeat: repeat;
+  }
+
+  .norep {
+    background-repeat: no-repeat;
+  }
+
+  .rx {
+    background-repeat: repeat-x;
+  }
+
+  .ry {
+    background-repeat: repeat-y;
+  }
+
+  /* space の例: 画像を小さくして要素内に並べ、間に余白が入る様子を見せる */
+  .sp {
+    background-repeat: space;
+  }`}
 />
 
-<Exercise title="演習3：背景のタイル設定">
+補足: `space` は、画像を要素の中にぴったり並べるのではなく、はみ出さない範囲でできるだけ多く並べ、画像同士の間に等しい余白を入れます。
 
-要件：
-- 高さ150pxの箱（`tile`）を作る
-- 背景画像：`picnic.jpg`
-- よこ方向だけくり返す（repeat-x）
-- 画像の大きさは 100px × 100px にする
+## 4. background-position（画像の初期位置）
 
-<Solution>
-
-<CodePreview 
-  initialHTML={`<div class="tile"></div>`}
-  initialCSS={`.tile {
-  height: 150px;
-  background-image: url('/programming-course-docs/files/picnic.jpg');
-  background-repeat: repeat-x;
-  background-size: 100px 100px;
-}`}
-/>
-
-</Solution>
-
-</Exercise>
-
----
-
-## 4. background-position（画像の置き場所）
-
-くり返さない画像（no-repeat）を、どこに置くか決めます。
+背景画像の初期位置を決めます。
 
 主な指定：`left` / `center` / `right` と `top` / `center` / `bottom` の組み合わせ、または `px`・`%`。
 
 <CodePreview 
   initialHTML={`<div class="p1">left top</div>
-<div class="p2">center center</div>
-<div class="p3">right bottom</div>`}
-  initialCSS={`div { height: 140px; padding: 8px; margin: 6px 0; color: #fff; }
-.p1 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: no-repeat; background-size: 120px 120px; background-position: left top; }
-.p2 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: no-repeat; background-size: 120px 120px; background-position: center center; }
-.p3 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-repeat: no-repeat; background-size: 120px 120px; background-position: right bottom; }`}
+  <div class="p2">center center</div>
+  <div class="p3">right bottom</div>
+  <div class="p4"></div>`}
+  initialCSS={`div {
+    height: 300px;
+    margin: 10px;
+    background-color: #d9e5ff;
+    background-image: url("/programming-course-docs/files/background-sample.png");
+  }
+
+  .p1 {
+    background-repeat: no-repeat;
+    background-position: left top;
+  }
+
+  .p2 {
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .p3 {
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  
+  .p4 {
+    background-repeat: repeat-x;
+    background-position: 100px 100px;
+  }`}
 />
 
-<Exercise title="演習4：右上にロゴを置く">
+---
 
-要件：
-- 高さ160pxの箱（`logo`）
-- 背景画像：`park_map.jpg`
-- くり返さない（no-repeat）
-- 右上に置く（`right top`）
-- 画像の大きさは 120px × 120px
+<Exercise title="演習3：右上に画像を1枚置く">
+
+```html
+<div>高さ300px,右上に画像</div>
+```
+
+上の div に対して、
+- 高さ300px
+- 背景色：#d9e5ff
+- 背景画像：下のフォルダ構成で、image1.jpg
+- 背景画像は繰り返さず、右上に1枚だけ表示
+
+```
+index.html
+css/
+  style.css
+img/
+  image1.jpg
+```
 
 <Solution>
 
-<CodePreview 
-  initialHTML={`<div class="logo">右上ロゴ</div>`}
-  initialCSS={`.logo {
-  height: 160px;
-  padding: 8px;
-  background-image: url('/programming-course-docs/files/park_map.jpg');
-  background-repeat: no-repeat;
-  background-size: 120px 120px;
-  background-position: right top;
-}`}
-/>
+<CodePreview
+  initialHTML={`<div>高さ300px,右上に画像</div>`}
+  initialCSS={`div {
+    height: 300px;
+    background-color: #d9e5ff;
+    background-image: url("../img/image1.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }`}
+/> 
+
+</Solution>
+
+</Exercise>
+
+<Exercise title="演習4：よこ方向だけくり返し、左下から少しずらす">
+
+```html
+<div>高さ300px, 横にだけくり返し</div>
+```
+
+上の div に対して、
+- 高さ300px
+- 背景色：#fff2d9
+- 背景画像：下のようなフォルダ構成で、image1.jpg
+- 画像はよこ方向だけくり返し、開始位置を左から80pxで下寄せ
+
+```
+index.html
+css/
+  style.css
+img/
+  image1.jpg
+```
+
+<Solution>
+
+<CodePreview
+  initialHTML={`<div>高さ300px, 横にだけくり返し</div>`}
+  initialCSS={`div {
+    height: 300px;
+    background-color: #fff2d9;
+    background-image: url("../img/image1.jpg");
+    background-repeat: repeat-x;
+    background-position: 80px bottom;
+  }`}
+/> 
+
+</Solution>
+
+</Exercise>
+
+<Exercise title="演習5：中央に1枚だけ置く">
+
+```html
+<div>高さ300px, 上下左右中央に画像が1枚</div>
+```
+
+上の div に対して、
+- 高さ300px
+- 背景色：#f0f0f0
+- 背景画像：下のようなフォルダ構成で、image1.jpg
+- 背景画像は1枚だけ表示し、上下左右中央に配置する
+
+```
+index.html
+css/
+  style.css
+img/
+  image1.jpg
+```
+
+<Solution>
+
+<CodePreview
+  initialHTML={`<div>高さ300px, 上下左右中央に画像が1枚</div>`}
+  initialCSS={`div {
+    height: 300px;
+    background-color: #f0f0f0;
+    background-image: url("../img/image1.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }`}
+/> 
 
 </Solution>
 
@@ -214,50 +356,49 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 ## 5. background-attachment（スクロール時の動き）
 
-背景画像を、スクロールに合わせて動かすか固定するかを決めます。
+背景画像がスクロールするときにどう動くかを決めます。主な値は次の3つです。
 
-- scroll（初期）…いっしょに動く
-- fixed … 画面に固定（いわゆる「固定背景」）
+| 値 | 説明 |
+| --- | --- |
+| local | 要素の内部のコンテンツと背景がいっしょに動きます。要素自体にスクロール領域がある場合に使います。 |
+| scroll（初期値） | 要素の相対位置で画像は固定され、要素の内部のコンテンツのコンテンツと共にスクロールはしません。 |
+| fixed | 背景を画面（ビューポート）に対する相対位置で固定します。要素をスクロールしても背景は動きません。 |
 
-<CodePreview 
-  initialHTML={`<div class="fix">固定背景のサンプル（スクロールしてみてください）<br>行1<br>行2<br>行3<br>行4<br>行5<br>行6<br>行7<br>行8<br>行9<br>行10<br>行11<br>行12</div>`}
-  initialCSS={`.fix {
-  height: 220px;
-  overflow: auto;
-  color: #fff;
-  padding: 12px;
-  background-image: url('/programming-course-docs/files/picnic.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-}`}
-/>
-
-<Exercise title="演習5：固定背景の見出し帯">
-
-要件：
-- 高さ200pxの帯（`obi`）を作る
-- 背景画像：`picnic.jpg`
-- 画像は画面に固定（fixed）
-- 画像の大きさは全面に広げる（cover）
-- 文字は白、中央寄せ
-
-<Solution>
+下の例では、親要素（スクロールコンテナ）をスクロールして、`local` → `scroll` → `fixed` の違いを順に確認できるようにしています。
 
 <CodePreview 
-  initialHTML={`<div class="obi">学校イベント 2025</div>`}
-  initialCSS={`.obi {
-  height: 200px;
-  color: #fff; font-weight: bold; text-align: center; line-height: 200px;
-  background-image: url('/programming-course-docs/files/picnic.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}`}
-/>
+  initialHTML={`<div class="parent">
+    <div class="loc">local（要素の内容と一緒に動く）<br>行1<br>行2<br>行3<br>行4<br>行5<br>行6<br>行7<br>行8<br>行9<br>行10</div>
+    <div class="scr">scroll（初期。要素とは一緒に動くが、内容とは一緒に動かない）<br>行1<br>行2<br>行3<br>行4<br>行5<br>行6<br>行7<br>行8<br>行9<br>行10</div>
+    <div class="fix">fixed（画面に固定）<br>行1<br>行2<br>行3<br>行4<br>行5<br>行6<br>行7<br>行8<br>行9<br>行10</div>
+  </div>`}
+  initialCSS={`.parent {
+    height: 400px;
+    overflow: auto; /* 親をスクロールさせる */
+  }
 
-</Solution>
+  .parent > div {
+    height: 180px;
+    overflow: auto;
+    margin: 10px;
+    background-image: url("/programming-course-docs/files/background-sample.png");
+  }
 
-</Exercise>
+  /* local: 要素内のコンテンツと背景が一緒に動く（要素にスクロールがある場合に有効） */
+  .loc {
+    background-attachment: local;
+  }
+
+  /* デフォルト（scroll）: 背景は要素と一緒に動く */
+  .scr {
+    background-attachment: scroll;
+  }
+
+  /* fixed: 背景は画面に固定され、親をスクロールしても背景は動かない */
+  .fix {
+    background-attachment: fixed;
+  }`}
+  />
 
 ---
 
@@ -265,128 +406,82 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 背景画像の大きさを決めます。
 
-- `cover` … はみ出してもよいので、枠いっぱいに広げる（切り抜きが発生）
-- `contain` … ぜんぶ入るようにおさめる（余白が出る）
+- `cover` … はみ出してもよいので、枠全体を埋めるようにいっぱいに広げる（切り抜きが発生）
+- `contain` … 画像全体が見えるように収める（余白が生まれる）
 - `幅 高さ` … 例：`120px 80px`、`50% 50%`
 
 <CodePreview 
   initialHTML={`<div class="s1">cover</div>
-<div class="s2">contain</div>
-<div class="s3">120px 80px</div>`}
-  initialCSS={`div { height: 130px; padding: 8px; margin: 6px 0; color: #fff; }
-.s1 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-size: cover; background-position: center; }
-.s2 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; }
-.s3 { background-image: url('/programming-course-docs/files/picnic.jpg'); background-size: 120px 80px; background-repeat: no-repeat; background-position: center; }`}
+  <div class="s2">contain</div>`}
+  initialCSS={`div {
+    height: 130px;
+    margin: 10px;
+    background-image: url("/programming-course-docs/files/background-sample.png");
+    background-repeat: no-repeat;
+  }
+
+  .s1 {
+    background-size: cover;
+  }
+
+  .s2 {
+    background-size: contain;
+  }`}
 />
-
-<Exercise title="演習6：カードに背景をあてる">
-
-要件：
-- 3つのカード（`card`）を横にならべるイメージで3つ作る（ここでは縦に出ます）
-- 1枚目：`cover`、2枚目：`contain`、3枚目：`200px 120px`
-- 文字は白、中央寄せ
-
-<Solution>
-
-<CodePreview 
-  initialHTML={`<div class="kaado ichi">cover</div>
-<div class="kaado ni">contain</div>
-<div class="kaado san">200x120</div>`}
-  initialCSS={`.kaado { height: 160px; margin: 8px 0; color:#fff; text-align:center; line-height:160px; background-image:url('/programming-course-docs/files/picnic.jpg'); background-position:center; }
-.ichi { background-size: cover; }
-.ni { background-size: contain; background-repeat: no-repeat; }
-.san { background-size: 200px 120px; background-repeat: no-repeat; }`}
-/>
-
-</Solution>
-
-</Exercise>
 
 ---
 
-## 演習 - 発展（ステップアップ）
+## 7. 実習：簡単なパララックスを作ってみよう
 
-次にいくほど少しずつむずかしくなります。すべて、このページの6つだけで解けます。
+ここまでで学んだ `background-attachment: fixed` を使って、簡単なパララックスを作ってみます。
 
-<Exercise title="発展1：ニュース見出しの帯">
+:::note パララックスについて
+**パララックス（parallax）** とは、手前のコンテンツと背後の背景がスクロールの速さや動きでズレて見えることで、奥行きがあるように見せる表現のことです。たとえば、背景を画面に固定しておくと、前の部分（テキストや白い帯）がスクロールするたびに背景との位置が変わるため、奥行きが生まれます。
+:::
 
-要件：
-- 高さ180pxの帯（`news`）
-- 背景画像：`park_map.jpg`
-- `background-size: cover`、`background-position: center`
-- 右下に同じ画像をもう1枚…はまだやりません（この回では1枚だけ）
-- 文字は白、左下寄せ（上下左右の配置はCSSで自由に）
-
-<Solution>
+下の例では、スクロールしてみると背景画像が固定されていて、白い帯（テキスト）だけが動くので、奥行きがあるように見えます。
 
 <CodePreview 
-  initialHTML={`<div class="news">学校だより 4月号</div>`}
-  initialCSS={`.news {
-  height: 180px; color:#fff; padding: 140px 12px 12px; /* 左下寄せになるよう下側に余白を小さく */
-  background-image: url('/programming-course-docs/files/park_map.jpg');
-  background-size: cover;
-  background-position: center;
-}`}
+  initialHTML={`<div class="scrollarea">
+    <div class="content">
+      <p>最初のコンテンツ領域です。</p>
+      <p>色々文章を</p>
+      <p>書いておきます</p>
+    </div>
+    <div class="parallax1">背景が固定されている領域1</div>
+    <div class="parallax2">背景が固定されている領域2</div>
+    <div class="content">
+      <p>別のコンテンツ領域です。</p>
+      <p>背景が固定されているので、動きにズレが生まれます。</p>
+      <p>これがパララックス効果です。</p>
+    </div>
+    <div class="parallax3">背景が固定されている領域3</div>
+  </div>`}
+  initialCSS={`.scrollarea {
+    height: 400px;
+    overflow: auto;
+  }
+
+  .parallax1,
+  .parallax2,
+  .parallax3 {
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+  }
+
+  .parallax1 {
+    background-image: url("/programming-course-docs/files/parallax1.jpg");
+  }
+
+  .parallax2 {
+    background-image: url("/programming-course-docs/files/parallax2.jpg");
+  }
+
+  .parallax3 {
+    background-image: url("/programming-course-docs/files/parallax3.jpg");
+  }`}
 />
 
-</Solution>
-
-</Exercise>
-
-<Exercise title="発展2：固定背景のセクション（パラパラ効果）">
-
-要件：
-- 3つのセクション `sec1` `sec2` `sec3`
-- `sec2` は固定背景（`fixed`）＋ `cover`、ほかは単色
-- それぞれ高さは `200px`
-
-<Solution>
-
-<CodePreview 
-  initialHTML={`<div class="sec1">上のセクション</div>
-<div class="sec2">固定背景のセクション</div>
-<div class="sec3">下のセクション</div>`}
-  initialCSS={`.sec1 { height:200px; background-color:#f5f5f5; text-align:center; line-height:200px; }
-.sec2 { height:200px; color:#fff; text-align:center; line-height:200px; background-image:url('/programming-course-docs/files/picnic.jpg'); background-size:cover; background-position:center; background-attachment:fixed; }
-.sec3 { height:200px; background-color:#eef7ff; text-align:center; line-height:200px; }`}
-/>
-
-</Solution>
-
-</Exercise>
-
-<Exercise title="発展3：位置とくり返しの細かな調整">
-
-要件：
-- 高さ180pxの箱 `fine`
-- 画像は `picnic.jpg`
-- 画像の大きさは 120px × 120px
-- 置き場所は 左から20px、上から40px（`background-position: 20px 40px;`）
-- よこ方向だけくり返す（repeat-x）
-
-<Solution>
-
-<CodePreview 
-  initialHTML={`<div class="fine"></div>`}
-  initialCSS={`.fine {
-  height: 180px;
-  background-image: url('/programming-course-docs/files/picnic.jpg');
-  background-size: 120px 120px;
-  background-position: 20px 40px;
-  background-repeat: repeat-x;
-}`}
-/>
-
-</Solution>
-
-</Exercise>
-
----
-
-## まとめ（この回で大切なこと）
-
-- 色・画像・くり返し・置き場所・動き・大きさの6点セットで考える
-- 画像を使うときは、`background-repeat`・`background-position`・`background-size` をセットで調整することが多い
-- 固定背景（`fixed`）は、強い効果なので使いすぎに注意
-
-次回は、背景の「一括指定」や複数画像の重ね合わせに進みます。
