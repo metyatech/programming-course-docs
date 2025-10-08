@@ -485,3 +485,12 @@ img/
   }`}
 />
 
+---
+
+## 練習: デザインに合わせて作る
+
+最後に、練習として次のデザイン通りのサイトを作ってみましょう。
+
+デザインへのリンク:
+
+https://www.figma.com/design/gPrpQCYBcG9JHotsbEjTwI/backgrounds-practice?node-id=0-1&t=8azfKNFnsyZ0LSy8-1
