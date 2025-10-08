@@ -66,7 +66,7 @@ import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 :::note 補足：相対パスについて
 
-- `background-image: url("../img/image.jpg")` のような相対パスは、CSS を書いているファイルの位置を基準として、画像ファイルの位置を指定します。CSS ファイルの場所を起点に、画像ファイルまでの経路をたどる形で書いてください。
+- `background-image: url("../img/image.png")` のような相対パスは、CSS を書いているファイルの位置を基準として、画像ファイルの位置を指定します。CSS ファイルの場所を起点に、画像ファイルまでの経路をたどる形で書いてください。
 
 - `../` は一つ上のフォルダを指します。
 
@@ -77,10 +77,10 @@ index.html
 css/
   style.css
 img/
-  image1.jpg
+  image1.png
 ```
 
-この場合、`css/style.css` から `img/image1.jpg` を指定するには `../img/image1.jpg` と書きます。
+この場合、`css/style.css` から `img/image1.png` を指定するには `../img/image1.png` と書きます。
 
 :::
 
@@ -92,14 +92,14 @@ img/
 
 - `index.html` に上の div 要素を置き、高さ 600px にする。
 - 背景色を #d9e5ff にする。
-- 下のようなフォルダ構成で、image1.jpg を背景に指定。
+- 下のようなフォルダ構成で、image1.png を背景に指定。
 
 ```
 index.html
 css/
   style.css
 img/
-  image1.jpg
+  image1.png
 ```
 
 <Solution>
@@ -109,7 +109,7 @@ img/
   initialCSS={`div {
     height: 600px;
     background-color: #d9e5ff;
-    background-image: url("../img/image1.jpg");
+    background-image: url("../img/image1.png");
   }`}
 />
 
@@ -125,13 +125,13 @@ img/
 
 - `index.html` に上の div 要素を置き、高さ 600px にする。
 - 背景色を #d9e5ff にする
-- 下のようなフォルダ構成で、image2.jpg を背景に指定。
+- 下のようなフォルダ構成で、image2.png を背景に指定。
 
 ```
 index.html
 css/
   style.css
-  image2.jpg
+  image2.png
 ```
 
 <Solution>
@@ -141,7 +141,7 @@ css/
   initialCSS={`div {
     height: 600px;
     background-color: #d9e5ff;
-    background-image: url("image2.jpg");
+    background-image: url("image2.png");
   }`}
 /> 
 
@@ -250,7 +250,7 @@ css/
 上の div に対して、
 - 高さ300px
 - 背景色：#d9e5ff
-- 背景画像：下のフォルダ構成で、image1.jpg
+- 背景画像：下のフォルダ構成で、image1.png
 - 背景画像は繰り返さず、右上に1枚だけ表示
 
 ```
@@ -258,7 +258,7 @@ index.html
 css/
   style.css
 img/
-  image1.jpg
+  image1.png
 ```
 
 <Solution>
@@ -268,7 +268,7 @@ img/
   initialCSS={`div {
     height: 300px;
     background-color: #d9e5ff;
-    background-image: url("../img/image1.jpg");
+    background-image: url("../img/image1.png");
     background-repeat: no-repeat;
     background-position: right top;
   }`}
@@ -287,7 +287,7 @@ img/
 上の div に対して、
 - 高さ300px
 - 背景色：#fff2d9
-- 背景画像：下のようなフォルダ構成で、image1.jpg
+- 背景画像：下のようなフォルダ構成で、image1.png
 - 画像はよこ方向だけくり返し、開始位置を左から80pxで下寄せ
 
 ```
@@ -295,7 +295,7 @@ index.html
 css/
   style.css
 img/
-  image1.jpg
+  image1.png
 ```
 
 <Solution>
@@ -305,7 +305,7 @@ img/
   initialCSS={`div {
     height: 300px;
     background-color: #fff2d9;
-    background-image: url("../img/image1.jpg");
+    background-image: url("../img/image1.png");
     background-repeat: repeat-x;
     background-position: 80px bottom;
   }`}
@@ -324,7 +324,7 @@ img/
 上の div に対して、
 - 高さ300px
 - 背景色：#f0f0f0
-- 背景画像：下のようなフォルダ構成で、image1.jpg
+- 背景画像：下のようなフォルダ構成で、image1.png
 - 背景画像は1枚だけ表示し、上下左右中央に配置する
 
 ```
@@ -332,7 +332,7 @@ index.html
 css/
   style.css
 img/
-  image1.jpg
+  image1.png
 ```
 
 <Solution>
@@ -342,7 +342,7 @@ img/
   initialCSS={`div {
     height: 300px;
     background-color: #f0f0f0;
-    background-image: url("../img/image1.jpg");
+    background-image: url("../img/image1.png");
     background-repeat: no-repeat;
     background-position: center center;
   }`}
