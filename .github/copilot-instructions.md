@@ -149,3 +149,36 @@ import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise/client';
 - **つまずきやすいポイント** - 特に混乱しやすい概念は複数回演習
 
 確立された初学者向けアプローチに従い、専門用語を避け、視覚的な例を使用し、各授業が前の知識の上に段階的に構築されるようにしてください。
+
+### 演習作成ルール（必須）
+
+演習は受講者がその回で学ぶ「主要な概念」だけに集中できるよう作成してください。余計なスタイル指定（色・余白・フォント・レイアウトの過剰な調整など）は原則として含めません。以下のルールを常に守ってください：
+
+- 演習の目的は「その回に教えたプロパティや概念の理解を確認すること」です。別の概念を無理に混ぜない。
+- 問題（完成イメージ）として配置する `CodePreview` は、エディタを非表示にして「プレビューだけ見せる」設定にしてください。具体的には下記のプロパティを使用します：
+  - `htmlVisible={false}`
+  - `cssVisible={false}`
+  - `jsVisible={false}`
+  - `previewVisible={true}`
+ 例（問題側）:
+```jsx
+<CodePreview
+  sourceId="sample-exercise-1"
+  initialHTML={`<div class="box">サンプル</div>`}
+  initialCSS={`.box { border: 1px solid #333; }`}
+  htmlVisible={false}
+  cssVisible={false}
+  jsVisible={false}
+  previewVisible={true}
+/>
+```
+
+- 解答（`<Solution>` 内）では、同じ `sourceId` を持つ `CodePreview` を「1行表記」で置いてください。解答側ではエディタ表示の制御は不要です（デフォルトの挙動に任せる）。
+  例（解答側）:
+```jsx
+<CodePreview sourceId="sample-exercise-1"/>
+```
+
+- `sourceId` を使って問題と解答のコードを共有してください。問題では `initialHTML` / `initialCSS` を指定してプレビューを作り、解答では `sourceId` のみを指定してコードを表示させることで、受講者が先に結果を見てから解答を確認できるようにします。
+
+これらのルールは全ての教材ページに適用してください。
