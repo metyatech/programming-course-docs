@@ -52,6 +52,7 @@ const sidebars: SidebarsConfig = {
         'css-basics/css-selectors',
         'css-basics/backgrounds',
         'css-basics/shorthand-properties',
+        'css-basics/decorative-effects',
       ],
     },
   ],
