@@ -618,7 +618,7 @@ h4.pin が、下のプレビューのようにスクロール時に上部へ貼�
 
 </Exercise>
 
-<Exercise title="演習2-発展（stickyサイドバー）">
+<Exercise title="演習2-発展1（stickyサイドバー）">
 
 左カラムの aside.sidebar が、下のプレビューのように親コンテナ内で上部に貼り付くように、CSSを書いてください。
 
@@ -652,7 +652,7 @@ h4.pin が、下のプレビューのようにスクロール時に上部へ貼�
 
 </Exercise>
 
-<Exercise title="演習2-発展（stickyヘッダー）">
+<Exercise title="演習2-発展2（stickyヘッダー）">
 
 header.head が、下のプレビューのようになるように CSS を書いてください（ヘッダーはスクロールで上部に貼り付く）。
 
@@ -687,7 +687,7 @@ header.head が、下のプレビューのようになるように CSS を書い
 
 </Exercise>
 
-<Exercise title="演習2-発展（複数stickyの積み重なり）">
+<Exercise title="演習2-発展3（複数stickyの積み重なり）">
 
 h3.lv3 と h4.lv4 の見出しが、下のプレビューのように上下に積み重なって貼り付くように、CSSを書いてください。
 
