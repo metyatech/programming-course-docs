@@ -120,7 +120,12 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
-    '@kodai-yamamoto-siw/exercise'
+    [
+      '@kodai-yamamoto-siw/exercise',
+      {
+        headingLevel: 3
+      }
+    ]
   ]
 };
 

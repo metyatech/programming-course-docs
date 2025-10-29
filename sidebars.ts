@@ -53,6 +53,8 @@ const sidebars: SidebarsConfig = {
         'css-basics/backgrounds',
         'css-basics/shorthand-properties',
         'css-basics/decorative-effects',
+        'css-basics/positioning',
+        'css-basics/negative-margin',
       ],
     },
   ],
