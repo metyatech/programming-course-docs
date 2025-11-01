@@ -55,6 +55,7 @@ const sidebars: SidebarsConfig = {
         'css-basics/decorative-effects',
         'css-basics/positioning',
         'css-basics/negative-margin',
+        'css-basics/display',
       ],
     },
   ],
