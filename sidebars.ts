@@ -56,6 +56,7 @@ const sidebars: SidebarsConfig = {
         'css-basics/positioning',
         'css-basics/negative-margin',
         'css-basics/display',
+        'css-basics/flexbox',
       ],
     },
   ],
