@@ -836,3 +836,12 @@ Flexboxは、現代のWebサイトで最もよく使われるレイアウト手�
 - **ボタングループ**: `justify-content: center` + `gap`
 
 Flexboxは、現代のWebレイアウトで最も重要な技術の1つです。これらの基本をマスターすることで、多くのレイアウトパターンを実現できるようになります。
+
+## 練習: デザインに合わせて作る
+
+最後に、練習として次のデザイン通りのサイトを作ってみましょう。
+
+デザインへのリンク: https://www.figma.com/design/hvae4QKzBkGi79L6AAIsKF/Website-of-architects---free-website--Community-?node-id=0-1&t=VwT0ZkKsl6b6cwEm-1
+
+### 著作権元
+<p style={{"font-size":"0.8em"}}><a href="https://www.figma.com/community/file/891374608655348853" target="_blank" rel="noopener noreferrer">上述のデザインの元デザイン</a></p>
