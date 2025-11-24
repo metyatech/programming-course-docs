@@ -44,12 +44,7 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   }
 
   .card-title {
-    margin: 0;
     text-align: center;
-  }
-
-  .card-text {
-    margin: 0;
   }
 `}
 />
@@ -152,14 +147,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .service-card {
     flex: 0 0 200px;
     padding: 15px;
-  }
-
-  .service-card h3 {
-    margin: 0;
-  }
-
-  .service-card p {
-    margin: 0;
   }
 `}
 />
@@ -280,17 +267,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     padding: 15px;
   }
 
-  .sidebar h2 {
-    margin: 0;
-  }
-
   .sidebar ul {
-    margin: 10px 0 0;
     padding-left: 15px;
-  }
-
-  .sidebar li {
-    margin: 0;
   }
 `}
 />
@@ -331,18 +309,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .plan {
     width: 300px;
     padding: 20px;
-  }
-
-  .plan-title {
-    margin: 0;
-  }
-
-  .plan-text {
-    margin: 10px 0;
-  }
-
-  .plan-price {
-    margin: 10px 0;
   }
 
   .plan-btn {
@@ -410,14 +376,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     text-align: center;
   }
 
-  .lp-title {
-    margin: 0;
-  }
-
-  .lp-lead {
-    margin: 10px 0 0;
-  }
-
   .lp-main {
     max-width: 960px;
     margin: 20px auto;
@@ -437,14 +395,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .lp-card {
     flex: 1;
     padding: 15px;
-  }
-
-  .lp-card h3 {
-    margin: 0;
-  }
-
-  .lp-card p {
-    margin: 0;
   }
 `}
 />
