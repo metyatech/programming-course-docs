@@ -2,7 +2,7 @@
 sidebar_position: 18
 ---
 
-import Exercise from '@kodai-yamamoto-siw/exercise/client';
+import Exercise, { Solution } from '@kodai-yamamoto-siw/exercise/client';
 import { CodePreview } from '@kodai-yamamoto-siw/code-preview';
 
 # レイアウト総合演習（CSS）
@@ -28,7 +28,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 ヒント: `width`, `margin`, `padding`, `text-align`, `background-color`, `border-radius` などを使います。
 
 <CodePreview
+  sourceId="ex1"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="card">
   <h2 class="card-title">自己紹介</h2>
@@ -62,6 +64,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex1" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -80,7 +88,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 ヒント: 親ボックスを横並びにしてから、子要素に幅を指定します。
 
 <CodePreview
+  sourceId="ex2"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="info">
   <div class="info-label">お知らせ</div>
@@ -119,6 +129,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex2" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -132,7 +148,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 次のHTMLに対して、3つのボタンが **1行に横並び** になり、ボタン同士に一定の間隔がつくようにしてください。
 
 <CodePreview
+  sourceId="ex3"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="actions">
   <a href="#" class="btn">保存</a>
@@ -161,6 +179,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex3" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -174,7 +198,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 次のHTMLに対して、カードが横に並び、画面幅が足りなくなったら **次の行に折り返すレイアウト** にしてください。
 
 <CodePreview
+  sourceId="ex4"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="services">
   <div class="service-card">
@@ -227,6 +253,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex4" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -240,7 +272,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 次のHTMLに対して、左にサイト名、中央にナビゲーション、右にボタンが並ぶ **ヘッダーレイアウト** にしてください。
 
 <CodePreview
+  sourceId="ex5"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<header class="site-header">
   <div class="site-logo">MySite</div>
@@ -294,6 +328,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex5" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -307,7 +347,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 次のHTMLに対して、左にメイン記事、右にサイドバーがある **ブログ風2カラムレイアウト** にしてください。
 
 <CodePreview
+  sourceId="ex6"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="layout">
   <main class="main">
@@ -367,6 +409,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex6" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -380,7 +428,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 次のHTMLに対して、タイトル・説明・ボタンが見やすくまとまった **申込みカード** にしてください。
 
 <CodePreview
+  sourceId="ex7"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="plan">
   <h2 class="plan-title">体験レッスン</h2>
@@ -431,6 +481,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 `}
 />
 
+<Solution>
+
+<CodePreview sourceId="ex7" />
+
+</Solution>
+
 </Exercise>
 
 ---
@@ -444,7 +500,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 次のHTMLに対して、1ページの **シンプルな紹介ページ（LP）レイアウト** にしてください。
 
 <CodePreview
+  sourceId="ex8"
   htmlVisible={true}
+  cssVisible={false}
   jsVisible={false}
   initialHTML={`<header class="lp-header">
   <h1 class="lp-title">レイアウト練習コース</h1>
@@ -533,5 +591,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 }
 `}
 />
+
+<Solution>
+
+<CodePreview sourceId="ex8" />
+
+</Solution>
 
 </Exercise>
