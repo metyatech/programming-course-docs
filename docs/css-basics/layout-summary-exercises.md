@@ -37,10 +37,7 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     <p class="card-text">Webデザインの勉強中です。</p>
     <p class="card-text">レイアウトが少し苦手なので練習します。</p>
   </div>`}
-  initialCSS={`body {
-  }
-
-  .card {
+  initialCSS={`.card {
     width: 320px;
     margin: auto;
     padding: 20px;
@@ -212,15 +209,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     padding: 15px 20px;
   }
 
-  .site-logo {
-  }
-
   .site-nav {
     display: flex;
     gap: 15px;
-  }
-
-  .site-nav a {
   }
 
   .site-login .login-btn {
