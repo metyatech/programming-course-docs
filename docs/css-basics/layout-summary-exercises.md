@@ -16,16 +16,13 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ## 演習1（ボックスを縦にそろえる）
 
-**ねらい / テーマ**: 余白と幅の基本レイアウト（`margin`, `padding`, `width`, `text-align`）。
+**ねらい / テーマ**: 余白と幅の基本レイアウト（`margin`, `width`, `text-align`）。
 
 <Exercise title="演習1（プロフィールカードの基本レイアウト）">
 
 次のHTMLに対して、下のプレビューのような **シンプルな縦レイアウトのプロフィールカード** にしてください。
 
-- 全体の幅・余白をそろえて、中央寄せにする
-- タイトルと本文の間隔を整える
-
-ヒント: `width`, `margin`, `padding`, `text-align` を使ってカードの中央寄せと内側の余白を調整します。
+- 全体の幅を適切に設定して、中央寄せにする
 
 <CodePreview
   sourceId="ex1"
@@ -40,7 +37,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   initialCSS={`.card {
     width: 320px;
     margin: auto;
-    padding: 20px;
   }
 
   .card-title {
@@ -61,13 +57,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ## 演習2（ボタンの横並びと間隔）
 
-**ねらい / テーマ**: シンプルな横並びレイアウト（`display: inline-block` か `display: flex` の基本）。
+**ねらい / テーマ**: シンプルな横並びレイアウト（`display: inline-block` か `display: flex` の基本）と、バッジの配置（`position`）。
 
 <Exercise title="演習2（3つの操作ボタンの横並び）">
 
-次のHTMLに対して、3つのボタンが **1行に横並び** になり、ボタン同士に一定の間隔がつくようにしてください。
-
-ヒント: `display: flex` と `gap` を使ってボタンを横に並べます。`padding` でボタンの内側の余白も調整します。
+次のHTMLに対して、3つのボタンが **1行に横並び** になり、ボタン同士に一定の間隔がつくようにしてください。  
+また、**1つ目のボタンに「NEW」バッジが右上に重なって表示される** ようにしてください。
 
 <CodePreview
   sourceId="ex2"
@@ -75,22 +70,23 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   cssVisible={false}
   jsVisible={false}
   initialHTML={`<div class="actions">
-    <a href="#" class="btn">保存</a>
+    <a href="#" class="btn">保存<span class="badge">NEW</span></a>
     <a href="#" class="btn">下書き保存</a>
     <a href="#" class="btn">キャンセル</a>
   </div>`}
-  initialCSS={`body {
-    margin: 20px;
-  }
-
-  .actions {
+  initialCSS={`.actions {
     display: flex;
     gap: 10px;
   }
 
   .btn {
-    display: inline-block;
-    padding: 10px 20px;
+    position: relative;
+  }
+
+  .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
   }
 `}
 />
@@ -107,13 +103,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ## 演習3（カード一覧のグリッド風レイアウト）
 
-**ねらい / テーマ**: 複数ボックスの並びと折り返し（`display: flex`, `gap`, `flex-wrap`）。
+**ねらい / テーマ**: 複数ボックスの並びと折り返し（`display: flex`, `gap`, `flex-wrap`）と、カードの重なり表現（`negative margin`）。
 
 <Exercise title="演習3（サービス紹介カードの並べ方）">
 
-次のHTMLに対して、カードが横に並び、画面幅が足りなくなったら **次の行に折り返すレイアウト** にしてください。
-
-ヒント: `display: flex` と `flex-wrap: wrap` を使ってカードを並べ、`gap` で間隔を調整します。`flex: 0 0 200px` で各カードの幅を固定します。
+次のHTMLに対して、**カードが横一列に並び、各カードが前のカードに少し重なって表示される** ようにしてください。
 
 <CodePreview
   sourceId="ex3"
@@ -138,19 +132,22 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
       <p>作品の見せ方を一緒に考えます。</p>
     </div>
   </div>`}
-  initialCSS={`body {
-    margin: 20px;
-  }
-
-  .services {
+  initialCSS={`.services {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
   }
 
   .service-card {
-    flex: 0 0 200px;
-    padding: 15px;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    margin-left: -120px;
+  }
+
+  .service-card:first-child {
+    margin-left: 0;
   }
 `}
 />
@@ -167,13 +164,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ## 演習4（ヘッダーの3分割レイアウト）
 
-**ねらい / テーマ**: ヘッダーの典型レイアウト（左ロゴ・中央ナビ・右ボタン）を `flex` で組む。
+**ねらい / テーマ**: ヘッダーの典型レイアウト（左ロゴ・中央ナビ・右ボタン）を `flex` で組み、検索ボックス内のアイコンを `position: absolute` で配置する。
 
 <Exercise title="演習4（サイトヘッダーのレイアウト）">
 
-次のHTMLに対して、左にサイト名、中央にナビゲーション、右にボタンが並ぶ **ヘッダーレイアウト** にしてください。
-
-ヒント: ヘッダーに `display: flex` と `justify-content: space-between` を使って左右端に配置、`align-items: center` で高さを揃えます。ナビゲーションも `display: flex` で横並びにします。
+次のHTMLに対して、左にサイト名、中央にナビゲーション、右に検索ボックスとログインボタンが並ぶ **ヘッダーレイアウト** にしてください。  
+また、**検索ボックスの右端に検索アイコン（🔍）が入力欄に重なって表示される** ようにしてください。
 
 <CodePreview
   sourceId="ex4"
@@ -187,19 +183,18 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
       <a href="#">コース</a>
       <a href="#">お問い合わせ</a>
     </nav>
-    <div class="site-login">
+    <div class="site-actions">
+      <div class="search-box">
+        <input type="text" placeholder="ここに検索したいワードを入力して色々検索します">
+        <span class="search-icon">🔍</span>
+      </div>
       <a href="#" class="login-btn">ログイン</a>
     </div>
   </header>`}
-  initialCSS={`body {
-    margin: 0;
-  }
-
-  .site-header {
+  initialCSS={`.site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 20px;
   }
 
   .site-nav {
@@ -207,9 +202,20 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     gap: 15px;
   }
 
-  .site-login .login-btn {
-    display: inline-block;
-    padding: 10px 20px;
+  .site-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .search-box {
+    position: relative;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 `}
 />
@@ -226,13 +232,15 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ## 演習5（メイン + サイドバーの2カラム）
 
-**ねらい / テーマ**: メインコンテンツとサイドバーのレイアウト（`flex` で幅の比率を調整）。
+**ねらい / テーマ**: メインコンテンツとサイドバーのレイアウト（`flex` で幅の比率を調整）と、サムネイル画像の配置（`negative margin` と `position`）。
 
 <Exercise title="演習5（ブログ風レイアウト）">
 
-次のHTMLに対して、左にメイン記事、右にサイドバーがある **ブログ風2カラムレイアウト** にしてください。
+次のHTMLに対して、左にメイン記事、右にサイドバーがある **ブログ風2カラムレイアウト** にしてください。  
+メイン記事とサイドバーの幅の比率を調整し、さらに以下の条件を満たしてください：
 
-ヒント: `.layout` に `display: flex` を使い、`.main` に `flex: 2`、`.sidebar` に `flex: 1` を設定して幅の比率を調整します。
+- **記事のサムネイル画像が記事カードの上端から少しはみ出して表示される**
+- **各記事カードの右上に「おすすめ」バッジが重なって表示される**
 
 <CodePreview
   sourceId="ex5"
@@ -241,9 +249,18 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   jsVisible={false}
   initialHTML={`<div class="layout">
     <main class="main">
-      <h1>レイアウト練習ブログ</h1>
-      <p>このページではCSSレイアウトの練習をしています。</p>
-      <p>文章量が増えても、読みやすい幅に保つことが大切です。</p>
+      <article class="post">
+        <div class="post-thumbnail">🖼️</div>
+        <span class="post-badge">おすすめ</span>
+        <h2>レイアウト練習ブログ</h2>
+        <p>このページではCSSレイアウトの練習をしています。</p>
+      </article>
+      <article class="post">
+        <div class="post-thumbnail">🖼️</div>
+        <span class="post-badge">おすすめ</span>
+        <h2>Flexboxの使い方</h2>
+        <p>文章量が増えても、読みやすい幅に保つことが大切です。</p>
+      </article>
     </main>
     <aside class="sidebar">
       <h2>メニュー</h2>
@@ -254,29 +271,31 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
       </ul>
     </aside>
   </div>`}
-  initialCSS={`body {
-    margin: 0;
-  }
-
-  .layout {
-    max-width: 960px;
-    margin: 20px auto;
+  initialCSS={`.layout {
     display: flex;
     gap: 20px;
   }
 
   .main {
     flex: 2;
-    padding: 15px;
   }
 
   .sidebar {
     flex: 1;
-    padding: 15px;
   }
 
-  .sidebar ul {
-    padding-left: 15px;
+  .post {
+    position: relative;
+  }
+
+  .post-thumbnail {
+    margin-top: -20px;
+  }
+
+  .post-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
 `}
 />
@@ -284,136 +303,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 <Solution>
 
 <CodePreview sourceId="ex5" />
-
-</Solution>
-
-</Exercise>
-
----
-
-## 演習6（カード + ボタンのまとまりレイアウト）
-
-**ねらい / テーマ**: 1つのカードの中で、上下と左右のバランスを取るレイアウト。
-
-<Exercise title="演習6（申込みカードのレイアウト）">
-
-次のHTMLに対して、タイトル・説明・ボタンが見やすくまとまった **申込みカード** にしてください。
-
-ヒント: カードに `width` と `padding` を設定して、内側に余白を作ります。ボタンに `display: inline-block` と `padding` を使ってスタイルを整えます。
-
-<CodePreview
-  sourceId="ex6"
-  htmlVisible={true}
-  cssVisible={false}
-  jsVisible={false}
-  initialHTML={`<div class="plan">
-    <h2 class="plan-title">体験レッスン</h2>
-    <p class="plan-text">オンラインで60分の体験授業が受けられます。</p>
-    <p class="plan-price">無料</p>
-    <a href="#" class="plan-btn">申し込む</a>
-  </div>`}
-  initialCSS={`body {
-    margin: 20px;
-  }
-
-  .plan {
-    width: 300px;
-    padding: 20px;
-  }
-
-  .plan-btn {
-    display: inline-block;
-    padding: 10px 20px;
-  }
-`}
-/>
-
-<Solution>
-
-<CodePreview sourceId="ex6" />
-
-</Solution>
-
-</Exercise>
-
----
-
-## 演習7（ページ全体のレイアウト）
-
-**ねらい / テーマ**: ヘッダー・メイン・カード一覧を組み合わせた、ページ全体のレイアウト設計。
-
-<Exercise title="演習7（シンプルなLPレイアウト）">
-
-次のHTMLに対して、1ページの **シンプルな紹介ページ（LP）レイアウト** にしてください。
-
-ヒント: ヘッダーに `text-align: center` を使い、メインに `max-width` で最大幅を設定。カード一覧に `display: flex` を使い、各カードに `flex: 1` で均等な幅にします。
-
-<CodePreview
-  sourceId="ex7"
-  htmlVisible={true}
-  cssVisible={false}
-  jsVisible={false}
-  initialHTML={`<header class="lp-header">
-    <h1 class="lp-title">レイアウト練習コース</h1>
-    <p class="lp-lead">配置のコツを、小さなステップで身につけます。</p>
-  </header>
-
-  <main class="lp-main">
-    <section class="lp-section">
-      <h2>この講座で学べること</h2>
-      <p>ボックス配置、余白、2カラム、カードレイアウトなど。</p>
-    </section>
-
-    <section class="lp-cards">
-      <article class="lp-card">
-        <h3>基礎レイアウト</h3>
-        <p>まずは1カラムから始めます。</p>
-      </article>
-      <article class="lp-card">
-        <h3>2カラム</h3>
-        <p>メイン + サイドバーの形に慣れます。</p>
-      </article>
-      <article class="lp-card">
-        <h3>カード一覧</h3>
-        <p>サービス紹介や作品一覧でよく使います。</p>
-      </article>
-    </section>
-  </main>`}
-  initialCSS={`body {
-    margin: 0;
-  }
-
-  .lp-header {
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .lp-main {
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 0 15px;
-  }
-
-  .lp-section {
-    margin-bottom: 20px;
-    padding: 15px;
-  }
-
-  .lp-cards {
-    display: flex;
-    gap: 15px;
-  }
-
-  .lp-card {
-    flex: 1;
-    padding: 15px;
-  }
-`}
-/>
-
-<Solution>
-
-<CodePreview sourceId="ex7" />
 
 </Solution>
 
