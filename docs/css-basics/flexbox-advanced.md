@@ -93,45 +93,58 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 
 <Exercise title="演習1（縦中央にそろえたヘッダー）">
 
-ロゴとボタンが**上下中央**にそろったヘッダーを作ってください。
+ヘッダー内のロゴとメニューが**上下中央**にそろうようにCSSを書いてください。
 
 要件:
 - `.head` をフレックスコンテナにする
-- `.head` 内の要素（ロゴとボタン）を横並びにする
-- 縦方向は中央にそろえる
+- `.head` 内の要素を縦方向に中央にそろえる
+- `.logo` のフォントサイズを `24px` にする
 
 <CodePreview
   sourceId="flex-adv-ex1"
   cssVisible={false}
   initialHTML={`<header class="head">
     <div class="logo">🏠 サイト名</div>
-    <button class="login">ログイン</button>
+    <nav class="menu">
+      <a href="#">メニュー1</a>
+      <a href="#">メニュー2</a>
+    </nav>
   </header>`}
   initialCSS={`.head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     background: #1976d2;
     color: #fff;
     padding: 12px 16px;
   }
 
   .logo {
+    font-size: 24px;
     font-weight: bold;
   }
 
-  .login {
-    margin-left: auto;
+  .menu {
+    display: flex;
+    gap: 12px;
+  }
+
+  .menu a {
+    color: #fff;
+    text-decoration: none;
   }`}
 />
 
-ヒント: `justify-content` で左右の位置、`align-items` で上下の位置を決めます。
+ヒント: `align-items` で縦方向のそろえ方を指定します。
 
 <Solution>
 
 <CodePreview sourceId="flex-adv-ex1" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.head` を `display: flex;` にして横並びにします。
-- `margin-left: auto;` でボタンを右端に押し出します。
-- `align-items: center;` でロゴとボタンを上下中央にそろえます。
+- `.head` に `display: flex;` を指定して横並びにします。
+- `align-items: center;` でロゴとメニューを上下中央にそろえます。
+- 高さが異なる要素でも、縦方向の中央にそろえることができます。
 
 </Solution>
 
@@ -145,6 +158,7 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 - `.cardlist` をフレックスコンテナにする
 - カードは横並び
 - 縦方向のそろえ方を「下そろえ」にする
+- `.tall` だけ `height: 140px;` を指定して大きめの高さにする
 
 <CodePreview
   sourceId="flex-adv-ex1-adv"
@@ -164,8 +178,9 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
     </div>
   </div>`}
   initialCSS={`.cardlist {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
   }
 
   .card {
@@ -189,6 +204,7 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 **解説**:
 - `.cardlist` に `display: flex;` を指定して横並びにします。
 - `align-items: flex-end;` で、カードの下辺をそろえます。
+- `stretch`（初期値）では高さがそろって伸びますが、`flex-end` では下辺だけがそろい、各カードの高さは保たれます。
 
 </Solution>
 
@@ -200,22 +216,25 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 
 ### flex とは
 
-**説明**: `flex` プロパティは、アイテムごとの**幅の伸び縮み**のルールをまとめて指定します。
+**説明**: `flex` プロパティは、アイテムごとの**幅の伸び縮み**を指定します。
 
-書式:
+**基本の書き方**:
 ```css
 .item {
-  flex: 増える割合 縮む割合 基本の幅;
+  flex: 数値;
 }
 ```
-よく使う簡単な書き方:
+
+よく使う値:
 - `flex: 1;`（同じ割合で広がる）
 - `flex: 2;`（`1` の 2 倍の割合で広がる）
+
+数値が大きいほど、他の要素と比べて広いスペースを取ります（比率）。
 
 ### 基本イメージ
 
 <CodePreview
-  initialHTML={`<div class="oya demo">
+  initialHTML={`<div class="demo">
     <div class="box a">A</div>
     <div class="box b">B</div>
     <div class="box c">C</div>
@@ -229,9 +248,7 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
   .box {
     height: 60px;
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
 
   .a {
@@ -241,7 +258,7 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 
   .b {
     background: #42a5f5;
-    flex: 2;
+    flex: 2; /* flex: 1 の要素の 2 倍の幅になる、ということ */
   }
 
   .c {
@@ -269,16 +286,18 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     <div class="side">サイドバー</div>
   </div>`}
   initialCSS={`.layout {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    gap: 16px;
   }
 
   .main {
+    flex: 2;
     background: #e3f2fd;
     padding: 8px;
   }
 
   .side {
+    flex: 1;
     background: #fff3e0;
     padding: 8px;
   }`}
@@ -291,8 +310,9 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 <CodePreview sourceId="flex-adv-ex2" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.layout` に `display: flex;` を指定します。
+- `.layout` に `display: flex;` を指定して横並びにします。
 - `.main { flex: 2; }`、`.side { flex: 1; }` とすることで、2:1 の幅になります。
+- `flex` の値の比率で、要素の幅が決まります。
 
 </Solution>
 
@@ -317,11 +337,12 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     <button>適用</button>
   </div>`}
   initialCSS={`.btns2 {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    gap: 12px;
   }
 
   button {
+    flex: 1;
     padding: 8px 0;
   }`}
 />
@@ -333,8 +354,8 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 <CodePreview sourceId="flex-adv-ex2-adv1" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.btns2` に `display: flex;` と `gap` を指定します。
-- `button { flex: 1; }` とすることで、3 つのボタンが同じ幅で横に広がります。
+- `.btns2` に `display: flex;` と `gap: 12px;` を指定します。
+- `button { flex: 1; }` とすることで、3 つのボタンが同じ幅で横に広がり、親要素の幅いっぱいに伸びます。
 
 </Solution>
 
@@ -358,17 +379,19 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     <div class="card">プランC</div>
   </div>`}
   initialCSS={`.cards2 {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    gap: 12px;
   }
 
   .card {
+    flex: 1;
     border: 1px solid #ccc;
     padding: 12px;
     text-align: center;
   }
 
   .main {
+    flex: 1.5;
     background: #fff8e1;
   }`}
 />
@@ -380,8 +403,9 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 <CodePreview sourceId="flex-adv-ex2-adv2" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.card { flex: 1; }`、`.main { flex: 1.5; }` のように比率を変えます。
-- これにより、真ん中のカードだけ少し広く表示できます。
+- `.card { flex: 1; }` で基本の幅を設定します。
+- `.main { flex: 1.5; }` で、真ん中のカードだけ 1.5 倍の幅にします。
+- これにより、おすすめプランを強調できます。
 
 </Solution>
 
@@ -393,7 +417,7 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 ### flex-direction とは
 
-**説明**: `flex-direction` は、フレックスアイテムの並ぶ**向き（主軸）**を決めます。
+**説明**: `flex-direction` は、フレックスアイテムの並ぶ **向き（主軸）** を決めます。
 
 主な値:
 - `row`（初期値）：左から右へ横並び
@@ -472,8 +496,9 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     <a href="#">お問い合わせ</a>
   </nav>`}
   initialCSS={`.menu {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   a {
@@ -491,8 +516,9 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 <CodePreview sourceId="flex-adv-ex3" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.menu` に `display: flex;` と `flex-direction: column;` を指定します。
-- `gap` でリンク同士の間隔をそろえます。
+- `.menu` に `display: flex;` を指定してフレックスコンテナにします。
+- `flex-direction: column;` で、横並びの初期値（row）を縦並びに変更します。
+- `gap` でリンク同士の間隔を統一できます。
 
 </Solution>
 
@@ -526,21 +552,24 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     <div class="card">カード3</div>
   </div>`}
   initialCSS={`.cards3 {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    gap: 12px;
     margin-bottom: 12px;
   }
 
   .card {
+    flex: 1;
     border: 1px solid #ccc;
     padding: 8px;
     margin: 0;
   }
 
   .pc {
+    flex-direction: row;
   }
 
   .sp {
+    flex-direction: column;
   }`}
 />
 
@@ -552,7 +581,8 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 **解説**:
 - `.cards3` に `display: flex;` を指定します。
-- `.pc` では `flex-direction: row;`、`.sp` では `flex-direction: column;` として、レイアウトの向きを切り替えます。
+- `.pc` では `flex-direction: row;`（横並び）、`.sp` では `flex-direction: column;`（縦並び）として、レイアウトの向きを切り替えます。
+- 実際のレスポンシブ対応では、メディアクエリを使って画面幅に応じて自動的に切り替えます（詳細は別ページで学習します）。
 
 </Solution>
 
@@ -584,11 +614,14 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     </div>
   </div>`}
   initialCSS={`.nav {
-    border: 2px dashed #999;
-    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .item {
+    display: flex;
+    align-items: center;
     border: 1px solid #ccc;
     padding: 8px;
   }
@@ -608,7 +641,8 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 **解説**:
 - `.nav` に `display: flex; flex-direction: column; gap: 8px;` を指定して、メニュー項目を縦に並べます。
-- `.item` に `display: flex; align-items: center;` を指定して、アイコンとテキストを横並びかつ上下中央にそろえます。
+- `.item` の中でも `display: flex; align-items: center;` を使い、アイコンとテキストを横並びかつ上下中央にそろえます。
+- Flexbox は入れ子にすることで、複雑なレイアウトを実現できます。
 
 </Solution>
 
