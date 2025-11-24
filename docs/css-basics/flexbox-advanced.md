@@ -50,14 +50,14 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 
 <CodePreview
   initialHTML={`<h4>align-items: stretch（初期値）</h4>
-  <div class="oya sample-stretch">
+  <div class="oya s1">
     <div class="hako tall">A<br>高さ高め</div>
     <div class="hako">B</div>
     <div class="hako">C</div>
   </div>
 
   <h4>align-items: center</h4>
-  <div class="oya sample-center">
+  <div class="oya s2">
     <div class="hako tall">A<br>高さ高め</div>
     <div class="hako">B</div>
     <div class="hako">C</div>
@@ -69,11 +69,11 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
     margin-bottom: 8px;
   }
 
-  .sample-stretch {
+  .s1 {
     align-items: stretch;
   }
 
-  .sample-center {
+  .s2 {
     align-items: center;
   }
 
@@ -104,7 +104,7 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
   sourceId="flex-adv-ex1"
   cssVisible={false}
   initialHTML={`<header class="head">
-    <div class="rogo">🏠 サイト名</div>
+    <div class="logo">🏠 サイト名</div>
     <button class="login">ログイン</button>
   </header>`}
   initialCSS={`.head {
@@ -113,7 +113,7 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
     padding: 12px 16px;
   }
 
-  .rogo {
+  .logo {
     font-weight: bold;
   }
 
@@ -215,12 +215,12 @@ Flexbox の基本（`display: flex` / `gap` / `justify-content` / `flex-wrap`）
 ### 基本イメージ
 
 <CodePreview
-  initialHTML={`<div class="oya flexdemo">
+  initialHTML={`<div class="oya demo">
     <div class="box a">A</div>
     <div class="box b">B</div>
     <div class="box c">C</div>
   </div>`}
-  initialCSS={`.flexdemo {
+  initialCSS={`.demo {
     display: flex;
     border: 2px dashed #999;
     padding: 8px;
@@ -413,19 +413,19 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 <CodePreview
   initialHTML={`<h4>flex-direction: row（初期値）</h4>
-  <div class="dir-oya row">
+  <div class="dir row">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
   </div>
 
   <h4>flex-direction: column</h4>
-  <div class="dir-oya column">
+  <div class="dir column">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
   </div>`}
-  initialCSS={`.dir-oya {
+  initialCSS={`.dir {
     display: flex;
     gap: 8px;
     border: 2px dashed #999;
@@ -563,32 +563,32 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 アイコンとテキストをまとめた「メニュー項目」を 3 つ作り、**縦並び**かつ、アイコンとテキストを**横並び中央揃え**にしてください。
 
 要件:
-- `.navlist` をフレックスコンテナにし、項目を縦に並べる
-- `.navitem` の中で、アイコンとテキストを横並びにし、上下中央にそろえる
+- `.nav` をフレックスコンテナにし、項目を縦に並べる
+- `.item` の中で、アイコンとテキストを横並びにし、上下中央にそろえる
 
 <CodePreview
   sourceId="flex-adv-ex3-adv2"
   cssVisible={false}
-  initialHTML={`<div class="navlist">
-    <div class="navitem">
+  initialHTML={`<div class="nav">
+    <div class="item">
       <span class="icon">🏠</span>
       <span class="label">ホーム</span>
     </div>
-    <div class="navitem">
+    <div class="item">
       <span class="icon">⭐</span>
       <span class="label">お気に入り</span>
     </div>
-    <div class="navitem">
+    <div class="item">
       <span class="icon">⚙️</span>
       <span class="label">設定</span>
     </div>
   </div>`}
-  initialCSS={`.navlist {
+  initialCSS={`.nav {
     border: 2px dashed #999;
     padding: 8px;
   }
 
-  .navitem {
+  .item {
     border: 1px solid #ccc;
     padding: 8px;
   }
@@ -599,16 +599,16 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 />
 
 ヒント:
-- `.navlist` では `flex-direction` を縦にします。
-- `.navitem` の中でも Flexbox を使い、アイコンとテキストを中央揃えにします。
+- `.nav` では `flex-direction` を縦にします。
+- `.item` の中でも Flexbox を使い、アイコンとテキストを中央揃えにします。
 
 <Solution>
 
 <CodePreview sourceId="flex-adv-ex3-adv2" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.navlist` に `display: flex; flex-direction: column; gap: 8px;` を指定して、メニュー項目を縦に並べます。
-- `.navitem` に `display: flex; align-items: center;` を指定して、アイコンとテキストを横並びかつ上下中央にそろえます。
+- `.nav` に `display: flex; flex-direction: column; gap: 8px;` を指定して、メニュー項目を縦に並べます。
+- `.item` に `display: flex; align-items: center;` を指定して、アイコンとテキストを横並びかつ上下中央にそろえます。
 
 </Solution>
 
