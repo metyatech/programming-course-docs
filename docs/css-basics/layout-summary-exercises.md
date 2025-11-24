@@ -38,15 +38,12 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     <p class="card-text">レイアウトが少し苦手なので練習します。</p>
   </div>`}
   initialCSS={`body {
-    background-color: #f3f4f6;
   }
 
   .card {
     width: 320px;
     margin: auto;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
   }
 
   .card-title {
@@ -100,10 +97,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .btn {
     display: inline-block;
     padding: 10px 20px;
-    border-radius: 999px;
-    background-color: #2563eb;
-    color: #ffffff;
-    text-decoration: none;
   }
 `}
 />
@@ -151,7 +144,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </div>`}
   initialCSS={`body {
     margin: 20px;
-    background-color: #f9fafb;
   }
 
   .services {
@@ -163,8 +155,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .service-card {
     flex: 0 0 200px;
     padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
   }
 
   .service-card h3 {
@@ -220,12 +210,9 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    background-color: #0f172a;
-    color: #e5e7eb;
   }
 
   .site-logo {
-    font-weight: bold;
   }
 
   .site-nav {
@@ -234,17 +221,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   }
 
   .site-nav a {
-    color: #e5e7eb;
-    text-decoration: none;
   }
 
   .site-login .login-btn {
     display: inline-block;
     padding: 10px 20px;
-    border-radius: 999px;
-    background-color: #2563eb;
-    color: #ffffff;
-    text-decoration: none;
   }
 `}
 />
@@ -289,7 +270,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </div>`}
   initialCSS={`body {
     margin: 0;
-    background-color: #f3f4f6;
   }
 
   .layout {
@@ -302,16 +282,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .main {
     flex: 2;
     padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
   }
 
   .sidebar {
     flex: 1;
     padding: 15px;
-    background-color: #111827;
-    color: #e5e7eb;
-    border-radius: 8px;
   }
 
   .sidebar h2 {
@@ -360,15 +335,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </div>`}
   initialCSS={`body {
     margin: 20px;
-    background-color: #0b1120;
   }
 
   .plan {
     width: 300px;
     padding: 20px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #1d4ed8, #6366f1);
-    color: #e5e7eb;
   }
 
   .plan-title {
@@ -381,17 +352,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
   .plan-price {
     margin: 10px 0;
-    font-weight: bold;
   }
 
   .plan-btn {
     display: inline-block;
     padding: 10px 20px;
-    border-radius: 999px;
-    background-color: #facc15;
-    color: #111827;
-    text-decoration: none;
-    font-weight: bold;
   }
 `}
 />
@@ -447,14 +412,11 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </main>`}
   initialCSS={`body {
     margin: 0;
-    background-color: #020617;
-    color: #e5e7eb;
   }
 
   .lp-header {
     padding: 30px 20px;
     text-align: center;
-    background: radial-gradient(circle at top, #38bdf8, #0f172a);
   }
 
   .lp-title {
@@ -474,9 +436,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .lp-section {
     margin-bottom: 20px;
     padding: 15px;
-    border-radius: 8px;
-    background-color: #020617;
-    border: 1px solid #1e293b;
   }
 
   .lp-cards {
@@ -487,9 +446,6 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   .lp-card {
     flex: 1;
     padding: 15px;
-    border-radius: 8px;
-    background-color: #0b1120;
-    border: 1px solid #1f2937;
   }
 
   .lp-card h3 {
