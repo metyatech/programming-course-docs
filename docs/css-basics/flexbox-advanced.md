@@ -437,14 +437,28 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 <CodePreview
   initialHTML={`<h4>flex-direction: row（初期値）</h4>
-  <div class="dir row">
+  <div class="dir yoko">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h4>flex-direction: row-reverse</h4>
+  <div class="dir gyaku-yoko">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
   </div>
 
   <h4>flex-direction: column</h4>
-  <div class="dir column">
+  <div class="dir tate">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h4>flex-direction: column-reverse</h4>
+  <div class="dir gyaku-tate">
     <div class="item">1</div>
     <div class="item">2</div>
     <div class="item">3</div>
@@ -457,12 +471,20 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     margin-bottom: 8px;
   }
 
-  .row {
+  .yoko {
     flex-direction: row;
   }
 
-  .column {
+  .gyaku-yoko {
+    flex-direction: row-reverse;
+  }
+
+  .tate {
     flex-direction: column;
+  }
+
+  .gyaku-tate {
+    flex-direction: column-reverse;
   }
 
   .item {
@@ -470,13 +492,11 @@ B が A・C の 2 倍の幅になっていることを確認してください�
     height: 40px;
     background: #ab47bc;
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }`}
 />
 
-横並び（row）と縦並び（column）の違いを、2 つの例で見比べてください。
+それぞれの `flex-direction` の値によって、要素の並び順と向きが変わることを確認してください。`row-reverse` は右から左へ、`column-reverse` は下から上へ並びます。
 
 <Exercise title="演習3（縦並びのメニューボックス）">
 
@@ -524,16 +544,14 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 </Exercise>
 
-<Exercise title="演習3-発展1（レスポンシブなカード配置：横→縦）">
+<Exercise title="演習3-発展1（横並びと縦並びのカード配置）">
 
-画面幅が広いときはカードを**横並び**、狭いときは**縦並び**に切り替えてください。
-
-ここでは、CSS のみで「横 / 縦」を切り替える書き方に慣れることが目的です（実際のレスポンシブ対応の詳細は別ページで扱います）。
+カードを**横並び**と**縦並び**の2パターンで作ってください。
 
 要件:
 - `.cards3` をフレックスコンテナにする
-- 通常は横並び
-- 「スマホ用レイアウト」のブロック内では縦並びにする
+- `.pc` クラスがついている方は横並びにする
+- `.sp` クラスがついている方は縦並びにする
 
 <CodePreview
   sourceId="flex-adv-ex3-adv1"
@@ -590,7 +608,7 @@ B が A・C の 2 倍の幅になっていることを確認してください�
 
 <Exercise title="演習3-発展2（flex-direction と align-items の組み合わせ）">
 
-アイコンとテキストをまとめた「メニュー項目」を 3 つ作り、**縦並び**かつ、アイコンとテキストを**横並び中央揃え**にしてください。
+アイコンとテキストをまとめた「メニュー項目」を 3 つ作り、**縦並び**かつ、アイコンとテキストを**横並び上下中央揃え**にしてください。
 
 要件:
 - `.nav` をフレックスコンテナにし、項目を縦に並べる
@@ -622,25 +640,22 @@ B が A・C の 2 倍の幅になっていることを確認してください�
   .item {
     display: flex;
     align-items: center;
+    gap: 8px;
     border: 1px solid #ccc;
     padding: 8px;
-  }
-
-  .icon {
-    margin-right: 8px;
   }`}
 />
 
 ヒント:
 - `.nav` では `flex-direction` を縦にします。
-- `.item` の中でも Flexbox を使い、アイコンとテキストを中央揃えにします。
+- `.item` の中でも Flexbox を使い、アイコンとテキストを**横並び上下中央揃え**にします。
 
 <Solution>
 
 <CodePreview sourceId="flex-adv-ex3-adv2" htmlVisible={true} cssVisible={true} />
 
 **解説**:
-- `.nav` に `display: flex; flex-direction: column; gap: 8px;` を指定して、メニュー項目を縦に並べます。
+- `.nav` に `display: flex; flex-direction: column;` を指定して、メニュー項目を縦に並べます。
 - `.item` の中でも `display: flex; align-items: center;` を使い、アイコンとテキストを横並びかつ上下中央にそろえます。
 - Flexbox は入れ子にすることで、複雑なレイアウトを実現できます。
 
