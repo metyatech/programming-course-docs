@@ -25,7 +25,7 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 - 全体の幅・余白をそろえて、中央寄せにする
 - タイトルと本文の間隔を整える
 
-ヒント: `width`, `margin`, `padding`, `text-align`, `background-color`, `border-radius` などを使います。
+ヒント: `width`, `margin`, `padding`, `text-align` を使ってカードの中央寄せと内側の余白を調整します。
 
 <CodePreview
   sourceId="ex1"
@@ -66,6 +66,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 <Exercise title="演習2（3つの操作ボタンの横並び）">
 
 次のHTMLに対して、3つのボタンが **1行に横並び** になり、ボタン同士に一定の間隔がつくようにしてください。
+
+ヒント: `display: flex` と `gap` を使ってボタンを横に並べます。`padding` でボタンの内側の余白も調整します。
 
 <CodePreview
   sourceId="ex2"
@@ -110,6 +112,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 <Exercise title="演習3（サービス紹介カードの並べ方）">
 
 次のHTMLに対して、カードが横に並び、画面幅が足りなくなったら **次の行に折り返すレイアウト** にしてください。
+
+ヒント: `display: flex` と `flex-wrap: wrap` を使ってカードを並べ、`gap` で間隔を調整します。`flex: 0 0 200px` で各カードの幅を固定します。
 
 <CodePreview
   sourceId="ex3"
@@ -169,6 +173,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 次のHTMLに対して、左にサイト名、中央にナビゲーション、右にボタンが並ぶ **ヘッダーレイアウト** にしてください。
 
+ヒント: ヘッダーに `display: flex` と `justify-content: space-between` を使って左右端に配置、`align-items: center` で高さを揃えます。ナビゲーションも `display: flex` で横並びにします。
+
 <CodePreview
   sourceId="ex4"
   htmlVisible={true}
@@ -225,6 +231,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 <Exercise title="演習5（ブログ風レイアウト）">
 
 次のHTMLに対して、左にメイン記事、右にサイドバーがある **ブログ風2カラムレイアウト** にしてください。
+
+ヒント: `.layout` に `display: flex` を使い、`.main` に `flex: 2`、`.sidebar` に `flex: 1` を設定して幅の比率を調整します。
 
 <CodePreview
   sourceId="ex5"
@@ -291,6 +299,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 次のHTMLに対して、タイトル・説明・ボタンが見やすくまとまった **申込みカード** にしてください。
 
+ヒント: カードに `width` と `padding` を設定して、内側に余白を作ります。ボタンに `display: inline-block` と `padding` を使ってスタイルを整えます。
+
 <CodePreview
   sourceId="ex6"
   htmlVisible={true}
@@ -335,6 +345,8 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 <Exercise title="演習7（シンプルなLPレイアウト）">
 
 次のHTMLに対して、1ページの **シンプルな紹介ページ（LP）レイアウト** にしてください。
+
+ヒント: ヘッダーに `text-align: center` を使い、メインに `max-width` で最大幅を設定。カード一覧に `display: flex` を使い、各カードに `flex: 1` で均等な幅にします。
 
 <CodePreview
   sourceId="ex7"
