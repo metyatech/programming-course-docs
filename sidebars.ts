@@ -58,6 +58,7 @@ const sidebars: SidebarsConfig = {
         'css-basics/display',
         'css-basics/flexbox',
         'css-basics/flexbox-advanced',
+        'css-basics/layout-summary-exercises',
       ],
     },
   ],
