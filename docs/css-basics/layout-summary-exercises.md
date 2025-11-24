@@ -39,27 +39,23 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </div>`}
   initialCSS={`body {
     background-color: #f3f4f6;
-    font-family: sans-serif;
   }
 
   .card {
     width: 320px;
-    margin: 40px auto;
-    padding: 24px;
+    margin: auto;
+    padding: 20px;
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
   }
 
   .card-title {
-    margin: 0 0 12px;
-    font-size: 20px;
+    margin: 0;
     text-align: center;
   }
 
   .card-text {
-    margin: 6px 0;
-    line-height: 1.6;
+    margin: 0;
   }
 `}
 />
@@ -74,57 +70,40 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ---
 
-## 演習2（2カラムの情報レイアウト）
+## 演習2（ボタンの横並びと間隔）
 
-**ねらい / テーマ**: 横並びと幅の比率（`display`, `width`, `box-sizing` などの基本2カラム）。
+**ねらい / テーマ**: シンプルな横並びレイアウト（`display: inline-block` か `display: flex` の基本）。
 
-<Exercise title="演習2（お知らせ + 詳細の2カラム）">
+<Exercise title="演習2（3つの操作ボタンの横並び）">
 
-次のHTMLに対して、左にタイトル・右に詳細テキストが並ぶ **2カラムレイアウト** にしてください。
-
-- 左カラムは細め、右カラムは広めにする
-- 行間と上下の余白を整える
-
-ヒント: 親ボックスを横並びにしてから、子要素に幅を指定します。
+次のHTMLに対して、3つのボタンが **1行に横並び** になり、ボタン同士に一定の間隔がつくようにしてください。
 
 <CodePreview
   sourceId="ex2"
   htmlVisible={true}
   cssVisible={false}
   jsVisible={false}
-  initialHTML={`<div class="info">
-    <div class="info-label">お知らせ</div>
-    <div class="info-main">
-      <p>来週の授業はオンラインで実施します。</p>
-      <p>教材のダウンロードは前日までに済ませてください。</p>
-    </div>
+  initialHTML={`<div class="actions">
+    <a href="#" class="btn">保存</a>
+    <a href="#" class="btn">下書き保存</a>
+    <a href="#" class="btn">キャンセル</a>
   </div>`}
   initialCSS={`body {
-    margin: 40px;
-    font-family: sans-serif;
+    margin: 20px;
   }
 
-  .info {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 16px 20px;
-    background-color: #fef3c7;
-    border-radius: 8px;
+  .actions {
+    display: flex;
+    gap: 10px;
   }
 
-  .info-label {
-    float: left;
-    width: 100px;
-    font-weight: bold;
-  }
-
-  .info-main {
-    margin-left: 120px;
-  }
-
-  .info-main p {
-    margin: 4px 0;
-    line-height: 1.6;
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
   }
 `}
 />
@@ -139,66 +118,16 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ---
 
-## 演習3（ボタンの横並びと間隔）
-
-**ねらい / テーマ**: シンプルな横並びレイアウト（`display: inline-block` か `display: flex` の基本）。
-
-<Exercise title="演習3（3つの操作ボタンの横並び）">
-
-次のHTMLに対して、3つのボタンが **1行に横並び** になり、ボタン同士に一定の間隔がつくようにしてください。
-
-<CodePreview
-  sourceId="ex3"
-  htmlVisible={true}
-  cssVisible={false}
-  jsVisible={false}
-  initialHTML={`<div class="actions">
-    <a href="#" class="btn">保存</a>
-    <a href="#" class="btn">下書き保存</a>
-    <a href="#" class="btn">キャンセル</a>
-  </div>`}
-  initialCSS={`body {
-    margin: 40px;
-    font-family: sans-serif;
-  }
-
-  .actions {
-    display: flex;
-    gap: 12px;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 999px;
-    background-color: #2563eb;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-`}
-/>
-
-<Solution>
-
-<CodePreview sourceId="ex3" />
-
-</Solution>
-
-</Exercise>
-
----
-
-## 演習4（カード一覧のグリッド風レイアウト）
+## 演習3（カード一覧のグリッド風レイアウト）
 
 **ねらい / テーマ**: 複数ボックスの並びと折り返し（`display: flex`, `gap`, `flex-wrap`）。
 
-<Exercise title="演習4（サービス紹介カードの並べ方）">
+<Exercise title="演習3（サービス紹介カードの並べ方）">
 
 次のHTMLに対して、カードが横に並び、画面幅が足りなくなったら **次の行に折り返すレイアウト** にしてください。
 
 <CodePreview
-  sourceId="ex4"
+  sourceId="ex3"
   htmlVisible={true}
   cssVisible={false}
   jsVisible={false}
@@ -221,41 +150,36 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
     </div>
   </div>`}
   initialCSS={`body {
-    margin: 32px;
-    font-family: sans-serif;
+    margin: 20px;
     background-color: #f9fafb;
   }
 
   .services {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 15px;
   }
 
   .service-card {
-    flex: 0 0 220px;
-    padding: 16px;
+    flex: 0 0 200px;
+    padding: 15px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   }
 
   .service-card h3 {
-    margin: 0 0 8px;
-    font-size: 16px;
+    margin: 0;
   }
 
   .service-card p {
     margin: 0;
-    font-size: 13px;
-    line-height: 1.6;
   }
 `}
 />
 
 <Solution>
 
-<CodePreview sourceId="ex4" />
+<CodePreview sourceId="ex3" />
 
 </Solution>
 
@@ -263,16 +187,16 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ---
 
-## 演習5（ヘッダーの3分割レイアウト）
+## 演習4（ヘッダーの3分割レイアウト）
 
 **ねらい / テーマ**: ヘッダーの典型レイアウト（左ロゴ・中央ナビ・右ボタン）を `flex` で組む。
 
-<Exercise title="演習5（サイトヘッダーのレイアウト）">
+<Exercise title="演習4（サイトヘッダーのレイアウト）">
 
 次のHTMLに対して、左にサイト名、中央にナビゲーション、右にボタンが並ぶ **ヘッダーレイアウト** にしてください。
 
 <CodePreview
-  sourceId="ex5"
+  sourceId="ex4"
   htmlVisible={true}
   cssVisible={false}
   jsVisible={false}
@@ -289,14 +213,13 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </header>`}
   initialCSS={`body {
     margin: 0;
-    font-family: sans-serif;
   }
 
   .site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: 15px 20px;
     background-color: #0f172a;
     color: #e5e7eb;
   }
@@ -307,30 +230,28 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
   .site-nav {
     display: flex;
-    gap: 20px;
+    gap: 15px;
   }
 
   .site-nav a {
     color: #e5e7eb;
     text-decoration: none;
-    font-size: 14px;
   }
 
   .site-login .login-btn {
     display: inline-block;
-    padding: 6px 16px;
+    padding: 10px 20px;
     border-radius: 999px;
     background-color: #2563eb;
     color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
   }
 `}
 />
 
 <Solution>
 
-<CodePreview sourceId="ex5" />
+<CodePreview sourceId="ex4" />
 
 </Solution>
 
@@ -338,16 +259,16 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ---
 
-## 演習6（メイン + サイドバーの2カラム）
+## 演習5（メイン + サイドバーの2カラム）
 
 **ねらい / テーマ**: メインコンテンツとサイドバーのレイアウト（`flex` で幅の比率を調整）。
 
-<Exercise title="演習6（ブログ風レイアウト）">
+<Exercise title="演習5（ブログ風レイアウト）">
 
 次のHTMLに対して、左にメイン記事、右にサイドバーがある **ブログ風2カラムレイアウト** にしてください。
 
 <CodePreview
-  sourceId="ex6"
+  sourceId="ex5"
   htmlVisible={true}
   cssVisible={false}
   jsVisible={false}
@@ -368,43 +289,109 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </div>`}
   initialCSS={`body {
     margin: 0;
-    font-family: sans-serif;
     background-color: #f3f4f6;
   }
 
   .layout {
     max-width: 960px;
-    margin: 32px auto;
+    margin: 20px auto;
     display: flex;
-    gap: 24px;
+    gap: 20px;
   }
 
   .main {
     flex: 2;
-    padding: 20px;
+    padding: 15px;
     background-color: #ffffff;
     border-radius: 8px;
   }
 
   .sidebar {
     flex: 1;
-    padding: 16px;
+    padding: 15px;
     background-color: #111827;
     color: #e5e7eb;
     border-radius: 8px;
   }
 
   .sidebar h2 {
-    margin-top: 0;
+    margin: 0;
   }
 
   .sidebar ul {
-    margin: 8px 0 0;
-    padding-left: 18px;
+    margin: 10px 0 0;
+    padding-left: 15px;
   }
 
   .sidebar li {
-    margin: 4px 0;
+    margin: 0;
+  }
+`}
+/>
+
+<Solution>
+
+<CodePreview sourceId="ex5" />
+
+</Solution>
+
+</Exercise>
+
+---
+
+## 演習6（カード + ボタンのまとまりレイアウト）
+
+**ねらい / テーマ**: 1つのカードの中で、上下と左右のバランスを取るレイアウト。
+
+<Exercise title="演習6（申込みカードのレイアウト）">
+
+次のHTMLに対して、タイトル・説明・ボタンが見やすくまとまった **申込みカード** にしてください。
+
+<CodePreview
+  sourceId="ex6"
+  htmlVisible={true}
+  cssVisible={false}
+  jsVisible={false}
+  initialHTML={`<div class="plan">
+    <h2 class="plan-title">体験レッスン</h2>
+    <p class="plan-text">オンラインで60分の体験授業が受けられます。</p>
+    <p class="plan-price">無料</p>
+    <a href="#" class="plan-btn">申し込む</a>
+  </div>`}
+  initialCSS={`body {
+    margin: 20px;
+    background-color: #0b1120;
+  }
+
+  .plan {
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1d4ed8, #6366f1);
+    color: #e5e7eb;
+  }
+
+  .plan-title {
+    margin: 0;
+  }
+
+  .plan-text {
+    margin: 10px 0;
+  }
+
+  .plan-price {
+    margin: 10px 0;
+    font-weight: bold;
+  }
+
+  .plan-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background-color: #facc15;
+    color: #111827;
+    text-decoration: none;
+    font-weight: bold;
   }
 `}
 />
@@ -419,88 +406,16 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
 ---
 
-## 演習7（カード + ボタンのまとまりレイアウト）
-
-**ねらい / テーマ**: 1つのカードの中で、上下と左右のバランスを取るレイアウト。
-
-<Exercise title="演習7（申込みカードのレイアウト）">
-
-次のHTMLに対して、タイトル・説明・ボタンが見やすくまとまった **申込みカード** にしてください。
-
-<CodePreview
-  sourceId="ex7"
-  htmlVisible={true}
-  cssVisible={false}
-  jsVisible={false}
-  initialHTML={`<div class="plan">
-    <h2 class="plan-title">体験レッスン</h2>
-    <p class="plan-text">オンラインで60分の体験授業が受けられます。</p>
-    <p class="plan-price">無料</p>
-    <a href="#" class="plan-btn">申し込む</a>
-  </div>`}
-  initialCSS={`body {
-    margin: 40px;
-    font-family: sans-serif;
-    background-color: #0b1120;
-  }
-
-  .plan {
-    width: 320px;
-    padding: 24px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #1d4ed8, #6366f1);
-    color: #e5e7eb;
-  }
-
-  .plan-title {
-    margin: 0 0 8px;
-    font-size: 20px;
-  }
-
-  .plan-text {
-    margin: 0 0 12px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .plan-price {
-    margin: 0 0 16px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .plan-btn {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 999px;
-    background-color: #facc15;
-    color: #111827;
-    text-decoration: none;
-    font-weight: bold;
-  }
-`}
-/>
-
-<Solution>
-
-<CodePreview sourceId="ex7" />
-
-</Solution>
-
-</Exercise>
-
----
-
-## 演習8（ページ全体のレイアウト）
+## 演習7（ページ全体のレイアウト）
 
 **ねらい / テーマ**: ヘッダー・メイン・カード一覧を組み合わせた、ページ全体のレイアウト設計。
 
-<Exercise title="演習8（シンプルなLPレイアウト）">
+<Exercise title="演習7（シンプルなLPレイアウト）">
 
 次のHTMLに対して、1ページの **シンプルな紹介ページ（LP）レイアウト** にしてください。
 
 <CodePreview
-  sourceId="ex8"
+  sourceId="ex7"
   htmlVisible={true}
   cssVisible={false}
   jsVisible={false}
@@ -532,69 +447,64 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </main>`}
   initialCSS={`body {
     margin: 0;
-    font-family: sans-serif;
     background-color: #020617;
     color: #e5e7eb;
   }
 
   .lp-header {
-    padding: 40px 24px 32px;
+    padding: 30px 20px;
     text-align: center;
     background: radial-gradient(circle at top, #38bdf8, #0f172a);
   }
 
   .lp-title {
-    margin: 0 0 8px;
-    font-size: 26px;
+    margin: 0;
   }
 
   .lp-lead {
-    margin: 0;
-    font-size: 14px;
+    margin: 10px 0 0;
   }
 
   .lp-main {
     max-width: 960px;
-    margin: 24px auto 40px;
-    padding: 0 16px;
+    margin: 20px auto;
+    padding: 0 15px;
   }
 
   .lp-section {
-    margin-bottom: 24px;
-    padding: 20px;
-    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
     background-color: #020617;
     border: 1px solid #1e293b;
   }
 
   .lp-cards {
     display: flex;
-    gap: 16px;
+    gap: 15px;
   }
 
   .lp-card {
     flex: 1;
-    padding: 16px;
-    border-radius: 12px;
+    padding: 15px;
+    border-radius: 8px;
     background-color: #0b1120;
     border: 1px solid #1f2937;
   }
 
   .lp-card h3 {
-    margin: 0 0 6px;
+    margin: 0;
   }
 
   .lp-card p {
     margin: 0;
-    font-size: 13px;
-    line-height: 1.6;
   }
 `}
 />
 
 <Solution>
 
-<CodePreview sourceId="ex8" />
+<CodePreview sourceId="ex7" />
 
 </Solution>
 
