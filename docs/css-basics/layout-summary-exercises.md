@@ -237,7 +237,7 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 <Exercise title="演習5（ブログ風レイアウト）">
 
 次のHTMLに対して、左にメイン記事、右にサイドバーがある **ブログ風2カラムレイアウト** にしてください。  
-メイン記事とサイドバーの幅の比率を調整し、さらに以下の条件を満たしてください：
+**メイン記事とサイドバーの幅の比率が「2:1」になるように調整**し、さらに以下の条件を満たしてください：
 
 - **記事のサムネイル画像が記事カードの上端から少しはみ出して表示される**
 - **各記事カードの右上に「おすすめ」バッジが重なって表示される**
@@ -253,13 +253,13 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
         <div class="post-thumbnail">🖼️</div>
         <span class="post-badge">おすすめ</span>
         <h2>レイアウト練習ブログ</h2>
-        <p>このページではCSSレイアウトの練習をしています。</p>
+        <p>このページではCSSレイアウトの練習をしています。CSSのflexboxを使うと柔軟なレイアウトが実現できます。</p>
       </article>
       <article class="post">
-        <div class="post-thumbnail">🖼️</div>
+        <div class="post-thumbnail">📱</div>
         <span class="post-badge">おすすめ</span>
         <h2>Flexboxの使い方</h2>
-        <p>文章量が増えても、読みやすい幅に保つことが大切です。</p>
+        <p>文章量が増えても、読みやすい幅に保つことが大切です。レスポンシブデザインにも対応できます。</p>
       </article>
     </main>
     <aside class="sidebar">
@@ -273,7 +273,7 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
   </div>`}
   initialCSS={`.layout {
     display: flex;
-    gap: 20px;
+    gap: 30px;
   }
 
   .main {
@@ -282,20 +282,33 @@ HTMLは完成している前提で、**CSSだけで調整**してください。
 
   .sidebar {
     flex: 1;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
   }
 
   .post {
     position: relative;
+    padding: 40px 20px 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
   }
 
   .post-thumbnail {
-    margin-top: -20px;
+    font-size: 40px;
+    margin-top: -55px;
   }
 
   .post-badge {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 10px;
   }
 `}
 />
