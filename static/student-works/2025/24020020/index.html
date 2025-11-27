@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不気味な建物からの脱出</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <!-- ヘッダーメニュー欄 -->
+    <header class="dropdwon">
+        <!-- ドロワーメニュー -->
+        <div class="drowermenu">
+            <button class="leftmenu">
+                <span class="icon">
+                    <span class="box first"></span>
+                    <span class="box two"></span>
+                    <span class="box three"></span>
+                </span>
+            </button>
+            <div class="drower">
+                <ul class="fuunako"><br>
+                    <li class="fuu">ふうなこについて</li><br>
+                    <li class="fuu">きっかけ</li><br>
+                    <li class="fuu">関係図<br>-クリアした人向け-</li>
+                </ul>
+            </div>
+            <div class="end"></div>
+        </div>
+        <!-- ドロップダウンメニュー -->
+        <div class="menu-h">
+            <p class="menu">STORY</p>
+            <div class="menu-c">CHARACTER
+                <ul class="menu-chara">
+                    <li class="chara-list">NOZEA</li>
+                    <li class="chara-list">???</li>
+                    <li class="chara-list">???</li>
+                    <li class="chara-list">???</li>
+                </ul>
+            </div>
+            <p class="menu">MAP&ITEM</p>
+            <p class="menu">ILLUSTRATION</p>
+        </div>
+    </header>
+    <!-- モーダルウィンドウ -->
+    <button class="m-open js-modal-open">じー</button>
+    <!-- モーダル本体 -->
+    <div class="modal js-modal">
+        <div class="m-container">
+            <!-- モーダルを閉じるボタン -->
+            <div class="m-close js-modal-close">×</div>
+            <!-- モーダル内部のコンテンツ -->
+            <div class="m-content">
+                <p>ばぁ</p>
+            </div>
+        </div>
+    </div>
+    <!-- タイトル名 -->
+    <section class="name">
+        <h1>不気味な建物からの脱出</h1>
+    </section>
+    <!-- ストーリー -->
+    <div class="sub">
+        <p>ストーリー<br>
+            <small>目覚めた少年は記憶がなく……<br>
+                化け物が徘徊している廃墟から脱出を目指す。</small>
+        </p>
+    </div>
+    <!-- キャラ詳細 -->
+    <div class="sub">
+        <p>操作キャラ詳細</p>
+    </div>
+    <section class="syousai">
+        <!-- 操作キャラについて -->
+        <div class="setumei">
+            <h2>-ノゼア-</h2>
+            <p>
+                記憶喪失。<br>
+                覚えているのは自身の名のみ。
+            </p>
+        </div>
+        <div class="illust-n">
+            <img src="image/23109a4b195fa138.png" alt="">
+        </div>
+    </section>
+    <div id="dream">
+        <!-- 装飾 -->
+        <div class="border1">
+            <div class="dream-border1"></div>
+            <div class="dream-border2"></div>
+        </div>
+        <!-- 他のキャラ -->
+        <section class="sub">
+            <p>
+                夢に出てくる人たち<br>
+                <small>会ったこともないのになぜか気になるのはどうしてだろう？</small>
+            </p>
+        </section>
+        <div class="border2">
+            <div class="dream-border2"></div>
+            <div class="dream-border1"></div>
+        </div>
+    </div>
+    <section class="dream">
+        <div class="V">
+            <img src="image/150_20241227202030.png" alt="">
+        </div>
+        <div class="M">
+            <img src="image/19ddec5f1a6ab10d.png" alt="">
+        </div>
+        <div class="N">
+            <img src="image/HP1_20241225181422.png" alt="">
+        </div>
+
+    </section>
+    <!-- マップ詳細 -->
+    <div class="sub">
+        <p>マップとアイテム<br>
+            <small>所々に落ちている物<br>
+                記憶を取り戻す手掛かりが見つかるかも？</small>
+        </p>
+    </div>
+    <!-- 画像と文字が一緒に表示される部分 -->
+    <section class="itemmap" id="itemmap">
+        <div class="item-up">
+            <!-- クリックした画像が大きく表示される＋アイテム説明文表示 -->
+            <div class="item-big">
+                <img src="" alt="ドアップ" id="picksup">
+                <p class="text" id="text">錆びていて開かない。持ち主を知っているような……。</p>
+            </div>
+            <div class="item-i">
+                <button class="ITEM" type="button" onclick="displayItem('image/rokketo.png', '錆びていて開かない。持ち主を知っているような……。')">
+                    <img src="./image/rokketo.png" alt="ロケット">
+                </button>
+                <button class="ITEM" type="button" onclick="displayItem('image/', 'どうやったらこんなにぼろぼろになるんだろうか......。')">
+                    <img src="./image/" alt="ぼろぼろの手錠">
+                </button>
+                <button class="ITEM" type="button" onclick="displayItem('image/', '綺麗な状態の赤いうろこ。')">
+                    <img src="./image/" alt="赤いうろこ">
+                </button>
+                <button class="ITEM" type="button"
+                    onclick="displayItem('image/blood.syringe.png', '血が入っているせいか気分が悪い..。')">
+                    <img src="./image/blood.syringe.png" alt="注射器">
+                </button>
+                <button class="ITEM" type="button"
+                    onclick="displayItem('image/', '年季が入っている二枚のカルテ。二枚とも文字がかすれていて一枚目のものは「神……実験」と読め、二枚目は「ミ…ェﾉ」と読める。')">
+                    <img src="./image/" alt="カルテ">
+                </button>
+                <button class="ITEM" type="button"
+                    onclick="displayItem('image/item.hammer.png', '鈍器なりそう。何かを破壊するのに使えるかもしれない。')">
+                    <img src="./image/item.hammer.png" alt="とんかち">
+                </button>
+                <button class="ITEM" type="button" onclick="displayItem('image/cage.png', '中に火の玉が浮かんでいる')">
+                    <img src="./image/" alt="鳥籠">
+                </button>
+                <button class="ITEM" type="button" onclick="displayItem('image/item.pias.png', '二つのピアス。懐かしいような感じがする')">
+                    <img src="./image/item.pias.png" alt="二つのピアス">
+                </button>
+                <button class="ITEM" type="button" onclick="displayItem('image/cage.png', '')">
+                    <img src="./image/" alt="未定">
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- マップ説明部分 -->
+    <section class="map">
+        <div class="sub">
+            <p>マップ説明<br><br>
+                <small>化け物に捕まると最初にいたところに戻される。<br>
+                    化け物に追いつかれないよう逃げ切れ</small>
+            </p>
+        </div>
+        <div id="map-img">
+            <img src="./image/monster.png" alt="">
+        </div>
+    </section>
+    <div id="sub">
+        <p>イラスト</p>
+    </div>
+    <!-- スライドショー スチル絵四枚-->
+    <div class="wrapper">
+        <span id="prev" class="prev"></span>
+        <span id="next" class="next"></span>
+        <div id="slider" class="slider slider1">
+            <div class="ILLUSTRATION illust1"></div>
+            <div class="ILLUSTRATION illust2"><img src="image/seen.mishenagivol.png" alt=""></div>
+            <div class="ILLUSTRATION illust3"><img src="image/" alt=""></div>
+            <div class="ILLUSTRATION illust4"></div>
+        </div>
+    </div>
+    <!-- フッター -->
+    <!-- <footer>
+        <small>ふうなこ</small>(あとから追加予定)
+    </footer> -->
+</body>
+
+</html>

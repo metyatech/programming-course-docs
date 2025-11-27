@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/contact.js" defer></script>
+    <script src="https://kit.fontawesome.com/459ccf466e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/contact.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">:
+        <div class="ham-c">
+            <!-- ハンバーガー -->
+            <button class="ham-button">
+                <span class="ham-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+                <h1 class="title">liberte</h1>
+            </button>
+            <nav class="ham">
+                <ul class="nav-b">
+                    <li class="nav-i"><a href="../index.html">HOME</a></li>
+                    <li class="nav-i"><a href="shop.html">SHOP</a></li>
+                    <li class="nav-i"><a href="account.html">ACCOUNT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- メニュー -->
+        <section class="menu">
+            <div class="menu-a">
+            <div class="menu-title"><span>SNS</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">Instagram</li>
+                <li class="menu-i">X</li>
+                <li class="menu-i">Facebook</li>
+                <li class="menu-i">LINE</li>
+            </ul>
+            </div>
+    </header>
+    <main>
+        <!-- モーダルウィンドウ -->
+        <button class="openModal">お問い合わせ</button>
+        <section class="modalArea">
+            <div class="modalBg"></div>
+            <div class="modalWrapper">
+                <div class="modalContents">
+                    <form action="" class="contact-form"></form>        
+                    <span class="contact-us">Contact Us</span> 
+                    <ul>
+                        <li>
+                            <i class="fa fa-user form-icon"></i>
+                            <input class="form-i" type="text" placeholder="Name" required>
+                        </li>
+                        <li>
+                            <i class="fa fa-at form-icon"></i>
+                            <input class="form-i" type="email" placeholder="Email" required>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-icon"></i>
+                            <input class="form-i" type="tel" placeholder="Phone" required>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-icon"></i>
+                            <textarea class="form-i" placeholder="Message" rows="2" required></textarea>
+                        </li>
+                        <li>
+                            <button class="form-i" id="form-button" type="submit">送信</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="closeModal">
+                    ×
+                </div>
+            </div>
+        </section>
+        <div class="form-text">送信が完了されました</div>
+    </main>
+    <!-- フッター -->
+    <footer>&copy; fuuki</footer>
+</body>
+</html>

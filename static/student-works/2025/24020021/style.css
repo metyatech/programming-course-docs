@@ -1,0 +1,215 @@
+:root {
+    font-family: "Lato", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-size: 1.25rem;
+}
+
+/*-------
+ header
+--------*/
+
+.header-bar {
+    height: 80px;
+    border-bottom: solid #2c2c2c 1px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-bar>* {
+    flex: auto;
+}
+
+/* ham */
+.ham-button {
+    height: 100%;
+    border: none;
+    padding: 10px 10px 10px 20px;
+
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.ham-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ham-icon .bar {
+    width: 32px;
+    height: 4px;
+
+    display: block;
+    background-color: #434343;
+}
+
+.ham {
+    height: 80px;
+    width: 450px;
+    padding-top: 80px;
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    /* クリック時に即座に切り替わる */
+    transform: translateX(calc(-1000% - 3px));
+    transition: transform 0, 1s;
+    background-color: white;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%);
+    font-size: 1.5rem;
+}
+
+.ham-c.open .ham {
+    transform: translateX(0);
+}
+
+.nav-b {
+    margin: 0;
+    padding: 0 20px;
+
+    list-style: none;
+}
+
+.nav-i {
+    padding-top: 25px;
+}
+
+.nav-i:hover {
+    /* カーソルを合わせたら背景が変わる */
+    background-color: #f9f9f9;
+    border-bottom: solid #949494 1px;
+}
+
+/* menu */
+.menu {
+    width: 190px;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-c {
+    flex: initial;
+
+    display: flex;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+.title:hover {
+    /* カーソルを乗せたら変わるcss */
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #3f3f3f;
+    color: white;
+}
+
+.menu-b {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    transition: clip-path 0.5s;
+    /* 左から表示される */
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+    overflow: hidden;
+    position: absolute;
+    top: 80px;
+    list-style: none;
+    background-color: #3f3f3f;
+}
+
+
+.menu-b.open {
+    clip-path: inset(0 0 0);
+}
+
+.menu-i {
+    text-align: center;
+    color: white;
+
+    padding: 8px 10px;
+}
+
+.menu-i:hover {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #3f3f3f;
+    /* 文字の色を黄色にする */
+    color: yellow;
+}
+
+.hero {
+    background-image: url(./images/09f2110511008763ff5d9ff5cad53810.jpg);
+    background-size: cover;
+    height: 800px;
+    margin: 0;
+    background-position-x: 35%;
+    flex: auto;
+}
+
+.hero2 {
+    color: #fff;
+    position: absolute;
+    top: 700px;
+    font-size: 65px;
+}
+
+/* スライダー */
+img {
+    /* 真ん中に配置 */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    top: 650px;
+    left: 0;
+    /* 画像の透明度を初期値を0に設定 */
+    opacity: 0;
+    transition: all 2s ease;
+    width: 500px;
+    height: 450px;
+}
+
+img.active {
+    opacity: 1;
+}
+
+.hero3{
+    text-align: center;
+    
+}
+
+.slide{
+position: relative;
+}
+
+#modal::backdrop{
+    background-color: #000000;
+    opacity: 0.9
+}
+
+.btn{
+    padding-left: 4em;
+    padding-right: 4em;
+    height: 3em;
+    background-color: #ccc;
+}

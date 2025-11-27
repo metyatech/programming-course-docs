@@ -1,0 +1,49 @@
+
+
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+
+html {
+  box-sizing: border-box; 
+}
+
+*{
+  background-repeat: no-repeat; 
+  box-sizing: inherit;
+}
+
+
+* {
+  padding: 0; 
+  margin: 0;
+}
+
+
+/* # =================================================================
+   # Forms
+   # ================================================================= */
+
+
+/* ボタン要素にカーソルポインタの適用 */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+
+
+/* すべてのブラウザでデフォルトのボタンのスタイルを削除 */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+}
+
+

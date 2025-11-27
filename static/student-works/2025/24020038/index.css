@@ -1,0 +1,222 @@
+.g-ms {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transform: translate3d(50vw, 50vh, 0);
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+}
+
+.g-ms_i {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: 30px;
+    transition: all .3s ease;
+    background: rgba(0, 0, 0, .05);
+    opacity: 0;
+}
+
+/* アクティブ時 */
+.g-ms.g-ms-active .g-ms_i {
+    opacity: 1;
+}
+
+/* マウスホバー時 */
+.g-ms.g-ms-hover {
+    mix-blend-mode: difference;
+}
+
+.g-ms.g-ms-hover .g-ms_i {
+    background: #fff;
+    transform: scale(.2);
+}
+
+/* 以下、ホバー確認用要素のための記述 */
+html,
+body {
+    /* exclusionに影響するので背景色はきちんと指定 */
+    background-color: #fff;
+    height: 100%;
+}
+
+.sampleWrapper {
+    padding: 50px 0;
+}
+
+.sampleTxt {
+    text-align: center;
+    margin: 0;
+}
+
+.sampleBox {
+    background-image: url(image/yoake.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.gnav_wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main_menu {
+    background-color: transparent;
+    width: 33.333%;
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.sub_menu {
+    position: absolute;
+    background: cornflowerblue;
+    width: 100%;
+    transform: translateY(-500px);
+    transition: .5s;
+    z-index: 1;
+}
+
+
+.sub_menu>li {
+    padding: 20px 0;
+}
+
+.sub_menu>li:hover {
+    background: pink;
+}
+
+.open {
+    transform: translateY(20px);
+}
+
+
+
+/* モーダルを開くボタン */
+.modal-open {
+    background-image: url(image/yozora.jpeg);
+    position: fixed;
+    top: 2%;
+    left: 10%;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px;
+    height: 60px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    translate: -50% -50%;
+}
+
+/* モーダルと背景の指定 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 50%);
+    padding: 40px 20px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+/* モーダルの擬似要素の指定 */
+.modal:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-left: -0.2em;
+}
+
+/* クラスが追加された時の指定 */
+.modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダル内側の指定 */
+.modal-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* モーダルを閉じるボタンの指定 */
+.modal-close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* モーダルのコンテンツ部分の指定 */
+.modal-content {
+    background: #fff;
+    text-align: left;
+    line-height: 1.8;
+    padding: 20px;
+}
+
+/* モーダルのコンテンツ部分のテキストの指定 */
+.modal-content p {
+    margin: 1em 0;
+}
+
+
+/* スライダー */
+.slider {
+    margin: 0 auto;
+    width: 70%;
+    height: 60%;
+    top: 30px;
+    z-index: 0;
+}
+
+.slider img {
+    height: auto;
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}

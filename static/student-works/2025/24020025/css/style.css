@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+}
+
+/* header */
+.header-bar {
+    height: 80px;
+    border-bottom: solid #2c2c2c 1px;
+    display: flex;
+    position: relative;
+    z-index: 20;
+}
+
+.header-bar>* {
+    flex: auto;
+}
+
+/* ham */
+.ham-button {
+    height: 100%;
+    border: none;
+    padding: 10px 10px 10px 20px;
+
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.ham-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ham-icon .bar {
+    width: 34px;
+    height: 4px;
+
+    display: block;
+    background-color: #434343;
+    transform-origin: left center;
+    transition: 1s;
+}
+
+.ham-c.open .ham-icon .bar.first {
+    transform: rotate(45deg);
+}
+
+.ham-c.open .ham-icon .bar.middle {
+    opacity: 0;
+}
+
+.ham-c.open .ham-icon .bar.last {
+    transform: rotate(-45deg);
+}
+
+.ham {
+    height: 200vh;
+    width: 450px;
+    padding-top: 80px;
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    transform: translateX(calc(-100% - 3px));
+    transition: transform 1s;
+    background-color: white;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%);
+    font-size: 1.5rem;
+}
+
+.ham-c.open .ham {
+    transform: translateX(0);
+}
+
+.nav-b {
+    margin: 0;
+    padding: 0 20px;
+
+    list-style: none;
+}
+
+.nav-i {
+    padding-top: 25px;
+
+    border-bottom: solid #E9E9E9 1px;
+    cursor: pointer;
+}
+
+.nav-i:hover {
+    background-color: #E9E9E9;
+}
+
+.back {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.ham-c.open .back {
+    pointer-events: auto;
+    opacity: 25%;
+}
+
+/* menu */
+.menu {
+    width: 190px;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-c {
+    flex: initial;
+
+    display: flex;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+.menu-b {
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    transition: clip-path 0.5s;
+    clip-path: inset(0 0 100%);
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    top: 80px;
+    right: 20px;
+    list-style: none;
+    background-color: #3f3f3f;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+.menu-b.open {
+    clip-path: inset(0 0 0);
+}
+
+.menu-i {
+    text-align: center;
+    color: white;
+    padding: 8px 10px;
+}
+
+.menu-i a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-i:hover {
+    background-color: #1b1b1b;
+}
+
+/* slider */
+.slider {
+    padding-top: 20px;
+    width: 100vh;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.container1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform .3s;
+}
+
+.box {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+#left1,
+#right1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: #2c2c2c;
+    font-size: 50px;
+    padding: 0 6px;
+    cursor: pointer;
+}
+
+#left1 {
+    left: 20px;
+}
+
+#right1 {
+    right: 20px;
+}
+
+#left1:hover,
+#right1:hover {
+    opacity: .9;
+}
+
+.hidden {
+    display: none;
+}
+
+/* information */
+.wrapper {
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 1.5rem;
+    min-height: 100vh;
+}
+
+.heading-large {
+    margin-bottom: 1rem;
+}
+
+.location {
+    margin-bottom: 3.5rem;
+    margin-top: 120px;
+}
+
+.location-info {
+    margin-bottom: 2rem;
+}
+
+.location-info .info {
+    padding: 0;
+}
+
+.info {
+    width: 100%;
+    max-width: 544px;
+    margin: auto;
+    padding: 0 1.5rem;
+    border-spacing: 0;
+}
+
+.info th,
+.info td {
+    border-bottom: 1px solid #c9c2bc;
+}
+
+.info th {
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem;
+}
+
+.info td {
+    padding: 1rem 0;
+}
+
+@media (min-width: 800px) {
+    .location {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .location-info {
+        width: 32%;
+    }
+
+    .location-info .info th {
+        padding-left: 2rem;
+    }
+
+    .location-map {
+        width: 64%;
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: #432;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+}

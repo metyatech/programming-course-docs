@@ -1,0 +1,384 @@
+@charset "UTF-8";
+
+/* 全体の調整 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    list-style-type: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.haikeisyoku {
+    background-color: #b86e5d;
+}
+
+.title-center {
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* ----------------------------------------------- */
+
+/* ヘッダー */
+header {
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-menu {
+    margin: 0 0.5rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    margin-left: 26px;
+}
+
+.logo {
+    margin: 2.2rem;
+}
+
+li:last-child {
+    margin-right: 60px;
+}
+
+/* ----------------------------------------------- */
+
+/* ドロップダウンメニュー */
+.midashi {
+    color: #fff;
+}
+
+.drop {
+    position: absolute;
+    color: #fff;
+    background-color: #b86e5d;
+    text-align: center;
+    width: 270px;
+    height: 180px;
+    margin-right: 75px;
+    padding: 0;
+    top: 80px;
+    right: 0;
+    display: none;
+}
+
+.drop ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop li {
+    margin: 2rem auto 0;
+}
+
+.drop-hyouji {
+    display: block;
+    animation-name: drop;
+    animation-fill-mode: forwards;
+    animation-duration: .2s;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------- */
+
+/* メニューバー */
+.menuber {
+    position: absolute;
+    margin-top: -15px;
+    z-index: 3;
+}
+
+button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.menubutton {
+    width: 2.4rem;
+    height: 3px;
+    background-color: #000;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    transition: right 0.5s;
+    overflow: hidden;
+
+}
+
+nav.open {
+    right: 0;
+}
+
+nav hr {
+    margin-top: 1rem;
+}
+
+nav ul {
+    margin-top: 120px;
+}
+
+.youso {
+    margin-top: 20px;
+}
+
+/* ----------------------------------------------- */
+
+/* hero */
+.hero {
+    width: 100%;
+    height: 640px;
+    background-image: url(../images/cake-hero.png);
+    background-size: cover;
+    background-position: center center;
+    color: #641f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1,
+.hero h2 {
+    padding-left: 120px;
+}
+
+/* ----------------------------------------------- */
+
+/* 診断と試食 */
+.sindann {
+    color: #fff;
+    display: flex;
+    margin-top: 135px;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.sindann div {
+    width: 470px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sindann h2,
+.sindann p {
+    padding-left: 24px;
+}
+
+/* ----------------------------------------------- */
+
+/* モーダルウィンドウ */
+.hihyouji {
+    display: none;
+}
+
+/* モーダルウィンドウのボタン */
+.modal-open {
+    display: block;
+    margin: 60px auto 0;
+    color: #fff;
+    width: 240px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #b86e5d;
+}
+
+.modal-open:hover {
+    background-color: #915547;
+    transition: 0.2s;
+}
+
+.modal-open:active {
+    color: #b86e5d;
+    border: 5px solid #b86e5d;
+    background-color: #fff;
+}
+
+/* -------------------------- */
+
+/* モーダルウィンドウが表示された時 */
+/* js-modalのやつ */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 50%);
+    z-index: 2;
+    transition: .3s;
+}
+
+/* modal-containerのやつ */
+.modal-container-open {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* modal-contentのやつ */
+.modal-content-open {
+    position: absolute;
+    background: #fff;
+    width: 600px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 3;
+}
+
+.modal-content {
+    display: none;
+}
+
+/* ----------------------------------------------- */
+
+/* ニュース */
+.news h2 {
+    margin-top: 60px;
+}
+
+.news-table {
+    border-spacing: 0;
+    margin: 30px auto 0;
+}
+
+.news-table td {
+    padding: 12px 30px 0 0;
+}
+
+/* ----------------------------------------------- */
+
+/* 商品紹介 */
+.syouhinn {
+    padding-bottom: 90px;
+    margin-top: 120px;
+}
+
+.syouhinn h2 {
+    color: #fff;
+}
+
+.syouhinn p {
+    height: 160px;
+    width: 1130px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.sannmenu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.sannmenu div {
+    background-color: #fff;
+    width: 360px;
+    margin-top: 60px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* ----------------------------------------------- */
+
+/* アクセス */
+.access-table {
+    margin: 60px auto 60px;
+}
+
+.access-table th,
+.access-table td {
+    padding: 1rem
+}
+
+/* ----------------------------------------------- */
+
+/* メニュー */
+menu {
+    margin: 0 auto;
+}
+
+menu ul {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+menu li {
+    width: 360px;
+    height: 200px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------------------------------------------- */
+
+/* フッター */
+footer {
+    margin-top: 120px;
+    height: 120px;
+    color: #fff;
+}
+
+footer ul {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+small {
+    padding-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+/* ----------------------------------------------- */

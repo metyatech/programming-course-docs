@@ -1,0 +1,238 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+ul {
+    list-style: none;
+}
+/*-------
+ header
+--------*/
+header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+}
+h1 {
+    font-size:1.5rem;
+}
+.rg {
+    width: 8%;
+    height: 8%;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+ul {
+    padding-top: 75px;
+}
+li {
+    padding: 10px;;
+    font-size: 12px;
+    font-weight: bold;
+}
+/*-------
+ドロワーメニュー
+--------*/
+.rg-btn {
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+.rg-a {
+    height: 90vh;
+    width: 450px;
+    padding-top: 80px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    transform: translateX(calc(-150% - 3px));
+    transition: transform 1s;
+    background-color: #fff;
+    box-shadow: 3px 0 6px gray;
+    font-size: 1.5;
+}
+.rg-b.open .rg-a {
+    transform: translateX(0);
+}
+/*---------------------------------------------------------------------------------------------------------------------------*/
+.bimg {
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/01KV.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-content: center;
+    padding: 200px;
+}
+.bimg h2 {
+    margin: 100;
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+}
+.bimg h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    padding-bottom: 30px;
+}
+.bimg p {
+    color: #fff;
+    padding-bottom: 80px;
+}
+.bimg button {
+    /* margin: 10px; */
+    padding: 20px 100px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 50px;
+    font-weight: bold;
+}
+/* name */
+.name {
+    display: flex;
+}
+
+.name p {
+    font-size: 14px;
+    font-weight: bold;
+}
+img {
+    width: 300px;
+    height: 200px;
+}
+.name-top {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+.news-img {
+    width: 360px;
+    height: 200px;
+}
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* footer */
+.footer {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8),rgba(255, 255, 255,0.8)), url(../img/03about.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin-top: 100px;
+}
+.footer h2 {
+    margin: 100;
+    padding-bottom: 30px;
+    font-size: 2rem;
+    color: #000;
+}
+
+.footer p {
+    color: #000;
+    text-align: center;
+    padding: 10px;
+}
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* モーダルウィンドウ */
+.modal-open {
+    padding: 15px 130px;
+    color: #fff;
+    background-color: #000;
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+}
+/* モーダルを開くボタン */
+.modal-open{
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px;
+    height: 60px;
+    border-radius: 50px;
+    color: #fff;
+    background: #000;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    /* translate: -50% -50%; */
+  }
+  
+  /* モーダルと背景の指定 */
+  .modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0,0,0,50%);
+    padding: 40px 20px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+/* モーダルの擬似要素の指定 */
+.modal:before{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-left: -0.2em;
+}
+
+/* クラスが追加された時の指定 */
+.modal.is-active{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* モーダル内側の指定 */
+.modal-container{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* モーダルを閉じるボタンの指定 */
+.modal-close{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+}
+
+/* モーダルのコンテンツ部分の指定 */
+.modal-content{
+    background: #fff;
+    text-align: left;
+    line-height: 1.8;
+    padding: 20px;
+    border-radius: 5%;
+  }
+  
+  /* モーダルのコンテンツ部分のテキストの指定 */
+  .modal-content p{
+    margin: 1em 0;
+  }

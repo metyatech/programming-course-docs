@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>cafe 24020009</title>
+    <!-- 検索エンジンで表示されるサイトの説明文 -->
+    <meta name="description" content="女の子の憧れを形に">
+    <!-- デバイスサイズに合わせる -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,
+300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Philosopher:ital,wght
+@0,400;0,700;1,400;1,700&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!-- Animate.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- slick.css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min-thema.css">
+
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <div id="nav-wrapper" class="nav-wrapper">
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <nav class="sp-nav">
+          <ul>
+            <li><a href="#">TOP</a></li>
+            <li><a href="#info">infomation</a></li>
+          </ul>
+        </nav>
+        <div class="black-bg" id="js-black-bg"></div>
+    </div>
+    
+
+    <div class="gnavi__wrap">
+        <ul class="gnavi__lists">
+            <li class="gnavi__list">
+                <a href="#">menu</a>
+                <ul class="dropdown__lists">
+                    <li class="dropdown__list"><a href="#">テーブル</a></li>
+                    <li class="dropdown__list"><a href="#">ベッド</a></li>
+                    <li class="dropdown__list"><a href="#">照明</a></li>
+                    <li class="dropdown__list"><a href="#">ソファ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="top" class="cover cover-home">
+        <header class="page-header wrapper">
+            </h1>
+
+        </header>
+        <h2 class="page-title font-english wow animate__animated animate__fadeInUp">SIW INTERIOR</h2>
+    </div>
+
+    
+    <section class="menu-list">
+        
+        <h3 class="heading-medium font-english wow animate__animated animate__fadeInUp">pick up</h3>
+        <div class="lineup autoplay">
+            <div class="item">
+                <img src="images/1.png" alt="ソファ">
+            </div>
+            <div class="item">
+                <img src="images/2.png" alt="テーブル">
+            </div>
+            <div class="item">
+                <img src="images/3.png" alt="ベッド">
+            </div>
+            <div class="item">
+                <img src="images/4.png" alt="棚">
+            </div>
+            <div class="item">
+                <img src="images/5.png" alt="照明">
+            </div>
+    </section>
+    <!-- //slickでmenuのスライドを導入 -->
+
+    <section id="info" class="page-footer">
+     <div class="info1">
+        <div class="info-box">
+            <h3 class="heading-medium font-english wow animate__animated animate__fadeInUp">information</h3>
+            <table class="info">
+                <tr>
+                    <th>住所</th>
+                    <td>東京都〇〇-1</td>
+                </tr>
+                <tr>
+                    <th>電話</th>
+                    <td>080-0000-0000</td>
+                </tr>
+                <tr>
+                    <th>営業時間</th>
+                    <td>10:00〜21:00</td>
+                </tr>
+                <tr>
+                    <th>店休日</th>
+                    <td>日曜日</div></div></td>
+                </tr>
+            </table>
+        </div>
+        <div class="openModal"><button class="btn">お問い合わせ</button></div>
+     </div>
+        <section class="modalArea">
+            <div class="modalBg"></div>
+            <div class="modalWrapper">
+                <p>❤︎コメント❤︎</p>
+                <div class="closeModal">×</div>
+            </div>
+        </section>
+    </section>
+           
+        <footer class="copyright">
+            <small>&copy; 24020036 matsumotoyu</small>
+        </footer>
+
+        <!-- スライダー -->
+    <!-- slick.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- wowjs -->
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script>
+        $('.autoplay').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

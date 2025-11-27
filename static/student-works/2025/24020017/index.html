@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24020017_佐藤隼太</title>
+ 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+ 
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+ 
+<body>
+    <header class="header-bar">
+        <div class="ham-a">
+            <button class="ham-button">
+                <span class="ham-icon">
+                    <span class="bar first"></span>
+                    <span class="bar second"></span>
+                    <span class="bar last"></span>
+                </span>
+            </button>
+ 
+            <nav class="ham">
+                <ul class="nav-b">
+                    <li class="hamberger">TOP</li>
+                    <li class="hamberger">menu</li>
+                    <li class="hamberger">news</li>
+                    <li class="hamberger">ネット注文</li>
+                </ul>
+            </nav>
+            <div class="back"></div>
+        </div>
+ 
+        <section class="menu-c">
+ 
+            <section class="menu">
+                <div class="title"><span>Instagram</span></div>
+                <ul class="AAA">
+                    <li class="menber"><a href="https://www.instagram.com/s._satoo/" target="_blank">しゅんたのにぎり屋</a></li>
+                </ul>
+            </section>
+ 
+            <section class="menu">
+                <div class="title"><span>X</span></div>
+                <ul class="BBB">
+                    <li class="menber"><a href="https://x.com/hottomotto_com?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">ほっともっとさん</a></li>
+                </ul>
+        </section>
+
+        <!-- あめみやmodal -->
+        <button class="openModal">会員登録</button>
+        <section class="modalArea">
+            <div class="modalBg"></div>
+            <div class="modalWrapper">
+                <div class="modalContents">
+                    <form action="" class="contact-form"></form>         
+                    <ul>
+                        <li>
+                            <i class="fa fa-user form-icon"></i>
+                            <input class="form-i" type="text" placeholder="名前" required>
+                        </li>
+                        <li>
+                            <i class="fa fa-at form-icon"></i>
+                            <input class="form-i" type="email" placeholder="Eメール" required>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-icon"></i>
+                            <input class="form-i" type="tel" placeholder="電話番号" required>
+                        </li>
+                        <li>
+                            <button class="form-i" id="form-button" type="submit">登録</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="closeModal">
+                    ×
+                </div>
+    </header>
+ 
+    <div class="bg-hero"></div>
+
+    <!-- menu -->
+
+    <section class="works section" id="works">
+        <div class="container">
+          <h2 class="title">menu</h2>
+          <div class="works-list">
+            <a class="works-item" href="works-template.html">
+              <div class="works-img"><img src="image.png" alt="" /></div>
+              <p class="works-name">シャケ弁当</p>
+              <p class="works-info">1200円</p>
+            </a>
+            <a class="works-item" href="works-template.html">
+              <div class="works-img"><img src="image copy.png" alt="" /></div>
+              <p class="works-name">ひじき弁当</p>
+              <p class="works-info">1800円</p>
+            </a>
+            <a class="works-item" href="works-template.html">
+              <div class="works-img"><img src="image copy 2.png" alt="" /></div>
+              <p class="works-name">3色弁当</p>
+              <p class="works-info">1000円</p>
+            </a>
+            <a class="works-item" href="works-template.html">
+              <div class="works-img"><img src="image copy 3.png" alt="" /></div>
+              <p class="works-name">ハンバーグ弁当</p>
+              <p class="works-info">1500円</p>
+            </a>
+            <a class="works-item" href="works-template.html">
+              <div class="works-img"><img src="image copy 4.png" alt="" /></div>
+              <p class="works-name">ミートボール弁当</p>
+              <p class="works-info">1300円</p>
+            </a>
+          </div>
+        </div>
+      </section>
+         <!-- スライダー -->
+         <div class="container">
+            <div class="box-container">
+                <div class="box box-1"></div>
+                <div class="box box-2"></div>
+                <div class="box box-3"></div>
+                <div class="box box-4"></div>
+            </div>
+            <button id="left">&lt;</button>
+            <button id="right">&gt;</button>
+        </div>
+</body>
+</html>

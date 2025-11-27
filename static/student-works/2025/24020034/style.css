@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+/*hannba-ga-*/
+.button{
+    border: none;
+    background-color: initial;
+}
+
+.hum-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hum-icon .bar{
+    width: calc((4px + 8px + 4px + 8px) * sqrt(2));
+    height: 4px;
+    display: block;
+    background-color: #434343;
+    transform-origin: left center;
+    transition: 1s;
+}
+
+.nav-list{
+    list-style: none;
+}
+
+.hum{
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+}
+
+.image{
+    width: 100vw;
+}
+
+.hum-nav{
+    position: fixed;
+    top: 0;
+    padding-top: 50px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateX(-100%);
+    transition: transform 1s;
+}
+
+.open .bar1{
+    transform: rotate(45deg);
+}
+
+.open .bar2{
+    opacity: 0;
+}
+
+.open .bar3{
+    transform: rotate(-45deg);
+}
+
+.open .hum-nav{
+    transform: translateX(0);    
+}
+/*メニュー*/
+.menu{
+    width: 190px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-c{
+    flex: initial;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.title1,.title2,.title3{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.menu-b1,.menu-b2,.menu-b3{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: clip-path 1s;
+    clip-path: inset(0 0 100%);
+    overflow: hidden;
+    top: 80px;
+    list-style: none;
+    background-color: #FFF2C0;
+}
+
+.menu-b1.open,.menu-b2.open,.menu-b3.open{
+    clip-path: inset(0 0 0);
+}
+
+.menu-i{
+    text-align: center;
+    color: #434343;
+    padding: 8px 10px;
+}
+
+.menu-i:hover{
+    background-color: #dcdcdc;
+}
+
+.slider {
+    width: 100vw;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+ 
+.hero {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform .3s;
+}
+ 
+.image {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+ 
+#left1,
+#right1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: #2c2c2c;
+    font-size: 50px;
+    padding: 0 6px;
+    cursor: pointer;
+}
+ 
+#left1 {
+    left: 20px;
+}
+ 
+#right1 {
+    right: 20px;
+}
+ 
+#left1:hover,
+#right1:hover {
+    opacity: .9;
+}
+ 
+.hidden {
+    display: none;
+}
+
+

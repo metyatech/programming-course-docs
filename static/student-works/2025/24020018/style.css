@@ -1,0 +1,396 @@
+
+
+
+
+body 
+    .dotgothic16-regular {
+    
+       font-family: "DotGothic16", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+
+        font-size: 1.25rem;
+      }
+      
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*-------
+ header
+--------*/
+
+.header-bar {
+    height: 80px;
+    border-bottom: solid #2c2c2c 1px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-bar>* {
+    flex: auto;
+}
+
+/* ham */
+.ham-bt {
+    height: 100%;
+    border: none;
+    padding: 10px 10px 10px 20px;
+
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.ham-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ham-icon .bar {
+    width: calc((4px + 8px + 4px + 8px) * sqrt(2));
+    height: 4px;
+
+    display: block;
+    background-color: #434343;
+    transform-origin: left center;
+    transition: 1s;
+}
+
+.ham-a.open .ham-icon .bar.a {
+    transform: rotate(45deg);
+}
+
+.ham-a.open .ham-icon .bar.b {
+    opacity: 0;
+}
+
+.ham-a.open .ham-icon .bar.c {
+    transform: rotate(-45deg);
+}
+
+.ham {
+    height: 100vh;
+    width: 450px;
+    padding-top: 80px;
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    transform: translateX(calc(-100% - 3px));
+    transition: transform 1s;
+    background-color: white;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%);
+    font-size: 1.5rem;
+}
+
+.ham-a.open .ham {
+    transform: translateX(0);
+}
+
+.nav-b {
+    margin: 0;
+    padding: 0 20px;
+
+    list-style: none;
+}
+
+.nav-name{
+    padding-top: 25px;
+
+    border-bottom: solid #E9E9E9 1px;
+    cursor: pointer;
+}
+
+.nav-name:hover {
+    background-color: #E9E9E9;
+}
+
+.back {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.ham-c.open .back {
+    pointer-events: auto;
+    opacity: 25%;
+}
+
+
+
+/* menu */
+.menu {
+    width: 190px;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-c {
+    flex: initial;
+
+    display: flex;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+.menu-b {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    transition: clip-path 0.5s;
+    clip-path: inset(0 0 100%);
+    overflow: hidden;
+    position: absolute;
+    top: 80px;
+    list-style: none;
+    background-color: #3f3f3f;
+}
+
+.menu-b.open {
+    clip-path: inset(0 0 0);
+}
+
+.menu-name {
+    text-align: center;
+    color: white;
+
+    padding: 8px 10px;
+}
+
+.menu-name:hover {
+    background-color: #1b1b1b;
+}
+
+/*-------
+ main
+--------*/
+
+/* hero */
+.hero-c {
+    height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero {
+    background-image: url("./https___jp.hypebeast.com_files_2024_10_23_hm-20-years-of-iconic-guest-designer-collaborations-re-release-info-01.avif");
+    background-size: cover;
+    background-position-x: 35%;
+    flex: auto;
+}
+
+.hero-side {
+    width: min-content;
+    padding: 0 40px;
+
+    font-size: 50px;
+    display: grid;
+    place-items: center;
+}
+
+.hero-name{
+  text-align: center;
+  font-size: 50px;
+  margin: 10px;
+}
+
+.logo {
+  width: 210px;
+}
+
+label{
+    display: block;
+    font:px;
+}
+input,label,button{
+    width: 500px;
+    height: 50px;
+    margin: 0.4rem 0;
+    justify-content: center;
+    margin: 0 auto;
+    display:flex;
+    justify-content: center;
+}
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+
+}
+
+body {
+    font-family: DotGothic16, sans-serif;
+  }
+  
+  .search-target {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+.photos {
+    font-family: "Dela Gothic One", sans-serif;
+    list-style-type: none;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.photos li {
+    display: inline-box;
+    float: left;
+    width: 300px;
+    margin: 5px;
+    padding: 0px;
+}
+  .photos li img {
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 50px;
+    padding: 0px;
+
+}
+
+.name{
+    text-align: center;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.Ranking{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.flex-item{
+    text-align: center;
+    width: 50%;
+    height: 50%;
+}
+
+
+  body.open{
+    overflow-y:hidden;
+  }
+  
+  /* ボタン */
+  .button {
+    background: gray;
+    font-family: "DotGothic16", serif;
+    color: #fff;
+    padding: 0 2em;
+    border: 0;
+    width: 500px;
+    height: 80px;
+    font-size: 40px;
+    margin-top: 100px;
+    border-radius: 5px;
+    font-weight: 900;
+    position: relative;
+  }
+  
+  .button:hover {
+    background: lightcoral;
+    cursor: pointer;
+  }
+  
+  /* モーダル */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    height:100dvh;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    
+  }
+  .modal-inner{
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .modal-content {
+    background-color: #f4f4f4;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+  }
+  
+  @keyframes modalopen {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+  
+  .modal-header h1 {
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .modal-header {
+    background: gray;
+    padding: 3px 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modalClose {
+    font-size: 2rem;
+  }
+  
+  .modalClose:hover {
+    cursor: pointer;
+  }
+  
+  .modal-body {
+    padding: 10px 20px;
+    color: black;
+  }
+  
+  .buffer{
+    height:10vh;
+  }
+
+  .tel{
+    background-color: rgba(0,0,0,0.17);
+    color: #fff;;
+  }
+
+  
