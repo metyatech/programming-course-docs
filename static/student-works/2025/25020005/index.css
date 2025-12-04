@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* 初期設定 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    display: flex;
+    padding: 80px 140px;
+}
+
+.text{
+     writing-mode: vertical-rl;
+}
+
+

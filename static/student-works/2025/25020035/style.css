@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #1B222A;
+}
+
+.logo img {
+    width: 65px;
+    height: 80px;
+    position: absolute;
+    top: 34px;
+    left: 40px;
+}
+
+.btn {
+    width: 50px;
+    height: 5px;
+    background-color: #fff;
+    margin: 12px;
+}
+
+.oya-btn {
+    background: none;
+    border: none;
+}
