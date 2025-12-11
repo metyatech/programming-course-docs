@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eternal Weddings - ウェディングホール</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- ヒーロー -->
     <section class="hero">
-        <div class="hero-left">
-            <div class="hero-logo">
-                <h2 class="brand-name">Eternal<br><span class="infinity">∞</span><br>Weddings</h2>
+        <div class="heder">
+            <div class="heder-logo">
+                <h2><img src="images/image 12.png" alt=""></h2>
             </div>
-        </div>
-        <div class="hero-right">
             <nav class="hero-nav">
                 <a href="#concept">concept</a>
                 <a href="#chapel">chapel</a>
@@ -25,10 +25,13 @@
                 <a href="#access">Access</a>
             </nav>
             <button class="cta-button">見学予約</button>
-            <div class="hero-content">
-                <h1 class="hero-title">start yourself<br>from here</h1>
-                <p class="hero-subtitle">ここから始まる、ふたりの物語</p>
-            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">start yourself
+                <br>from here
+            </h1>
+            <p class="hero-subtitle">ここから始まる、ふたりの物語</p>
+            <h2 class="hero-btn">ブライダル予約</h2>    
         </div>
     </section>
 
@@ -43,7 +46,7 @@
                     <p>ゲストの皆様との素敵な思い出作りをお手伝いいたします。</p>
                 </div>
                 <div class="concept-image">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
+                    <img src="images/Mask group.png" alt="">
                 </div>
             </div>
         </div>
@@ -54,18 +57,32 @@
         <div class="section-container">
             <h2 class="section-title">Chapel</h2>
             <p class="section-description">光に満ちた神聖なチャペルで、人生最高の瞬間を迎えましょう。</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
+            <div class="chapel-container">
+                <!-- 拡大表示エリア -->
+                <div class="chapel-display">
+                    <div class="chapel-main-image"
+                        style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
                 </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
-                </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
-                </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
+                <!-- 横スクロールギャラリー -->
+                <div class="chapel-scroll-wrapper">
+                    <div class="chapel-scroll-gallery">
+                        <div class="chapel-scroll-item active" data-index="0">
+                            <div class="chapel-scroll-image"
+                                style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
+                        </div>
+                        <div class="chapel-scroll-item" data-index="1">
+                            <div class="chapel-scroll-image"
+                                style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
+                        </div>
+                        <div class="chapel-scroll-item" data-index="2">
+                            <div class="chapel-scroll-image"
+                                style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
+                        </div>
+                        <div class="chapel-scroll-item" data-index="3">
+                            <div class="chapel-scroll-image"
+                                style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,16 +95,20 @@
             <p class="section-description">ゲストとの時間を最高の雰囲気で過ごしていただけます。</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #6b4423 0%, #9d6f47 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #6b4423 0%, #9d6f47 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #3d3d2d 0%, #5a5a47 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #3d3d2d 0%, #5a5a47 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
                 </div>
             </div>
         </div>
@@ -100,19 +121,24 @@
             <p class="section-description">最高の味わいで、特別な日をさらに華やかに彩ります。</p>
             <div class="gallery-grid gallery-grid-5">
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #e8d4c4 0%, #d4b8a8 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #e8d4c4 0%, #d4b8a8 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #f5dcd0 0%, #e8c4b8 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #f5dcd0 0%, #e8c4b8 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #d4b8a8 0%, #c4a898 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #d4b8a8 0%, #c4a898 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #e8d4c4 0%, #d4b8a8 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #e8d4c4 0%, #d4b8a8 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #f5dcd0 0%, #e8c4b8 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #f5dcd0 0%, #e8c4b8 100%);"></div>
                 </div>
             </div>
         </div>
@@ -125,16 +151,20 @@
             <p class="section-description">花嫁様の美しさを引き立てるドレスをご用意しています。</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #f0e8e0 0%, #e8dcd0 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #f0e8e0 0%, #e8dcd0 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #fafaf5 0%, #f0f0e8 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #fafaf5 0%, #f0f0e8 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #e8e8e0 0%, #d8d8d0 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #e8e8e0 0%, #d8d8d0 100%);"></div>
                 </div>
             </div>
         </div>
@@ -147,13 +177,16 @@
             <p class="section-description">定期的にブライダルフェアを開催しています。</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
                 </div>
             </div>
         </div>
@@ -165,40 +198,52 @@
             <h2 class="section-title">Photo Gallery</h2>
             <div class="gallery-grid gallery-grid-4">
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #6b4423 0%, #9d6f47 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #6b4423 0%, #9d6f47 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #3d3d2d 0%, #5a5a47 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #3d3d2d 0%, #5a5a47 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #4a3728 0%, #6b5345 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #6b4423 0%, #9d6f47 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #6b4423 0%, #9d6f47 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #3d3d2d 0%, #5a5a47 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #3d3d2d 0%, #5a5a47 100%);"></div>
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);"></div>
                 </div>
             </div>
         </div>
@@ -210,14 +255,16 @@
             <h2 class="section-title">Access</h2>
             <div class="access-content">
                 <div class="map-placeholder">
-                    <div class="placeholder-image" style="background: linear-gradient(135deg, #e0e0d0 0%, #c0c0b0 100%); height: 400px;"></div>
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #e0e0d0 0%, #c0c0b0 100%); height: 400px;"></div>
                 </div>
                 <div class="access-info">
                     <h3>Eternal Weddings</h3>
                     <p><strong>住所：</strong>東京都渋谷区道玄坂1-2-3<br>
-                    <strong>電話：</strong>0120-123-456<br>
-                    <strong>営業時間：</strong>10:00 - 19:00<br>
-                    <strong>定休日：</strong>火曜日</p>
+                        <strong>電話：</strong>0120-123-456<br>
+                        <strong>営業時間：</strong>10:00 - 19:00<br>
+                        <strong>定休日：</strong>火曜日
+                    </p>
                     <p class="access-directions">
                         <strong>アクセス：</strong>
                         渋谷駅から徒歩5分、または半蔵門線渋谷駅A7出口より徒歩3分
@@ -270,4 +317,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

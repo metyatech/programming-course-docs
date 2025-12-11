@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eve Discography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="images/png" href="images/Eve丸アイコン.png">
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/slick.css">
+    <link rel="stylesheet" href="CSS/slick-theme.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="JS/slick.min.js"></script>
+
+    <script src="JS/index.js" defer></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="images/Eveアイコン.png" alt="">
+        <!-- 各ページへのナビゲーション -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">TOP</a>
+                </li>
+                <li>
+                    <a href="Discography.html" class="active">Discography</a>
+                </li>
+                <li>
+                    <a href="live.html">Live</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cd">
+            <h1 id="title">Discography</h1>
+            <!-- シングルとアルバムの切り替え -->
+            <nav>
+                <ul>
+                    <li class="tab-single active">Single</li>
+                    <li class="tab-album">Album</li>
+
+                </ul>
+            </nav>
+            <!-- アルバム一覧 -->
+            <div id="album" class="none">
+                <div>
+                    <a href="https://evemaru.booth.pm/items/3520672" target="_blank"><img
+                            src="images/img_wonderword.jpg" alt=""></a>
+                    <p>1st Mini Album</p>
+                    <p class="title">Wonder World</p>
+                </div>
+                <div>
+                    <a href="https://evemaru.booth.pm/items/3520703" target="_blank"><img
+                            src="images/img_roundrobin.jpg" alt=""></a>
+                    <p>2nd Album</p>
+                    <p class="title">Round Robin</p>
+                </div>
+                <div>
+                    <a href="https://amzn.asia/d/6SzKcAQ" target="_blank"><img src="images/img_officialnumber.jpg"
+                            alt=""></a>
+                    <p>3rd Album</p>
+                    <p class="title">OFFICIAL NUMBER</p>
+                </div>
+                <div>
+                    <a href="https://amzn.asia/d/dBotInh" target="_blank"><img src="images/img_bunka.jpg" alt=""></a>
+                    <p>4th Album</p>
+                    <p class="title">文化</p>
+                </div>
+                <div>
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-86665" target="_blank"><img
+                            src="images/img_otogi.jpg" alt=""></a>
+                    <p>Major 1st Album</p>
+                    <p class="title">おとぎ</p>
+                </div>
+                <div>
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-86703" target="_blank"><img
+                            src="images/img_smile.jpg" alt=""></a>
+                    <p>Major 2nd Album</p>
+                    <p class="title">Smile</p>
+                </div>
+                <div>
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-86830" target="_blank"><img
+                            src="images/img_kaizin.jpg" alt=""></a>
+                    <p>Major 3rd Album</p>
+                    <p class="title">廻人</p>
+                </div>
+                <div>
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-81108" target="_blank"><img
+                            src="images/img_underblue.jpg" alt=""></a>
+                    <p>Major 4th Album</p>
+                    <p class="title">Under Blue</p>
+                </div>
+            </div>
+
+            <!-- シングル一覧 -->
+            <div id="single" class="look">
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/69vckdXULKdHOmXKFwh4A8?si=806342023e0a4d41" target="_blank"><img src="images/img_underdog.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">Under Dog</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/1oPkA8CBVQ2vQIEjiFcIuK?si=46967e92c53e48c9" target="_blank"><img src="images/img_iolite.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">アイオライト</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/4JlytQeCEWu0W3mQcEA9Ta?si=426e320ca9f8482b" target="_blank"><img src="images/img_ghostavenue.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">ゴーストアベニュー</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/0VQpxAQz4SneOFhwJ8I8zQ?si=6d314ac72e3b4869" target="_blank"><img src="images/img_feellike.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">feel like</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/1VX0XkhIHTO2CuZo1FbYp6?si=c2b88e0ed4494077" target="_blank"><img src="images/img_teenageblue.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">ティーンエイジブルー</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/7mUHehTb9L5DFVkn4DgGkt?si=efc3418f63344b40" target="_blank"><img src="images/img_makimonogatari.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">巻物語</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/1ogO3SlbAhuba46ecZ05v8?si=764a08cbc7c14067" target="_blank"><img src="images/img_sweetmemory.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">スイートメモリー</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/4ag6ahTK26pedrFCxKF6BA?si=bf0d4d7adde64edc" target="_blank"><img src="images/img_flatwoods.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">フラットウッズのモンスターみたいに</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/1axqW3tCZ2nBbDBCY4moZn?si=31e36f05eb9b4597" target="_blank"><img src="images/img_gloriousday.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">Glorious Day</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/2bjMRVAaaIwZVN2MtJCvok?si=cfd3a7fba11749ce" target="_blank"><img src="images/img_insomnia.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">インソムニア</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/3zauMgunmQhvK9ZlsaZT4n?si=70ff86c868e84fab" target="_blank"><img src="images/img_pray.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">pray</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/6wnPWVgHI1e6BquACh2Ue5?si=30544c8f83bf4a1b" target="_blank"><img src="images/img_tohiko.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">逃避行</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/4yeLvVC6sSxa4L0apcq30s?si=7cc1c981ea774101" target="_blank"><img src="images/img_hanaarashi.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">花嵐</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/793HiNkAcZTe1hi8rhYXg2?si=80d5fe3960ab4286" target="_blank"><img src="images/img_boukenroku.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">冒険録</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/5GTccPE0uhQz7nN0R1LN0Q?si=914fda783c084553" target="_blank"><img src="images/img_bokurano.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">ぼくらの</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/05UFNH7Htp7Odg9XGhxtxQ?si=76cea0f9cc2b4021" target="_blank"><img src="images/img_fightsong.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">ファイトソング</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/4CaMTx37T9RiHTq7cMeFji?si=d1ebeb59d4114a4e" target="_blank"><img src="images/img_shirayuki.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">白雪</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/5i260ouzpjVEJxDyFTMjA9?si=b7d8684c479a45a5" target="_blank"><img src="images/img_bubble.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">Bubble feat.Uta</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/6BxPsHJtz8jTEDARrYUSnv?si=09dd52b655d9418a" target="_blank"><img src="images/img_avant.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">アヴァン</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/7znz9Gm1qXs5wOXwOGQqZR?si=5f0fd13d430547fb" target="_blank"><img src="images/img_aisai.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">藍才</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/7cFfOE0R0wL1BJiwDFdcVW?si=3856169e297a4947" target="_blank"><img src="images/img_yoruhahonoka.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">夜は仄か</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/65LUiqfnSGLbOrUnAzXfpW?si=766af054761e4f02" target="_blank"><img src="images/img_heikousen.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">平行線</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/4UbNbFLadY8fOb23oWJuGt?si=86c33a1cd93245e4" target="_blank"><img src="images/img_aonowaltz.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">蒼のワルツ</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/2FBqRp1do5VgpiSDk2RAKh?si=e6f6746b97d847d8" target="_blank"><img src="images/img_shinkai.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">心海</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/1MQ6QI54h40WXsQLU1FTGt?si=545583688e5c4c57" target="_blank"><img src="images/img_yakusoku.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">約束</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/2gSkvrwfCXCgqeugzezn97?si=625aea0975114bf7" target="_blank"><img src="images/img_kaikaikitan.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">廻廻奇譚</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/30bvAFA6MpijODXxvK9rP2?si=19c41e451b60437f" target="_blank"><img src="images/img_hakugin.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">白銀</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/0Nn9gfz60CyzqnFXiAphMs?si=69c88b0cfb13419f" target="_blank"><img src="images/img_raisondetre.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">レーゾンデートル</p>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/intl-ja/track/6aW8fq5lGlhoZxhLyC7JuL?si=111004a08a2245f9" target="_blank"><img src="images/img_yamiyo.jpg" alt=""></a>
+                    <p>Digital Single</p>
+                    <p class="title">闇夜</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="end">
+            <small><p>25020034 土師快斗</p></small>
+        </div>
+    </footer>
+</body>
+
+</html>

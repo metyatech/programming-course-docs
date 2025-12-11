@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ポートフォリオ「昼想夜夢」</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -28,29 +31,91 @@
     <!-- 紹介 -->
     <section class="syokai">
         <img src="image/仮2.png" alt="人物紹介">
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/私.png" alt="">
+                    <h2>私</h2>
+                    <p>
+                        感情の起伏が激しい<br>
+                        憧れには近づきたい<br>
+                        でも◻︎◻︎ができない
+                    </p>
+                </div>
+
+                <div class="swiper-slide"><img src="image/君.png" alt="">
+                    <h2>君</h2>
+                    <p>
+                        夢<br>
+                        笑顔がかわいい<br>
+                        憧れを煮詰めた存在
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+
+
     </section>
 
     <!-- リスト -->
-     <ul class="list">
-        <li>
-            <img src="image/仮.png" alt="">
-        </li>
-     </ul>
-     <ul>
-        <li>
-            <img src="image/仮.png" alt="">
-        </li>
-     </ul>
-     <ul>
-        <li>
-            <img src="image/仮.png" alt="">
-        </li>
-     </ul>
-     <ul>
-        <li>
-            <img src="image/仮.png" alt="">
-        </li>
-     </ul>
+    <section class="list">
+        <ul>
+            <li>
+                <img src="image/仮.png" alt="">
+            </li>
+            <li>
+                <img src="image/仮3.png" alt="">
+            </li>
+            <li>
+                <img src="image/仮4.png" alt="">
+            </li>
+            <li>
+                <img src="image/仮5.png" alt="">
+            </li>
+        </ul>
+    </section>
+
+    <!-- 終わり -->
+    <section class="fin">
+        <img src="image/ポ６.png" alt="終わり">
+
+        <p>それでは、<br>
+            夢の続きで出会えませんように
+        </p>
+    </section>
+
+    <!-- 自己紹介 -->
+    <section class="ziko">
+        <h2>小出望翔</h2>
+        <p>
+            私の最大の強みは、目標達成に向けて時間を戦略的にマネジメントする「実行力」です。<br>
+            私はクリエイター専門の道を選びませんでしたが、心に抱く強い思いや感情を、作品として昇華させたいという切なる目標がありました。<br>
+            この抑えがたい創作への衝動こそが、私を突き動かす原動力です。<br>
+            特に、私は「『自分自身』の感情と葛藤を、創作した『代理キャラクター』との関係性を通して描く」という、深く内省的なテーマに取り組んでいます。<br>
+            この創作活動は、自己理解を深めると同時に、表現の限界を超えたいという強い探求心が存在します。<br>
+            この目標を達成するため、私は学校やアルバイトといった日常のスケジュールを分析し、すべての隙間時間を、創作のための時間と定めました。<br>
+            その時間に活動し継続的に作品制作を積み重ねることで、確かなアウトプットを維持しています。<br>
+            さらに表現の幅を広げる挑戦として、最近は独学で動画編集にも挑戦し、新たな創作表現に強い意欲を持って取り組んでいます。<br>
+            限られた環境下で、熱意と独自のテーマを具体的な成果へと変えてきたこの徹底した行動力こそが、私の可能性を証明します。<br>
+            実際の業務ではこれまでの創作経験を通じて得た知見を基盤とし、キャラクターグッズやSNS広告のデザイン業務に貢献したいと考えています。<br>
+            特に、自分のアイデアを制作物に活かし、世の中に新しい驚きを提供したい。<br>
+            そして、そのデザインの力で、このエンタメ業界を盛り上げていくという夢が私には存在します。<br>
+            常に最新のデザイン動向を学び、日々の業務を通してデザインのスキルアップを目指していきたい所存です。
+        </p>
+        <h3>自己スキル</h3>
+        <p class="center">Adobe Illustrator、Adobe Photoshop、Figum、Word、 Excel、PowerPoint、HTML、CSS
+        </p>
+    </section>
+
+    <!-- 公式X -->
+    <div class="x"><a href="https://x.com/?lang=ja">公式X (旧Twitter)
+        </a></div>
+
+    <!-- ボタン -->
+    <div class="btn">TOPへ戻る</div>
 
     <!-- フッター -->
     <footer>

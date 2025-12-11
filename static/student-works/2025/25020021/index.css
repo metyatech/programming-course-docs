@@ -1,37 +1,37 @@
-body{
-background-color: #FFF0F5;;
+* {
+    box-sizing: border-box;
 }
-header{
-    height: 800px;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
-.line{
-    width: 32px;
-    height: 4px;
-    background-color: #666;
+
+body {
+    background-color: #FFF;
+
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
     display: block;
-}
-.ham-icon{
-    display: flex;
-    gap: 8px;
-    flex-direction: column;
-}
-.ham-btn{
-    background-color: transparent;
-    border: none;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
+    padding: 30px;
+    margin-top: 40px;
 }
 
-body{
-    margin: 0 ;
-}
-
-    
-    .box{
-        position: fixed;
+.box {
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background-color: #fff;
-    width: 1800px;
     height: 70px;
 }

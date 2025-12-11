@@ -22,71 +22,40 @@ body {
     display: flex;
     position: relative;
     margin-top: 0;
-}
-
-.hero-left {
-    flex: 0 0 25%;
-    background: linear-gradient(to bottom, #000000 0%, #1a0a00 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-left::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
-}
-
-.hero-logo {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #d4a574;
-}
-
-.brand-name {
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    line-height: 1.2;
-    font-style: italic;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.infinity {
-    font-size: 2rem;
-    display: block;
-    margin: 0.5rem 0;
-}
-
-.hero-right {
-    flex: 1;
-    background: url('images/Grop20.png') center/cover no-repeat;
-    display: flex;
+    background-image: url('images/Group 20.png');
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 3rem;
     position: relative;
     overflow: hidden;
+    padding-top: 100px;
 }
 
-.hero-right::before {
-    content: '';
-    position: absolute;
+.heder {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 3rem;
+    z-index: 1000;
+    gap: 2rem;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+
+.heder.scrolled {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.heder-logo h2 img {
+    height: 200px;
 }
 
 .hero-nav {
@@ -133,7 +102,9 @@ body {
 
 .hero-content {
     color: white;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 20%;
     z-index: 2;
     flex: 1;
     display: flex;
@@ -158,11 +129,19 @@ body {
     margin-bottom: 2rem;
 }
 
+.hero-content h2{
+    width: 200px;
+    height: 40px;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    background-color: goldenrod;
+}
+
 /* ========== セクション共通 ========== */
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
 }
 
 .section-title {
@@ -185,23 +164,49 @@ body {
 
 /* ========== Concept ========== */
 .concept {
-    background: white;
-    padding: 4rem 2rem;
+    background-color:black;
+    color: white;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.concept .section-title {
+    color: white;
+    z-index: 10;
+    /* 見出しを上に寄せる（必要に応じて値を調整） */
+    margin-top: -2.5rem;
+    position: relative;
 }
 
+.concept .section-description {
+    color: #e0e0e0;
+}
+.concept .section-container {
+    padding: 0;
+}
 .concept-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .concept-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: #555;
+    color: white;
+    order: -1;
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 8px;
+    z-index: 10;
 }
 
 .concept-text p {
@@ -210,16 +215,28 @@ body {
 }
 
 .concept-image {
-    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    width: 1200px;
+    height: 600px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 /* ========== Chapel ========== */
 .chapel {
     background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);
     color: white;
+    min-height: 900px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .chapel .section-title {
@@ -228,6 +245,91 @@ body {
 
 .chapel .section-description {
     color: #e0e0e0;
+}
+
+.chapel-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 0 auto;
+}
+
+.chapel-display {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.chapel-main-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+.chapel-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0;
+}
+
+.chapel-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.chapel-scroll-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.chapel-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+.chapel-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.chapel-scroll-gallery {
+    display: flex;
+    gap: 1rem;
+    min-width: min-content;
+    padding: 0.5rem 0;
+}
+
+.chapel-scroll-item {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chapel-scroll-item:hover {
+    transform: scale(1.05);
+}
+
+.chapel-scroll-item.active {
+    border-color: #d4a574;
+    transform: scale(1.08);
+}
+
+.chapel-scroll-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 /* ========== Party ========== */

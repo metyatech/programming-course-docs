@@ -1,0 +1,221 @@
+/* 全体 */
+body {
+  margin: 0;
+  background-color: #efefef;
+  color: #111;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ヘッダー*/
+.site-header {
+  background-color: #efefef;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand img {
+  height: 38px;
+  width: auto;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.icon,
+.menu-btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.18); 
+  background-color: transparent;
+  transition: background-color .2s ease, transform .2s ease; 
+}
+
+
+.ham-btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: none;                     
+  background-color: transparent;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.menu-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.icon:hover,
+.menu-btn:hover,
+.ham-btn:hover {                 
+  background-color: rgba(0,0,0,.06);
+  transform: translateY(-1px);
+}
+
+/* ハンバーガーメニュー（三本線） */
+.ham-icon{
+  position: relative;
+  width: 24px;
+  height: 18px;
+  display: inline-block;
+}
+
+.ham-icon .line{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background-color: #111; 
+  transition:
+    transform .25s ease,
+    top .25s ease,
+    bottom .25s ease,
+    opacity .2s ease;
+}
+
+.ham-icon .top{
+  top: 0;
+}
+
+.ham-icon .middle{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ham-icon .bottom{
+  bottom: 0;
+}
+
+.ham-btn.is-open .top{
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ham-btn.is-open .middle{
+  opacity: 0;
+}
+
+.ham-btn.is-open .bottom{
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+
+
+/* セクション */
+.section-title {
+  margin: 18px 0 12px;
+  font-size: 22px;
+}
+
+/* NEWS */
+.news-grid {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.news-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.news-photo {
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, .15);
+}
+
+/* 製品紹介 */
+.product-grid {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-title {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.center {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: #5c3d31;
+  color: #fff;
+  border-radius: 999px;
+  transition: opacity .2s ease;
+}
+
+.btn:hover {
+  opacity: .85;
+}
+
+/* フッター */
+.site-footer {
+  margin-top: 22px;
+  background-color: #5c3d31;
+  color: #fff;
+  padding: 22px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

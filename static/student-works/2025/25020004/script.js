@@ -29,14 +29,33 @@ document.querySelector('.contact-form form').addEventListener('submit', function
 // ========== スクロール時のナビゲーション背景 ========== 
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(75, 55, 40, 0.98)';
-        navbar.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.background = 'rgba(75, 55, 40, 0.95)';
-        navbar.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+    const header = document.querySelector('.heder');
+    const heroHeight = document.querySelector('.hero').offsetHeight;
+    const logo = document.querySelector('.heder-logo h2 img');
+    
+    // 既存のナビゲーション背景処理
+    if (navbar) {
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(75, 55, 40, 0.98)';
+            navbar.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
+        } else {
+            navbar.style.background = 'rgba(75, 55, 40, 0.95)';
+            navbar.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+        }
+    }
+    
+    // ヘッダーのぼかし効果とロゴサイズ変更（ヒーロー高さを超えたら適用）
+    if (header && logo) {
+        if (window.scrollY > heroHeight - 100) {
+            header.classList.add('scrolled');
+            logo.style.height = '60px';
+        } else {
+            header.classList.remove('scrolled');
+            logo.style.height = '200px';
+        }
     }
 });
+            header.classList.remove('scrolled');
 
 // ========== 画像の遅延読み込み効果 ========== 
 const observerOptions = {
@@ -139,4 +158,42 @@ document.querySelector('.logo').addEventListener('click', function() {
 // ========== 初期化 ========== 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('ウェディングサイトが読み込まれました。');
+    
+    // ========== Chapel 画像ギャラリー機能 ==========
+    const chapelItems = document.querySelectorAll('.chapel-scroll-item');
+    const mainImage = document.querySelector('.chapel-main-image');
+    
+    // 最初の画像を背景グラデーションで設定
+    const firstItem = chapelItems[0];
+    const firstItemStyle = firstItem.querySelector('.chapel-scroll-image').getAttribute('style');
+    if (firstItemStyle) {
+        mainImage.setAttribute('style', firstItemStyle);
+    }
+    
+    // 各スクロール項目にクリックリスナーを設定
+    chapelItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // 前のactiveを削除
+            chapelItems.forEach(i => i.classList.remove('active'));
+            
+            // 新しいactiveを追加
+            this.classList.add('active');
+            
+            // メイン画像を更新
+            const scrollImage = this.querySelector('.chapel-scroll-image');
+            const style = scrollImage.getAttribute('style');
+            if (style) {
+                mainImage.setAttribute('style', style);
+            }
+            
+            // スムーズなスクロール位置調整（選択アイテムを中央に）
+            const wrapper = document.querySelector('.chapel-scroll-wrapper');
+            const itemLeft = item.offsetLeft;
+            const itemWidth = item.offsetWidth;
+            const wrapperWidth = wrapper.clientWidth;
+            
+            wrapper.scrollLeft = itemLeft - (wrapperWidth - itemWidth) / 2;
+        });
+    });
 });
+

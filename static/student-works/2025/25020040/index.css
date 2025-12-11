@@ -4,27 +4,101 @@
     box-sizing: border-box;
 }
 
-.title {
-    font-size: 30px;
+body {
+    background-color: #006341;
+}
+
+/* ヘッダー */
+
+.top {
+    width: 100%;
+    height: 90px;
+    background-color: #006341;
+    display: flex;
+    position: relative;
+}
+
+.top img {
+    width: 10vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav ul {
-    list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    gap: 100px;
-    padding: 20px;
+    list-style-type: none;
+    gap: 40px;
+    position: absolute;
+    top: 25px;
+    right: 100px;
 }
 
 .nav li {
     font-size: 20px;
 }
 
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Inknut Antiqua", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* キービジュアル */
+
 .keyvisual {
     width: 100%;
     height: 100vh;
-    background-image: url(img/bride01.jpg);
+    background-image: url(img/47311964e9d711b1cb396bc194587cbb.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+}
+
+
+.keyvisual h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 400;
+    font-size: 95px;
+    letter-spacing: 3px;
+    color: #fff;
+    position: absolute;
+    bottom: 25px;
+    right: 100px;
+}
+
+/* ミセスの紹介 */
+
+#shokai {
+    width: 1300px;
+    height: 450px;
+    background-color: #01442D;
+    margin: 120px auto;
+}
+
+#shokai h2 {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #FFD700;
+    text-align: center;
+    padding: 40px;
+}
+
+#shokai p {
+    color: #fff;
+    text-align: center;
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+/* 最新情報 */
+
+#joho h2 {
+    color: #69E65B;
+    text-align: center;
 }

@@ -1,3 +1,5 @@
+// KVとアルバムのスクロール設定
+
 $('.kv').slick({
     autoplay: true,
     autoplaySpeed: 2500,
@@ -8,47 +10,187 @@ $('.album').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 1500,
     arrows: false,
 });
 
-// jQueryで全てのアルバムにクリックイベントを設定
-$(".albums.Wonder-World img").on("click", function() {
-    $(".detail > div").not(".ww-detail").slideUp();
-    $(".ww-detail").slideToggle();
+
+// ---------------------------
+// nav 内のリンクだけ active を付ける
+// ---------------------------
+$(function () {
+    const path = location.pathname;
+
+    $("header nav a").each(function () {
+        const href = $(this).attr("href");
+
+        // 空リンクは除外（Live や sample の空 href 防止）
+        if (!href || href === "#") return;
+
+        // 現在のページとリンク先が一致したら active を付ける
+        if (path.includes(href)) {
+            $("header nav a").removeClass("active");
+            $(this).addClass("active");
+        }
+    });
 });
 
-$(".albums.Round-Robin img").on("click", function() {
-    $(".detail > div").not(".rr-detail").slideUp();
-    $(".rr-detail").slideToggle();
+
+
+//アルバム収録曲の表示 / 非表示 
+
+function checkAllClosed() {
+    if ($(".detail > div:visible").length === 0) {
+        $(".detail").removeClass("show");
+    }
+}
+
+$(".albums img").on("click", function () {
+    const target = $(this).data("target");
+
+    $(".detail > div").not("." + target).slideUp(checkAllClosed);
+    $("." + target).slideToggle(checkAllClosed);
+
+    $(".detail").addClass("show");
 });
 
-$(".albums.OFFICIAL-NUMBER img").on("click", function() {
-    $(".detail > div").not(".on-detail").slideUp();
-    $(".on-detail").slideToggle();
+
+// シングル / アルバム　切り替え
+
+$(".tab-single").on("click", function () {
+
+    // 表示切り替え
+    $("#album").removeClass("look").addClass("none");
+    $("#single").removeClass("none").addClass("look");
+
+    // active 切り替え
+    $(".tab-single").addClass("active").addClass("bc");
+    $(".tab-album").removeClass("active").removeClass("bc");
+
 });
 
-$(".albums.bunka img").on("click", function() {
-    $(".detail > div").not(".bunka-detail").slideUp();
-    $(".bunka-detail").slideToggle();
+
+$(".tab-album").on("click", function () {
+
+    // 表示切り替え
+    $("#single").removeClass("look").addClass("none");
+    $("#album").removeClass("none").addClass("look");
+
+    // active 切り替え
+    $(".tab-album").addClass("active").addClass("bc");
+    $(".tab-single").removeClass("active").removeClass("bc");
 });
 
-$(".albums.otogi img").on("click", function() {
-    $(".detail > div").not(".otogi-detail").slideUp();
-    $(".otogi-detail").slideToggle();
+
+
+// Live 系ページならリンク無効化
+if (location.pathname.includes("live")) {
+    const liveLink = document.querySelector('nav a[href="live.html"]');
+    if (liveLink) {
+        liveLink.classList.add("no-click");
+        liveLink.removeAttribute("href"); // 完全に無効化
+    }
+}
+
+
+document.querySelectorAll('h1').forEach(h1 => {
+
+    // 文字を span に包む
+    let text = h1.textContent;
+    h1.innerHTML = `<span>${text}</span>`;
+    let span = h1.querySelector("span");
+
+    // hover でフォント変更
+    span.addEventListener("mouseenter", () => {
+        span.classList.add("fade");
+        setTimeout(() => {
+            span.style.fontFamily = '"Zen Old Mincho", serif';
+            span.classList.remove("fade");
+        }, 300);
+    });
+
+    span.addEventListener("mouseleave", () => {
+        span.classList.add("fade");
+        setTimeout(() => {
+            span.style.fontFamily = 'Evefont';
+            span.classList.remove("fade");
+        }, 300);
+    });
+
 });
 
-$(".albums.Smile img").on("click", function() {
-    $(".detail > div").not(".smile-detail").slideUp();
-    $(".smile-detail").slideToggle();
+
+document.querySelectorAll('h2').forEach(h2 => {
+
+    // 文字を span に包む（自動処理）
+    let text = h2.textContent;
+    h2.innerHTML = `<span>${text}</span>`;
+    let span = h2.querySelector("span");
+
+    span.addEventListener("mouseenter", () => {
+        span.classList.add("fade");
+        setTimeout(() => {
+            span.style.fontFamily = '"Zen Old Mincho", serif';
+            span.classList.remove("fade");
+        }, 300);
+    });
+
+    span.addEventListener("mouseleave", () => {
+        span.classList.add("fade");
+        setTimeout(() => {
+            span.style.fontFamily = 'Evefont';
+            span.classList.remove("fade");
+        }, 300);
+    });
+
 });
 
-$(".albums.kaizin img").on("click", function() {
-    $(".detail > div").not(".kaizin-detail").slideUp();
-    $(".kaizin-detail").slideToggle();
+document.querySelectorAll('h3').forEach(h3 => {
+
+    // 文字を span に包む
+    let text = h3.textContent;
+    h3.innerHTML = `<span>${text}</span>`;
+    let span = h3.querySelector("span");
+
+    // hover でフォント変更
+    span.addEventListener("mouseenter", () => {
+        span.classList.add("fade");
+        setTimeout(() => {
+            span.style.fontFamily = '"Zen Old Mincho", serif';
+            span.classList.remove("fade");
+        }, 300);
+    });
+
+    span.addEventListener("mouseleave", () => {
+        span.classList.add("fade");
+        setTimeout(() => {
+            span.style.fontFamily = 'Evefont';
+            span.classList.remove("fade");
+        }, 300);
+    });
+
 });
 
-$(".albums.Under-Blue img").on("click", function() {
-    $(".detail > div").not(".ub-detail").slideUp();
-    $(".ub-detail").slideToggle();
+$(".tab-single").on("click", function () {
+
+    // 表示切り替え
+    $("#album").removeClass("look").addClass("none");
+    $("#single").removeClass("none").addClass("look");
+
+    // active 切り替え
+    $(".tab-single").addClass("active").addClass("bc");
+    $(".tab-album").removeClass("active").removeClass("bc");
+
+});
+
+
+$(".tab-album").on("click", function () {
+
+    // 表示切り替え
+    $("#single").removeClass("look").addClass("none");
+    $("#album").removeClass("none").addClass("look");
+
+    // active 切り替え
+    $(".tab-album").addClass("active").addClass("bc");
+    $(".tab-single").removeClass("active").removeClass("bc");
 });

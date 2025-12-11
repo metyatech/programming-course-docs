@@ -1,11 +1,63 @@
-h1{
-font-family: "Zen Maru Gothic", sans-serif;
-color: #67966B;
-font-size: 3rem;
-text-align: center;
-font-weight: bold;
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 900px;
+}
+.taitotu{
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: #67966B;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 100px;
+    font-size: 150px;
+    margin: 0;
+    left: 5%;
+    letter-spacing: 35px;
+    animation: taitotu 50s linear 0s infinite;
+}
+
+@keyframes taitotu{
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(-100%);}
 }
 img{
     height: 300px;
     width: 300px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+}
+.top{
+    position: relative;
+    top: 50px;
+}
+.nabi{
+    position: relative;
+}
+li{
+    list-style: none;
+    padding: 20px;
+    font-size: 25px;
+}
+ul{
+    position: absolute;
+    top: 100px;
+    background-color: #000;
+}
+a{
+    color: #fff;
+}
+main{
+    position: relative;
+}
+
+.mein{
+    position: absolute;
+    top: 500px;
+    left: 60%;
+    right: 60%;
 }
