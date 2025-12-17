@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition の練習</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- my styles -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- my scripts -->
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+<!-- モーダルウィンドウ -->
+
+    <label for="modalToggle" class="modal-open-button">サブスク購入する</label>
+    <input type="checkbox" id="modalToggle" class="modal-checkbox">
+    <div class="modal" id="modal">
+      <div class="modal-wrapper">
+        <label for="modalToggle" class="close">&times;</label>
+        <div class="modal-content">
+          <h1>サグスク購入</h1>
+          <p><br><br>
+            サブスクサービスをご利用の方はこちらまで<br><br>
+            <a href="https://newcar.shop/carlist/mazda/?utm_source=google&utm_medium=cpc&utm_campaign=pmax&utm_term=&utm_content=pmax&gad_source=1&gclid=EAIaIQobChMI-ZzGypCfiwMVgxZ7Bx36MxYZEAAYASAAEgIfrPD_BwE">https://newcar.shop/carlist/mazda/?utm_source=google&utm_medium=cpc&utm_<br>campaign=pmax&utm_term=&utm_<br>content=pmax&gad_source=1&gclid=EAIaIQobChMI-ZzGypCfiwMVgxZ7Bx36MxYZEAAYASAAEgIfrPD_<br>BwE</a></p>
+        </div>
+      </div>
+    </div>
+
+
+
+<!-- ドロワーメニュー -->
+
+    <header class="header-bar">
+        <div class="ham-c">
+            <button class="ham-button">
+                <span class="ham-icon">
+                    <span class="bar first"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar last"></span>
+                </span>
+            </button>
+            <nav class="ham">
+                <ul class="nav-b">
+                    <li class="nav-i">車種</li>
+                    <li class="nav-i">保険</li>
+                    <li class="nav-i">お問い合わせ</li>
+                </ul>
+            </nav>
+        </div>
+
+
+<!-- スライダー -->
+      
+      <div class="wrap slide-paused" ontouchstart="">
+        <ul class="slideshow">
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+        </ul>
+        <ul class="slideshow">
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+        </ul>
+        <ul class="slideshow">
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+          <li class="content content-hover"></li>
+        </ul>
+      </div>
+</body>
+
+</html>

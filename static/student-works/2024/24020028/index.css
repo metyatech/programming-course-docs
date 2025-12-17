@@ -1,0 +1,276 @@
+body{
+    background-color: #FFFBF2;
+    margin: 0;
+}
+
+h2{
+    font-family: "Oleo Script", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: #A70102;
+}
+
+h3{
+    text-align: center;
+    color: #A70102;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* --------ナビゲーションメニュー --------*/
+.logo{
+    flex: 1;
+    background-color: #814341; 
+    display: grid;
+    justify-items: left;
+    align-items: center;
+}
+
+
+.header-bar {
+    display: flex;
+    height: 150px;
+}
+.header-bar>* {
+    flex: auto;
+}
+
+.menu{
+    background-color: #814341; 
+    height: 100%;
+    color: #fff;
+    align-items: center;
+    margin: 0;
+    font-size:14px;
+    display: flex;
+    gap: 100px;
+    justify-content: flex-end; /* 右側に配置 */
+}
+
+.menu-b{
+    position: absolute;
+    top: 150px;
+    background-color: #A69869;
+    margin: 0;
+    margin-right: 30px;
+    padding: 30px 50px;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path .5s;
+    text-align: center;
+}
+
+.menu.open .menu-b{
+    clip-path: inset(0 0 0 0);
+}
+
+hr{
+    width: 120px;
+}
+
+li{
+    list-style: none;
+    line-height: 40px;
+}
+
+/* ham */
+.ham-button {
+    height: 100%;
+    border: none;
+    padding: 10px 10px 10px 20px;
+
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.ham-icon {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+}
+
+.ham-icon .bar {
+    width: 32px;
+    height: 4px;
+
+    display: block;
+    background-color: white;
+}
+
+.ham {
+    height: 450px;
+    width: 400px;
+    padding-top: 30px;
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: -450px;
+    transform: translateX(calc(100% - 3px));
+    transition: transform 1s;
+    background-color: #F4E5D3;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%);
+    font-size: 1.5rem;
+    overflow: hidden;
+}
+
+.ham-c.open .ham {
+    transform: translateX(-300px);
+}
+
+.nav-b {
+    margin: 0;
+    padding: 0 20px;
+
+    list-style: none;
+}
+
+.nav-i {
+    padding-top: 40px;
+    color: #353C11;
+    font-size:14px;
+    border-bottom: solid #A69869 1px;
+    cursor: pointer;
+}
+
+.nav-i:hover {
+    background-color: #E9E9E9;
+}
+
+
+
+/* --------メインビジュアル --------*/
+.main {
+    display: flex;
+}
+
+.main-1{
+    flex:603;
+}
+
+.main-2{
+    flex: 837;
+}
+
+.main img{
+    width: 100%;
+}
+
+/* --------ケーキ診断,試食セット --------*/
+.link{
+    display: flex;
+    gap: 84px;
+    justify-content: center;
+    margin: 120px 120px;
+}
+
+.shindan ,
+.shisyoku{
+    border-radius: 27px;
+    background-color: #fff;
+    color: #353C11;
+    width: 537px;
+    height: 207px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shindan-title ,
+.shisyoku-title{
+    font-size: 27px;
+    margin-top: 54px;
+    margin-bottom: 20px;
+}
+
+.shindan-p ,
+.shisyoku-p{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.shindan-jpg ,
+.shisyoku-jpg{
+    border-radius: 27px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* -------- slider --------*/
+.cake-photo{
+    width: 100%;
+}
+
+.lineup .slider{
+    max-width: 400px;
+    text-align: center;
+
+}
+
+.slider img{
+    width: 500px;
+}
+
+.cake-photo button {
+    display: none!important;
+}
+
+
+
+
+
+/* --------モーダルウィンドウ --------*/
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: none; /* 初期状態は非表示 */
+    position: fixed; /* 固定位置 */
+    z-index: 1; /* 前面に表示 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* スクロール可能 */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 上下中央に配置 */
+    padding:30px; /* パディング */
+    border: 1px solid #888; /* 枠線 */
+    width: 50%;
+    text-align: center;
+}
+
+.modal-photo{
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+hr{
+    width: 100%;
+}
+
+.close {
+    color: #aaa; /* 閉じるボタンの色 */
+    float: right; /* 右寄せ */
+    font-size: 28px;
+    font-weight: bold; /* 太字 */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* ホバー時の色 */
+    text-decoration: none; /* 下線なし */
+    cursor: pointer; /* カーソルをポインターに */
+}

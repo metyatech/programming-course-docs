@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* 共通の初期設定
+------------------------------- */
+html {
+    font-size: 100%; /*ブラウザ基準の16px=1em=1rem（root em）*/
+    scroll-behavior: smooth;/* スクロールの制御 */
+}
+
+img {
+    max-width: 100%;
+}
+
+.heading-medium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.heading-medium::before,
+.heading-medium::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    /* ★背景色#432を設定 */
+    background-color: #432;
+    margin: 0 1.5rem;
+}
+
+.heading-medium::before {
+    /* ★回転角度を設定 */
+    transform: rotate(45deg);
+}
+
+.heading-medium::after {
+    /* ★回転角度を設定 */
+    transform: rotate(-45deg);
+}
+
+
+
+@media (min-width:800px) {
+    .page-title {
+        font-size: 5rem;
+    }
+
+    .heading-large {
+        font-size: 4rem;
+    }
+}
+
+/* btn */
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    background-color: #432;
+    color: #fff;
+    border-radius: 8px;
+    padding: .75rem 1.5rem;
+    transition: .5s;
+}
+
+.btn:hover {
+    background-color: #432;
+    /* ★大きさを1.2倍に設定 */
+    transform: scale(1.2);
+}

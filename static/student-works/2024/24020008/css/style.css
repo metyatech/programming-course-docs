@@ -1,0 +1,280 @@
+:root {
+    font-family: "Lato", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-size: 1.25rem;
+}
+
+
+/* header */
+
+.header {
+    height: 80px;
+    border-bottom: 2px solid #3e3e3e;
+    display: flex;
+    justify-content: center;
+}
+
+.header > * {
+    flex: auto;
+}
+
+.header .title {
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+/* menu */
+
+.menu {
+    position: absolute;
+    right: 0;
+}
+
+/* ham */
+
+
+.ham-button {
+    height: 100%;
+    border: none;
+    padding: 10px 10px 10px 20px;
+
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    order: 1;
+}
+
+.ham-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ham-icon .bar {
+    width: calc((4px + 8px + 4px + 8px) * sqrt(2));
+    height: 4px;
+
+    display: block;
+    background-color: #434343;
+    transform-origin: left center;
+    transition: 1s;
+}
+
+.ham {
+    height: 100vh;
+    width: 300px;
+    padding-top: 80px;
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    transform: translateX(calc(-100% - 3px));
+    transition: transform 1s;
+    background-color: white;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%);
+    font-size: 1.5rem;
+}
+
+.ham-c.open .ham {
+    transform: translateX(0);
+}
+
+.ham-c.open .bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.ham-c.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-c.open .bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.nav-b {
+    margin: 0;
+    padding: 0 20px;
+    list-style: none;
+}
+
+.nav-i {
+    padding-top: 25px;
+    border-bottom: solid #E9E9E9 1px;
+    cursor: pointer;
+}
+
+.nav-i:hover {
+    background-color: #E9E9E9;
+}
+
+.nav-i a {
+    color: black;
+    font-weight: bold;
+}
+
+/* menu */
+
+.menu-title {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.menu-b {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: clip-path 0.5s;
+    clip-path: inset(0 0 100%);
+    overflow: hidden;
+    list-style: none;
+    background-color: #3f3f3f;
+    position: relative;
+    z-index: 999;
+    top: 30px;
+}
+
+.menu-a {
+    position: relative;
+    top: 25px;
+    right: 40px;
+}
+
+.menu-b.open {
+    clip-path: inset(0 0 0);
+}
+
+.menu-i {
+    text-align: center;
+    color: white;
+    place-items: center;
+    padding: 8px 10px;
+}
+
+.menu-i a {
+    color: white;
+}
+
+.menu-i:hover {
+    background-color: #1b1b1b;
+}
+
+/* slider */
+.container {
+    padding-top: 20px;
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform .3s;
+}
+
+.box {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.box-1 {
+    background-image: url(../images/blue.jpeg);
+}
+
+.box-2 {
+    background-image: url(../images/red.jpeg);
+}
+
+.box-3 {
+    background-image: url(../images/green.jpg);
+}
+
+.box-4 {
+    background-image: url(../images/yellow.jpeg);
+}
+
+#left,
+#right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: 24px;
+    padding: 0 6px;
+    cursor: pointer;
+}
+
+#left {
+    left: 8px;
+}
+
+#right {
+    right: 8px;
+}
+
+#left:hover,
+#right:hover {
+    opacity: .8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* news */
+.news h2 {
+    text-align: center;
+}
+.news ul {
+    margin: 40px auto;
+    width: 800px;
+    border: 2px solid black;
+}
+.news ul li {
+    border-bottom: 1px dotted black;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.news .time {
+    color: #000;
+    text-decoration: none;
+}
+time {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 40px;
+}
+.time .time-word {
+    color: black;
+    display: inline-block;
+    text-decoration: underline black;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    background-color: #3e3e3e;
+    color: white;
+}

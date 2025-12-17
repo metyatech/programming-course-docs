@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    color: #e3e3e3;
+}
+
+body {
+    background-color: #1B222A;
+
+}
+
+/* ファーストビューーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    box-sizing: border-box;
+}
+
+.first-view {
+    background-image: url(img/Mask\ group.png);
+    background-image: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    object-fit: cover;
+
+}
+
+.logo img {
+    width: 65px;
+    height: 80px;
+}
+
+.btn {
+    width: 50px;
+    height: 5px;
+    background-color: #fff;
+    margin: 12px;
+}
+
+.oya-btn {
+    background: none;
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    width: 930px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: #e3e3e3;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 97px;
+    color: #e3e3e3;
+    padding-top: 345px;
+    text-align: center;
+}
+
+.first-view p {
+    color: #e3e3e3;
+    text-align: center;
+    margin-top: 204px;
+}
+
+
+/* コンセプトーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+h2 {
+    font-size: 84px;
+    display: inline-block;
+    background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+    background: -webkit-linear-gradient(0deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.concept {
+    position: relative;
+    width: 1120px;
+    margin: 56px auto 283px;
+}
+
+.concept p {
+    width: 352px;
+    padding: 38px 0;
+}
+
+.concept-1 {
+    display: flex;
+}
+
+.img2 {
+    position: absolute;
+
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>24200003　新井湊音</title>
+    <!-- 検索エンジンで表示されるサイトの説明文 -->
+    <meta name="description" content="モンスターエナジードリンク">
+    <!-- デバイスサイズに合わせる -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!-- Animate.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- slick.css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min-thema.css">
+
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <div id="nav-wrapper" class="nav-wrapper">
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <nav class="sp-nav">
+          <ul>
+            <li><a href="#">商品</a></li>
+            <li><a href="#">カート</a></li>
+          </ul>
+        </nav>
+        <div class="black-bg" id="js-black-bg"></div>
+    </div>
+    
+
+    <div class="gnavi__wrap">
+        <ul class="gnavi__lists">
+            <li class="gnavi__list">
+                <a href="#">info</a>
+                <ul class="dropdown__lists">
+                    <li class="dropdown__list"><a href="#">種類</a></li>
+                    <li class="dropdown__list"><a href="#">お問い合わせ</a></li>
+                    <li class="dropdown__list"><a href="#">Instagram</a></li>
+                    <li class="dropdown__list"><a href="#">x</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <section id="mn" class="page-footer">
+     <div class="mn1">
+        <div class="info-box">
+            <h3 class="heading-medium font-english wow animate__animated animate__fadeInUp">モンスター</h3>
+            <table class="info">
+                <tr>
+                    <th>商品名</th>
+                    <td>モンスターエナジー</td>
+                </tr>
+                <tr>
+                    <th>値段</th>
+                    <td>230円</td>
+                </tr>
+                <tr>
+                    <th>種類数</th>
+                    <td>12種類</td>
+                </tr>
+            </table>
+        </div>
+        <div class="openModal"><button class="btn">ネット通販</button></div>
+     </div>
+        <section class="modalArea">
+            <div class="modalBg"></div>
+            <div class="modalWrapper">
+                <p>購入</p>
+                <div class="closeModal">×</div>
+            </div>
+        </section>
+    </section>
+           
+        <footer class="copyright">
+            <small>&copy; 24020003 新井湊音</small>
+        </footer>
+    <!-- slick.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- wowjs -->
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script>
+        $('.autoplay').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

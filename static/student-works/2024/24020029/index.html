@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/459ccf466e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>野口の靴屋のホームページ</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="ham-c">
+            <section class="menu">
+                <div class="menu-a">
+                    <div class="menu-title"><span>靴の種類</span></div>
+                    <ul class="menu-b">
+                        <li class="menu-i">スニーカー</li>
+                        <li class="menu-i">ブーツ</li>
+                        <li class="menu-i">サンダル</li>
+                    </ul>
+                </div>
+                </nav>
+        </div>
+    </header>
+    <main>
+        <section class="slider-container">
+            <div class="slider">
+                <div class="slides"></div>
+            </div>
+            <button id="left">&lt;</button>
+            <button id="right">&gt;</button>
+        </section>
+        <section class="news">
+            <h2>NEWS</h2>
+            <ul>
+                <li class="time">
+                    <time datetime="2025-01-17">[2025-01-17]</time>
+                    <p class="time-word">制作中</p>
+                </li>
+                <li class="time">
+                    <time datetime="2025-01-18">[2025-01-18]</time>
+                    <p class="time-word">制作中</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>&copy; 2025 野口</footer>
+    <!-- モーダルウィンドウ -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <img id="modal-img" src="" alt="拡大画像">
+            <p id="modal-text">商品詳細</p>
+        </div>
+    </div>
+</body>
+
+</html>

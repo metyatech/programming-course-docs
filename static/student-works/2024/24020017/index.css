@@ -1,0 +1,352 @@
+/* ハンバーガーメニュー */
+.ham-button {
+    height: 100%;  /*ボタンの表示をなくす*/
+border: none; /*ボタンの枠線をなしにする*/
+padding: 10px 10px 10px 20px; /*見えていないボタンの幅をこれで調整する*/
+
+background-color: initial;
+cursor: pointer;
+position: relative;
+z-index: 3;
+}
+
+
+
+.ham-icon {
+/**/
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px; /*押したときの間の調整*/
+}
+
+.ham-icon .bar {
+width: calc((4px + 8px + 4px + 8px) * sqrt(2)); /*ハンバーガーメニューを表示するために必要なもの*/
+height: 4px;
+
+display: block; /*中央揃え　notionにおすすめのURLをはる*/
+background-color: #434343;
+transform-origin: left center; /*左上を基準に時計回りに移動*/
+transition: 1s; /*1秒かけてアニメーションを行う*/  
+}
+
+.ham-a.open .ham-icon .bar.first {
+
+transform: rotate(45deg); /*斜め45度(右下)に傾ける + 左は固定のまま*/
+}
+
+.ham-a.open .ham-icon .bar.second {
+opacity: 0; /*線を消す*/
+}
+
+.ham-a.open .ham-icon .bar.last {
+transform: rotate(-45deg); /*斜め45度(右上)に傾ける + 左は固定のまま*/  
+}
+
+.ham {
+height: 100vh; /*ハンバーガーの中に表示するものを左側におく*/
+width: 450px;
+padding-top: 60px; /*上から何px動かすか*/
+
+position: absolute; /*親要素から変える　notionにURLをはる*/
+z-index: 2;
+top: 0;
+left: 0;
+transform: translateX(calc(-100% - 3px)); /*-100%に移動*/
+transition: transform 1s; /*開閉のやつ？*/
+background-color: white; /*開閉したときの後ろの背景*/
+box-shadow: 3px 0 6px rgb(0 0 0 / 25%); /*ボックスの影・ぼかし量・広がり量・色*/
+font-size: 1.5rem;
+}
+
+.ham-a {
+width: 150px;
+}
+
+.ham-a.open .ham {
+transform: translateX(0); /*要素を移動しない(±0) + Xは横軸*/
+}
+
+.nav-b {
+margin: 0; /*外側に余白をつける*/
+padding: 0 20px; /*内側に余白⇒右に20px移動する + 0はリストを消す要素をなくしてしまうから入れる*/
+
+list-style: none; /*リストの点(・)をなくす*/
+}
+
+.hamberger {
+padding-top: 25px; /*内側上の余白を25px開ける*/
+
+border-bottom: solid #E9E9E9 1px; /*横棒の色と太さを書く*/
+cursor: pointer; /*カーソルを当てると...*/
+}
+
+.hamberger:hover {
+background-color: #9e9a9a; /*hoverとはカーソルを当てたときに色を変える*/
+}
+
+.back {
+width: 100vw;
+height: 100vh;
+
+position: fixed; /*要素を画面を基準とした位置に固定するプロパティ*/
+pointer-events: none; /*クリックやタッチ、ホバーなどのイベントを無効にすること*/
+top: 0;
+left: 0;
+z-index: 1; /*指定されていない要素より手前に表示するならこれ*/  
+background-color: #000;
+opacity: 0; /*opacity: 0;　は非表示　/　opacity: 1; は表示*/
+transition: opacity 1s; /*透明度を滑らかに1秒で切り替えるとき*/
+}
+
+.ham-a.open .back {
+pointer-events: auto; /*pointer-eventsの初期値　クリックが正常に作動する*/
+opacity: 25%; /*ハンバーガを表示したときに後ろの色を少し暗くする*/
+}
+
+
+.header-bar {
+display: flex; /*横並びにする*/
+margin: auto; /*自動で間を調整してくれる*/
+}
+
+
+/* ドロップダウン */
+.menu {
+width: 200px;
+
+position: relative; /*要素の順番を守る*/
+cursor: pointer; /*カーソルを当てると何かが起こる*/
+}
+
+.menu-c {
+flex: auto; /*残り全部を埋める*/
+
+display: flex; /*親要素につける大切なやつ　+　横並びにする*/
+justify-content: right; /*右寄せ*/
+}
+
+.title {
+width: 100%;
+height: 100%;
+
+display: grid; /*上に書いてある上下左右の中央寄せをやる*/
+place-items: center; /*コンテナ内の要素の揃えをまんなかにする*/
+}
+
+.AAA, .BBB, .CCC {
+margin: 0;
+padding: 0;
+width: 100%;
+height: 0;
+
+transition: clip-path 0.5s; /*要素の表示を0.5秒で切り替えをする*/
+clip-path: inset(0 0 100%); /*下方向に非表示　　表示する⇒clip-path:inset(0)*/
+overflow: hidden; /*ボックス内に収まりきらないコンテンツのはみ出た部分を非表示*/
+position: absolute; /*一つで絶対的な位置を指定し好きな場所に要素を動かして絶対配置ができる*/
+list-style: none; /*リストの点(・)を非表示にする*/
+background-color: #3f3f3f;
+}
+
+.AAA.open {
+clip-path: inset(0 0 0); /*表示するやつ*/
+height: 325px;
+width: 200px;
+}
+
+.BBB.open {
+clip-path: inset(0 0 0); /*表示するやつ*/
+height: 120px;
+width: 200px;
+}
+
+.CCC.open {
+clip-path: inset(0 0 0); /*表示するやつ*/
+height: 40px;
+width: 200px;
+}
+
+.menber {
+text-align: center;
+color: rgb(255, 255, 255);
+
+padding: 8px 10px;
+}
+
+.menber:hover {
+background-color: #1b1b1b; /*hover⇒カーソルを当てたときに色を変える*/
+}
+
+.menber a {
+display: block;
+width: 100%;
+height: 100%;
+color: inherit; /*親と同じ色*/
+text-decoration: none; /*下線をなくす*/
+}
+
+.wrap {
+display: flex; /*横一列に並ぶ*/
+align-items: center; /*中央ぞろえ*/
+height: 340px;
+overflow: hidden; /*枠内からはみ出た領域を隠す*/
+position: relative;
+top: 500px;
+}
+
+/* スライドショー */
+.slideshow {
+    display: flex;
+    animation: loop-slide 20s infinite linear 1s both;
+/* animation-name: loop-slide;  アニメーション名
+   animation-duration: 20s;  開始から終了までの所要時間
+   animation-iteration-count: infinite;  アニメーションのループ回数　　infinite=無限ループ
+   animation-timing-function: linear;  動きの加減速
+   animation-delay: 1s;  アニメーションが開始するまでの遅延時間
+   animation-fill-mode: both;  アニメーション開始前・終了後の挙動　 */
+}
+   @keyframes loop-slide {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+   }
+
+/* 背景画像について */
+.bg-hero {
+background: url(B898CE9B-ED54-4EF8-9434-EA0631979E98_1_105_c.jpeg) center bottom no-repeat;
+background-size: contain;
+background-color: beige;
+max-width: 100%;
+height: 100vh;
+}
+
+  /* menu */
+  .works-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -40px;
+  }
+  
+  .works-item {
+    width: 31.74603%;
+    margin-right: 1.58730%;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .works-item:hover {
+    opacity: .9;
+  }
+  
+  .works-item:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  
+  .works-img img {
+    border: 1px solid #e6e6e6;
+  }
+  
+  .works-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  
+  .works-info {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+    /* Works */
+    .works-name {
+        font-size: 12px;
+      }
+    
+      .works-info {
+        margin-top: 3px;
+      }
+    
+      .works-list {
+        justify-content: space-between;
+      }
+    
+      .works-item {
+        flex: 0 0 48%;
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+
+      /* slider */
+.container {
+    padding-top: 20px;
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform .3s;
+}
+
+.box {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.box-1 {
+    background-image: url(image\ copy\ 4.png);
+}
+
+.box-2 {
+    background-image: url(image\ copy\ 3.png);
+}
+
+.box-3 {
+    background-image: url(image\ copy\ 3.png);
+}
+
+.box-4 {
+    background-image: url(image\ copy\ 3.png);
+}
+
+#left,
+#right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-size: 24px;
+    padding: 0 6px;
+    cursor: pointer;
+}
+
+#left {
+    left: 8px;
+}
+
+#right {
+    right: 8px;
+}
+
+#left:hover,
+#right:hover {
+    opacity: .8;
+}
+
+.hidden {
+    display: none;
+}
+
+      

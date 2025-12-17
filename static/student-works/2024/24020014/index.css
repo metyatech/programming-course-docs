@@ -1,0 +1,469 @@
+/* ハンバーガーメニュー */
+.ham-button {
+    height: 100%;  /*ボタンの表示をなくす*/
+    border: none; /*ボタンの枠線をなしにする*/
+    padding: 10px 10px 10px 20px; /*見えていないボタンの幅をこれで調整する*/
+
+    background-color: initial;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.ham-icon {
+    /**/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /*押したときの間の調整*/
+}
+
+.ham-icon .bar {
+    width: calc((4px + 8px + 4px + 8px) * sqrt(2)); /*ハンバーガーメニューを表示するために必要なもの*/
+    height: 4px;
+
+    display: block; /*中央揃え　notionにおすすめのURLをはる*/
+    background-color: #434343;
+    transform-origin: left center; /*左上を基準に時計回りに移動*/
+    transition: 1s; /*1秒かけてアニメーションを行う*/   
+}
+
+.ham-a.open .ham-icon .bar.first {
+
+    transform: rotate(45deg); /*斜め45度(右下)に傾ける + 左は固定のまま*/
+}
+
+.ham-a.open .ham-icon .bar.second {
+    opacity: 0; /*線を消す*/
+}
+
+.ham-a.open .ham-icon .bar.last {
+    transform: rotate(-45deg); /*斜め45度(右上)に傾ける + 左は固定のまま*/  
+}
+
+.ham {
+    height: 100vh; /*ハンバーガーの中に表示するものを左側におく*/
+    width: 450px;
+    padding-top: 60px; /*上から何px動かすか*/ 
+
+    position: absolute; /*親要素から変える　notionにURLをはる*/
+    z-index: 2;
+    top: 0;
+    left: 0;
+    transform: translateX(calc(-100% - 3px)); /*-100%に移動*/
+    transition: transform 1s; /*開閉のやつ？*/
+    background-color: white; /*開閉したときの後ろの背景*/
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%); /*ボックスの影・ぼかし量・広がり量・色*/
+    font-size: 1.5rem;
+}
+
+.ham-a {
+    width: 150px;
+}
+
+.ham-a.open .ham {
+    transform: translateX(0); /*要素を移動しない(±0) + Xは横軸*/
+}
+
+.nav-b {
+    margin: 0; /*外側に余白をつける*/
+    padding: 0 20px; /*内側に余白⇒右に20px移動する + 0はリストを消す要素をなくしてしまうから入れる*/
+
+    list-style: none; /*リストの点(・)をなくす*/
+}
+
+.hamberger {
+    padding-top: 25px; /*内側上の余白を25px開ける*/
+
+    border-bottom: solid #E9E9E9 1px; /*横棒の色と太さを書く*/
+    cursor: pointer; /*カーソルを当てると...*/
+}
+
+.hamberger:hover {
+    background-color: #9e9a9a; /*hoverとはカーソルを当てたときに色を変える*/
+}
+
+.back {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed; /*要素を画面を基準とした位置に固定するプロパティ*/
+    pointer-events: none; /*クリックやタッチ、ホバーなどのイベントを無効にすること*/
+    top: 0;
+    left: 0;
+    z-index: 1; /*指定されていない要素より手前に表示するならこれ*/  
+    background-color: #000;
+    opacity: 0; /*opacity: 0;　は非表示　/　opacity: 1; は表示*/
+    transition: opacity 1s; /*透明度を滑らかに1秒で切り替えるとき*/
+}
+
+.ham-a.open .back {
+    pointer-events: auto; /*pointer-eventsの初期値　クリックが正常に作動する*/
+    opacity: 25%; /*ハンバーガを表示したときに後ろの色を少し暗くする*/
+}
+
+
+.header-bar {
+    display: flex; /*横並びにする*/
+    margin: auto; /*自動で間を調整してくれる*/
+}
+
+
+/* ドロップダウン */
+.menu {
+    width: 200px;
+
+    position: relative; /*要素の順番を守る*/
+    cursor: pointer; /*カーソルを当てると何かが起こる*/
+    z-index: 10;
+}
+
+.menu-c {
+    flex: auto; /*残り全部を埋める*/
+
+    display: flex; /*親要素につける大切なやつ　+　横並びにする*/
+    justify-content: right; /*右寄せ*/
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+
+    display: grid; /*上に書いてある上下左右の中央寄せをやる*/
+    place-items: center; /*コンテナ内の要素の揃えをまんなかにする*/
+}
+
+.AAA, .BBB, .CCC {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0;
+
+    transition: clip-path 0.5s; /*要素の表示を0.5秒で切り替えをする*/
+    clip-path: inset(0 0 100%); /*下方向に非表示　　表示する⇒clip-path:inset(0)*/
+    overflow: hidden; /*ボックス内に収まりきらないコンテンツのはみ出た部分を非表示*/
+    position: absolute; /*一つで絶対的な位置を指定し好きな場所に要素を動かして絶対配置ができる*/
+    list-style: none; /*リストの点(・)を非表示にする*/
+    background-color: #3f3f3f;
+}
+
+.AAA.open {
+    clip-path: inset(0 0 0); /*表示するやつ*/
+    height: 360px;
+    width: 200px;
+}
+
+.BBB.open {
+    clip-path: inset(0 0 0); /*表示するやつ*/
+    height: 120px;
+    width: 200px;
+}
+
+.CCC.open {
+    clip-path: inset(0 0 0); /*表示するやつ*/
+    height: 40px;
+    width: 200px;
+}
+
+.menber {
+    text-align: center;
+    color: rgb(255, 255, 255);
+
+    padding: 8px 10px;
+}
+
+.menber:hover {
+    background-color: #1b1b1b; /*hover⇒カーソルを当てたときに色を変える*/
+}
+
+.menber a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit; /*親と同じ色*/
+    text-decoration: none; /*下線をなくす*/
+}
+
+
+/* 写真を横スライドにする(SnowManのアルバムスライド) */
+
+.content {
+    width: 300px;
+    height: 300px;
+    list-style: none; 
+}
+.content:nth-child(1) {
+    background-color: yellow;
+}
+.content:nth-child(2) {
+    background-color: purple;
+}
+.content:nth-child(3) {
+    background-color: whitesmoke;
+}
+.content:nth-child(4) {
+    background-color: blue;
+}
+.content:nth-child(5) {
+    background-color: orange;
+}
+.content:nth-child(6) {
+    background-color: green;
+}
+.content:nth-child(7) {
+    background-color: red;
+}
+.content:nth-child(8) {
+    background-color: black;
+}
+.content:nth-child(9) {
+    background-color: pink;
+}
+
+.slideshow {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    display: flex; /*横一列に並ぶ*/
+    align-items: center; /*中央ぞろえ*/
+    height: 340px;
+    overflow: hidden; /*枠内からはみ出た領域を隠す*/
+    position: relative;
+
+}
+
+/* スライドショー */
+    .slideshow {
+        display: flex;
+        animation: loop-slide 20s infinite linear 1s both;
+    /* animation-name: loop-slide;  アニメーション名
+       animation-duration: 20s;  開始から終了までの所要時間
+       animation-iteration-count: infinite;  アニメーションのループ回数　　infinite=無限ループ
+       animation-timing-function: linear;  動きの加減速
+       animation-delay: 1s;  アニメーションが開始するまでの遅延時間
+       animation-fill-mode: both;  アニメーション開始前・終了後の挙動　*/
+    }
+       @keyframes loop-slide {
+        from {
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-100%);
+        }
+       }
+
+/* 背景画像について */
+.bg-hero {   /*要素の横幅、高さに合わせて背景画像を引き延ばす・切り取る指定*/
+    background-size: cover;
+    height: 30rem;
+    background-image: url(images/SnowMan.png);
+    background-repeat: no-repeat;
+    height: 850px;
+    position: relative;  /*親要素にリライティブ*/
+}
+
+
+/* トップに戻るボタン */
+.pagetop {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;  /*マウスを乗せたときに影が付く*/
+    position: fixed;  /*画面上の固定位置に配置する*/
+    right: 30px;
+    bottom: 30px;
+    display: flex;  /*横並びにする*/
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;  /*形を丸にする*/
+    transition: .2; /*一番上に戻る時間を0.2秒*/
+    background: #bebebe;
+    font-weight: bold;  /*フォントを太字にする*/
+    opacity: 0;  /*非表示にする*/
+}
+
+.pagetop:hover {
+    box-shadow: 0 0 10px #000;
+}
+ 
+footer{
+    text-align: center;  /*テキストを真ん中に*/
+    margin-top: 50px;  /*外側の余白(上)を50px開ける*/
+    font-size: 15px;
+    color: #999;
+}
+
+
+/* 文字指定 */
+.H2 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+H1 {
+    color: #fff;
+    justify-content: center;
+    text-align: justify;
+    position: absolute;  /*重ねたい要素にアブソリュート*/
+    font-size: 18rem;  /*文字の大きさ*/
+    top: 150px;
+    text-align: center;
+}
+
+/* モーダルウィンドウの最初のボタン */
+.button {
+    background: #000;
+    border-radius: 12px;
+    /* box-shadow: 2px 4px 6px 3px rgba(0, 0, 0, .24);   影なし*/
+    border: 1px solid #000000;  /*solid → 枠線やボーダーラインを実線で表示*/
+    font-size: 16px;
+    line-height: 1.6;  /*文字の行間を指定する*/
+    display: block;
+    padding: 12px 20px;  /*上下　左右　という順番*/
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* グレー背景 */
+.layer {
+    background: rgba(0, 0, 0, .2); /*背景を薄くする*/
+    width: 100%;
+    height: 100%;
+    position: fixed; /* 画面に固定するために指定 */
+    top: 0;
+    left: 0;  /*topとleftを一緒に書く！*/
+}
+  
+  /* モーダルウィンドウ */
+.modal {
+    position: relative;  /*元々の位置から位置を調整*/
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    min-width: 440px;  /*要素の最小幅を設定する*/
+}
+  
+.modal__inner {
+    margin-top: 125px;
+    margin-bottom: 125px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    /* box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);  モーダルにシャドウをかける */
+    border-radius: 13px; /* モーダルの角を丸める */
+    display: block;  /*真ん中に配置？*/
+    padding: 21px 8px 21px;
+    height: auto;
+}
+  
+.modal__content {
+    padding-top: 15px;
+    padding-bottom: 23px;
+    text-align: center;
+}
+
+
+/* バツボタンの詳細 */
+.modal__button-wrap {
+    position: absolute;
+    right: 10px;
+    top: -28px;
+    display: inline-flex;
+}
+  
+.close-button {  /*閉じているときのボタン*/
+    position: relative;
+    width: 39px;
+    height: 39px;
+    background: #000000;
+    border-radius: 50%;
+    padding: 0;
+    border: transparent;  /*これを入れたら透明色になる*/
+    cursor: pointer;
+}
+  
+.close-button span {
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    left: calc(50% - 12px);
+    top: 50%;
+    border-radius: 20px;  /*角を丸くする*/
+}
+  
+  .close-button span:nth-child(1) {
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+  
+  .close-button span:nth-child(2) {
+    transform: rotate(-45deg) translate(1px, -1px);
+  }
+
+.layer {
+  background: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -1; 
+  opacity: 0;
+  visibility: hidden;  /*visibility → 表示と非表示を切り替える*/
+}
+
+.modal {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;  /*表示したときに幅を100％の内80％表示する*/
+  min-width: 440px;  /*最大を440px*/
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*非表示について*/
+.layer {
+    background: rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    z-index: -1; /*要素を重ねる時に使用　-1は非表示の時に一番後ろにするってこと？*/
+    opacity: 0;  /*不透明度を0にする*/
+    visibility: hidden;
+}
+  
+.modal {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    min-width: 440px;
+
+    opacity: 0;  /*不透明度を0にする*/
+    visibility: hidden;
+}
+
+/*openしたときについて*/
+.layer.is-open {
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+}
+  
+.layer.is-open .modal{
+    opacity: 1;
+    visibility: visible;  /*visible → 要素が可視状態になる（初期値）*/
+}

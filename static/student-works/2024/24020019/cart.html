@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショッピングカート</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ショッピングカート</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>本</th>
+                <th>価格</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        <tbody id="book-list">
+        </tbody>
+    </table>
+
+    <div class="buttons">
+        <button onclick="shipBooks()">出荷</button>
+        <button onclick="generateOrder()">注文書を発生
+        </button>
+    </div>
+
+    <script>
+        const books = [
+            { title: '日本匠人之魂', price: 1299, quantity: 1 },
+            { title: '日本文学的生态关照',  price: 2999, quantity: 2 },
+            { title: '日本侦探作家论',  price: 1999, quantity: 3 },
+			{ title: '日本文学流',  price: 1999, quantity: 3 },
+			{ title: '日本的昔话',  price: 999, quantity: 3 }
+        ];
+
+        function renderBookList() {
+            const bookList = document.getElementById('book-list');
+            bookList.innerHTML = ''; 
+
+            books.forEach(book => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${book.title}</td>
+                    <td>${book.price.toFixed(2)}</td>
+                    <td>${book.quantity}</td>
+                `;
+                bookList.appendChild(row);
+            });
+        }
+
+        window.onload = renderBookList;
+
+        function shipBooks() {
+            alert('出荷しました！');
+           
+        }
+        function generateOrder() {
+            alert('注文書が発生しました');
+            
+        }
+    </script>
+</body>
+</html>

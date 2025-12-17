@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+/* 共通の初期設定
+------------------------------- */
+html {
+    font-size: 100%; /*ブラウザ基準の16px=1em=1rem（root em）*/
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    background-color: rgb(66, 13, 13);
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Layout */
+.align-center {
+    text-align: center;
+}
+.wrapper {
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+/* 見出し */
+.font-english {
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.page-title,
+.heading-large,
+.heading-medium {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+}
+
+.page-title {
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+.heading-large {
+    margin-bottom: 1rem;
+}
+
+.heading-medium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+.heading-medium::before,
+.heading-medium::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: #432;
+    margin: 0 1.5rem;
+}
+.heading-medium::before {
+    transform: rotate(45deg);
+}
+
+.heading-medium::after {
+    transform: rotate(-45deg);
+}
+
+
+
+@media (min-width:800px) {
+    .page-title {
+        font-size: 5rem;
+    }
+    .heading-large {
+        font-size: 4rem;
+    }
+}
+
+/* btn */
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    background-color: #432;
+    color: #fff;
+    border-radius: 8px;
+    padding: .75rem 1.5rem;
+    transition: .5s;
+}
+.btn:hover {
+    background-color: #432;
+    transform: scale(1.2);
+}
+
+/* header
+------------------------------- */
+.page-header {
+    padding-top: 0.5rem;
+}
+
+.logo {
+    width: 210px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    list-style: none;
+    gap: 2.5rem;
+}
+.main-nav a {
+    color: rgb(255, 255, 255);
+    padding-bottom: .2rem;
+    transition: .5s;
+    border-bottom: 3px solid rgba(68, 51, 34, 0);
+}
+.main-nav a:hover {
+    border-bottom: 3px solid rgba(68, 51, 34, 1);
+}
+
+@media (min-width:800px)  {
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.5rem;
+    }
+    .main-nav {
+        font-size: 2rem;
+    }
+}
+/* header-cover
+------------------------------- */
+.cover {
+    background-size: cover;
+    background-position: center bottom;
+    height: 800px;
+}
+
+.sub-covrer{
+    background-size: cover;
+    background-position: center bottom;
+    height: 528px;
+    margin-bottom: 4rem;/*16px*4=64px*/
+}
+
+@media (min-width:800px) {
+    .sub-cover {
+        height: 400px;
+        margin-bottom: 6rem;
+    }
+}
+
+/* footer
+------------------------------- */
+.page-footer {
+    background-image: url(../images/cafe-info.png);
+    background-size: cover;
+    background-position: center;
+    padding-top: 12rem;
+}
+
+.botan{
+    background-image: url(..images/cafe-info.png);
+}
+
+.info {
+    width: 100%;
+    max-width: 544px;
+    margin: auto;
+    padding: 1.5rem;
+    border-spacing: 0;
+}
+
+.info th,
+.info td {
+    border-bottom: 1px solid #c9c2bc;
+}
+
+.info th {
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem;
+}
+
+.info td {
+    padding: 1rem 0;
+}
+
+.info1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.copyright {
+    background-color: #432;
+    text-align: center;
+    padding: 2rem 0;
+    color: #fff;
+};
+
+.openModal{display: flex;
+          justify-content: center;
+          text-align: center;
+          align-items: center;
+          margin: auto;
+          padding-top: 3rem;
+        }
+
+.btn{background-color: #4e401d;
+    color: #fff;
+}
+
+.page-footer{
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 800px) {
+    .page-footer {
+        background-image: url(../images/cafe-info.png);
+    }
+    .info th {
+        padding-left: 2.5rem;
+    }
+    .info-box {
+        max-width: 900px;
+        margin: auto;
+        margin-bottom: 2rem;
+        padding: 1rem 15rem;
+        background-color: rgba(255, 255, 255, .5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        border-radius: 1rem;
+    }
+}

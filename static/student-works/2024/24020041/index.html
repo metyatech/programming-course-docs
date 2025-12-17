@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カービィ風ヘッダー</title>
+    <!-- CSSリンク -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JSリンク -->
+    <script src="index.js" defer></script>
+    <!-- googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Hachi+Maru+Pop&family=Press+Start+2P&family=Train+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 🌟 ヘッダー -->
+    <header class="header-bar">
+        <div class="header-content">
+            <!-- 🌸 ナビゲーションメニュー -->
+            <nav class="h-menu">
+                <ul class="nav-links">
+                    <li class="menu">
+                        <span class="header-title">CHARACTER</span>
+                        <ul class="submenu">
+                            <li class="i-menu"><a>カービィ</a></li>
+                            <li class="i-menu"><a>ワドルディ</a></li>
+                            <li class="i-menu"><a>メタナイト</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <span class="header-title">KIRBY CAFE</span>
+                        <ul class="submenu">
+                            <li class="i-menu"><a>TOKYO</a></li>
+                            <li class="i-menu"><a>OSAKA</a></li>
+                            <li class="i-menu"><a>HAKATA</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <span class="header-title">KIRBY CAFÉ PETIT</span>
+                        <ul class="submenu">
+                            <li class="i-menu"><a>TOKYO</a></li>
+                            <li class="i-menu"><a>OSAKA</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <span class="header-title">GOODS</span>
+                        <ul class="submenu">
+                            <li class="i-menu"><a>ぬいぐるみ</a></li>
+                            <li class="i-menu"><a>キッチン</a></li>
+                            <li class="i-menu"><a>本・CD</a></li>
+                            <li class="i-menu"><a>雑貨</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 🎈 バブルポップメニュー -->
+            <div class="bubble-menu">
+                <button class="menu-button" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🎈 バブルポップメニュー -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#">『星のカービィ』とは？</a></li>
+            <li><a href="#">ゲーム一覧</a></li>
+            <li><a href="#">コピー能力</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-img1">
+        <img src="img/Desktop - 1.png" alt="">
+    </div>
+
+    <!-- character -->
+
+    <section class="character-section">
+        <h2 class="character-title">CHARACTER</h2>
+
+        <div class="character-card pink">
+            <h3 class="character-name">カービィ</h3>
+            <p class="character-desc red">プププランドにやってきた旅の若者</p>
+            <p class="character-text">なんでも吸い込んでしまう食いしん坊🍏🍎</p>
+            <p class="character-text">敵の能力をコピーして変身ができる！！</p>
+            <p class="character-text">武器を使ったり不思議な技を使って</p>
+            <p class="character-text">プププランドの平和のために戦う！！</p>
+            <img src="img/kirby.png" alt="カービィ">
+        </div>
+
+        <div class="character-card orange">
+            <h3 class="character-name">ワドルディ</h3>
+            <p class="character-desc red">プププランドのいろんなところで暮らす不思議な生き物</p>
+            <p class="character-text">カービィの前に現れるザコ中のザコ</p>
+            <p class="character-text">大きなワドルディや金色のワドルディ、</p>
+            <p class="character-text">様々なワドルディがいる⭐</p>
+            <img src="img/wado.png" alt="ワドルディ">
+        </div>
+
+        <div class="character-card purple">
+            <h3 class="character-name">メタナイト</h3>
+            <p class="character-desc red">華麗な剣裁きで戦う謎に包まれた戦士</p>
+            <p class="character-text">ときには敵となって、</p>
+            <p class="character-text">ときには味方になることもある。</p>
+            <p class="character-text">『ハルバード』 大きな戦艦の船長！！</p>
+            <img src="img/night.png" alt="メタナイト">
+        </div>
+    </section>
+
+    <!-- game history -->
+
+    <section class="game-history">
+        <h2 class="game-title">GAME HISTORY</h2>
+
+        <div class="game-slider">
+            <button class="slider-btn-game left-btn-game">&lt;</button>
+            <div class="game-container">
+                <div class="game-list">
+                    <!-- JavaScriptでゲームアイテムを追加 -->
+                </div>
+            </div>
+            <button class="slider-btn-game right-btn-game">&gt;</button>
+        </div>
+
+        <button class="view-more">VIEW MORE</button>
+
+        <p class="game-count">全部で <span class="count-number">37</span> 作</p>
+    </section>
+
+
+    <!-- cafe -->
+    <section class="cafe">
+        <section class="header-cafe">
+            <img src="img/logo 1.png" alt="Kirby Café Logo" class="logo1">
+        </section>
+
+        <!-- メインセクション -->
+        <section class="main-cafe">
+            <img src="img/cafe-character.png" alt="カービィとワドルディ" class="main-img2">
+            <p class="title">カービィカフェは3店舗！！！</p>
+
+            <!-- 地図エリア -->
+            <div class="map">
+                <img src="img/Group 107.png" alt="日本地図">
+            </div>
+
+            <!-- ボタンエリア -->
+            <div class="area-buttons">
+                <button class="area-btn">TOKYO</button>
+                <button class="area-btn">OSAKA</button>
+                <button class="area-btn">HAKATA</button>
+            </div>
+        </section>
+
+        <!-- カフェメニューエリア -->
+        <section class="menu">
+            <div class="menu-images">
+                <img src="img/Group 106.png" alt="メニュー">
+            </div>
+            <button class="view-more">VIEW MORE</button>
+        </section>
+    </section>
+
+
+    <section class="puti">
+        <!-- ロゴ -->
+        <section class="header-puti">
+            <img src="img/logoputi.png" alt="Kirby Café Petit Logo" class="logo2">
+        </section>
+
+        <!-- 店舗情報 -->
+        <section class="store-info">
+            <p class="store-text">☆東京（東京駅）と大阪（天王寺駅）の2店舗☆</p>
+            <img src="img/Group 130.png" alt="Kirby Café 店舗画像" class="cafe-img">
+
+            <!-- ボタンエリア -->
+            <div class="area-buttons">
+                <button class="area-btn">TOKYO</button>
+                <button class="area-btn">OSAKA</button>
+            </div>
+        </section>
+
+        <!-- スイーツ一覧 -->
+        <section class="sweets-section">
+            <h2>☆スイーツ一覧☆</h2>
+            <div class="slider-container">
+                <button class="slider-btn left">&lt;</button>
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <!-- 16個のスイーツ画像 -->
+                        <img src="img/puti1.png" alt="スイーツ1" class="sweet-item">
+                        <img src="img/puti2.png" alt="スイーツ2" class="sweet-item">
+                        <img src="img/puti3.png" alt="スイーツ3" class="sweet-item">
+                        <img src="img/puti4.png" alt="スイーツ4" class="sweet-item">
+                        <img src="img/puti5.png" alt="スイーツ5" class="sweet-item">
+                        <img src="img/puti6.png" alt="スイーツ6" class="sweet-item">
+                        <img src="img/puti7.png" alt="スイーツ7" class="sweet-item">
+                        <img src="img/puti8.png" alt="スイーツ8" class="sweet-item">
+                        <img src="img/puti9.png" alt="スイーツ9" class="sweet-item">
+                        <img src="img/puti10.png" alt="スイーツ10" class="sweet-item">
+                        <img src="img/puti11.png" alt="スイーツ11" class="sweet-item">
+                        <img src="img/puti12.png" alt="スイーツ12" class="sweet-item">
+                        <img src="img/puti13.png" alt="スイーツ13" class="sweet-item">
+                        <img src="img/puti14.png" alt="スイーツ14" class="sweet-item">
+                        <img src="img/puti15.png" alt="スイーツ15" class="sweet-item">
+                        <img src="img/puti16.png" alt="スイーツ16" class="sweet-item">
+                    </div>
+                </div>
+                <button class="slider-btn right">&gt;</button>
+            </div>
+        </section>
+
+
+        <!-- View More ボタン -->
+        <div class="puti-button">
+            <button class="view-more">view more</button>
+        </div>
+    </section>
+
+        <!-------------------- footer --------------------->
+
+    <section class="x">
+        <!-- ヘッダーの黄色の部分 -->
+        <div class="header-x"></div>
+
+        <!-- メインコンテンツ -->
+        <div class="xcontainer">
+            <img src="img/Vector.png" alt="ロゴ" class="logo3">
+            <button class="xlink-button">「カービィカフェ」のXはこちらから</button>
+            <button class="xlink-button">「カービィ」のXはこちらから</button>
+            <button class="xlink-button">「カービィカフェ PETIT」のXはこちらから</button>
+        </div>
+
+
+        <section class="modal-sleep">
+            <!-- 🎀 モーダルを開くボタン（手動用） -->
+            <button id="openModalBtn" class="modal-button">注意喚起を見る</button>
+            
+            <!-- 🎀 モーダルウィンドウ -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="modalclose-btn">&times;</span>
+                    <p class="modal-text">
+                        画面の見過ぎに注意だよ！！！<br>
+                        しっかり目を休ませてね<span class="sleep-icon">💤</span>
+                    </p>
+                    <img src="img/sreep.png" alt="注意喚起" class="modal-image">
+                </div>
+            </div>
+        </section>
+        
+        <!-- フッターの黄色の部分 -->
+        <div class="footer">
+            <p>24020041 上野七海</p>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>

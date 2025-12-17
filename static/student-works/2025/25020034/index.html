@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プログラミング演習　期末課題</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="images/png" href="images/Eve丸アイコン.png">
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/slick.css">
+    <link rel="stylesheet" href="CSS/slick-theme.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="JS/slick.min.js"></script>
+
+    <script src="JS/index.js" defer></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="images/Eveアイコン.png" alt="">
+        <!-- 各ページへのナビゲーション -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="active">TOP</a>
+                </li>
+                <li>
+                    <a href="Discography.html">Discography</a>
+                </li>
+                <li>
+                    <a href="live.html">Live</a> </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <ul class="kv">
+                <li class="kvpic">
+                    <a href="https://youtu.be/2eOg5DoYuwU?si=psn9sSgMmkxI_YAx" target="_blank"><img
+                            salign-items: src="images/ファイトソング.png" alt=""></a>
+                </li>
+                <li class="kvpic">
+                    <a href="https://youtu.be/PysVvOp0jiU?si=NkvHqnnfR9pScTvc" target="_blank"><img
+                            src="images/ゴーストアベニュー.png" alt=""></a>
+                </li>
+                <li class="kvpic">
+                    <a href="https://youtu.be/UfTpKaKXbG4?si=QhsGj8YM2FmkmztY" target="_blank"><img
+                            src="images/under dog.png" alt=""></a>
+                </li>
+                <li class="kvpic">
+                    <a href="https://eveofficial-underblue-film.com/" target="_blank"><img src="images/under blue.png"
+                            alt=""></a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Eveの紹介
+         Introduction -->
+        <section class="main">
+            <h1>INTRODUCTION</h1>
+            <div class="text1">
+                <img src="images/Eve.jpg" alt="">
+                <div class="eve">
+                    <h2>Eve</h2>
+                    <p>2枚の自主制作アルバムを経て、2016年に全国流通盤「OFFICIAL NUMBER」をリリース。</p>
+                    <p>
+                        2017年12月13日発売のインディーズアルバム「文化」は初の全自作曲のみで制作され、<br>
+                        収録曲「ドラマツルギー」は2億回再生を突破。YouTube登録者数は544万人を上回る。
+                    </p>
+                    <p>
+                        2020年12月23日リリースの「廻廻奇譚 / 蒼のワルツ」はオリコンデイリーランキング1位を獲得し、<br>
+                        アルバム収録曲「廻廻奇譚」はストリーミングは全世界7億回、MVは4.3億回再生を突破し、
+                        2021年にSpotifyの海外で最も再生された日本の楽曲の1位となった。
+                    </p>
+                    <p>
+                        国内のみならず海外からも大きな注目を集めるアーティスト。
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- アルバム一覧、アルバム収録曲 -->
+        <section>
+            <h2>ALBUM</h2>
+            <div class="album">
+                <div class="albums Wonder-World">
+                    <img data-target="ww-detail" src="images/img_wonderword.jpg" alt="">
+                    <p>1st Mini Album</p>
+                    <p>Wonder World</p>
+                </div>
+                <div class="albums Round-Robin">
+                    <img data-target="rr-detail" src="images/img_roundrobin.jpg" alt="">
+                    <p>2nd Album</p>
+                    <p>Round Robin</p>
+                </div>
+                <div class="albums OFFICIAL-NUMBER">
+                    <img data-target="on-detail" src="images/img_officialnumber.jpg" alt="">
+                    <p>3rd Album</p>
+                    <p>OFFICIAL NUMBER</p>
+                </div>
+                <div class="albums bunka">
+                    <img data-target="bunka-detail" src="images/img_bunka.jpg" alt="">
+                    <p>4th Album</p>
+                    <p>文化</p>
+                </div>
+                <div class="albums otogi">
+                    <img data-target="otogi-detail" src="images/img_otogi.jpg" alt="">
+                    <p>Major 1st Album</p>
+                    <p>おとぎ</p>
+                </div>
+                <div class="albums Smile">
+                    <img data-target="smile-detail" src="images/img_smile.jpg" alt="">
+                    <p>Major 2nd Album</p>
+                    <p>Smile</p>
+                </div>
+                <div class="albums kaizin">
+                    <img data-target="kaizin-detail" src="images/img_kaizin.jpg" alt="">
+                    <p>Major 3rd Album</p>
+                    <p>廻人</p>
+                </div>
+                <div class="albums Under-Blue">
+                    <img data-target="ub-detail" src="images/img_underblue.jpg" alt="">
+                    <p>Major 4th Album</p>
+                    <p>Under Blue</p>
+                </div>
+            </div>
+            <div class="detail">
+                <div class="ww-detail">
+                    <a href="https://evemaru.booth.pm/items/3520672" target="_blank"><img
+                            src="images/img_wonderword.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">1st Mini Album</p>
+                        <p class="title">Wonder World</p>
+                        <ol>
+                            <li>
+                                <p>よるのゆめ(書き下ろし楽曲)</p>
+                            </li>
+                            <li>
+                                <p>アルカリ成人</p>
+                            </li>
+                            <li>
+                                <p>線香花火(書き下ろし楽曲)</p>
+                            </li>
+                            <li>
+                                <p>へロウメロウ(書き下ろし楽曲)</p>
+                            </li>
+                            <li>
+                                <p>蜃気楼(書き下ろし合作曲)</p>
+                            </li>
+                            <li>
+                                <p>またあした</p>
+                            </li>
+                            <li>
+                                <p>夜を超えろ</p>
+                            </li>
+                            </ul>
+                    </div>
+                </div>
+
+                <div class="rr-detail">
+                    <a href="https://evemaru.booth.pm/items/3520703" target="_blank"><img
+                            src="images/img_roundrobin.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">2nd Album</p>
+                        <p class="title">Round Robin</p>
+                        <ol>
+                            <li>
+                                <p>名前も知らないあなたに恋をした</p>
+                            </li>
+                            <li>
+                                <p>Round Robin</p>
+                            </li>
+                            <li>
+                                <p>右に曲ガール</p>
+                            </li>
+                            <li>
+                                <p>不完全な処遇 album ver</p>
+                            </li>
+                            <li>
+                                <p>反対車線</p>
+                            </li>
+                            <li>
+                                <p>フォーリンマイワールド</p>
+                            </li>
+                            <li>
+                                <p>メルファクトリー</p>
+                            </li>
+                            <li>
+                                <p>新宿シック</p>
+                            </li>
+                            <li>
+                                <p>いかないで album ver</p>
+                            </li>
+                            <li>
+                                <p>グッバイデイ</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="on-detail">
+                    <a href="https://amzn.asia/d/6SzKcAQ" target="_blank"><img src="images/img_officialnumber.jpg"
+                            alt=""></a>
+                    <div class="ww">
+                        <p class="t">3rd Album</p>
+                        <p class="title">OFFICIAL NUMBER</p>
+                        <ol>
+                            <li>
+                                <p>どうしようもないくらいに君が好き</p>
+                            </li>
+                            <li>
+                                <p>キャラバン</p>
+                            </li>
+                            <li>
+                                <p>惑星ループ</p>
+                            </li>
+                            <li>
+                                <p>デーモンダンストーキョー</p>
+                            </li>
+                            <li>
+                                <p>浮遊感</p>
+                            </li>
+                            <li>
+                                <p>ショートアンブレラ</p>
+                            </li>
+                            <li>
+                                <p>ラビットグレイ</p>
+                            </li>
+                            <li>
+                                <p>パーフェクト生命</p>
+                            </li>
+                            <li>
+                                <p>メルファクトリー(リアレンジver)</p>
+                            </li>
+                            <li>
+                                <p>sister(リアレンジver)</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bunka-detail">
+                    <a href="https://amzn.asia/d/dBotInh" target="_blank"><img src="images/img_bunka.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">4th Album</p>
+                        <p class="title">文化</p>
+                        <ol>
+                            <li>
+                                <p>fanfare(instrumental)</p>
+                            </li>
+                            <li>
+                                <p>ナンセンス文学</p>
+                            </li>
+                            <li>
+                                <p>ドラマツルギー</p>
+                            </li>
+                            <li>
+                                <p>ホームシック</p>
+                            </li>
+                            <li>
+                                <p>あの娘シークレット</p>
+                            </li>
+                            <li>
+                                <p>会心劇</p>
+                            </li>
+                            <li>
+                                <p>ふりをした。</p>
+                            </li>
+                            <li>
+                                <p>羊を数えて</p>
+                            </li>
+                            <li>
+                                <p>お気に召すまま</p>
+                            </li>
+                            <li>
+                                <p>paradigm(instrumental)</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="otogi-detail">
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-86665" target="_blank"><img
+                            src="images/img_otogi.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">Major 1st Album</p>
+                        <p class="title">おとぎ</p>
+                        <ol>
+                            <li>
+                                <p>slumber</p>
+                            </li>
+                            <li>
+                                <p>トーキョーゲットー</p>
+                            </li>
+                            <li>
+                                <p>アウトサイダー</p>
+                            </li>
+                            <li>
+                                <p>迷い子</p>
+                            </li>
+                            <li>
+                                <p>やどりぎ</p>
+                            </li>
+                            <li>
+                                <p>アンビバレント</p>
+                            </li>
+                            <li>
+                                <p>楓</p>
+                            </li>
+                            <li>
+                                <p>ラストダンス</p>
+                            </li>
+                            <li>
+                                <p>僕らまだアンダーグラウンド</p>
+                            </li>
+                            <li>
+                                <p>君に世界</p>
+                            </li>
+                            <li>
+                                <p>dawn</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="smile-detail">
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-86703" target="_blank"><img
+                            src="images/img_smile.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">Major 2nd Album</p>
+                        <p class="title">Smile</p>
+                        <ol>
+                            <li>
+                                <p>doublet</p>
+                            </li>
+                            <li>
+                                <p>LEO</p>
+                            </li>
+                            <li>
+                                <p>レーゾンデートル</p>
+                            </li>
+                            <li>
+                                <p>虚の記憶</p>
+                            </li>
+                            <li>
+                                <p>いのちの食べ方</p>
+                            </li>
+                            <li>
+                                <p>闇夜</p>
+                            </li>
+                            <li>
+                                <p>朝が降る</p>
+                            </li>
+                            <li>
+                                <p>心予報</p>
+                            </li>
+                            <li>
+                                <p>白銀</p>
+                            </li>
+                            <li>
+                                <p>バウムクーヘンエンド</p>
+                            </li>
+                            <li>
+                                <p>mellow</p>
+                            </li>
+                            <li>
+                                <p>ognanje</p>
+                            </li>
+                            <li>
+                                <p>胡乱な食卓</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="kaizin-detail">
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-86830" target="_blank"><img
+                            src="images/img_kaizin.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">Major 3rd Album</p>
+                        <p class="title">廻人</p>
+                        <ol>
+                            <li>
+                                <p>廻人(instrumental)</p>
+                            </li>
+                            <li>
+                                <p>廻廻奇譚</p>
+                            </li>
+                            <li>
+                                <p>夜は仄か</p>
+                            </li>
+                            <li>
+                                <p>遊生夢死</p>
+                            </li>
+                            <li>
+                                <p>暴徒</p>
+                            </li>
+                            <li>
+                                <p>平行線</p>
+                            </li>
+                            <li>
+                                <p>YOKU</p>
+                            </li>
+                            <li>
+                                <p>蒼のワルツ</p>
+                            </li>
+                            <li>
+                                <p>心海</p>
+                            </li>
+                            <li>
+                                <p>群青讃歌</p>
+                            </li>
+                            <li>
+                                <p>言の葉</p>
+                            </li>
+                            <li>
+                                <p>藍才</p>
+                            </li>
+                            <li>
+                                <p>退屈を再演しないで</p>
+                            </li>
+                            <li>
+                                <p>アヴァン</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="ub-detail">
+                    <a href="https://store.toysfactory.co.jp/products/tfcc-81108" target="_blank"><img
+                            src="images/img_underblue.jpg" alt=""></a>
+                    <div class="ww">
+                        <p class="t">Major 4th Album</p>
+                        <p class="title">Under Blue</p>
+                        <ol>
+                            <li>
+                                <p>lazy cat</p>
+                            </li>
+                            <li>
+                                <p>ティーンエイジブルー</p>
+                            </li>
+                            <li>
+                                <p>逃避行</p>
+                            </li>
+                            <li>
+                                <p>虎狼来</p>
+                            </li>
+                            <li>
+                                <p>ファイトソング</p>
+                            </li>
+                            <li>
+                                <p>花星</p>
+                            </li>
+                            <li>
+                                <p>冒険録</p>
+                            </li>
+                            <li>
+                                <p>Byme</p>
+                            </li>
+                            <li>
+                                <p>巻物語</p>
+                            </li>
+                            <li>
+                                <p>インソムニア</p>
+                            </li>
+                            <li>
+                                <p>Bubble feat.Uta</p>
+                            </li>
+                            <li>
+                                <p>スイートメモリー</p>
+                            </li>
+                            <li>
+                                <p>白雪</p>
+                            </li>
+                            <li>
+                                <p>Midnight Runway</p>
+                            </li>
+                            <li>
+                                <p>ぼくらの</p>
+                            </li>
+                            <li>
+                                <p>花嵐</p>
+                            </li>
+                            <li>
+                                <p>さよならエンドロール</p>
+                            </li>
+                            <li>
+                                <p>Under Blue</p>
+                            </li>
+                            <li>
+                                <p>夢に逢えたら</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ライブ情報 -->
+        <section class="live">
+            <h2>Live</h2>
+            <div id="live">
+                <div class="live-pic">
+                    <img src="images/IMG_8086.png" alt="">
+                    <img src="images/IMG_8823.PNG" alt="">
+                </div>
+
+                <div class="lives">
+                    <h3>Live Events</h3>
+                    <ul>
+                        <li>
+                            <p class="day">2025.11.22 ~ 2025.11.23</p>
+                            <p class="live-title">Eve Anniversary Live [UNDERCOVER]</p>
+                        </li>
+                        <li>
+                            <p class="day">2025.11.14</p>
+                            <p class="live-title">韓国・WONDERLIVET 2025</p>
+                        </li>
+                        <li>
+                            <p class="day">2025.7.12 ~ 2025.8.24</p>
+                            <p class="live-title">Eve Arena Tour 2025 [Under Blue]</p>
+                        </li>
+                        <li>
+                            <p class="day">2024.12.30</p>
+                            <p class="live-title">COUNTDOWN JAPAN 24/25</p>
+                        </li>
+                        <li>
+                            <p class="day">2024.12.24</p>
+                            <p class="live-title">Eveの日 [Under Blue Premium Live]</p>
+                        </li>
+                        <a href="live.html">
+                            <p class="more">more →</p>
+                        </a>
+                    </ul>
+                </div>
+
+                <div class="live-pic">
+                    <img src="images/IMG_8824.png" alt="">
+                    <img src="images/IMG_8819.PNG" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="end">
+            <small><p>25020034 土師快斗</p></small>
+        </div>
+    </footer>
+</body>
+
+</html>

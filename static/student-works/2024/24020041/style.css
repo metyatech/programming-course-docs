@@ -1,0 +1,888 @@
+@charset "UTF-8";
+
+
+/* 🌟 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------🎀 ヘッダー 🎀----------------------- */
+
+.header-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-image: url(img/Desktop\ -\ 1.png);
+    z-index: 1000;
+    font-family: "DotGothic16", serif;
+    font-weight: 400;
+}
+
+/* 🌸 ヘッダーの上部コンテンツ（メニュー + ボタン） */
+.header-content {
+    background-color: #ffb5d2;
+    padding: 10px 20px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+/* 📌 ナビゲーションメニュー */
+
+.h-menu .nav-links {
+    list-style: none;
+    display: flex;
+    /* gap: 10px; */
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.header-title {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; /* 中央揃え */
+    width: 100%; /* 幅を親要素（menu-item）に合わせる */
+    padding: 10px 0;
+    cursor: pointer;
+
+}
+
+/* 🎀 サブメニュー */
+
+.menu {
+    position: relative;
+     /* サブメニューの基準点 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 180px; /* 幅を固定 */
+    padding-bottom: 10px;
+
+}
+
+.submenu {
+    position: absolute;
+    top: calc(50% + 30px);
+    left: 0;
+    background: #ffe39c;
+    list-style: none;
+    width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: clip-path 0.5s ease-out, visibility 0.5s ease-out;
+    
+    /* 🌟巻きおろすように */
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden; /* 最初は見えない */
+}
+
+.submenu.open {
+    clip-path: inset(0 0 0 0); 
+    visibility: visible; /* 表示する */
+}
+
+
+
+
+
+.i-menu {
+    padding: 12px 0px;
+    text-decoration: none;
+    color: #ff8502;
+    font-size: 16px; /* フォントサイズをアップ */
+    font-weight: bold; /* 太字にする */
+    text-align: center; /* 文字を中央揃え */
+    display: block;
+    line-height: 1.8; /* 行間を調整 */
+    cursor: pointer;
+}
+
+.i-menu:hover {
+    background-color: #fdc63b;
+}
+
+
+
+/* 🎈 バブルメニューのボタン */
+.bubble-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+/* 🎀 丸ボタンデザイン */
+.menu-button {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🖱️ ホバー時 */
+.menu-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎀 バブルポップメニュー（隠れている） */
+.nav-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #ffb6c1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "DotGothic16", serif;
+    font-weight: 400;
+}
+
+/* メニューを開いた状態 */
+.nav-menu.active {
+    width: 250px;
+    height: 250px;
+}
+
+/* メニューリスト */
+.nav-menu ul {
+    list-style: none;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* メニューが開いたとき */
+.nav-menu.active ul {
+    opacity: 1;
+}
+
+/* メニュー項目 */
+.nav-menu ul li {
+    margin: 10px 0;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.main-img1 img {
+    padding-top: 0;  /* 余白を削除 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* 画像の余白を防ぐ */
+}
+
+
+
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 98;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+
+
+/* 📱 スマホ対応 */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .h-menu .nav-links {
+        flex-direction: column;
+    }
+    
+    .submenu {
+        position: static;
+        display: none;
+    }
+    
+    .menu-item:active .submenu {
+        display: block;
+    }
+
+    .character-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 90%; /* スマホでは画面幅に適応 */
+        max-width: 300px;
+    }
+
+    .game-container {
+        width: 320px; /* 2つ分 */
+    }
+}
+
+
+/* --------------------🎀 CHARACTER タイトル 🎀----------------------*/
+.character-title {
+    font-size: 20px;
+    font-weight: bold;
+    background: #fff848;
+    padding: 10px 10px;
+    width: 220px;
+    border: 8px solid #FFB341;
+    display: inline-block;
+    font-family: "Press Start 2P", sans-serif;
+    text-align: center;
+    margin: 60px auto;
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* 🎀 キャラクターセクション */
+.character-section {
+    background-color: #fffcb3; /* 黄色の背景 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0; /* 余白を削除 */
+    margin-top: 0; /* 余白を完全になくす */
+}
+
+
+/* キャラクターごとのスタイル */
+.character-card {
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* 背景色 */
+.pink {
+    background-color: #ffb5d2;
+}
+
+.orange {
+    background-color: #ffcc99;
+}
+
+.purple {
+    background-color: #b6a0ff;
+}
+
+/* キャラクター名 */
+.character-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: yellow;
+    margin-bottom: 10px;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: 400;
+}
+
+/* 説明テキスト */
+.character-desc {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
+    font-family: "DotGothic16", serif;
+    font-weight: 400;
+}
+
+/* 一般テキスト */
+.character-text {
+    font-size: 16px;
+    color: white;
+    line-height: 1.8;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: 400;
+}
+
+/* 画像スタイル */
+.character-card img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+/* ----------------------🎀 GAME HISTORY 🎀------------------------- */
+
+.game-history {
+    text-align: center;
+    background-color: #FF94C4;
+    padding: 50px 20px;
+    padding-bottom: 200px;
+}
+
+
+.game-title {
+    font-size: 20px;
+    font-weight: bold;
+    background: #fff848;
+    padding: 10px 20px;
+    width: 300px;
+    border: 8px solid #FFB341;
+    display: inline-block;
+    font-family: "Press Start 2P", sans-serif;
+    text-align: center;
+    margin: 60px auto;
+    margin-bottom: 100px;
+    display: block;
+}
+
+
+/* 🎞 ゲームスライダー */
+.game-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* スライダーの幅を制限 */
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* 📦 ゲームコンテナ（レスポンシブ対応） */
+.game-container {
+    overflow: hidden;
+    width: 640px; /* 4つ分 */
+    max-width: 100%;
+}
+
+/* 🖼 ゲームリスト */
+.game-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc((150px + 10px) * 37); /* 余白を考慮して計算 */
+}
+
+/* 🕹 ゲームアイテム */
+.game-item {
+    text-align: center;
+    width: 150px;
+    margin: 0 5px;
+    box-sizing: border-box;
+}
+
+.game-item img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 5px;
+    display: block;
+    height: auto;
+}
+
+
+
+.game-year {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "DotGothic16", serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+/* ◀ ▶ スライダーボタン */
+.slider-btn-game {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-btn-game {
+    left: -40px; /* 左ボタンの位置調整 */
+}
+
+.right-btn-game {
+    right: -40px; /* 右ボタンの位置調整 */
+}
+
+
+/* 🎀 「view more」ボタン */
+.view-more {
+    background: #FF6F72;
+    border: 5px solid white;
+    font-size: 14px;
+    width: 1000px;
+    color: white;
+    padding: 8px 24px;
+    margin: 80px 0;
+    cursor: pointer;
+    font-weight: normal;
+    font-family: "Train One", serif;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🖱️ ホバー時（ボタンがふわっと浮いて色が変わる） */
+.view-more:hover {
+    background: #FF4F52; /* 色を少し濃くする */
+    transform: translateY(-5px); /* 少し浮く */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 影をつける */
+}
+
+/* 🎯 クリック時（押した感を出す） */
+.view-more:active {
+    transform: translateY(2px); /* 少し下がる */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* 影を小さくする */
+}
+
+
+/* 🔢 ゲーム総数 */
+.game-count {
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    margin-top: 40px;
+    font-family: "DotGothic16", serif;
+    font-weight: 400;
+}
+
+.count-number {
+    font-size: 140px;
+    font-weight: bold;
+}
+
+/* ------------------🎀 cafe 🎀--------------------*/
+
+.cafe {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFAE3;
+    text-align: center;
+}
+
+
+.header-cafe {
+    background-color: #FFEB70;
+    padding: 60px;
+}
+.logo1 {
+    width: 400px;
+}
+
+
+/* 🖼 メイン画像 */
+.main-img2 {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 80px;
+}
+
+/* 🔥 タイトル */
+.title {
+    font-size: 60px;
+    color: #FF8A00;
+    font-weight: bold;
+    margin-top: 200px;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: 400;
+}
+
+/* 🗺 地図エリア */
+.map {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+}
+.map img {
+    width: 100%;
+}
+.city {
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+.fukuoka { top: 70%; left: 15%; }
+.osaka { top: 70%; left: 45%; }
+.tokyo { top: 40%; right: 10%; }
+
+/* 🏠 店舗ボタン */
+.area-buttons {
+    margin: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 100px;
+}
+.area-btn {
+    background: #FF6F72;
+    border: 3px solid white;
+    font-size: 20px;
+    color: white;
+    width: 250px;
+    padding: 10px 60px;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: bold;
+    font-family: "Train One", serif;
+    font-weight: 400;
+    transition: transform 0.2s, background 0.3s;
+}
+.area-btn:hover {
+    background: #FF4F52;
+    transform: scale(1.1);
+}
+
+.menu-images img {
+    padding: 100px 0 200px 0;
+    width: 100%;
+}
+
+/* ---------------puti------------------- */
+
+.puti {
+    background-color: #FFE2F0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: 400;
+}
+
+/* 🎀 ヘッダー */
+.header-puti {
+    background-color: #D9A4B7;
+    padding: 50px 0;
+}
+
+.logo2 {
+    width: 80%;
+    padding: 40px 20px;
+    
+}
+
+/* 🏠 店舗情報 */
+.store-info {
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.store-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 80px;
+}
+
+.cafe-img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 30px;
+    margin-bottom: -40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🏠 店舗ボタン */
+.area-buttons {
+    margin: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 100px;
+}
+.area-btn {
+    background: #FF6F72;
+    border: 3px solid white;
+    font-size: 20px;
+    color: white;
+    width: 250px;
+    padding: 10px 60px;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+.area-btn:hover {
+    background: #FF4F52;
+    transform: scale(1.1);
+}
+
+/* 🍰 スイーツ一覧 */
+.sweets-section h2 {
+    font-size: 40px;
+    margin: 50px 0;
+    margin-bottom: 120px;
+    color: black;
+}
+
+/* 🍰 スライダー */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.slider-wrapper {
+    width: auto; /* 画像3つ分の幅を動的に設定 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* スイーツ画像 */
+.sweet-item {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 5px; /* 余白を考慮 */
+}
+
+/* 🎀 スライダーボタン */
+.slider-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #6A1B4D;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.slider-btn:hover {
+    color: #FF4081;
+}
+
+
+.puti-button {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+/* 🔍 VIEW MORE ボタン */
+.view-more {
+    background: #FF6F72;
+    border: 5px solid white;
+    font-size: 28px;
+    color: white;
+    padding: 14px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 20px auto;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    text-align: center;
+    width: 340px;
+    
+}
+.view-more:hover {
+    background: #FF4F52;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------footer----------------------- */
+
+/* 🍋 全体の背景 */
+.x {
+    margin: 0;
+    padding: 0;
+    background-color: #FDE3E3;
+    text-align: center;
+}
+
+/* 🟡 ヘッダーとフッター */
+.header-x, .footer {
+    background-color: #FFD839;
+    height: 80px;
+    width: 100%;
+}
+
+.footer {
+    height: 100px;
+}
+
+/* 🏠 メインボックス */
+.xcontainer {
+    background-color: white;
+    width: 50%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🎀 ロゴ */
+.logo3 {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+/* 🎨 ボタンのデザイン */
+.xlink-button {
+    display: block;
+    width: 100%;
+    background-color: #FF9797;
+    color: white;
+    font-size: 16px;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: bold;
+    padding: 15px;
+    margin: 80px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* 🌟 ボタンのホバー */
+.xlink-button:hover {
+    background-color: #FF6565;
+}
+
+/* 🔠 フッターのテキスト */
+.footer p {
+    margin: 0;
+    padding: 40px;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: normal;
+    color: white;
+}
+
+
+
+/* ----------------💤 modal 💤---------------------*/
+
+/* 🌟 モーダルの全体背景 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🎀 モーダルの中身 */
+.modal-content {
+    background-color: #FFE2F0; /* ピンクの背景 */
+    padding: 50px 0 0 0;
+    border: 12px solid #C2B8FF;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* ❌ 閉じるボタン */
+.modalclose-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FF7878;
+}
+
+/* 🖼 モーダル内の画像 */
+.modal-image {
+    width: 90%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* 📜 モーダル内のテキスト */
+.modal-text {
+    font-size: 18px;
+    color: #FF7878;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+/* 🌙 睡眠マークを青に */
+.sleep-icon {
+    color: #4169E1;
+    font-size: 20px;
+}
+
+/* 🎀 モーダルを開くボタン */
+.modal-button {
+    background-color: #FF9797;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    font-family: "Hachi Maru Pop", serif;
+    font-weight: normal;
+}
+
+/* ホバー時 */
+.modal-button:hover {
+    background-color: #FF6565;
+}

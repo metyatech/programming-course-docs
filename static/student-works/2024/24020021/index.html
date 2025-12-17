@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24020021</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- my styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- my scripts -->
+    <script src="index.js" defer></script>
+</head>
+<!-- ドロワメニュー -->
+<header class="header-bar">
+    <div class="ham-c">
+        <button class="ham-button">
+            <span class="ham-icon">
+                <span class="bar first"></span>
+                <span class="bar middle"></span>
+                <span class="bar last"></span>
+            </span>
+        </button>
+        <nav class="ham">
+            <ul class="nav-b">
+                <li class="nav-i">コンセプト</li>
+                <li class="nav-i">客室紹介</li>
+                <li class="nav-i">レストラン</li>
+                <li class="nav-i">アクティビティ</li>
+                <li class="nav-i">アクセス</li>
+                <li class="nav-i">お知らせ</li>
+            </ul>
+        </nav>
+    </div>
+    <!-- ドロップダウンメニュー -->
+    <section class="menu-c">
+        <section class="menu">
+            <div class="title"><span>予約</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">予約</li>
+                <li class="menu-i">客室紹介</li>
+                <li class="menu-i">カレンダー</li>
+            </ul>
+        </section>
+        <section class="menu">
+            <div class="title"><span>本館について</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">コンセプト</li>
+                <li class="menu-i">お知らせ</li>
+                <li class="menu-i">よくある質問</li>
+            </ul>
+        </section>
+        <section class="menu">
+            <div class="title"><span>レストラン</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">メニュー</li>
+                <li class="menu-i">期間限定メニュー</li>
+                <li class="menu-i">こだわりの素材</li>
+                <li class="menu-i">テイクアウト</li>
+            </ul>
+        </section>
+    </section>
+
+</header>
+<!-- タイトル -->
+<div class="hero">
+    <h1 class="hero2">Primal Oak Hotel</h1>
+</div>
+<!-- スライダー -->
+<div class="slide">
+    <h1 class="hero3">プライマルオークホテルについて</h1>
+    <img src="images/049389715fad67532095fa597dd567cf.jpg">
+    <img src="images/05ddf47448ea1270901a8c6baca7e368.jpg">
+    <img src="images/05de9dc45f7f5a1b93353129b66d3d3f.jpg">
+    <img src="images/beautiful view.jpeg">
+    <img src="images/朝食が美味しいホテル13選！クチコミ高評価の施設を厳選して紹介＜東京・2024＞ ｜じゃらんニュース.jpeg">
+</div>
+<!-- モーダルウィンドウ -->
+ <div>
+    <!-- モーダルのボタン -->
+ <button class="btn" onclick="modal.showModal()">予約する</button>
+
+ <dialog id="modal">
+    <p>日付を選択してください。</p>
+    <!-- 閉じる用のボタン -->
+    <form method="dialog">
+        <button>戻る</button>
+    </form>
+ </dialog>
+</div>
+</body>
+</html>

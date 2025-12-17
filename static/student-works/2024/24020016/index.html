@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webサイト</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- my styles -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="common.css">
+
+    <!-- my scripts -->
+    <script src="index.js" defer></script>
+
+    <!-- Animate.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- slick.css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min-thema.css">
+</head>
+
+<body>
+    <header class="header-bar">
+        <div class="ham-c">
+            <button class="ham-button">
+                <span class="ham-icon">
+                    <span class="bar first"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar last"></span>
+                </span>
+            </button>
+            <nav class="ham">
+                <ul class="nav-b">
+                    <li class="nav-i">HOME</li>
+                    <li class="nav-i">NEWS</li>
+                    <li class="nav-i">STORE</li>
+                </ul>
+            </nav>
+        </div>
+        <section class="menu-c">
+            <section class="menu">
+                <div class="title"><span>PROFILE</span></div>
+                <ul class="menu-b">
+                    <li class="menu-i">ABOUT SHOSENSEI</li>
+                    <li class="menu-i">GOODS</li>
+                </ul>
+            </section>
+            <section class="menu">
+                <div class="title"><span>DISCOGRAPHY</span></div>
+                <ul class="menu-b">
+                    <li class="menu-i">NEW RELEASE</li>
+                    <li class="menu-i">SINGLE</li>
+                    <li class="menu-i">ALBUM</li>
+                </ul>
+            </section>
+            <section class="menu">
+                <div class="title"><span>VIDEO</span></div>
+                <ul class="menu-b">
+                    <li class="menu-i">YOUTUBE</li>
+                    <li class="menu-i">INSTAGRAM</li>
+                    <li class="menu-i">LIVE</li>
+
+                </ul>
+            </section>
+        </section>
+    </header>
+
+    <div class="cover cover-home">
+        <!-- ★見出しにwowとAnimate.CSSのfadeInUpを設定する -->
+        <h2 class="page-title font-english wow animate__animated animate__fadeInUp">SHO-SENSEI!!</h2>
+    </div>
+    <section class="about">
+        <!-- ★見出しにwowとAnimate.CSSのfadeInUpを設定する -->
+        <h3 class="heading-medium font-english wow animate__animated animate__fadeInUp">SHO-SENSEI!!</h3>
+        <p class="">SHO-SENSEI!!（しょうせんせい）は、兵庫県出身のラッパー。高校卒業後、カナダに渡り英語と音楽を学ぶ。20歳で東京に拠点を移し、本格的に音楽活動を開始する。
+        </p>
+        <div class="align-center">
+            <a class="btn" href="menu.html">view more</a>
+        </div>
+    </section>
+
+    <!-- スライドの外枠 -->
+    <div class="slide-wrapper">
+        <!-- スライド（コンテンツ） -->
+        <div id="slide" class="slide">
+            <div>
+                <img src="images/002.jpeg" alt="">
+            </div>
+            <div>
+                <img src="images/003.jpeg" alt="">
+            </div>
+            <div>
+                <img src="images/005.jpeg" alt="">
+            </div>
+        </div>
+        <!-- 左右のボタン -->
+        <span id="prev" class="prev"></span>
+        <span id="next" class="next"></span>
+        <!-- インジケーター -->
+        <ul class="indicator" id="indicator">
+            <li class="list"></li>
+            <li class="list"></li>
+            <li class="list"></li>
+        </ul>
+    </div>
+
+</body>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptII 24020022</title>
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- リセットCSS -->
+    <link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" rel="stylesheet">
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- JavaScript -->
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header class="haikeisyoku">
+        <h2 class="logo"><img src="images/logo.png" alt=""></h2>
+        <ul class="header-menu">
+            <li><button class="midashi">シャルル・パティスリーについて</button></li>
+            <li>
+                <button class="menuber" id="menuber">
+                    <p class="menubutton"></p>
+                    <p class="menubutton"></p>
+                    <p class="menubutton"></p>
+                </button>
+            </li>
+        </ul>
+    </header>
+
+    <!-- ドロップダウンメニュー -->
+    <section class="drop">
+        <ul>
+            <li>ケーキ</li>
+            <li>ドリンク</li>
+            <li>お土産</li>
+        </ul>
+    </section>
+
+    <!-- ハンバーガーメニューのボタン -->
+    <nav id="ham" class="ham">
+        <ul>
+            <li class="youso">ニュース</li>
+            <hr>
+            <li class="youso">商品紹介</li>
+            <hr>
+            <li class="youso">アクセス</li>
+            <hr>
+        </ul>
+    </nav>
+
+    <!-- heroイメージ -->
+    <section class="hero">
+        <h2>あなたの日常を贅沢なひとときに</h2>
+        <h1>Charles Pâtisserie</h1>
+        <h2>シャルル・パティスリー</h2>
+    </section>
+
+    <!-- 箱 -->
+    <section class="sindann">
+        <div class="haikeisyoku">
+            <h2>ケーキ診断</h2>
+            <p>AIがあなたに合うケーキを診断！</p>
+            <p>自分好みのケーキを見つけてもらおう！</p>
+        </div>
+        <div class="haikeisyoku">
+            <h2>試食セット</h2>
+            <p>何を選んでいいかわからない。</p>
+            <p>試食セットで「好き」を見つけよう！</p>
+        </div>
+    </section>
+
+    <!-- モーダルウィンドウのボタン -->
+    <button class="modal-open js-modal-open">好きなケーキを診断する！</button>
+    <div class="js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-content modal-content-open">
+                <p>モーダルウィンドウを開きました。</p>
+                <button class="js-modal-close">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ニュース -->
+    <section class="news">
+        <h2 class="title-center">ニュース</h2>
+        <table class="news-table">
+            <tr>
+                <td class="hiduke">2024年8月12日</td>
+                <td>8月のお盆中は火曜日も休まず営業いたします。</td>
+            </tr>
+            <tr>
+                <td class="hiduke">2024年7月23日</td>
+                <td>Charles Pâtisserieが〇〇〇〇紙に掲載されました。</td>
+            </tr>
+            <tr>
+                <td class="hiduke">2024年7月17日</td>
+                <td>季節の商品が発売になりました。この季節は桃！</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 商品紹介 -->
+    <section class="syouhinn haikeisyoku">
+        <h2 class="title-center">商品紹介</h2>
+        <div>
+            <p>新鮮な素材を厳選し、手作りで仕上げるこだわりのスイーツ。</p>
+        </div>
+        <div class="sannmenu">
+            <div>
+                <h3>カットケーキ</h3>
+            </div>
+            <div>
+                <h3>ホールケーキ</h3>
+            </div>
+            <div>
+                <h3>焼き菓子</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス -->
+    <section class="basyo">
+        <h2 class="title-center">アクセス</h2>
+        <table class="access-table">
+            <tr>
+                <th>住所</th>
+                <td>〒330-0845 埼玉県さいたま市大宮区仲町３丁目１００−２<br>※大宮駅東口から徒歩10分</td>
+                <th>駐車場</th>
+                <td>店舗前に5台分の駐車スペース有り<br>満車時は付近のコインパーキングをご利用ください。<br>徒歩3分圏内に3箇所ございます。</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>048-555-2663</td>
+                <th>定休日</th>
+                <td>毎週火曜日定休（）祝日は営業</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- メニュー -->
+    <menu>
+        <ul>
+            <li class="haikeisyoku">オンラインショッピング</li>
+            <li class="haikeisyoku">ケーキ予約</li>
+            <li class="haikeisyoku">採用情報</li>
+        </ul>
+    </menu>
+
+    <!-- フッター -->
+    <footer class="haikeisyoku">
+        <ul>
+            <li>商品紹介</li>
+            <li>季節の商品</li>
+            <li>シャルル・パティスリーについて</li>
+            <li>オンラインショッピング</li>
+            <li>ケーキ予約</li>
+            <li>採用情報</li>
+        </ul>
+        <small>Copyright © Charles Pâtisserie. All rights reserved.</small>
+    </footer>
+
+</body>
+
+</html>

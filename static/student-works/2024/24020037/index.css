@@ -1,0 +1,327 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #efefef;
+}
+
+
+
+/* menu */
+.menu-c {
+  flex: initial;
+  margin-top: 20px;
+  margin-right: 60px;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  z-index: 13;
+}
+
+.menu {
+  width: 100px;
+  font-size: 12px;
+
+  cursor: pointer;
+
+}
+
+.title {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+}
+
+.menu-b {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  transition: clip-path 0.5s;
+  clip-path: inset(0 0 100%);
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  list-style: none;
+  background-color: #fff;
+}
+
+.menu-b.open {
+  clip-path: inset(0 0 0);
+}
+
+.menu-i {
+  text-align: center;
+  color: #000;
+  padding: 8px 10px;
+}
+
+.menu-i:hover {
+  background-color: #1b1b1b;
+}
+
+
+.aplle-list {
+  margin: 10rem auto 0;
+}
+
+.lineup .item {
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.lineup .item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  /* 縦横比を 1/1に設定 */
+  object-fit: cover;
+  /* 縦横比を維持して表示する設定 */
+  border: 5px solid #432;
+  /* 境界線：5px #432 */
+  border-radius: 10%;
+  /*角丸10%*/
+  margin-bottom: 1rem;
+}
+
+.lineup .item p {
+  font-size: 16px;
+}
+
+
+
+
+/* 800以上で表示しない */
+@media (min-width:800px) {
+  .nav-i {
+    display: none;
+  }
+}
+
+/* 800以下の時 */
+@media screen and (max-width: 800px) {
+  .menu-c {
+    display: none;
+  }
+
+  .header-bar {
+    height: 80px;
+    position: fixed;
+    /* 固定位置に変更 */
+    top: 0;
+    right: 0;
+    /* 右上に配置 */
+    width: 100%;
+    z-index: 13;
+  }
+
+  /* ham-buttonの位置調整 */
+  .ham-button {
+    height: 100%;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    background-color: initial;
+    cursor: pointer;
+    position: absolute;
+    /* 絶対位置で調整 */
+    right: 0;
+    /* 右側に配置 */
+    top: 0;
+    /* 上部に配置 */
+    z-index: 15;
+  }
+
+
+  .ham-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ham-icon .bar {
+    width: calc((4px + 8px + 4px + 8px) * sqrt(2));
+    height: 4px;
+    display: block;
+    background-color: #434343;
+    transform-origin: left center;
+    transition: 1s;
+  }
+
+  .ham-c.open .ham-icon .bar.first {
+    transform: rotate(20deg);
+  }
+
+
+
+  .ham-c.open .ham-icon .bar.last {
+    transform: rotate(-20deg);
+  }
+
+  .ham {
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 20px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    transform: translateY(calc(-150% - 3px));
+    transition: transform 1s;
+    background-color: white;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 25%);
+  }
+
+  .ham-c.open .ham {
+    transform: translateX(0);
+  }
+
+  .nav-b {
+    margin: 0;
+    padding: 0 20px;
+    list-style: none;
+
+  }
+
+  .nav-i {
+    padding-top: 25px;
+    border-bottom: solid #E9E9E9 1px;
+    cursor: pointer;
+  }
+
+  .nav-i:hover {
+
+    background-color: #E9E9E9;
+  }
+
+  .back {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .ham-c.open .back {
+    pointer-events: auto;
+    opacity: 25%;
+  }
+}
+
+
+.modal_wrap input {
+  display: none;
+}
+
+.modal_overlay {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0s 0.5s;
+  transform: scale(0);
+}
+
+.modal_trigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.modal_content {
+  align-self: center;
+  width: 60%;
+  height: 100px;
+  padding: 30px 30px 20px;
+  box-sizing: border-box;
+  background: #fff;
+  line-height: 1.4em;
+  transition: 0.5s;
+}
+
+.modal_content p {
+  top: 0px;
+  text-align: center;
+}
+
+.close_button {
+  position: absolute;
+  bottom: 20%;
+  left: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.go_button {
+  position: absolute;
+  bottom: 20%;
+  right: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal_wrap input:checked~.modal_overlay {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+}
+
+.modal_wrap input:checked~.modal_overlay .modal_content {
+  transform: translateY(20px);
+}
+
+.open_button {
+  color: #4f96f6;
+  background-color: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 2px;
+  max-width: 300px;
+  text-decoration: none;
+
+}
+
+.open-button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  /*下に動く*/
+
+}
+
+
+.copyright {
+  background-color: #efefef;
+  text-align: center;
+  padding: 2rem 0;
+  color: #000;
+}
+
+.gg {
+  color: #fff;
+}

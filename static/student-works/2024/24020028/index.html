@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- h2フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- my styles -->
+    <link rel="stylesheet" href="index.css">
+    <!-- my scripts -->
+        <script src="index.js" defer></script>
+    <!-- slick.css  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min-thema.css">
+</head>
+
+<body>
+    <!-- モーダルウィンドウ -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Charles　Patisserie</h2>
+            <img class="modal-photo" src="img/モーダルウィンドウ.JPG" alt="">
+            <p>今月中にご来店いただいた方には、全メニュー10%オフの特典があります！</p>
+            <hr>
+            <p>InstagramやFacebookで最新情報をチェックしてください！</p>
+        </div>
+    </div>
+
+    <!-- ナビゲーションメニュー -->
+    <header class="header-bar">
+            <section class="logo">
+                <img class="logo.img" src="img/_レイヤー_1.png" alt="">
+            </section>
+            <section class="menu">
+                <div class="title"><span>商品紹介</span></div>
+                <ul class="menu-b">
+                    <li class="menu-i">カットケーキ</li>
+                    <hr>
+                    <li class="menu-i">ホールケーキ</li>
+                    <hr>
+                    <li class="menu-i">焼き菓子</li>
+                </ul>
+                <div class="ham-c">
+                    <button class="ham-button">
+                        <span class="ham-icon">
+                            <span class="bar first"></span>
+                            <span class="bar middle"></span>
+                            <span class="bar last"></span>
+                        </span>
+                    </button>
+                    <nav class="ham">
+                        <ul class="nav-b">
+                            <li class="nav-i">季節の商品</li>
+                            <li class="nav-i">シャルル・パティスリーについて</li>
+                            <li class="nav-i">オンラインショッピング</li>
+                            <li class="nav-i">ケーキ予約</li>
+                            <li class="nav-i">採用情報</li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+    </header>
+    <!-- メインビジュアル -->
+    <section class="main">
+        <div class="main-1">
+            <img src="img/メインビジュアル.jpg" alt="">
+        </div>
+
+        <div class="main-2">
+            <!-- いちごケーキ -->
+            <img src="img/いちごケーキ.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- ケーキ診断,試食セット -->
+    <section class="link">
+        <table>
+            <ul class="shindan">
+                <li class="shindan-title">ケーキ診断<br>
+                <p class="shindan-p">AIがあなたに合うケーキを診断！<br>
+                自分好みのケーキを見つけてもらおう！</p></li>
+                <li><img class="shindan-jpg" src="img/ケーキ診断.jpg" alt=""></li>
+            </ul>
+            <ul class="shisyoku">
+                <li  class="shisyoku-title">試食セット<br>
+                <p class="shisyoku-p">何を選んでいいかわからない。<br>
+                試食セットで「好き」を見つけよう！</p></li>
+                <li><img class="shisyoku-jpg" src="img/試食セット.jpg" alt=""></li>
+            </ul>
+        </table>
+    </section>
+
+    <!-- スライダー -->
+    <section class="cake-photo">
+        <div class="lineup autoplay">
+            <div class="slider">
+                <img src="img/slider-1.jpg" alt="">
+            </div>
+            <div class="slider">
+                <img src="img/slider-2.jpg" alt="">
+            </div>
+            <div class="slider">
+                <img src="img/slider-3.jpg" alt="">
+            </div>
+            <div class="slider">
+                <img src="img/slider-4.jpg" alt="">
+            </div>
+            <div class="slider">
+                <img src="img/slider-5.jpg" alt="">
+            </div>
+            <div class="slider">
+                <img src="img/slider-6.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品紹介 -->
+    <section>
+        <h2>Product introduction</h2>
+        <h3>-商品紹介-</h3>
+        <p>新鮮な素材を厳選し、手作りで仕上げるこだわりのスイーツ。</p>
+        <img src="img/季節限定商品.jpg" alt="">
+        <p>⚪︎⚪︎⚪︎の優しい味わいが心地よく広がる、究極の癒しスイーツ。</p>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </section>
+    <!-- slick.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $('.autoplay').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                    }
+                ]
+            });
+    </script>
+
+</body>
+
+</html>

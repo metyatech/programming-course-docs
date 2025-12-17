@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: "Noto Serif JP", serif;
+    width: 100%;
+}
+h2{
+    font-family: "Jacques Francois", serif;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.sns-menu{
+    padding: 30px;
+}
+
+
+
+
+.title{
+    z-index: 6;
+}
+
+.nav-box{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75px;
+    height: 75px;
+    background-color: #fff;
+    z-index: 10;
+}
+.nav-box p{
+    position: absolute;
+    left: 10px;
+    width: 40px;
+    height: 3px;
+    background-color: black;
+    transition: .7s;
+}
+.nav-box p:nth-of-type(1){
+    top: 25px;
+    left: 20px;
+}
+.nav-box p:nth-of-type(2){
+    top: 35px;
+    left: 20px;
+}
+.nav-box p:nth-of-type(3){
+    top: 45px;
+    left: 20px;
+}
+.nav-box.active p:nth-of-type(1){
+    transform: translateY(10px) rotate(45deg);
+}
+.nav-box.active p:nth-of-type(2){
+    opacity: 0;
+}
+.nav-box.active p:nth-of-type(3){
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+.container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9;
+    opacity: 0;
+    pointer-events: none;
+    transition: .7s;
+}
+.container.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.item{
+    width: 800px;
+    margin: 0 auto;
+}
+.item div{
+    list-style: none;
+    text-align: center;
+    padding: 100px;
+}
+.item div{
+    padding: 10px;
+    padding-top: 20px;
+    font-size: 24px;
+    border-bottom: 1px solid #333;
+}
+
+.menu-b{
+    /* position=absoluteにすると線の下に行く（要素を無かったものとしてレイアウトされる） */
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 0;
+    width: 800px;
+    background-color: #333;
+    color: #fff;
+    /* 中身が溢れた時に隠す */
+    overflow: hidden;
+    text-align: center;
+    font-size: 24px;
+
+    transition: height 0.5s;
+}
+.menu-b li{
+    padding: 10px;
+}
+.menu-b.open{
+    height: 250px;
+}
+.sns-icon{
+    display: flex;
+    justify-content: space-between;
+    width: 87px;
+    padding-left: 30px;
+    padding-top: 22px;
+    padding-bottom: 21px;
+}
+.sns-icon img{
+    width: 32px;
+    height: 32px;
+}
+
+.recommend{
+    width: 1097px;    
+    margin: 0 auto;
+    padding-top: 45px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.recommend img{
+    width: 506px;
+    height: 263px;
+}
+.mainvisual{
+    width: 100%;
+    /* position: relative; */
+    overflow: hidden;
+}
+
+#open{
+    cursor: pointer;
+}
+#mask{
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+}
+#modalcontent{
+    text-align: center;
+    width: 506px;
+    padding: 40px 30px;
+    position: fixed;
+    top: 280px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+} 
+#mask.hidden{
+    display: none;
+}
+#modalcontent.hidden{
+    display: none;
+}
+.news{
+    padding-top: 95px;
+    width: 674px;
+    margin: 0 auto;
+}
+.news h2,.news p{
+    border-bottom: 1px solid #333;
+    margin: 0 auto;
+}
+.news h2{
+    width: 126px;
+}
+.newscontent{
+    padding-top: 5px;
+}
+.news p{
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+.btn{
+    text-align: right;
+    padding-top: 11px;
+}
+.btn button{
+    border: none;
+    background-color: #fff;
+}
+.info{
+    padding-top: 98px;
+}
+.info p{
+    padding-top: 15px;
+    text-align: center;
+}
+.info-h2{
+    width: 176px;
+    margin: 0 auto;
+}
+
+.item img{
+    width: 289px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.menu-list button {
+    display: none!important;
+}
+
+.menu-list{
+    max-width: 1044px;
+    margin: 0 auto;
+}

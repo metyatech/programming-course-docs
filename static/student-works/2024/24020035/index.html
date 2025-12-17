@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cake Pâtisserie</title>
+    <!-- 検索エンジンで表示されるサイトの説明文 -->
+    <meta name="description" content="Cake Pâtisserieは、ブレンドコーヒーと季節のスイーツを提供するカフェです。">
+    <!-- デバイスサイズに合わせる -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- ★リセットCSS destyle.min.cssをjsdelivrから読み込む -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.1/destyle.min.css">
+    <!-- ★Googleフォント　和文「M PLUS Rounded 1c」　欧文「Lora」を読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- ★オリジナルCSSを読み込む -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- my scripts -->
+    <script src="index.js" defer></script>
+    <!-- Animate.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- slick.css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min-thema.css">
+</head>
+
+<body>
+    <header>
+        <div class="ham-c">
+            <button class="ham-button">
+                <span class="ham-icon">
+                    <span class="bar first"></span>
+                    <span class="bar middle"></span>
+                    <span class="bar last"></span>
+                </span>
+            </button>
+
+
+            <nav class="ham">
+                <ul class="nav-b">
+                    <li class="nav-i">HOME</li>
+                    <li class="nav-i">MENU</li>
+                    <li class="nav-i">ACCESS</li>
+                    <li class="nav-i">Cake Pâtisserie</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="menu-c">
+        <section class="menu">
+            <div class="title"><span>HOME</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">ABOUT</li>
+                <li class="menu-i">MORE</li>
+            </ul>
+        </section>
+        <section class="menu">
+            <div class="title"><span>MENU</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">NEW</li>
+                <li class="menu-i">SEASON</li>
+                <li class="menu-i"></li>
+            </ul>
+        </section>
+        <section class="menu">
+            <div class="title"><span>ACCESS</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">MAP</li>
+                <li class="menu-i">ADDEWSS</li>
+
+            </ul>
+        </section>
+        <section class="menu">
+            <div class="title"><span>Cake Pâtisserie</span></div>
+            <ul class="menu-b">
+                <li class="menu-i">VIEW</li>
+                <li class="menu-i">INFOMATION</li>
+
+            </ul>
+        </section>
+    </section>
+
+
+    <div class="cover cover-home"><!-- ★背景画像のclassを指定 -->
+        <header class="page-header wrapper">
+            <h1 class="align-center"><a href="index.html"></a>
+            </h1>
+        </header>
+        <!-- ★見出し文字には「Lora」。wowとzoomInを設定する -->
+        <h2 class="page-title font-english wow animate__animated animate__zoomIn">Elevate Your Senses with Every
+            Bite.
+        </h2>
+        <p class="catch">限られた人だけが味わえる、本物の逸品</p>
+    </div>
+    <section class="about">
+        <!-- ★見出し文字には「Lora」。wowとzoomInを設定する -->
+        <h3 class="heading-medium font-english wow animate__animated animate__zoomIn">About Cake</h3>
+        <p class="">
+            シンプルでありながら奥深い、飽きのこない美味しさ。見た目にも美しく、心まで満たされるスイーツ体験をお届けします。大切な日にも、何気ない日常にも寄り添う、特別な一皿をぜひお楽しみください。
+        </p>
+        <div class="align-center">
+            <a class="btn" href="menu.html">CAKE MENUを見る</a>
+        </div>
+    </section>
+
+    <section class="menu-list">
+
+        <!-- スライドの外枠 -->
+        <div class="slide-wrapper">
+            <!-- スライド（コンテンツ） -->
+            <div id="slide" class="slide">
+                <div class="p">
+                    <p>❤︎ 新 商 品 ❤︎</p>
+                </div>
+                <div class="p">
+                    <p>❤︎ 季 節 限 定 商 品 ❤︎</p>
+                </div>
+                <div class="p">
+                    <p>❤︎ Cake Pâtisserie ❤︎</p>
+                </div>
+            </div>
+            <!-- 左右のボタン -->
+            <span id="prev" class="prev"></span>
+            <span id="next" class="next"></span>
+            <!-- インジケーター -->
+            <ul class="indicator" id="indicator">
+                <li class="list"></li>
+                <li class="list"></li>
+                <li class="list"></li>
+            </ul>
+        </div>
+        <!-- ★見出し文字には「Lora」。wowとzoomInを設定する -->
+        <h3 class="heading-medium font-english wow animate__animated animate__zoomIn">Menu List</h3>
+
+        <!-- slickでmenuのスライドを導入　ulタグで実装 -->
+        <ul class="lineup menu-slide">
+            <li class="item">
+                <img src="images/menu10.jpg" alt="">
+                <p>ラズベリーチーズケーキ</p>
+            </li>
+            <li class="item">
+                <img src="images/menu11.jpg" alt="">
+                <p>ストロベリームース</p>
+            </li>
+            <li class="item">
+                <img src="images/menu12.jpg" alt="">
+                <p>キャラメルムース</p>
+            </li>
+            <li class="item">
+                <img src="images/menu04.jpg" alt="">
+                <p>チョコ・フラペチーノ</p>
+            </li>
+            <li class="item">
+                <img src="images/menu05.jpg" alt="">
+                <p>ブルークリームソーダ</p>
+            </li>
+            <li class="item">
+                <img src="images/menu06.jpg" alt="">
+                <p>オレンジ・ティー</p>
+            </li>
+            <li class="item">
+                <img src="images/menu07.jpg" alt="">
+                <p>ガトーショコラ</p>
+            </li>
+            <li class="item">
+                <img src="images/menu08.jpg" alt="">
+                <p>季節のパンケーキ</p>
+            </li>
+            <li class="item">
+                <img src="images/menu09.jpg" alt="">
+                <p>カスタードプディング</p>
+            </li>
+        </ul>
+    </section>
+
+
+    <button class="button modalOpen">Click Me</button>
+    <div class="modal">
+        <div class="modal-inner">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>windowを開きました</h1>
+                    <span class="modalClose">×</span>
+                </div>
+                <div class="modal-body">
+                    <p>Cake Pâtisserieは最高!!!!!!!!!!!!!!!!!!!!!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buffer"></div>
+    <!-- //slickでmenuのスライドを導入 -->
+    <div class="copyright">
+        <small><!-- ★実体参照を使用してコピーライト記号を入れる  -->&copy; Cake Pâtisserie　24020035　町田妃菜</small>
+    </div>
+    </footer>
+    <!-- slick.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- wowjs -->
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <!-- slick：desktopでは、4つ表示、mobileでは、2つ表示 -->
+    <script>
+        $('.menu-slide').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>

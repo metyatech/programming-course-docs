@@ -1,0 +1,373 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* 共通部分 ---------------------------------------------------*/
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: #ddd 1px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 0;
+}
+
+/* 上に戻るボタン */
+.top.header {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #1976d2;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+}
+
+footer {
+    padding: 20px;
+    padding-left: 50px;
+    display: flex;
+    gap: 50px;
+    background-color: #203952;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+
+footer .top {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #203952;
+}
+
+footer a {
+    color: #fff;
+}
+
+h1 {
+    font-size: 64px;
+    color: #203952;
+}
+
+h2 {
+    font-size: 58px;
+    color: #203952;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 36px;
+    color: #203952;
+}
+h4{
+    font-size: 32px;
+    color: #203952;
+}
+
+/* 各ページ共通部分ここまで -------------------------------------*/
+/* home.html専用スタイル -------------------------------------*/
+.mainvisual img {
+    width: 1000px;
+    height: auto;
+    display: block;
+    margin-bottom: 150px;
+    padding: 20px;
+}
+
+/* mainvisualセクションのスタイル */
+
+.mainvisual {
+    display: flex;
+    align-items: center;
+    height: 600px;
+    gap: 20px;
+}
+
+.mainvisual .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.mainvisual p {
+    font-size: 36px;
+    color: #555;
+}
+
+/* home .about-------------*/
+.about {
+    position: relative;
+}
+
+.about-title {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-tab {
+    cursor: pointer;
+    /* position: absolute;
+    top: 190px; */
+}
+
+.about-setumei {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 50px;
+}
+
+.about p {
+    width: 420px;
+    font-size: 24px;
+    line-height: 1.8;
+}
+
+.about img {
+    width: 700px;
+    height: 450px;
+    margin-left: 50px;
+
+}
+
+/* home .aboutここまで-------------*/
+/* home.feature-----------------*/
+.feature-title {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+table {
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 50px 20px;
+    font-size: 36px;
+    width: 500px;
+    text-align: center;
+}
+
+td {
+    padding: 20px 70px;
+    font-size: 23px;
+}
+
+.card.recommend {
+    width: 800px;
+    margin: 80px auto;
+    padding: 30px;
+    border: 2px solid #203952;
+    border-radius: 10px;
+}
+
+.card.recommend h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card.recommend ul {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+.card.recommend li {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* home.featureここまで-----------------*/
+
+/* home.flow-----------------*/
+
+.flow-section {
+    margin: 0 auto;
+    margin-bottom: 100px;
+    width: 90%;
+    display: grid;
+    gap: 20px;
+}
+
+.flow-section p {
+    font-size: 20px;
+}
+
+.flow-section h4 {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.flow {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+}
+
+.flow li {
+    background-color: #eff5f9;
+    border: 2px solid #06182a;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* home.flowここまで----------------- */
+/* home.qa-----------------*/
+.qa-section {
+    margin: 0 auto;
+    margin-bottom: 100px;
+    width: 800px;
+    margin: 80px auto;
+    padding: 30px;
+    border: 2px solid #203952;
+    border-radius: 10px;
+}
+
+.qa-section h2 {
+    margin-bottom: 40px;
+}
+
+.qa {
+    list-style-type: none;
+}
+
+.qa li {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/* home.qaここまで-----------------*/
+
+/* about.html-------------------------- */
+/* about.detail -----------------------------*/
+.detail-section {
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.detail-section h3 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #06182a;
+}
+
+.detail-section li {
+    font-size: 20px;
+    list-style: none;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+.detail {
+    width: 390px;
+    border: #06182a 2px solid;
+    margin: 0 auto;
+}
+
+.main-about h3{
+    margin: 0 auto;
+    text-align: center;
+    width: 1100px;
+    margin-bottom: 70px;
+    border-top: 5px solid #203952; 
+    border-bottom: 5px solid #203952;
+    padding: 20px 0;
+}
+
+.main-about h4{
+    margin: 0 auto;
+    width: 1100px;
+    margin-bottom:70px ;
+    border-bottom: 5px solid #203952;
+    padding: 10px 0;
+}
+
+.main-about p{
+    font-size: 24px;
+    line-height: 2rem;
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+.main-about img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    width: 600px;
+    height: auto;
+}
+
+.main-about ul{
+    width: 1100px;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-bottom: 70px;
+}
+.main-about li{
+    margin-bottom: 20px;
+    line-height: 2rem;
+}
+
+/* about.htmlここまで -----------------------------*/
+/* gallery.html-------------------------- */
+.gallery-item {
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #203952;
+    border-radius: 8px;
+}
+

@@ -1,0 +1,222 @@
+/* 基本リセット */
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+   line-height: 1.6;
+}
+
+/* ヘッダー */
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #000000;
+   color: white;
+   padding: 50px 20px;
+}
+
+.ham-c {
+   display: flex;
+   align-items: center;
+}
+
+.ham-button {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: white;
+   display: flex;
+   align-items: center;
+}
+
+.ham-icon .bar {
+   display: block;
+   width: 25px;
+   height: 3px;
+   background: white;
+   margin: 5px 0;
+}
+
+.nav-b {
+   list-style: none;
+   display: none;
+   padding: 0;
+   margin: 0;
+}
+
+/* menu */
+
+.menu-title {
+   width: 100%;
+   height: 100%;
+   display: grid;
+   place-items: center;
+   font-weight: bold;
+}
+
+.menu-b {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   transition: clip-path 0.5s;
+   clip-path: inset(0 0 100%);
+   overflow: hidden;
+   list-style: none;
+   background-color: #3f3f3f;
+   position: relative;
+   z-index: 999;
+   top: 30px;
+}
+
+.menu-a {
+   position: relative;
+   top: 25px;
+   right: 40px;
+}
+
+.menu-b.open {
+   clip-path: inset(0 0 0);
+}
+
+.menu-i {
+   text-align: center;
+   color: white;
+   place-items: center;
+   padding: 8px 10px;
+}
+
+.menu-i a {
+   color: white;
+}
+
+.menu-i:hover {
+   background-color: #1b1b1b;
+}
+
+.nav-i a {
+   color: white;
+   text-decoration: none;
+   padding: 10px 20px;
+   display: block;
+}
+
+.ham.open .nav-b {
+   display: block;
+}
+
+/* スライダー */
+.slider-container {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   max-width: 800px;
+   margin: 20px auto;
+}
+
+.slides {
+   display: flex;
+   transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+   width: 100%;
+   flex-shrink: 0;
+}
+
+button {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: rgba(0, 0, 0, 0.5);
+   color: white;
+   border: none;
+   cursor: pointer;
+   padding: 10px;
+   z-index: 10;
+}
+
+#left {
+   left: 10px;
+}
+
+#right {
+   right: 10px;
+}
+
+/* NEWS */
+.news {
+   margin: 20px;
+   padding: 10px;
+   background-color: #f4f4f4;
+   border-radius: 5px;
+}
+
+.news h2 {
+   margin-bottom: 10px;
+   color: #333;
+}
+
+.time {
+   margin-bottom: 10px;
+   display: flex;
+   align-items: center;
+}
+
+.time time {
+   margin-right: 10px;
+   color: #888;
+}
+/* ドロップダウンメニュー */
+.dropdown-menu {
+   display: none;
+   position: absolute;
+   background: white;
+   list-style: none;
+   padding: 10px;
+   border: 1px solid #ddd;
+}
+.dropdown:hover .dropdown-menu {
+   display: block;
+}
+.dropdown-menu li a {
+   color: #000000;
+   text-decoration: none;
+   display: block;
+   padding: 5px 10px;
+}
+
+/* モーダル */
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 1000;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.8);
+   justify-content: center;
+   align-items: center;
+}
+
+.modal-content {
+   background: white;
+   padding: 20px;
+   border-radius: 10px;
+   text-align: center;
+}
+
+.modal img {
+   width: 80%;
+   max-width: 500px;
+}
+
+.close {
+   position: absolute;
+   top: 10px;
+   right: 20px;
+   font-size: 24px;
+   cursor: pointer;
+   color: black;
+}
