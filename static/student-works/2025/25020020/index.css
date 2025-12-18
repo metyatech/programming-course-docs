@@ -1,42 +1,62 @@
 body {
     margin: 0;
+    font-family: "yosugara ver12"; /* 商用利用可 */
+    font-style: normal;
+}
+/* リンク ーーーーーーーーーー */
+a {
+    color: #B39D5A;
+    text-decoration: none;
+}
+a:hover {color: #E4C1B5;}
+/* a:valid {color: #E4C1B5;} */
+.view {
+    color: #000;
+    padding: 3px 20px;
+    border: 1px #B39D5A solid;
 }
 
-.menu {
+.nv {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    /* text-align: center; */
 }
 
-.menu>li {
+.nv>li {
     padding: 20px;
     cursor: pointer;
 }
 
-.menu>li:hover {
-    background-color: lightgreen;
+.nv>li:hover {
+    background-color: #B0D5C0;
 }
 
 
-
 h1 {
-    font-family: "Yesteryear", cursive;
+    font-family: "Yesteryear", cursive; /* 商用利用　不明 変更する */
     font-weight: 400;
     font-style: normal;
 }
 
 
-@font-face {
-    font-family: "myfont";
-    src: url("image/AsWinterBegins.otf") format("opentype");
-    /* font-display: swap; */
-    /*ダウンロード状況に応じてフォントの表示を変える
-    (「swap」はWebフォントが読み込まれるまでフォールバックフォントで表示し、読み込まれた時点で置き換えます。)*/
+
+#CONCEPT {
+    text-align: center;
+    margin-bottom: -8px;
 }
 
-.h2 {
-    font-size: 50px;
-    font-family: "myfont", sans-serif;
+
+.menu {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menu h3 {
+    text-align: center;
+    background-color: #B0D5C0;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }

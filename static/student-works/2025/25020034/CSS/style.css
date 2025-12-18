@@ -20,8 +20,9 @@
 }
 
 @font-face {
-    font-family: 'Evefont';
-    src: url('font/Evefont-Regular.ttf') format('opentype');
+    font-family: "Evefont";
+    src: url(../font/Evefont-Regular.woff2) format("woff2"),
+        url(../font/Evefont-Regular.ttf) format("truetype"); 
     font-weight: normal;
     font-style: normal;
 }
@@ -60,7 +61,7 @@ h1 {
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 70px;
-    font-family: "Evefont", serif;
+    font-family: "Evefont", "Zen Old Mincho", serif;
     background-color: #333;
     padding: 12px;
     transition: opacity 0.4s ease;
@@ -88,7 +89,7 @@ h2 {
     margin-bottom: 50px;
     padding: 12px;
     font-size: 50px;
-    font-family: "Evefont", serif;
+    font-family: "Evefont", "Zen Old Mincho", serif;
     background-color: #333;
     transition: opacity 0.4s ease;
 }
@@ -108,7 +109,7 @@ h3 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 50px;
-    font-family: "Evefont", serif;
+    font-family: "Evefont", "Zen Old Mincho", serif;
     transition: opacity 0.4s ease;
 }
 
@@ -128,7 +129,7 @@ nav {
     color: #fff;
     border-bottom: 1px solid #aaa;
     margin: 0 0 20px;
-    padding: 0 0 12px 0;
+    padding: 12px 0;
 }
 
 nav ul {
@@ -355,6 +356,15 @@ a {
     margin: auto;
 }
 
+.lives a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.live-title:hover {
+    border-bottom: 1px solid #fff;
+}
+
 .lives ul {
     list-style-type: none;
     color: #fff;
@@ -371,7 +381,9 @@ a {
 .live-title {
     font-size: 20px;
     padding-top: 10px;
+    padding-bottom: 5px;
     font-weight: bold;
+    width: max-content;
 }
 
 .more {
@@ -478,44 +490,75 @@ a {
 /* UNDERCOVER.html
 --------------------------------------------- */
 
-.undercover {
+#live-list {
+    margin-bottom: 50px;
+}
+
+
+.live-name {
     display: flex;
-    gap: 100px;
+    gap: 60px;
     justify-content: center;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
+    margin-bottom: 10px;
 }
 
-.undercover img{
+.live-name img {
     margin: auto 0;
 }
 
-.uc {
-    margin: auto 0;
+#live-list a {
+    padding: 20px;
 }
 
-.uc p {
+.live-list {
+    margin: auto 0;
+    width: 600px;
+}
+
+.live-list p {
     color: #fff;
 }
 
-.uc .t {
+.live-list .t {
     font-size: 30px;
     padding-bottom: 10px;
 }
 
-.uc .title {
+.live-list .title {
     font-size: 70px;
+    padding: 5px;
+    border-bottom: 1px solid #fff;
 }
 
-.setlist1 {
+#live-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.day1.look,
+.day2.look {
+    display: block;
+}
+
+/* ▼ 最初は day2 を非表示にする */
+.day1.none,
+.day2.none {
+    display: none;
+}
+
+.setlist {
     /* text-align: left; */
     list-style-position: inside;
     color: #fff;
     font-size: 20px;
     margin-left: 10px;
+    padding-top: 30px;
 }
 
 
-.setlist1 li {
+.setlist li {
     padding-bottom: 10px;
 }
 
@@ -524,7 +567,163 @@ a {
     padding: 1rem 0;
 }
 
-nav a.active {
+nav li.active {
     border-bottom: 2px solid #fff;
     padding-bottom: 5px;
+}
+
+.day {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* Under Blue.html
+--------------------------------------------- */
+
+.NAGOYA,
+.OSAKA,
+.FUKUOKA,
+.SENDAI,
+.KANAGAWA,
+.Hong-Kong,
+.Korea,
+.Singapore,
+.Malaysia,
+.Indonesia,
+.Taiwan,
+.Yokohama {
+    position: relative;
+}
+
+.days {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    border: solid #ddd 1px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95) rotate(-3deg);
+    transform-origin: top left;
+    transition: all 0.3s;
+}
+
+.days>li {
+    padding: 12px 20px;
+    cursor: pointer;
+    opacity: 0;
+    /* 最初は各項目を透明に */
+    transform: translateX(-10px);
+    /* 少し左にずらした状態から開始 */
+    transition: opacity 0.3s, transform 0.3s;
+    /* 各項目のアニメーション */
+}
+
+.days>li:hover {
+    background-color: #f5f5f5;
+}
+
+/* 各サブメニュー項目の遅延設定 */
+.days>li:nth-child(1) {
+    transition-delay: 0.1s;
+    /* 1番目は0.1秒遅れて表示 */
+}
+
+.days>li:nth-child(2) {
+    transition-delay: 0.2s;
+    /* 2番目は0.2秒遅れて表示 */
+}
+
+.days.open {
+    opacity: 1;
+    visibility: visible;
+    transform: revert;
+}
+
+/* サブメニューが開いたときの、各項目の設定 */
+.days.open>li {
+    opacity: revert;
+    /* 元の位置に */
+    transform: revert;
+    /* 元の位置に */
+}
+
+.NAGOYA-day1.look,
+.NAGOYA-day2.look,
+.OSAKA-day1.look,
+.OSAKA-day2.look,
+.FUKUOKA-day1.look,
+.FUKUOKA-day2.look,
+.SENDAI-day1.look,
+.SENDAI-day2.look,
+.KANAGAWA-day1.look,
+.KANAGAWA-day2.look,
+.Hong-Kong-day.look,
+.Korea-day.look,
+.Singapore-day.look,
+.Malaysia-day.look,
+.Indonesia-day.look,
+.Taiwan-day.look,
+.Yokohama-day.look {
+    display: block;
+}
+
+/* ▼ 最初は day2 を非表示にする */
+.NAGOYA-day1.none,
+.NAGOYA-day2.none,
+.OSAKA-day1.none,
+.OSAKA-day2.none,
+.FUKUOKA-day1.none,
+.FUKUOKA-day2.none,
+.SENDAI-day1.none,
+.SENDAI-day2.none,
+.KANAGAWA-day1.none,
+.KANAGAWA-day2.none,
+.Hong-Kong-day.none,
+.Korea-day.none,
+.Singapore-day.none,
+.Malaysia-day.none,
+.Indonesia-day.none,
+.Taiwan-day.none,
+.Yokohama-day.none {
+    display: none;
+}
+
+.NAGOYA.active,
+.OSAKA.active,
+.FUKUOKA.active,
+.SENDAI.active,
+.KANAGAWA.active,
+.Hong-Kong.active,
+.Korea.active,
+.Singapore.active,
+.Malaysia.active,
+.Indonesia.active,
+.Taiwan.active,
+.Yokohama.active {
+    border-bottom: 1px solid #fff;
+}
+
+.tab-Day1.active,
+.tab-Day2.active,
+.tab-Day3.active,
+.tab-Day4.active,
+.tab-Day5.active,
+.tab-Day6.active,
+.tab-Day7.active,
+.tab-Day8.active,
+.tab-Day9.active,
+.tab-Day10.active {
+    color: #0bd;
+    /* background-color: #0bd; */
 }

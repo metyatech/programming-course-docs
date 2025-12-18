@@ -1,7 +1,52 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: #ffdae7;
+.hamburger {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 65px;
+  right: 30px;
+  background: #a6ecff;
+  padding: 12px 18px;
+  border-radius: 999px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero {
+  height: 80vh; 
+  background-image: url(image/yuuki.jpeg); 
+  background-size: cover;
+  background-position: center;
+
+}
+.hero-text{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
 }

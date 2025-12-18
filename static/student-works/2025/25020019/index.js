@@ -8,3 +8,16 @@ if (hamBtn) {
     hamBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 }
+
+// スライドヒーロー
+const heroImg = document.querySelector(".hero-image");
+const heroDots = document.querySelectorAll(".hero-dot");
+
+heroDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    const index = dot.dataset.hero; Ï
+    heroImg.src = `image/hero${index}.png`;
+    heroDots.forEach((d) => d.classList.remove("is-active"));
+    dot.classList.add("is-active");
+  });
+});

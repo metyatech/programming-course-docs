@@ -85,7 +85,7 @@ img {
   transform: translateY(-1px);
 }
 
-/* ハンバーガーメニュー（三本線） */
+/* ハンバーガーメニュー*/
 .ham-icon{
   position: relative;
   width: 24px;
@@ -134,6 +134,38 @@ img {
   transform: translateY(50%) rotate(-45deg);
 }
 
+/* ヒーロー */
+.hero {
+  padding: 20px 0;
+}
+
+.hero-card {
+  position: relative;
+}
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.4);
+  background-color: rgba(255,255,255,.7);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.hero-dot.is-active {
+  background-color: #5c3d31;
+  transform: scale(1.1);
+}
 
 
 /* セクション */

@@ -1,63 +1,90 @@
-* {
-    padding: 0;
-    margin: 0;
-    color: #49586A;
-}
 
 /* header
 ---------------------- */
 header {
-    height: 920px;
+    height: 100vh;
+    min-height: 920px;
     background: url(img/back_flower.png) no-repeat center;
     position: relative;
 }
 
 h1 {
-    padding: 60px 0 0 0;
-    font-size: 150px;
+    font-size: clamp(64px, 10vw, 150px);
     text-align: center;
-    
+
     font-family: "Ibarra Real Nova", serif;
     font-weight: 400;
 }
 
-.hed-item {
+
+.header-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px;
+    height: 100%;
+}
+
+
+.hed-item {    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 46px;
 
     font-family: "Ibarra Real Nova", serif;
     font-weight: 400;
 }
 
-ul {
+.hed-item ul li{
+    margin-bottom: 8px;
+}
+
+.hed-item ul {
     list-style: none;
 }
 
-li {
+.hed-item li {
     font-size: 22px;
     border-bottom: 1px solid #49586A;
 }
 
-p {
+.hed-item p {
     font-size: 20px;
 }
 
+
+
+
 .main_visual {
-    transform: rotate(-2deg);
-    position: absolute;
-    bottom: 114px;
-    left: 372px;
-    width: 695px;
+    position: relative;
+    width: 48%;
+    max-width: 695px;
+  transform: rotate(-2deg) translateY(-20px);
 }
 
-h2 {
-    font-size: 64px;
+.main_visual img {
+    width: 100%;
+    height: auto;
+}
+
+
+.hero h2 {
     position: absolute;
-    bottom: 104px;
-    left: 252px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: clamp(32px, 5vw, 64px);
+    white-space: nowrap;
+    text-align: center;
 
     font-family: "Ibarra Real Nova", serif;
     font-weight: 400;
 }
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(229, 240, 255);
+}
+header{
+    margin: 0;
+    
+    background: url(./image/画像.jpg);
+    width: 1000px;
+    height: 70vh;
+    background-size: cover;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h4{
+    color: rgb(2, 57, 104);
+    
+    margin: 0 auto;
+}
+
+h1{
+    color: rgb(2, 57, 104);
+}
+
+.syoukai{
+    width: 1000px;
+    background-color: #fff;
+    color: rgb(2, 57, 104);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.kawai{
+    margin: 20px;
+}

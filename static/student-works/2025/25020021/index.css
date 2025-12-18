@@ -6,6 +6,9 @@ html,
 body {
     margin: 0;
     padding: 0;
+     font-size: 16px;
+     font-family: "Philosopher", sans-serif;
+  font-weight: 400;
 }
 
 body {
@@ -34,4 +37,27 @@ img {
     width: 100%;
     background-color: #fff;
     height: 70px;
+}
+h2{
+    margin-top: 90px;
+    text-align: center;
+    font-size: 96px;
+}
+.Message{
+    text-align: center;
+    font-size: 24px;
+}
+.gazou{
+    position: relative;
+    color: #FFF;
+}
+.main{
+    position: absolute;
+    top: 50%;
+    right: 14rem;
+    text-align: center;
+    font-size: 24px;
+}
+span{
+    font-size: 40px;
 }

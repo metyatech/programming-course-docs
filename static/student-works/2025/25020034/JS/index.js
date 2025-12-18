@@ -171,26 +171,409 @@ document.querySelectorAll('h3').forEach(h3 => {
 
 });
 
-$(".tab-single").on("click", function () {
+// 
+//  UC切り替え
+// 
+
+$(".tab-Day1").on("click", function () {
 
     // 表示切り替え
-    $("#album").removeClass("look").addClass("none");
-    $("#single").removeClass("none").addClass("look");
+    $(".day2").removeClass("look").addClass("none");
+    $(".day1").removeClass("none").addClass("look");
 
     // active 切り替え
-    $(".tab-single").addClass("active").addClass("bc");
-    $(".tab-album").removeClass("active").removeClass("bc");
+    $(".tab-Day1").addClass("active");
+    $(".tab-Day2").removeClass("active");
 
 });
 
 
-$(".tab-album").on("click", function () {
+$(".tab-Day2").on("click", function () {
 
     // 表示切り替え
-    $("#single").removeClass("look").addClass("none");
-    $("#album").removeClass("none").addClass("look");
+    $(".day1").removeClass("look").addClass("none");
+    $(".day2").removeClass("none").addClass("look");
 
     // active 切り替え
-    $(".tab-album").addClass("active").addClass("bc");
-    $(".tab-single").removeClass("active").removeClass("bc");
+    $(".tab-Day2").addClass("active");
+    $(".tab-Day1").removeClass("active");
 });
+
+// 
+//  UB切り替え
+// 
+
+// 対象クラス一覧
+const displayList = [
+    "NAGOYA-day1",
+    "NAGOYA-day2",
+    "OSAKA-day1",
+    "OSAKA-day2",
+    "FUKUOKA-day1",
+    "FUKUOKA-day2",
+    "SENDAI-day1",
+    "SENDAI-day2",
+    "KANAGAWA-day1",
+    "KANAGAWA-day2"
+];
+
+$(".tab-Day1").on("click", function () {
+
+    // 表示切り替え（ifでまとめる）
+    displayList.forEach(function (cls) {
+        if (cls === "NAGOYA-day1") {
+            $("." + cls).removeClass("none").addClass("look").addClass("active");  // 表示
+            $(".NAGOYA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");  // 非表示
+            $(".OSAKA, .FUKUOKA, .SENDAI, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    // active 切り替え（ifでまとめる）
+    for (let i = 1; i <= 10; i++) {
+        if (i === 1) {
+            $(".tab-Day1").addClass("active");   // Day1 を active
+        } else {
+            $(".tab-Day" + i).removeClass("active");  // ほかは非 active
+        }
+    }
+
+});
+
+$(".tab-Day2").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "NAGOYA-day2") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".NAGOYA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".OSAKA, .FUKUOKA, .SENDAI, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 2) $(".tab-Day2").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day3").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "OSAKA-day1") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".OSAKA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .FUKUOKA, .SENDAI, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 3) $(".tab-Day3").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day4").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "OSAKA-day2") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".OSAKA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .FUKUOKA, .SENDAI, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 4) $(".tab-Day4").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day5").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "FUKUOKA-day1") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".FUKUOKA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .OSAKA, .SENDAI, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 5) $(".tab-Day5").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day6").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "FUKUOKA-day2") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".FUKUOKA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .OSAKA, .SENDAI, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 6) $(".tab-Day6").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day7").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "SENDAI-day1") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".SENDAI").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .OSAKA, .FUKUOKA, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 7) $(".tab-Day7").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day8").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "SENDAI-day2") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".SENDAI").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .OSAKA, .FUKUOKA, .KANAGAWA").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 8) $(".tab-Day8").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day9").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "KANAGAWA-day1") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".KANAGAWA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .OSAKA, .FUKUOKA, .SENDAI").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 9) $(".tab-Day9").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day10").on("click", function () {
+
+    displayList.forEach(function (cls) {
+        if (cls === "KANAGAWA-day2") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".KANAGAWA").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".NAGOYA, .OSAKA, .FUKUOKA, .SENDAI").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 10) $(".tab-Day10").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+const displayLists = [
+    "Hong-Kong-day",
+    "Korea-day",
+    "Singapore-day",
+    "Malaysia-day",
+    "Indonesia-day",
+    "Taiwan-day",
+    "Yokohama-day"
+];
+
+$(".tab-Day1").on("click", function () {
+
+    // 表示切り替え（ifでまとめる）
+    displayLists.forEach(function (cls) {
+        if (cls === "Hong-Kong-day") {
+            $("." + cls).removeClass("none").addClass("look").addClass("active");  // 表示
+            $(".Hong-Kong").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");  // 非表示
+            $(".Korea, .Singapore, .Malaysia, .Indonesia, .Taiwan, .Yokohama").removeClass("active");
+        }
+    });
+
+    // active 切り替え（ifでまとめる）
+    for (let i = 1; i <= 10; i++) {
+        if (i === 1) {
+            $(".tab-Day1").addClass("active");   // Day1 を active
+        } else {
+            $(".tab-Day" + i).removeClass("active");  // ほかは非 active
+        }
+    }
+
+});
+
+$(".tab-Day2").on("click", function () {
+
+    displayLists.forEach(function (cls) {
+        if (cls === "Korea-day") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".Korea").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".Hong-Kong, .Singapore, .Malaysia, .Indonesia, .Taiwan, .Yokohama").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 2) $(".tab-Day2").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day3").on("click", function () {
+
+    displayLists.forEach(function (cls) {
+        if (cls === "Singapore-day") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".Singapore").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".Hong-Kong, .Korea, .Malaysia, .Indonesia, .Taiwan, .Yokohama").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 3) $(".tab-Day3").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day4").on("click", function () {
+
+    displayLists.forEach(function (cls) {
+        if (cls === "Malaysia-day") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".Malaysia").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".Hong-Kong, .Korea, .Singapore, .Indonesia, .Taiwan, .Yokohama").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 4) $(".tab-Day4").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day5").on("click", function () {
+
+    displayLists.forEach(function (cls) {
+        if (cls === "Indonesia-day") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".Indonesia").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".Hong-Kong, .Korea, .Singapore, .Malaysia, .Taiwan, .Yokohama").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 5) $(".tab-Day5").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day6").on("click", function () {
+
+    displayLists.forEach(function (cls) {
+        if (cls === "Taiwan-day") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".Taiwan").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".Hong-Kong, .Korea, .Singapore, .Malaysia, .Indonesia, .Yokohama").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 6) $(".tab-Day6").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+$(".tab-Day7").on("click", function () {
+
+    displayLists.forEach(function (cls) {
+        if (cls === "Yokohama-day") {
+            $("." + cls).removeClass("none").addClass("look");
+            $(".Yokohama").addClass("active");
+        } else {
+            $("." + cls).removeClass("look").addClass("none");
+            $(".Hong-Kong, .Korea, .Singapore, .Malaysia, .Indonesia, .Taiwan").removeClass("active");
+        }
+    });
+
+    for (let i = 1; i <= 10; i++) {
+        if (i === 6) $(".tab-Day6").addClass("active");
+        else $(".tab-Day" + i).removeClass("active");
+    }
+
+});
+
+
+
+// 都市クラスをまとめて取得
+let city = document.querySelectorAll('.NAGOYA, .OSAKA, .FUKUOKA, .SENDAI, .KANAGAWA, .Hong-Kong, .Korea, .Singapore, .Malaysia, .Indonesia, .Taiwan, .Yokohama');
+
+for (let cities of city) {
+
+    cities.addEventListener('mouseenter', function () {
+        let days = cities.querySelector('.days');
+        days.classList.add('open');
+    });
+
+    cities.addEventListener('mouseleave', function () {
+        let days = cities.querySelector('.days');
+        days.classList.remove('open');
+    });
+}

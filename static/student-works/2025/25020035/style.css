@@ -20,6 +20,8 @@ header {
     justify-content: space-between;
     padding: 15px 50px;
     box-sizing: border-box;
+    z-index: 300;
+    background: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0));
 }
 
 .first-view {
@@ -74,34 +76,157 @@ h1 {
     margin-top: 204px;
 }
 
-
-/* コンセプトーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-
 h2 {
     font-size: 84px;
-    display: inline-block;
+    /* display: inline-block; */
     background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
     background: -webkit-linear-gradient(0deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.text {
+    font-size: 11px;
+    line-height: 260%;
+    padding-top: 51px;
+    letter-spacing: 20%;
+}
+
+.about-btn {
+    display: inline-block;
+    border: 1px solid #FFF;
+    padding: 12px 22px;
+}
+
+/* コンセプトーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+
 .concept {
     position: relative;
     width: 1120px;
-    margin: 56px auto 283px;
+    margin: 0 auto 270px;
+    padding-top: 270px;
 }
 
-.concept p {
+.oya-text {
     width: 352px;
     padding: 38px 0;
+    font-size: 16px;
 }
+
 
 .concept-1 {
     display: flex;
 }
 
+.img1 {
+    position: relative;
+    z-index: 100;
+}
+
 .img2 {
     position: absolute;
+    top: 335px;
+    left: 255px;
+    z-index: 10;
+}
 
+/* ゲストルームーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.h2-guest {
+    text-align: right;
+}
+
+.guestroom {
+    position: relative;
+    width: 1120px;
+    margin: 0 auto 270px;
+}
+
+.guestroom-1 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn1 {
+    position: absolute;
+    top: 361px;
+    right: 0;
+}
+
+.img3 {
+    position: relative;
+    z-index: 100;
+}
+
+.img4 {
+    position: absolute;
+    top: 305px;
+    right: 235px;
+    z-index: 10;
+}
+
+/* レストランーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.restaurant {
+    position: relative;
+    width: 1120px;
+    margin: 0 auto 270px;
+}
+
+.restaurant-1 {
+    display: flex;
+}
+
+.btn2 {
+    position: absolute;
+    top: 333px;
+    left: 0;
+}
+
+.img5 {
+    position: relative;
+    z-index: 100;
+}
+
+.img6 {
+    position: absolute;
+    top: 118px;
+    left: 161px;
+    z-index: 10;
+}
+
+/* スパーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.spa {
+    position: relative;
+    width: 1120px;
+    margin: 0 auto 270px;
+}
+
+.h2-spa {
+    text-align: right;
+    }
+
+.spa-1 {
+    display: flex;
+    flex-direction: row-reverse;
+} 
+
+.btn3 {
+    position: absolute;
+    top: 312px;
+    right: 0;
+}
+
+.img7 {
+    position: relative;
+    z-index: 100;
+}
+
+.img8 {
+    position: absolute;
+    top: 161px;
+    right: 46px;
+    z-index: 10;
 }

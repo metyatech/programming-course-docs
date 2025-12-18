@@ -7,13 +7,14 @@
     font-family: "Hina Mincho", serif;
 }
 
-h2{
+h2 {
     font-size: 36px;
 }
 
-body{
+body {
     background-color: #FEF4F4;
 }
+
 /* header------------------------------------ */
 header {
     background-color: #FBFAF5;
@@ -71,3 +72,36 @@ p>span {
 }
 
 /* main------------------------------------- */
+#intro {
+    writing-mode: vertical-rl;
+    text-align: center;
+    margin: 0 auto;
+    padding: 80px 0;
+    width: 1270px;
+}
+
+
+#intro img {
+    width: 580px;
+    margin: 20px auto;
+}
+
+#intro h2,
+#intro p {
+    margin: 0;
+}
+
+
+#intro h2 {
+    font-size: 36px;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding: 0 40px;
+}
+
+#intro p {
+    font-size: 23px;
+    text-align: start;
+    padding: 0;
+    line-height: 2.2;
+}

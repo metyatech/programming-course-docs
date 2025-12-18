@@ -1,38 +1,49 @@
-<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mio Imada Special Profile</title>
+<title>プログラミング演習_期末試験</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
+
 <body>
-<!-- ドロワーメニュー -->
+  <!-- メニューボタン -->
 <div class="drawer" id="drawer">
-  <div class="close-btn" id="close">×</div>
-  <a href="#profile">Profile</a>
-  <a href="#charm">The Charm</a>
-  <a href="#message">Message</a>
+  <div class="drawer-close" id="close"></div>
+<a data-target="profile" href="#profile">Profile</a>
+<a data-target="charm" href="#charm">The Charm</a>
+<a data-target="works" href="#works">Filmography</a>
+<a data-target="message" href="#message">Message</a>
+<a data-target="sns" href="#sns">Sns</a>
+  <div class="menu-indicator"></div>
 </div>
 
-<!-- HERO -->
-<div class="hero container">
-  <div class="menu-btn" id="menu-btn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<!-- TOP画像 -->
+<header>
+  <div class="hero">
+    <div class="hero-slide active" style="background-image: url('img/images/top1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('img/images/top2.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('img/images/top3.jpg');"></div>
 
-  <div class="hero-title">
-    <h1>Mio Imada</h1>
-    <p>The Actress Who Has It All</p>
-  </div>
-</div>
+    <div class="hero-title">
+      <h1>Mio Imada</h1>
+      <p>The Actress Who Has It All</p>
+    </div>
 
-<!-- Profile Section -->
+    <div class="menu-btn" id="menu-btn">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- profile -->
 <section id="profile" class="profile-section">
   <div class="profile-bg">
     <div class="profile-box">
@@ -41,91 +52,236 @@
 
       <div class="profile-name">
         <span class="furigana">いまだ　みお</span>
-        <h3>今田美桜（２８歳）</h3>
+        <h3>今田美桜</h3>
       </div>
 
       <ul class="profile-list">
-        <li>・1997年3月5日生まれ（福岡県）</li>
-        <li>・身長157cm、血液型A型</li>
-        <li>・趣味：語学勉強</li>
-        <li>・特技：博多弁早口言葉</li>
-        <li>・好きなもの　ビールと日本酒</li>
+        <li>1997年3月5日生まれ （28歳）、福岡県出身、身長157cm、血液型A型</li>
+        <li>趣味：語学勉強、特技：博多弁早口言葉、けん玉</li>
+        <li>好きなもの　ビールと日本酒</li><br>
+        <li><strong>【主な出演作】</strong></li>
+        <li>「東京リベンジャーズ」シリーズ、映画「わたしの幸せな結婚」、<br>「トリリオンゲーム」シリーズ、連続テレビ小説「あんぱん」<br><br>
+        公開待機作に映画「ラストマン -FIRST LOVE-」(松竹/TBS)、<br>「メリーベリーラブ」(CJ ENM×日本テレビ×Disney＋)がある。</li><br>
+        <li><strong>【受賞歴・活躍】</strong></li>
+        <li>第45回日本アカデミー賞 新人俳優賞 (東京リベンジャーズ)</li>
+        <li>エランドール賞2024 新人俳優賞</li>
+        <li>anan award 2025 俳優部門</li>
+        <li>第76回NHK紅白歌合戦司会</li>
       </ul>
-
     </div>
   </div>
 </section>
 
+<!-- charm point -->
 <section id="charm" class="charm-section">
-
   <div class="charm-inner">
-
     <h2 class="charm-title">― The Charm of Mio Imada ―</h2>
     <p class="charm-lead">
       “福岡で一番かわいい女の子”として注目された今田美桜ちゃん。<br>
       でも、その魅力はかわいいだけにとどまりません。
     </p>
-
-<!-- ▽▽ スライダー（フェード＋自動切替） ▽▽ -->
-<div class="slider fade-slider">
-  <div class="fade-slide active"><img src="slide1.jpg" alt=""></div>
-  <div class="fade-slide"><img src="slide2.jpg" alt=""></div>
-  <div class="fade-slide"><img src="slide3.jpg" alt=""></div>
-  <div class="fade-slide"><img src="slide4.jpg" alt=""></div>
-  <div class="fade-slide"><img src="slide5.jpg" alt=""></div>
-  <div class="fade-slide"><img src="slide6.jpg" alt=""></div>
-
-  <button class="prev">‹</button>
-  <button class="next">›</button>
+<div class="fade-slider auto">
+  <div class="fade-slide active"><img src="img/images/slide1.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slide2.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slide3.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slide4.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slide5.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slide6.jpg" alt=""></div>
 </div>
-
-    <div class="charm-block">
-      <div class="block-title">💎 見るだけで惹きこまれるビジュアル</div>
+  <div class="charm-block">
+    <div class="block-title">💎 見るだけで惹きこまれるビジュアル</div>
       <p class="block-text">
-        澄んだ瞳、透明感、そして笑顔のギャップ。<br>
-        どの瞬間も華があって、思わず目を奪われる存在です。
+        大きな瞳と透き通る肌、クールさと笑ったときの柔らかさ。<br>
+        そのギャップに思わず惹きつけられます。<br>
+        どの角度から見ても華があって、画面に映るだけで目を奪われ<br>
+        CMでもドラマでも、気づけば自然と視線を追ってしまう存在です。
       </p>
     </div>
 
-    <!-- ▽▽ スライダー② ▽▽ -->
-    <div class="slider">
-      <div class="slides">
-        <img src="face1.jpg" alt="">
-        <img src="face2.jpg" alt="">
-      </div>
-
-      <button class="prev">&#8249;</button>
-      <button class="next">&#8250;</button>
-    </div>
-    <!-- △△ スライダー② △△ -->
-
-    <!-- ------------------------------ -->
-    <!-- Block 2 -->
-    <!-- ------------------------------ -->
+    
+  <div class="fade-slider">
+    <div class="fade-slide active"><img src="img/images/face1.jpg" alt=""></div>
+    <div class="fade-slide"><img src="img/images/face2.jpg" alt=""></div>
+    <div class="fade-slide"><img src="img/images/face3.jpg" alt=""></div>
+    <div class="fade-slide"><img src="img/images/face4.jpg" alt=""></div>
+    <div class="fade-slide"><img src="img/images/face5.jpg" alt=""></div>
+</div>
 
     <div class="charm-block">
       <div class="block-title">🎭 演じるたびに新しい表情を見せてくれる</div>
       <p class="block-text">
-        幅広い役を自然に演じ分ける演技力と、表情や目線だけで感情を伝える繊細さ。<br>
-        どの役でも新しい一面を見せてくれるところが魅力です。
+        さまざまな自然に演じ分けてしまう確かな演技力。<br>
+        特に、感情をセリフではなく“表情や目線”で伝えるのが本当に上手で、静かなシーンでも強く心に残ります。<br>
+        そして作品ごとに毎回まったく違う「彼女」が現れる。<br>
+        強気な役も、静かに戦うような役も、すべてそのキャラクターとして生きているのがすごいところ。<br>
+        見るたびに「こんな一面もあるんだ」と驚かされる、その変化が本当に魅力です。
       </p>
     </div>
 
-    <!-- ------------------------------ -->
-    <!-- Block 3 -->
-    <!-- ------------------------------ -->
-
+<div class="fade-slider">
+  <div class="fade-slide active"><img src="img/images/slider1.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slider2.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slider3.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slider4.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slider5.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slider6.jpg" alt=""></div>
+  <div class="fade-slide"><img src="img/images/slider7.jpg" alt=""></div>
+</div>
     <div class="charm-block">
       <div class="block-title">✨ 努力して掴んできた今の姿</div>
       <p class="block-text">
-        福岡でモデルをしていた頃から、夢に向かって努力を続けてきた彼女。<br>
-        映画やドラマに欠かせない存在になるまで成長し続けています。
+        福岡でモデルをしていた高校時代から、夢に向かって少しずつ歩き続けてきた彼女。<br>
+        地元を離れて挑戦の場を広げ、たくさんの役に挑み、今では映画やドラマに欠かせない存在になりました。<br>
+        その道のりは簡単じゃなかったはずなのに、苦労をあまり見せず、いつも自然体で前向き。<br>
+        そんな姿を見ると、本気で「これからもずっと応援したい」と思わせてくれます。
       </p>
     </div>
 
   </div>
+</section>
+
+<!-- Filmography -->
+
+<section id="works" class="works-section">
+  <h2 class="charm-title">Filmography</h2>
+  <p class="block-text">
+    いろんな作品の中から、特におすすめしたいものをピックアップしてみました！<br>
+それぞれジャンルや雰囲気は違うけれど、どれも見ているときっと楽しい発見やワクワクがあるはずです。<br>
+少しでも美桜ちゃんの魅力が伝われば嬉しいです！
+  </p>
+
+  <div class="works-grid">
+    <div class="work-item" data-work="watakon">
+      <img src="img/works/watakon.jpg" alt="">
+    </div>
+
+    <div class="work-item" data-work="anpan">
+      <img src="img/works/anpan.jpg" alt="">
+    </div>
+
+    <div class="work-item" data-work="trilliongame">
+      <img src="img/works/trilliongame.jpg" alt="">
+    </div>
+
+    <div class="work-item" data-work="tokyorevengers">
+      <img src="img/works/tokyo_revengers.jpg" alt="">
+    </div>
+
+    <div class="work-item" data-work="lastman">
+      <img src="img/works/lastman.jpg" alt="">
+    </div>
+
+    <div class="work-item" data-work="sukihana">
+      <img src="img/works/sukihana.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- Message -->
+<section id="message" class="message-section">
+  <h2 class="charm-title">Message</h2>
+
+  <!-- 背景スライダー -->
+  <div class="message-bg-slider">
+  <div class="bg-slide"><img src="img/background/bg1.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg2.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg3.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg4.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg5.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg6.jpg"></div>
+  <!-- 2巡目（無限ループ用） -->
+  <div class="bg-slide"><img src="img/background/bg1.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg2.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg3.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg4.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg5.jpg"></div>
+  <div class="bg-slide"><img src="img/background/bg6.jpg"></div>
+</div>
+
+
+  <div class="message-box">
+    <h2 class="charm-title">今田美桜ちゃんは、ただの“かわいい人”じゃない。</h2>
+
+    <p class="message-text">
+      演技の表現力や、役ごとに変わる表情の豊かさ、<br>
+      さらに素の姿から伝わる明るさや芯の強さも、本当に魅力的なんです。<br><br>
+
+      どんな役を演じても、そのキャラクターがちゃんと生きていて、<br>
+      見るたびに「やっぱりすごいな」と思わされ、気づけばどんどん惹かれていっています。<br><br>
+
+      私にとって、今田美桜ちゃんはただの推しじゃなくて、<br>
+      本気で応援したくなる大切な存在です。<br><br>
+
+      まだ彼女の作品を見たことがない人がいたら、ぜひ一度どれか観てみてほしいです。
+    </p>
+  </div>
 
 </section>
-<script src="script.js"></script>
+
+<!-- Sns -->
+<section id="sns" class="sns-section">
+<h2 class="charm-title">Sns</h2>
+
+  <div class="sns-images">
+    <img src="img/sns/sns1.jpg">
+    <img src="img/sns/sns2.jpg">
+    <img src="img/sns/sns3.jpg">
+    <img src="img/sns/sns4.jpg">
+  </div>
+
+
+  <div class="sns-overlay">
+
+    <div class="sns-block">
+      <a class="sns-block" href="https://x.com/imanomiofficial" target="_blank">
+      <p class="sns-title">staff X acount</p>
+      <img src="img/icons/Vector-1.png" class="sns-icon">
+      <p class="sns-id">@imanomiofficial</p>
+    </a>
+    </div>
+    <div class="sns-block">
+    <a class="sns-block" href="https://instagram.com/imada_mio" target="_blank">
+      <p class="sns-title">Instagram</p>
+      <img src="img/icons/Vector.png" class="sns-icon">
+      <p class="sns-id">@imada_mio</p>
+      </a>
+    </div>
+
+    <div class="sns-block">
+    <a class="sns-block" href="https://imadamio.com" target="_blank">
+      <p class="sns-title">official fanclub</p>
+      <img src="img/icons/18 1.png" class="sns-icon">
+      <p class="sns-id">imadamio.com</p>
+    </a>
+  </div>
+
+  </div>
+
+  <p class="sns-credit">25020023_髙杉菜央</p>
+</section>
+
+<!-- 作品コンテンツモーダル -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <span class="modal-close-btn">&times;</span>
+
+   
+    <div class="swiper modal-swiper">
+      <div id="modal-swiper-wrapper" class="swiper-wrapper"> 
+    </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <h2 id="modal-title"></h2>
+    <p id="modal-role"></p>
+    <p id="modal-desc"></p>
+    <div id="modal-links"></div>
+  </div>
+</div>
+</main>
+
 </body>
 </html>

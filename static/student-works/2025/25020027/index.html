@@ -3,284 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>期末試験</title>
+  <title>Ayano's Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script src="index.js" defer></script>
 </head>
 <body>
-  
-  <!-- ヘッダー -->
-  <header class="header">
-    <div class="header__container">
-      <h1 class="header__logo">
-        <img src="imags/Frame 5.png" alt="Leo/need" class="header__logo-img">
-      </h1>
-      <nav class="header__nav">
-        <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="#Home">Home</a></li>
-          <li class="header__nav-item"><a href="#Works">Works</a></li>
-          <li class="header__nav-item"><a href="#About">About</a></li>
-          <li class="header__nav-item"><a href="#music">MUSIC</a></li>
-          <li class="header__nav-item"><a href="#Contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="header__burger" aria-label="メニュー">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+  <!-- ヘッダー部分 -->
+  <header class="header-area">
+    <div class="logo"><img src="imags/Group 26.png" alt="ロゴ"></div>
+    <nav class="navi">
+      <a href="#TOP">TOP</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
   </header>
 
-  <!-- メインビジュアル -->
-  <section class="hero" id="top">
-    <div class="hero__bg">
-      <img src="imags/自画像.png" alt="Leo/need メインビジュアル" class="hero__bg-img">
-    </div>
-    <div class="content">
-      <h2 class="title">AYANO</h2>
-      <p class="subtitle">あなたに彩りを</p>
-    </div>
-    <!-- スライダードット -->
-    <div class="hero__dots">
-      <button class="hero__dot hero__dot--active" data-slide="0"></button>
-      <button class="hero__dot" data-slide="1"></button>
-      <button class="hero__dot" data-slide="2"></button>
-      <button class="hero__dot" data-slide="3"></button>
-      <button class="hero__dot" data-slide="4"></button>
-    </div>
-  </section>
+  <main class="main-area">
+    <!-- トップのメインビジュアルエリア -->
+    <section id="TOP" class="top-area">
+      <div class="top-img-box">
+        <a href="https://example.com" target="_blank">
+          <img src="https://via.placeholder.com/400x300/cccccc/cccccc" alt="メイン画像1" class="top-img">
+        </a>
+      </div>
+      <div class="top-text">
+        <p>今でさえ人間<br>
+        今日もあなたに近づきたい<br>
+        <br>
+        変質しない 変質しない<br>
+        完全無二なものをとっくに捨てた<br>
+        言葉が足りないから言葉をずっと求めた<br>
+        <br>
+        成らぬ輩は何者か<br>
+        未熟のままこんにちは<br>
+        <br>
+        変質したい 変質したい<br>
+        君の楽みたいに生きてみたい<br>
+        <br>
+        このままつまらない世界が続く</p>
+      </div>
+      <div class="top-img-box2">
+        <a href="https://example.com" target="_blank">
+          <img src="https://via.placeholder.com/300x350/d0d0d0/d0d0d0" alt="メイン画像2" class="top-img2">
+        </a>
+      </div>
+    </section>
 
-  <!-- ABOUT セクション -->
-  <section class="about" id="about">
-    <div class="about__container">
-      <h2 class="section-title">ABOUT</h2>
-      <div class="about__logo">
-        <img src="leo-need-logo.png" alt="Leo/need ロゴ" class="about__logo-img">
-      </div>
-      <div class="about__images">
-        <img src="about-img1.jpg" alt="星乃一歌" class="about__img">
-        <img src="about-img2.jpg" alt="天馬咲希" class="about__img">
-        <img src="about-img3.jpg" alt="望月穂波" class="about__img">
-      </div>
-      <div class="about__text">
-        <p>
-          それぞれの想いと絆で繋がれた4人によって結成された
-          音楽ユニット「Leo/need」。
-          幼馴染の絆と音楽への情熱で、
-          かつての想いを取り戻していく――。
-        </p>
-        <button class="about__button">詳しく見る</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHARACTER セクション -->
-  <section class="character" id="character">
-    <div class="character__container">
-      <h2 class="section-title">CHARACTER</h2>
+    <!-- Workセクション -->
+    <section id="work" class="work-area">
+      <h2 class="work-title">WORK</h2>
+      <p class="work-subtitle">Webdesign ・・・・・・・・・・・・・・・・・・</p>
       
-      <!-- キャラクター1: 星乃一歌 -->
-      <article class="character__item">
-        <div class="character__image">
-          <img src="character-ichika.png" alt="星乃一歌" class="character__img">
-        </div>
-        <div class="character__info">
-          <h3 class="character__name">星乃一歌</h3>
-          <p class="character__name-en">HOSHINO ICHIKA</p>
-          <p class="character__description">
-            ギターを担当する Leo/need のリーダー。
-            幼馴染との絆を取り戻すため、
-            音楽を通じて想いを伝えようとする。
-            真面目で優しい性格だが、
-            自分の気持ちを表現するのは苦手。
-          </p>
-          <dl class="character__details">
-            <dt>誕生日</dt>
-            <dd>4月10日</dd>
-            <dt>身長</dt>
-            <dd>161cm</dd>
-            <dt>趣味</dt>
-            <dd>ギター、作曲</dd>
-            <dt>好きなもの</dt>
-            <dd>音楽、星空観察</dd>
-            <dt>CV</dt>
-            <dd>野口瑠璃子</dd>
-          </dl>
-        </div>
-      </article>
-
-      <!-- キャラクター2: 天馬咲希 -->
-      <article class="character__item character__item--reverse">
-        <div class="character__image">
-          <img src="character-saki.png" alt="天馬咲希" class="character__img">
-        </div>
-        <div class="character__info">
-          <h3 class="character__name">天馬咲希</h3>
-          <p class="character__name-en">TENMA SAKI</p>
-          <p class="character__description">
-            キーボードを担当。
-            明るく前向きな性格で、
-            メンバーのムードメーカー的存在。
-            長期入院を経て復学し、
-            幼馴染たちとバンドを再開する。
-          </p>
-          <dl class="character__details">
-            <dt>誕生日</dt>
-            <dd>5月9日</dd>
-            <dt>身長</dt>
-            <dd>159cm</dd>
-            <dt>趣味</dt>
-            <dd>ショッピング</dd>
-            <dt>好きなもの</dt>
-            <dd>かわいいもの、お菓子作り</dd>
-            <dt>CV</dt>
-            <dd>礒部花凜</dd>
-          </dl>
-        </div>
-      </article>
-
-      <!-- キャラクター3: 望月穂波 -->
-      <article class="character__item">
-        <div class="character__image">
-          <img src="character-honami.png" alt="望月穂波" class="character__img">
-        </div>
-        <div class="character__info">
-          <h3 class="character__name">望月穂波</h3>
-          <p class="character__name-en">MOCHIZUKI HONAMI</p>
-          <p class="character__description">
-            ドラムを担当。
-            優しく穏やかな性格で、
-            周りに気を遣いすぎてしまう一面も。
-            幼馴染との関係がギクシャクしていたが、
-            音楽を通じて絆を取り戻していく。
-          </p>
-          <dl class="character__details">
-            <dt>誕生日</dt>
-            <dd>10月27日</dd>
-            <dt>身長</dt>
-            <dd>166cm</dd>
-            <dt>趣味</dt>
-            <dd>料理、お菓子作り</dd>
-            <dt>好きなもの</dt>
-            <dd>リンゴ</dd>
-            <dt>CV</dt>
-            <dd>上田麗奈</dd>
-          </dl>
-        </div>
-      </article>
-
-      <!-- キャラクター4: 日野森志歩 -->
-      <article class="character__item character__item--reverse">
-        <div class="character__image">
-          <img src="character-shiho.png" alt="日野森志歩" class="character__img">
-        </div>
-        <div class="character__info">
-          <h3 class="character__name">日野森志歩</h3>
-          <p class="character__name-en">HINOMORI SHIHO</p>
-          <p class="character__description">
-            ベースを担当。
-            クールで無口な性格だが、
-            音楽への情熱は人一倍強い。
-            幼馴染との関係に複雑な想いを抱えている。
-          </p>
-          <dl class="character__details">
-            <dt>誕生日</dt>
-            <dd>1月8日</dd>
-            <dt>身長</dt>
-            <dd>159cm</dd>
-            <dt>趣味</dt>
-            <dd>ベース練習</dd>
-            <dt>好きなもの</dt>
-            <dd>音楽、静かな場所</dd>
-            <dt>CV</dt>
-            <dd>和氣あず未</dd>
-          </dl>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- MUSIC セクション -->
-  <section class="music" id="music">
-    <div class="music__container">
-      <h2 class="section-title">MUSIC</h2>
-      
-      <div class="music__items">
-        <!-- 楽曲1 -->
-        <article class="music__item">
-          <div class="music__thumbnail">
-            <img src="music-needle.jpg" alt="needle" class="music__img">
-            <button class="music__play-btn" aria-label="再生">▶</button>
-          </div>
-          <h3 class="music__title">needle</h3>
-          <p class="music__description">
-            あたしとあなた、あつかましくて、
-            でもそれが、あの頃の魔法だから。
-            幼馴染への想いを綴った、
-            Leo/needの代表曲。
-          </p>
-          <a href="#" class="music__link">試聴する</a>
-        </article>
-
-        <!-- 楽曲2 -->
-        <article class="music__item">
-          <div class="music__thumbnail">
-            <img src="music-story.jpg" alt="STORY" class="music__img">
-            <button class="music__play-btn" aria-label="再生">▶</button>
-          </div>
-          <h3 class="music__title">STORY</h3>
-          <p class="music__description">
-            ありがとうと言えなくて、
-            君の背中を見送った。
-            かつての想いと現在の気持ちを
-            重ね合わせた楽曲。
-          </p>
-          <a href="#" class="music__link">試聴する</a>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ダウンロードセクション -->
-  <section class="download" id="download">
-    <div class="download__container">
-      <h2 class="download__title">配信中！</h2>
-      <div class="download__content">
-        <img src="app-visual.png" alt="アプリビジュアル" class="download__visual">
-        <div class="download__buttons">
-          <a href="#" class="download__btn download__btn--ios">
-            <img src="appstore-badge.png" alt="App Storeからダウンロード">
+      <div class="work-list">
+        <div class="work-box">
+          <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/350x450/c5c5c5/c5c5c5" alt="作品1" class="work-img">
           </a>
-          <a href="#" class="download__btn download__btn--android">
-            <img src="googleplay-badge.png" alt="Google Playで手に入れよう">
+        </div>
+        <div class="work-box">
+          <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/280x300/b8b8b8/b8b8b8" alt="作品2" class="work-img">
+          </a>
+        </div>
+        <div class="work-box">
+          <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/500x300/d5d5d5/d5d5d5" alt="作品3" class="work-img">
+          </a>
+        </div>
+        <div class="work-box">
+          <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/420x350/c0c0c0/c0c0c0" alt="作品4" class="work-img">
+          </a>
+        </div>
+        <div class="work-box">
+          <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/380x250/cdcdcd/cdcdcd" alt="作品5" class="work-img">
           </a>
         </div>
       </div>
-      <div class="download__info">
-        <img src="colorful-stage-logo.png" alt="プロジェクトセカイ カラフルステージ！ feat. 初音ミク" class="download__logo">
-        <p class="download__text">プロジェクトセカイ</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- フッター -->
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__notice">
-        <p>
-          ※ LAUNCH当日は、サーバー負荷による接続障害にご注意ください。<br>
-          ※ 今後もLeo/needの楽曲が続々追加予定です！
-        </p>
+      <p class="work-subtitle2">bussinesDesign</p>
+      
+      <div class="work-list2">
+        <div class="work-box">
+          <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/280x200/bebebe/bebebe" alt="作品6" class="work-img">
+          </a>
+        </div>
       </div>
-      <p class="footer__copyright">© SEGA / © Colorful Palette Inc. / © Crypton Future Media, INC.</p>
-      <nav class="footer__nav">
-        <a href="#">利用規約</a>
-        <a href="#">プライバシーポリシー</a>
-        <a href="#">お問い合わせ</a>
-      </nav>
+
+      <div class="design-link">
+        <a href="#more">Design.<br>MORE ></a>
+      </div>
+    </section>
+
+    <!-- Aboutセクション -->
+    <section id="about" class="about-area">
+      <h2 class="about-title">ABOUT</h2>
+      <div class="about-img-box">
+        <a href="https://example.com" target="_blank">
+          <img src="https://via.placeholder.com/450x200/cacaca/cacaca" alt="About画像" class="about-img">
+        </a>
+      </div>
+      
+      <h3 class="about-name">田 中 彩 乃</h3>
+      
+      <div class="about-text">
+        <p>はじめまして、田中彩乃と申します<br>
+        趣味でWebデザインをしています<br>
+        <br>
+        ユーザが使いやすい小さな配慮が効いた丁寧な<br>
+        デザインに、いつも心惹かれています</p>
+      </div>
+      
+      <div class="about-more">
+        <a href="#more-about">MORE ></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-area">
+    <!-- <p>Site  ©  Webdesign  2024/12  By  Ayano T.</p> -->
+    <div class="footer-link">
+      <a href="#top">HOME</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
     </div>
   </footer>
 

@@ -8,8 +8,8 @@
 
 h2 {
     text-align: center;
+    margin-bottom: 1em;
 }
-
 
 
 
@@ -51,16 +51,8 @@ header img {
 /* ham_button 
 ------------------------------------- */
 .ham_btn {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.line {
-    width: 30px;
-    height: 2px;
-    display: block;
-    background-color: #fff;
+    display: none;
+    right: 0;
 }
 
 
@@ -73,6 +65,7 @@ header img {
     background-position: center;
     background-size: cover;
 }
+
 .kv2 {
     background-image: url(./img/maxresdefault.jpg);
     object-fit: cover;
@@ -80,6 +73,7 @@ header img {
     background-position: center;
     background-size: cover;
 }
+
 .kv3 {
     background-image: url(./img/Ly8pabr1.png);
     object-fit: cover;
@@ -98,8 +92,9 @@ header img {
 ------------------------------------- */
 #news {
     background-color: #CABD9F;
-    margin: 0 auto;
+    margin: 150px auto;
     width: 1160px;
+    padding: 30px;
 }
 
 #news ul {
@@ -107,12 +102,148 @@ header img {
     padding: 0;
 }
 
-#news li {
-    border-left: 3px solid #030A2E;
+.list_item {
+    border-left: 5px solid #030A2E;
     padding-left: 20px;
     margin-bottom: 10px;
 }
 
+#news div {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* ABOUT US 
+------------------------------------- */
+#about {
+    position: relative;
+}
+
+#about .box {
+    position: absolute;
+    height: 250px;
+    width: 415px;
+    background-color: #47336F;
+    top: 0;
+    right: 0;
+}
+
+#about img {
+    position: absolute;
+    width: 472px;
+    height: 300px;
+    object-fit: cover;
+    top: 50%;
+    right: 140px;
+}
+
+
+
+/* STAFF 
+------------------------------------- */
+.introduction {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+
+.octavinelle {
+    position: relative;
+    width: 375px;
+    height: 500px;
+    background-color: #282F53;
+    overflow: hidden;
+}
+.octavinelle img {
+    width: 100%;
+    vertical-align: middle;
+    position: absolute;
+    bottom: -70px;
+}
+
+.octavinelle h3 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.floyd {
+    /* background-image: url(./img/octavinelle_chara_floyd_detail2_A.png); */
+    background-size: cover;
+}
+
+.azul {
+    /* background-image: url(./img/octavinelle_chara_azul_detail2_A.png); */
+    background-size: cover;
+}
+
+.jade {
+    /* background-image: url(./img/octavinelle_chara_jade_detail2_A.png); */
+    background-size: cover;
+}
+
+
 
 /* SNS_X 
 ------------------------------------- */
+
+
+
+
+/* mobile版 
+------------------------------------- */
+@media (max-width: 800px) {
+
+    /* KV 
+    ------------------------------------- */
+    .swiper {
+        height: 500px;
+    }
+
+    /* NEWS 
+    ------------------------------------- */
+    #news {
+        width: 350px;
+    }
+
+    #news h2 {
+        margin-bottom: 1em;
+    }
+
+    /* ham_button 
+    ------------------------------------- */
+    .ham_btn {
+        padding-right: 1em;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    .line {
+        display: block;
+        cursor: pointer;
+    }
+
+    .sub_list {
+        position: fixed;
+        padding-top: 10vh;
+        top: 0;
+        left: 105%;
+        z-index: 100;
+        width: 100%;
+        max-width: 240px;
+        height: 100vh;
+        flex-direction: column;
+        transition: 0.3s;
+        background-color: #030A2E;
+        margin-top: 66px;
+    }
+
+
+    /* ABOUT US 
+    ------------------------------------- */
+}

@@ -6,6 +6,7 @@
 
 body {
     background-color: #006341;
+    overflow: auto;
 }
 
 /* ヘッダー */
@@ -98,7 +99,138 @@ body {
 
 /* 最新情報 */
 
+#joho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px;
+}
+
 #joho h2 {
+    font-family: "Inknut Antiqua", sans-serif;
+    font-size: 36px;
     color: #69E65B;
     text-align: center;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 35px;
+    list-style-type: none;
+}
+
+.news li {
+    width: 1000px;
+    height: 90px;
+    background-color: #59AA37;
+    border-radius: 15px;
+    color: #fff;
+    position: relative;
+}
+
+.news h3 {
+    font-size: 22px;
+    position: absolute;
+    top: 20px;
+    left: 35px;
+}
+
+.news p {
+    font-size: 17px;
+    position: absolute;
+    top: 52px;
+    left: 35px;
+}
+
+/* メンバー写真 */
+
+#member {
+    margin: 250px;
+}
+
+#member h2 {
+    font-family: "Inknut Antiqua", sans-serif;
+    font-size: 36px;
+    color: #69E65B;
+    text-align: center;
+    margin: 80px;
+}
+
+.mrs {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+
+.Fujisawa {
+    width: 500px;
+    height: 600px;
+    border-radius: 15px;
+    background-image: url(img/6c19ff5c11492380695db8529bdbe018.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.Fujisawa p {
+    color: #FFEE59;
+    font-family: "Shippori Mincho", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    position: absolute;
+    bottom: 12px;
+    left: 115px;
+}
+
+.omori {
+    width: 500px;
+    height: 600px;
+    border-radius: 15px;
+    background-image: url(img/8d7ffc89abe24ac41aeb55cba8e8eab8.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.omori p {
+    color: #FF4E4E;
+    font-family: "Shippori Mincho", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    position: absolute;
+    bottom: 12px;
+    left: 130px;
+}
+
+.wakai {
+    width: 500px;
+    height: 600px;
+    border-radius: 15px;
+    background-image: url(img/c15133e74eecd7353a61418e608463a4.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.wakai p {
+    color: #6B41FF;
+    font-family: "Shippori Mincho", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    position: absolute;
+    bottom: 12px;
+    left: 145px;
+}
+
+/* 動画紹介 */
+
+#Video h2 {
+    font-family: "Inknut Antiqua", sans-serif;
+    font-size: 36px;
+    color: #69E65B;
+    text-align: center;
+    margin: 80px;
 }

@@ -1,6 +1,4 @@
-/* ========================================
-   リセット・基本設定
-======================================== */
+/* 全体のリセットと基本設定 */
 * {
     margin: 0;
     padding: 0;
@@ -8,16 +6,10 @@
   }
   
   body {
-    font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-family: "Yu Gothic", "游ゴシック", sans-serif;
     color: #333;
-    line-height: 1.7;
-    background: #f8f8ff;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    background-color: #fafafa;
+    line-height: 1.8;
   }
   
   a {
@@ -27,535 +19,212 @@
   }
   
   a:hover {
-    opacity: 0.7;
+    opacity: 0.6;
   }
   
-  button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-family: inherit;
-  }
-  
-  /* ========================================
-     ヘッダー
-  ======================================== */
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  }
-  
-  .header__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+  /* ヘッダー */
+  .header-area {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 25px 50px;
+    background-color: #DFE1FF;
+    border-bottom: 1px solid #d0d0d0;
   }
   
-  .header__logo-img {
-    height: 60px;
-    /* width: 50px; */
+  .logo img {
+  /* height: 90px; */
+  width: 150px;
   }
   
-  .header__nav-list {
+  .navi {
     display: flex;
-    gap: 2rem;
-    list-style: none;
+    gap: 35px;
+    font-size: 13px;
+    letter-spacing: 1px;
   }
   
-  .header__nav-item a {
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    color: #4a5fb8;
+  /* メインエリア */
+  .main-area {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
   }
   
-  .header__burger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    width: 30px;
-    height: 24px;
+  /* トップエリア */
+  .top-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 0;
+    gap: 30px;
   }
   
-  .header__burger span {
+  .top-img-box {
+    flex: 0 0 420px;
+  }
+  
+  .top-img {
+    width: 100%;
     display: block;
+  }
+  
+  .top-text {
+    flex: 1;
+    min-width: 280px;
+    font-size: 14px;
+    line-height: 2;
+    padding: 20px 15px;
+  }
+  
+  .top-img-box2 {
+    flex: 0 0 300px;
+    margin-left: auto;
+    margin-top: -80px;
+  }
+  
+  .top-img2 {
     width: 100%;
-    height: 3px;
-    background: #4a5fb8;
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
-  
-  /* ========================================
-     メインビジュアル（ヒーロー）
-  ======================================== */
-  .hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: 72px;
-  }
-  
-  .hero__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  
-  .hero__bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    /* letter-spacing: 0.1em; */
-  }
-  
-  .subtitle {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: lightpink;
-    /* letter-spacing: 0.05em; */
-  }
-  
-  .hero__dots {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 2;
-  }
-  
-  .hero__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transition: all 0.3s;
-  }
-  
-  .hero__dot--active {
-    background: #fff;
-    width: 30px;
-    border-radius: 5px;
-  }
-  
-  /* ========================================
-     セクション共通
-  ======================================== */
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    letter-spacing: 0.1em;
-    color: #4a5fb8;
-    position: relative;
-  }
-  
-  .section-title::after {
-    content: '';
     display: block;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #6b8af9, #c084fc);
-    margin: 1rem auto 0;
-    border-radius: 2px;
   }
   
-  /* ========================================
-     ABOUT
-  ======================================== */
-  .about {
-    padding: 100px 2rem;
-    background: linear-gradient(180deg, #f8f8ff 0%, #ffffff 100%);
+  /* Workエリア */
+  .work-area {
+    padding: 80px 0;
   }
   
-  .about__container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .about__logo {
+  .work-title {
+    font-size: 32px;
+    color: #5b5b9e;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
   }
   
-  .about__logo-img {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .about__images {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    justify-content: center;
-  }
-  
-  .about__img {
-    width: 30%;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .about__text {
+  .work-subtitle {
+    font-size: 12px;
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+    color: #888;
+    margin-bottom: 50px;
   }
   
-  .about__text p {
-    margin-bottom: 2rem;
-    line-height: 2;
-    color: #555;
+  .work-subtitle2 {
+    font-size: 12px;
+    color: #888;
+    margin: 60px 0 30px 0;
   }
   
-  .about__button {
-    padding: 1rem 3rem;
-    background: linear-gradient(135deg, #6b8af9, #c084fc);
-    color: #fff;
-    font-weight: 600;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(107, 138, 249, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .about__button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 138, 249, 0.4);
-  }
-  
-  /* ========================================
-     CHARACTER
-  ======================================== */
-  .character {
-    padding: 100px 2rem;
-    background: #fff;
-  }
-  
-  .character__container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .character__item {
+  /* 作品の配置 */
+  .work-list {
     display: flex;
-    gap: 3rem;
-    margin-bottom: 6rem;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start;
+    margin-bottom: 40px;
   }
   
-  .character__item--reverse {
-    flex-direction: row-reverse;
+  .work-box {
+    flex: 0 0 auto;
   }
   
-  .character__image {
-    flex: 1;
+  .work-box:nth-child(1) {
+    margin-right: 15px;
   }
   
-  .character__img {
+  .work-box:nth-child(2) {
+    margin-top: 60px;
+  }
+  
+  .work-box:nth-child(3) {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
   }
   
-  .character__info {
-    flex: 1;
+  .work-box:nth-child(4) {
+    margin-top: -50px;
   }
   
-  .character__name {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #4a5fb8;
+  .work-box:nth-child(5) {
+    margin-left: auto;
+    margin-top: -120px;
   }
   
-  .character__name-en {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.1em;
-  }
-  
-  .character__description {
-    line-height: 2;
-    color: #555;
-    margin-bottom: 2rem;
-  }
-  
-  .character__details {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .character__details dt {
-    font-weight: 600;
-    color: #4a5fb8;
-  }
-  
-  .character__details dd {
-    color: #666;
-  }
-  
-  /* ========================================
-     MUSIC
-  ======================================== */
-  .music {
-    padding: 100px 2rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f8ff 100%);
-  }
-  
-  .music__container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .music__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-  }
-  
-  .music__item {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .music__item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .music__thumbnail {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .music__img {
+  .work-img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    display: block;
+    border: 1px solid #e0e0e0;
   }
   
-  .music__play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
+  .work-list2 {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #4a5fb8;
-    transition: all 0.3s;
+    justify-content: flex-start;
+    margin-bottom: 30px;
   }
   
-  .music__play-btn:hover {
-    background: #fff;
-    transform: translate(-50%, -50%) scale(1.1);
+  .design-link {
+    text-align: right;
+    font-size: 13px;
+    margin-top: 40px;
+    margin-right: 20px;
   }
   
-  .music__title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 1.5rem 1.5rem 1rem;
-    color: #4a5fb8;
+  /* Aboutエリア */
+  .about-area {
+    padding: 100px 0 80px 0;
+    text-align: center;
   }
   
-  .music__description {
-    padding: 0 1.5rem;
+  .about-title {
+    font-size: 32px;
+    color: #5b5b9e;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+  }
+  
+  .about-img-box {
+    max-width: 480px;
+    margin: 0 auto 40px auto;
+  }
+  
+  .about-img {
+    width: 100%;
+    display: block;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .about-name {
+    font-size: 18px;
+    margin-bottom: 30px;
+    letter-spacing: 8px;
+    font-weight: normal;
+  }
+  
+  .about-text {
+    font-size: 14px;
+    line-height: 2.2;
+    margin-bottom: 35px;
+  }
+  
+  .about-more {
+    font-size: 13px;
+  }
+  
+  /* フッター */
+  .footer-area {
+    background-color: #DFE1FF;
+    padding: 50px 30px;
+    text-align: center;
+    font-size: 11px;
     color: #666;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 80px;
   }
   
-  .music__link {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    margin: 0 1.5rem 1.5rem;
-    background: linear-gradient(135deg, #6b8af9, #c084fc);
-    color: #fff;
-    border-radius: 50px;
-    font-weight: 600;
-    text-align: center;
-  }
-  
-  /* ========================================
-     DOWNLOAD
-  ======================================== */
-  .download {
-    padding: 100px 2rem;
-    background: linear-gradient(135deg, #6b8af9 0%, #c084fc 100%);
-    color: #fff;
-    text-align: center;
-  }
-  
-  .download__container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .download__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  
-  .download__content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-  
-  .download__visual {
-    max-width: 400px;
-  }
-  
-  .download__buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .download__btn img {
-    height: 60px;
-  }
-  
-  .download__info {
-    margin-top: 3rem;
-  }
-  
-  .download__logo {
-    max-width: 300px;
-    margin: 0 auto 1rem;
-  }
-  
-  .download__text {
-    font-size: 1.2rem;
-    font-weight: 300;
-  }
-  
-  /* ========================================
-     フッター
-  ======================================== */
-  .footer {
-    background: #2a2a3e;
-    color: #ccc;
-    padding: 3rem 2rem 2rem;
-    text-align: center;
-  }
-  
-  .footer__container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .footer__notice {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    font-size: 0.9rem;
-  }
-  
-  .footer__copyright {
-    margin-bottom: 1.5rem;
-    font-size: 0.85rem;
-    color: #999;
-  }
-  
-  .footer__nav {
+  .footer-link {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    font-size: 0.9rem;
-  }
-  
-  .footer__nav a {
-    color: #aaa;
-  }
-  
-  .footer__nav a:hover {
-    color: #fff;
-  }
-  
-  /* ========================================
-     レスポンシブ
-  ======================================== */
-  @media (max-width: 768px) {
-    .header__nav {
-      display: none;
-    }
-  
-    .header__burger {
-      display: flex;
-    }
-  
-    .hero__title {
-      font-size: 2.5rem;
-    }
-  
-    .hero__subtitle {
-      font-size: 1rem;
-    }
-  
-    .about__images {
-      flex-direction: column;
-    }
-  
-    .about__img {
-      width: 100%;
-    }
-  
-    .character__item,
-    .character__item--reverse {
-      flex-direction: column;
-    }
-  
-    .download__content {
-      flex-direction: column;
-    }
-  
-    .footer__nav {
-      flex-direction: column;
-      gap: 1rem;
-    }
+    gap: 30px;
+    margin-top: 25px;
+    font-size: 11px;
+    letter-spacing: 1px;
   }

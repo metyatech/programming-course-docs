@@ -1,9 +1,13 @@
 body {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
 header {
   border-bottom: solid black 1px;
+  background-color: #f9c1cfd3 ;
+  margin-top: 0;
+  padding: 20px 0;
 }
 
 header h1 {
@@ -47,4 +51,46 @@ main p {
     font-size: 20px;
     text-align: center;
     margin-top: -25px;
+}
+
+.charactertati {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.charactertati2 {
+    display: flex;
+    justify-content: center;
+    gap: 280px;
+    margin-bottom: 20px;
+}
+
+.section character h3 {
+    color: rgb(51, 51, 51);
+    font-size: 50px;
+    text-align: center;
+    margin-top: 300px
+}
+
+.photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ciikawa {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }

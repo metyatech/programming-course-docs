@@ -1,0 +1,7 @@
+header{
+    display: flex;
+    justify-content: right;
+}
+header p{
+    margin: 10px;
+}

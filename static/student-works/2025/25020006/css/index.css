@@ -47,9 +47,23 @@ ul{
     position: absolute;
     top: 100px;
     background-color: #000;
+    /* display: none; */
+    display: flex;
+    gap: 20px;
+}
+
+.div-img-p{
+    position: absolute;
+    background-color: #B27979;
+    top: 20px;
+    text-align: center;
+}
+.div-span-img{
+    position: relative;
 }
 a{
     color: #fff;
+    text-decoration: none;
 }
 main{
     position: relative;
@@ -60,4 +74,8 @@ main{
     top: 500px;
     left: 60%;
     right: 60%;
+}
+
+h3,p{
+    width: 140px;
 }
