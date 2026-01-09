@@ -2,7 +2,6 @@
   "output": "AGENTS.md",
   "rules": [
     "agent-rules/rules/languages-and-writing.md",
-    "agent-rules-private/rules/private-repository-confidentiality.md",
     "agent-rules/rules/implementation-and-coding-standards.md",
     "agent-rules/rules/agent-rules-composition.md",
     "agent-rules/rules/readme-standards.md",
