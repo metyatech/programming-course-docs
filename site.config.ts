@@ -8,4 +8,5 @@ export const siteConfig = {
     description: 'HTML・CSSの基礎から実践まで',
     faviconHref: '/img/favicon.ico',
     ogImageUrl: 'https://programming-course-docs.vercel.app/img/ogp.png',
+    adminCommentModeration: true,
 } as const;
