@@ -53,6 +53,62 @@ test('exercise heading verifier matches the site heading contract', () => {
         writeFileSync(
             fixturePath,
             [
+                '<Evidence targets="sample-unit" demonstrates="application">',
+                '',
+                '<Exercise>',
+                '</Exercise>',
+                '',
+                '</Evidence>',
+                '',
+            ].join('\n'),
+            'utf8'
+        );
+
+        result = runVerifier();
+        assert.notEqual(result.status, 0, outputOf(result));
+        assert.match(outputOf(result), /level 3-6/);
+
+        writeFileSync(
+            fixturePath,
+            '```mdx\n<Exercise>\n</Exercise>\n```\n',
+            'utf8'
+        );
+
+        result = runVerifier();
+        assert.equal(result.status, 0, outputOf(result));
+
+        writeFileSync(
+            fixturePath,
+            '### Titled exercise\n\n<Exercise title="Forbidden">\n</Exercise>\n',
+            'utf8'
+        );
+
+        result = runVerifier();
+        assert.notEqual(result.status, 0, outputOf(result));
+        assert.match(outputOf(result), /must not use a title prop/u);
+
+        writeFileSync(
+            fixturePath,
+            [
+                '### Evidence wrapped',
+                '',
+                '<Evidence targets="sample-unit" demonstrates="application">',
+                '',
+                '<Exercise>',
+                '</Exercise>',
+                '',
+                '</Evidence>',
+                '',
+            ].join('\n'),
+            'utf8'
+        );
+
+        result = runVerifier();
+        assert.equal(result.status, 0, outputOf(result));
+
+        writeFileSync(
+            fixturePath,
+            [
                 '### Not adjacent',
                 '',
                 'Intervening text.',

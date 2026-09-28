@@ -47,6 +47,9 @@
             "head",
             "body",
             "html",
+            "Instruction",
+            "ProblemSolving",
+            "Evidence",
             "Verify",
             "Recovery",
             "Checkpoint"

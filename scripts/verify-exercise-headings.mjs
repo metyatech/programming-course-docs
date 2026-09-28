@@ -43,6 +43,17 @@ const previousNonBlankLine = (lines, startLineIndex) => {
     return null;
 };
 
+const getFencedLines = (lines) => {
+    let inFence = false;
+    return lines.map((line) => {
+        const trimmed = line.trimStart();
+        if (trimmed.startsWith('```') || trimmed.startsWith('~~~')) {
+            inFence = !inFence;
+        }
+        return inFence;
+    });
+};
+
 const toRepoRelativePath = (filePath) =>
     path.relative(repoRoot, filePath).replaceAll(path.sep, '/');
 
@@ -52,13 +63,15 @@ let exerciseCount = 0;
 for (const filePath of listMdxFiles(contentDir)) {
     const content = fs.readFileSync(filePath, 'utf8');
     const lines = content.split(/\r?\n/);
+    const fencedLines = getFencedLines(lines);
     const relativePath = toRepoRelativePath(filePath);
 
     for (const match of content.matchAll(exerciseOpeningTagPattern)) {
-        exerciseCount += 1;
-
-        const openingTag = match[0];
         const lineNumber = lineNumberAt(content, match.index);
+        if (fencedLines[lineNumber - 1]) continue;
+
+        exerciseCount += 1;
+        const openingTag = match[0];
 
         if (titlePropPattern.test(openingTag)) {
             violations.push(
@@ -67,9 +80,36 @@ for (const filePath of listMdxFiles(contentDir)) {
         }
 
         const previousLine = previousNonBlankLine(lines, lineNumber - 1);
-        if (!previousLine || !headingPattern.test(previousLine.line.trim())) {
+        let previousMeaningfulLine = previousLine;
+        if (previousLine && /^<Evidence\b/.test(previousLine.line.trim())) {
+            previousMeaningfulLine = previousNonBlankLine(
+                lines,
+                previousLine.lineNumber - 1
+            );
+        } else if (previousLine?.line.trim() === '>') {
+            for (
+                let openingLine = previousLine.lineNumber - 2;
+                openingLine >= 0;
+                openingLine -= 1
+            ) {
+                const candidate = lines[openingLine].trim();
+                if (/^<Evidence\b/.test(candidate)) {
+                    previousMeaningfulLine = previousNonBlankLine(
+                        lines,
+                        openingLine
+                    );
+                    break;
+                }
+                if (candidate !== '' && !/^[\w-]+\s*=/.test(candidate)) break;
+            }
+        }
+
+        if (
+            !previousMeaningfulLine ||
+            !headingPattern.test(previousMeaningfulLine.line.trim())
+        ) {
             violations.push(
-                `${relativePath}:${lineNumber} <Exercise> must be immediately preceded by a non-empty Markdown heading at level 3-6.`
+                `${relativePath}:${lineNumber} <Exercise> must be immediately preceded by a non-empty Markdown heading at level 3-6, optionally followed by an Evidence wrapper.`
             );
         }
     }

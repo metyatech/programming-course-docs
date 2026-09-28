@@ -1,0 +1,10 @@
+version: 1
+units:
+    - id: css-class-selector
+      objective: HTMLのclassとCSSのクラスセレクターを対応させ、特定の要素だけにスタイルを適用できる。
+    - id: css-box-size
+      objective: width と height を使って、要素の横幅と高さを指定できる。
+    - id: css-border
+      objective: border を使って、要素の枠線の太さ・種類・色を指定できる。
+    - id: css-padding
+      objective: padding を使って、内容と枠線の間の内側余白を指定できる。
