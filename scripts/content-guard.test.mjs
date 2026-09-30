@@ -118,4 +118,10 @@ test('pre-commit runs the lightweight content guard after lint-staged', () => {
         packageJson.scripts['verify:content'],
         'node scripts/verify-code-block-indentation.mjs && node scripts/verify-exercise-structure.mjs'
     );
+
+    assert.equal(
+        packageJson.scripts['lint:md'],
+        'markdownlint "**/*.md" --ignore AGENTS.md --ignore "node_modules/**" --ignore "agent-rules-private/**" && markdownlint "**/*.mdx" --config .markdownlint.mdx.json --ignore AGENTS.md --ignore "node_modules/**" --ignore "agent-rules-private/**"'
+    );
+    assert.match(packageJson.scripts.verify, /&& npm audit$/u);
 });

@@ -5,7 +5,6 @@ import { fileURLToPath } from 'node:url';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
-const npxCommand = 'npx';
 const npmCommand = 'npm';
 
 const readPackageName = (dirPath) => {
@@ -92,42 +91,7 @@ const siteEnv = {
     COURSE_CONTENT_SOURCE: repoRoot,
 };
 
-run(npmCommand, ['run', 'format:check']);
-
-run('node', [
-    path.relative(
-        repoRoot,
-        path.join(scriptDir, 'verify-prettier-embedded-formatting.mjs')
-    ),
-]);
-
-run('node', [
-    path.relative(
-        repoRoot,
-        path.join(scriptDir, 'verify-code-block-indentation.mjs')
-    ),
-]);
-
-run('node', [
-    path.relative(
-        repoRoot,
-        path.join(scriptDir, 'verify-exercise-structure.mjs')
-    ),
-]);
-
-run(npxCommand, [
-    '-y',
-    'markdownlint-cli',
-    '**/*.md',
-    '--config',
-    '.markdownlint.json',
-    '--ignore',
-    'AGENTS.md',
-    '--ignore',
-    'node_modules/**',
-    '--ignore',
-    'agent-rules-private/**',
-]);
+run(npmCommand, ['run', 'verify']);
 
 run(npmCommand, ['run', 'lint'], { cwd: courseDocsSiteDir, env: siteEnv });
 run(npmCommand, ['run', 'build:verified'], {

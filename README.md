@@ -1,6 +1,6 @@
 # programming-course-docs
 
-Course content repository for the Programming course.
+Course content repository for the Programming course. Local verification requires Node.js 22 or newer; CI uses Node.js 24.
 
 This repo is **content-only** (not a Next.js app). The shared site runtime lives in `metyatech/course-docs-site`.
 
@@ -33,7 +33,8 @@ What it does:
 
 - rejects the unsupported `title` prop on `<Exercise>`; preceding headings remain authoring guidance and are not a build requirement
 - verifies that code examples use four-space indentation
-- runs `markdownlint` for this repository
+- runs Markdown linting and `npm audit` for all dependency scopes
+- keeps heading-increment checks enabled for Markdown; MDX disables that rule because the site injects `Section` headings at build time
 - locates a local `course-docs-site` checkout automatically when the repos live in the same workspace
 - runs `course-docs-site` lint and `build:verified` with `COURSE_CONTENT_SOURCE` set to this repository
 
