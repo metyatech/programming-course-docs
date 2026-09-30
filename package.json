@@ -31,6 +31,7 @@
             "node scripts/normalize-html-void-elements.mjs --write"
         ],
         "*.{json,yml,yaml,css,js,ts}": "prettier --write",
-        "*.{md,mdx}": "markdownlint --fix --ignore AGENTS.md --ignore node_modules/** --ignore agent-rules-private/**"
+        "*.md": "markdownlint --fix --ignore AGENTS.md --ignore node_modules/** --ignore agent-rules-private/**",
+        "*.mdx": "markdownlint --fix --config .markdownlint.mdx.json --ignore AGENTS.md --ignore node_modules/** --ignore agent-rules-private/**"
     }
 }

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -123,5 +124,150 @@ test('pre-commit runs the lightweight content guard after lint-staged', () => {
         packageJson.scripts['lint:md'],
         'markdownlint "**/*.md" --ignore AGENTS.md --ignore "node_modules/**" --ignore "agent-rules-private/**" && markdownlint "**/*.mdx" --config .markdownlint.mdx.json --ignore AGENTS.md --ignore "node_modules/**" --ignore "agent-rules-private/**"'
     );
+    assert.equal(
+        packageJson['lint-staged']['*.md'],
+        'markdownlint --fix --ignore AGENTS.md --ignore node_modules/** --ignore agent-rules-private/**'
+    );
+    assert.equal(
+        packageJson['lint-staged']['*.mdx'],
+        'markdownlint --fix --config .markdownlint.mdx.json --ignore AGENTS.md --ignore node_modules/** --ignore agent-rules-private/**'
+    );
     assert.match(packageJson.scripts.verify, /&& npm audit$/u);
+});
+
+test('Exercise structure verifier accepts multiline tags and checks only real title props', () => {
+    const fixtureDir = mkdtempSync(
+        path.join(contentDir, '.exercise-structure-test-')
+    );
+    const fixturePath = path.join(fixtureDir, 'fixture.mdx');
+
+    try {
+        const fixtures = [
+            [
+                'multiline supported props',
+                '<Exercise\n  answerTitle="確認"\n  enableBlanks\n>\n</Exercise>\n',
+                0,
+            ],
+            [
+                'multiline unsupported title prop',
+                '<Exercise\n  title="Unsupported"\n>\n</Exercise>\n',
+                1,
+            ],
+            [
+                'data-title is not title',
+                '<Exercise data-title="metadata">\n</Exercise>\n',
+                0,
+            ],
+            [
+                'quoted title-like value',
+                '<Exercise answerTitle="literal title= text">\n</Exercise>\n',
+                0,
+            ],
+            [
+                'braced title-like value',
+                '<Exercise answerTitle={"title="}>\n</Exercise>\n',
+                0,
+            ],
+            [
+                'template greater-than before title prop',
+                '<Exercise answerTitle={`a > b`}\n  title="Unsupported"\n>\n</Exercise>\n',
+                1,
+            ],
+            [
+                'quoted greater-than before title prop',
+                '<Exercise answerTitle="a > b"\n  title="Unsupported"\n>\n</Exercise>\n',
+                1,
+            ],
+            [
+                'unterminated opening tag',
+                '<Exercise\n  answerTitle="確認"\n',
+                1,
+            ],
+            [
+                'ExerciseFoo is not Exercise',
+                '<ExerciseFoo title="ignored">\n</ExerciseFoo>\n',
+                0,
+            ],
+            [
+                'fenced multiline example',
+                '```mdx\n<Exercise\n  title="example"\n>\n```\n',
+                0,
+            ],
+        ];
+
+        for (const [name, fixture, expectedStatus] of fixtures) {
+            writeFileSync(fixturePath, fixture, 'utf8');
+            const result = runVerifier();
+            assert.equal(
+                result.status,
+                expectedStatus,
+                `${name}: ${outputOf(result)}`
+            );
+            if (name.includes('unsupported title')) {
+                assert.match(
+                    outputOf(result),
+                    /does not support a title prop/u
+                );
+            }
+            if (name === 'unterminated opening tag') {
+                assert.match(
+                    outputOf(result),
+                    /Unterminated <Exercise> opening tag/u
+                );
+            }
+        }
+    } finally {
+        rmSync(fixtureDir, {
+            recursive: true,
+            force: true,
+        });
+    }
+});
+
+test('standard Markdown enforces heading order while MDX uses its explicit config', () => {
+    const fixtureDir = mkdtempSync(
+        path.join(os.tmpdir(), 'programming-course-markdownlint-config-')
+    );
+    const markdownPath = path.join(fixtureDir, 'fixture.md');
+    const mdxPath = path.join(fixtureDir, 'fixture.mdx');
+    const cliPath = path.join(
+        repoRoot,
+        'node_modules',
+        'markdownlint-cli',
+        'markdownlint.js'
+    );
+    const headingGap = '### 見出し3\n\n##### 見出し5\n';
+
+    try {
+        writeFileSync(markdownPath, headingGap, 'utf8');
+        writeFileSync(mdxPath, headingGap, 'utf8');
+
+        const standardMarkdown = spawnSync(
+            process.execPath,
+            [cliPath, '--config', '.markdownlint.json', markdownPath],
+            { cwd: repoRoot, encoding: 'utf8' }
+        );
+        const configuredMdx = spawnSync(
+            process.execPath,
+            [cliPath, '--config', '.markdownlint.mdx.json', mdxPath],
+            { cwd: repoRoot, encoding: 'utf8' }
+        );
+
+        assert.equal(
+            standardMarkdown.status,
+            1,
+            `${standardMarkdown.stdout}\n${standardMarkdown.stderr}`
+        );
+        assert.match(
+            `${standardMarkdown.stdout}\n${standardMarkdown.stderr}`,
+            /MD001/u
+        );
+        assert.equal(
+            configuredMdx.status,
+            0,
+            `${configuredMdx.stdout}\n${configuredMdx.stderr}`
+        );
+    } finally {
+        rmSync(fixtureDir, { recursive: true, force: true });
+    }
 });
