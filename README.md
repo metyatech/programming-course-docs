@@ -31,7 +31,7 @@ node scripts/verify.mjs
 
 What it does:
 
-- verifies that each `<Exercise>` block has an immediately preceding Markdown heading and no `title` prop
+- rejects the unsupported `title` prop on `<Exercise>`; preceding headings remain authoring guidance and are not a build requirement
 - verifies that code examples use four-space indentation
 - runs `markdownlint` for this repository
 - locates a local `course-docs-site` checkout automatically when the repos live in the same workspace

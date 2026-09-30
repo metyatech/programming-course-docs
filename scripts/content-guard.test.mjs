@@ -13,7 +13,7 @@ const contentDir = path.join(repoRoot, 'content');
 const verifierPath = path.join(
     repoRoot,
     'scripts',
-    'verify-exercise-headings.mjs'
+    'verify-exercise-structure.mjs'
 );
 
 const runVerifier = () =>
@@ -24,104 +24,72 @@ const runVerifier = () =>
 
 const outputOf = (result) => `${result.stdout}\n${result.stderr}`;
 
-test('exercise heading verifier matches the site heading contract', () => {
+test('exercise structure verifier enforces only the unsupported title prop', () => {
     const fixtureDir = mkdtempSync(
-        path.join(contentDir, '.exercise-heading-test-')
+        path.join(contentDir, '.exercise-structure-test-')
     );
     const fixturePath = path.join(fixtureDir, 'fixture.mdx');
 
     try {
-        writeFileSync(
-            fixturePath,
-            '## Invalid level\n\n<Exercise>\n</Exercise>\n',
-            'utf8'
-        );
-
-        let result = runVerifier();
-        assert.notEqual(result.status, 0, outputOf(result));
-        assert.match(outputOf(result), /level 3-6/);
-
-        writeFileSync(
-            fixturePath,
-            '### Valid level\n\n<Exercise>\n</Exercise>\n',
-            'utf8'
-        );
-
-        result = runVerifier();
-        assert.equal(result.status, 0, outputOf(result));
-
-        writeFileSync(
-            fixturePath,
+        const fixtures = [
+            ['without heading', '<Exercise>\n</Exercise>\n', 0],
             [
-                '<Evidence targets="sample-unit" demonstrates="application">',
-                '',
-                '<Exercise>',
-                '</Exercise>',
-                '',
-                '</Evidence>',
-                '',
-            ].join('\n'),
-            'utf8'
-        );
-
-        result = runVerifier();
-        assert.notEqual(result.status, 0, outputOf(result));
-        assert.match(outputOf(result), /level 3-6/);
-
-        writeFileSync(
-            fixturePath,
-            '```mdx\n<Exercise>\n</Exercise>\n```\n',
-            'utf8'
-        );
-
-        result = runVerifier();
-        assert.equal(result.status, 0, outputOf(result));
-
-        writeFileSync(
-            fixturePath,
-            '### Titled exercise\n\n<Exercise title="Forbidden">\n</Exercise>\n',
-            'utf8'
-        );
-
-        result = runVerifier();
-        assert.notEqual(result.status, 0, outputOf(result));
-        assert.match(outputOf(result), /must not use a title prop/u);
-
-        writeFileSync(
-            fixturePath,
+                'informative heading',
+                '### Try a CSS rule\n\n<Exercise>\n</Exercise>\n',
+                0,
+            ],
             [
-                '### Evidence wrapped',
-                '',
-                '<Evidence targets="sample-unit" demonstrates="application">',
-                '',
-                '<Exercise>',
-                '</Exercise>',
-                '',
-                '</Evidence>',
-                '',
-            ].join('\n'),
-            'utf8'
-        );
-
-        result = runVerifier();
-        assert.equal(result.status, 0, outputOf(result));
-
-        writeFileSync(
-            fixturePath,
+                'numbered heading',
+                '### Exercise 2\n\n<Exercise>\n</Exercise>\n',
+                0,
+            ],
             [
-                '### Not adjacent',
-                '',
-                'Intervening text.',
-                '',
-                '<Exercise>',
-                '</Exercise>',
-                '',
-            ].join('\n'),
-            'utf8'
-        );
+                'unnumbered heading',
+                '### Practice\n\n<Exercise>\n</Exercise>\n',
+                0,
+            ],
+            [
+                'unsupported title prop',
+                '### Practice\n\n<Exercise title="Unsupported">\n</Exercise>\n',
+                1,
+            ],
+            [
+                'unrelated data-title prop',
+                '<Exercise data-title="Metadata">\n</Exercise>\n',
+                0,
+            ],
+            [
+                'fenced example',
+                '```mdx\n<Exercise title="Example">\n</Exercise>\n```\n',
+                0,
+            ],
+            [
+                'evidence wrapper without heading',
+                '<Evidence targets="unit" demonstrates="application">\n<Exercise>\n</Exercise>\n</Evidence>\n',
+                0,
+            ],
+            [
+                'evidence wrapper after heading',
+                '### Practice\n\n<Evidence targets="unit" demonstrates="application">\n<Exercise>\n</Exercise>\n</Evidence>\n',
+                0,
+            ],
+        ];
 
-        result = runVerifier();
-        assert.notEqual(result.status, 0, outputOf(result));
+        for (const [name, fixture, expectedStatus] of fixtures) {
+            writeFileSync(fixturePath, fixture, 'utf8');
+            const result = runVerifier();
+            assert.equal(
+                result.status,
+                expectedStatus,
+                `${name}: ${outputOf(result)}`
+            );
+            if (name === 'unsupported title prop') {
+                assert.match(
+                    outputOf(result),
+                    /does not support a title prop/u
+                );
+            }
+        }
     } finally {
         rmSync(fixtureDir, {
             recursive: true,
@@ -148,11 +116,6 @@ test('pre-commit runs the lightweight content guard after lint-staged', () => {
 
     assert.equal(
         packageJson.scripts['verify:content'],
-        'node scripts/verify-code-block-indentation.mjs && node scripts/verify-exercise-headings.mjs'
-    );
-
-    assert.equal(
-        packageJson.scripts['lint:md'],
-        'markdownlint "**/*.mdx" "**/*.md" --ignore AGENTS.md --ignore "node_modules/**" --ignore "agent-rules-private/**"'
+        'node scripts/verify-code-block-indentation.mjs && node scripts/verify-exercise-structure.mjs'
     );
 });

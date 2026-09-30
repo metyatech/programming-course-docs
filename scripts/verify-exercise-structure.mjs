@@ -7,8 +7,7 @@ const repoRoot = path.resolve(scriptDir, '..');
 const contentDir = path.join(repoRoot, 'content');
 
 const exerciseOpeningTagPattern = /<Exercise\b[\s\S]*?>/g;
-const titlePropPattern = /\btitle\s*=/;
-const headingPattern = /^#{3,6}\s+\S/;
+const titlePropPattern = /(?:^|\s)title\s*=/;
 
 const listMdxFiles = (dirPath) => {
     const entries = fs.readdirSync(dirPath, { withFileTypes: true });
@@ -31,17 +30,6 @@ const listMdxFiles = (dirPath) => {
 
 const lineNumberAt = (content, index) =>
     content.slice(0, index).split('\n').length;
-
-const previousNonBlankLine = (lines, startLineIndex) => {
-    for (let lineIndex = startLineIndex - 1; lineIndex >= 0; lineIndex -= 1) {
-        const line = lines[lineIndex];
-        if (line.trim() !== '') {
-            return { line, lineNumber: lineIndex + 1 };
-        }
-    }
-
-    return null;
-};
 
 const getFencedLines = (lines) => {
     let inFence = false;
@@ -75,54 +63,20 @@ for (const filePath of listMdxFiles(contentDir)) {
 
         if (titlePropPattern.test(openingTag)) {
             violations.push(
-                `${relativePath}:${lineNumber} <Exercise> must not use a title prop.`
-            );
-        }
-
-        const previousLine = previousNonBlankLine(lines, lineNumber - 1);
-        let previousMeaningfulLine = previousLine;
-        if (previousLine && /^<Evidence\b/.test(previousLine.line.trim())) {
-            previousMeaningfulLine = previousNonBlankLine(
-                lines,
-                previousLine.lineNumber - 1
-            );
-        } else if (previousLine?.line.trim() === '>') {
-            for (
-                let openingLine = previousLine.lineNumber - 2;
-                openingLine >= 0;
-                openingLine -= 1
-            ) {
-                const candidate = lines[openingLine].trim();
-                if (/^<Evidence\b/.test(candidate)) {
-                    previousMeaningfulLine = previousNonBlankLine(
-                        lines,
-                        openingLine
-                    );
-                    break;
-                }
-                if (candidate !== '' && !/^[\w-]+\s*=/.test(candidate)) break;
-            }
-        }
-
-        if (
-            !previousMeaningfulLine ||
-            !headingPattern.test(previousMeaningfulLine.line.trim())
-        ) {
-            violations.push(
-                `${relativePath}:${lineNumber} <Exercise> must be immediately preceded by a non-empty Markdown heading at level 3-6, optionally followed by an Evidence wrapper.`
+                `${relativePath}:${lineNumber} <Exercise> does not support a title prop.`
             );
         }
     }
 }
 
 if (violations.length > 0) {
-    console.error('Exercise heading verification failed:');
+    console.error('Exercise structure verification failed:');
     for (const violation of violations) {
         console.error(`- ${violation}`);
     }
     process.exitCode = 1;
 } else {
     console.log(
-        `Exercise heading verification passed (${exerciseCount} Exercise block${exerciseCount === 1 ? '' : 's'} checked).`
+        `Exercise structure verification passed (${exerciseCount} Exercise block${exerciseCount === 1 ? '' : 's'} checked).`
     );
 }

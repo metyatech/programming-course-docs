@@ -111,7 +111,7 @@ run('node', [
 run('node', [
     path.relative(
         repoRoot,
-        path.join(scriptDir, 'verify-exercise-headings.mjs')
+        path.join(scriptDir, 'verify-exercise-structure.mjs')
     ),
 ]);
 
