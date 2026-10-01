@@ -6,7 +6,7 @@ title: CSSで商品カードを作ろう
 
 <Section title="完成形を見る">
 
-このレッスンで作る商品カードです。まずは完成形を見てみましょう。
+このレッスンで作る商品カードの完成形です。まずは見てみましょう。
 
 <CodePreview
     previewVisible={true}
@@ -49,18 +49,18 @@ title: CSSで商品カードを作ろう
 
 </CodePreview>
 
+今回は、この商品カードを少しずつ作っていきましょう。
+
 </Section>
 
-<Section title="値段だけ色を変える"
+<Section title="まずはHTMLを書いてみよう"
   eventId="css-class-selector-initial"
   targets="css-class-selector"
   phase="initial"
   pattern="instruction-first">
 
 <Instruction>
-### まずはHTMLを書く
-
-まず、次のHTMLを書きます。
+まず、商品カードに表示する内容をHTMLで並べます。
 
 <CodePreview
 >
@@ -78,9 +78,9 @@ title: CSSで商品カードを作ろう
 
 </CodePreview>
 
-この中の「180円」だけ色を変えてみます。
+次は、表示された段落のうち「180円」だけ色を変えます。
 
-### まず p に色を付けてみる
+### 段落の色をまとめて変えてみる
 
 <CodePreview
 >
@@ -105,9 +105,11 @@ p {
 
 CSSで `p` と書くと、すべての `<p>` が対象になります。今回は「180円」だけを変えたいので、対象を分ける必要があります。
 
-### 値段だけに class を付けて選ぶ
+そこで今回は `class` を使います。HTMLの要素に `class="名前"` と書くと、その要素に名前を付けられます。CSSからその名前を使って、指定した要素だけを選べます。
 
-HTMLで `class="nedan"` を付けた `<p>` にだけ CSS が当たるようにします。CSSでは、さっきの `p { ... }` を `.nedan { ... }` に書き換えます。
+### 値段の段落に名前を付ける
+
+値段の `<p>` に `class="nedan"` を付け、CSSの `p { ... }` を `.nedan { ... }` に書き換えます。
 
 <CodePreview
 >
@@ -128,20 +130,13 @@ HTMLで `class="nedan"` を付けた `<p>` にだけ CSS が当たるように�
 
 </CodePreview>
 
-**`.nedan` と書いたので、`class="nedan"` が付いた「180円」だけが変わります。**
+<Verify>「180円」だけ背景色と文字色が変わり、「おすすめ」と説明文は素のままである</Verify>
 
-### class と CSS の対応
+### classをCSSから選ぶときのルール
 
-<Concept title="class と `.名前` の対応">
+HTMLでは、対象にしたい要素に `class="名前"` と書きます。CSSでは、その名前の前にドットを付けて `.名前` と書きます。
 
-- HTMLで `class="名前"` と付けた要素だけが対象になる。
-- CSSでは `.名前` と書く（ `.nedan` のように、クラス名の前にドット `1つ`）。
-
-つまり、**HTML側で付けた名前と、CSS側で `.` を付けた名前を、完全に同じにする**ことが部分的にスタイルを当てるコツです。
-
-</Concept>
-
-<Verify>「180円」だけ背景色と文字色が変わっていて、他の段落は素のままである</Verify>
+HTML側の `class="名前"` とCSS側の `.名前` で、`名前` を同じにすると、その要素だけにスタイルが当たります。
 </Instruction>
 
 <ProblemSolving>
