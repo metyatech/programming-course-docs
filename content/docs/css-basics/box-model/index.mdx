@@ -1,20 +1,21 @@
 ---
-title: カードを作ろう
+title: CSSで商品カードを作ろう
 ---
 
 <Prerequisites>
 - [スタイリング](../css-styling-basics/index.mdx) レッスンを完了していること（CSSファイルの読み方・`background-color`・`color` を知っていること）
 </Prerequisites>
 
-今日は、商品カードを少しずつ作ります。先生と同じように、コードを書きながら見た目が変わるところを確認しましょう。
+このレッスンでは、CSSを使って商品カードを作ります。コードを少しずつ追加しながら、見た目がどう変わるか確認していきましょう。
 
-このレッスンでは、次の3つを覚えます。
+このレッスンでは、次のことができるようになるのを目指します。
 
-- **HTML の `class` と CSS の `.名前` を対応させて、一部分だけを選ぶ**
-- ボックスモデルの 4 つの層（content / padding / border / margin）の役割
-- `width`・`height`・`border`・`padding` の 4 つのプロパティでカードの見た目を作る
+- HTML の `class` と CSS の `.クラス名` を対応させて、特定の部分だけにスタイルを適用する
+- `width` と `height` で横幅と高さを指定する
+- `border` で枠線を指定する
+- `padding` で内容と枠線の間に内側の余白を付ける
 
-<Section title="完成形を見る" goal="これから作る商品カードの見た目を先に確認する">
+<Section title="完成形を見る" goal="作る順番と、完成時に使うスタイルを先に確認する">
 
 まずは完成形だけ見ます。ここでは、まだコードは書きません。
 
@@ -63,7 +64,7 @@ title: カードを作ろう
 
 </Section>
 
-<Section title="一部分だけ色を変えてクラスを覚える" goal="HTML の class と CSS の `.名前` を使って、ページ内の1か所にだけスタイルを当てる方法を覚える"
+<Section title="値段だけ色を変える" goal="HTML の `class` と CSS の `.クラス名` を対応させて、値段だけにスタイルを適用する"
   eventId="css-class-selector-initial"
   targets="css-class-selector"
   phase="initial"
@@ -175,7 +176,7 @@ HTML側で付けた名前とCSS側の名前を対応させます。タグ名 `p`
 </ProblemSolving>
 </Section>
 
-<Section title="カード全体を `.waku` で選ぶ" goal="`<div>` で複数の要素をまとめて、`.waku` という名前を付けてカード全体を選べるようにする"
+<Section title="カード全体を `.waku` で選ぶ" goal="`<div>` にクラス名 `waku` を付けて、カード全体をひとまとまりとして選ぶ"
   eventId="css-class-selector-card-practice"
   targets="css-class-selector"
   phase="practice">
@@ -239,7 +240,7 @@ HTML側で付けた名前とCSS側の名前を対応させます。タグ名 `p`
 <Verify>カード全体の背景色が `.waku` のクラス名で塗られている</Verify>
 </Section>
 
-<Section title="カードの大きさを決める" goal="`width` と `height` を指定して、カードの横幅と高さを決める"
+<Section title="カードの大きさを決める" goal="`width` と `height` でカードの横幅と高さを指定する"
   eventId="css-box-size-initial"
   targets="css-box-size"
   phase="initial"
@@ -346,20 +347,20 @@ HTMLのすべての要素は、**「箱（ボックス）」** の形で表現�
 
 <ProblemSolving>
   <QuickCheck>
-カードの高さはそのままにして横幅だけを変えたいとき、どのプロパティの値を変更しますか。
+カードの横幅を指定するときに使うCSSプロパティ名を答えてください。
 
 <Hint>
-横幅はカードの左右の広がりです。横幅と高さに使う2つのプロパティを比べましょう。
+横幅を決めるプロパティと、高さを決めるプロパティを思い出しましょう。
 </Hint>
 
 <Answer>
-`width` の値を変更します。`width` はcontentの横幅を決め、`height` はcontentの高さを決めます。
+`width` が正解です。横幅を指定するプロパティです。
 </Answer>
   </QuickCheck>
 </ProblemSolving>
 </Section>
 
-<Section title="枠線と内側の余白を足す" goal="`border` と `padding` を足してカードを商品カードらしく仕上げる"
+<Section title="枠線と内側の余白を足す" goal="`border` で枠線を、`padding` で内容と枠線の間の余白を指定する"
   eventId="css-border-padding-initial"
   targets="css-border,css-padding"
   phase="initial"
@@ -533,7 +534,7 @@ padding: 8px;
 </ProblemSolving>
 </Section>
 
-<Section title="演習問題" goal="HTML に class を付け、CSS の `.名前` と対応させて商品カードを完成させる"
+<Section title="自分で商品カードを完成させる" goal="`class`・`width`・`height`・`border`・`padding` を使って商品カードを完成させる"
   eventId="css-box-model-practice"
   targets="css-class-selector,css-box-size,css-border,css-padding"
   phase="practice">
@@ -1106,7 +1107,7 @@ HTML側を `class="shirushi"` に直します。
 </Evidence>
 </Section>
 
-<Section title="完成チェックと困ったとき" goal="自力で書いたカードが要件どおりに仕上がっているか、自分の目で確認する">
+<Section title="完成チェックと困ったとき" goal="指定した見た目とコードを照らし合わせ、合わないときは原因を順に確認する">
 
 まず、できたところを上から順に見直しましょう。
 
